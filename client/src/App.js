@@ -6,26 +6,22 @@ import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
 import UserLogin from './components/UserLogin';
-import Home from './components/Home';
+import UserList from './components/UserList';
+// import Home from './components/Home';
+
 class App extends Component {
 	render() {
 		return (
 			<Router>
 				<div>
-					<Navbar
-						style={{ backgroundColor: '#a00c54' }}
-						collapseOnSelect
-						expand="lg"
-						// bg="dark"
-						variant="dark"
-					>
+					<Navbar style={{ backgroundColor: '#a00c54' }} collapseOnSelect expand="lg" variant="dark">
 						<Navbar.Brand href="/">W-Oder</Navbar.Brand>
 						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 						<Navbar.Collapse id="responsive-navbar-nav">
 							<Nav className="mr-auto">
 								<NavDropdown title="Women" id="collasible-nav-dropdown">
 									<NavDropdown.Item>
-										<Link to="/apparels" style={{ color: 'black ' }}>
+										<Link to="/users/:userId" style={{ color: 'black ' }}>
 											Date Woman
 										</Link>
 									</NavDropdown.Item>
@@ -34,7 +30,7 @@ class App extends Component {
 								</NavDropdown>
 							</Nav>
 							<Nav.Link>
-								<Link to="/users" style={{ color: 'white ' }}>
+								<Link to="/login" style={{ color: 'white ' }}>
 									Profile Account
 								</Link>
 							</Nav.Link>
@@ -42,8 +38,9 @@ class App extends Component {
 					</Navbar>
 
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/users" component={UserLogin} />
+						{/* <Route exact path="/" component={Home} /> */}
+						<Route exact path="/login" component={UserLogin} />
+            <Route exact path="/users" component={UserList} />
 					</Switch>
 				</div>
 			</Router>
