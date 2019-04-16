@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import UserPage from './UserPage';
+import SingleEvent from './SingleEvent';
+import SingleComment from './SingleComment';
 
 
 export default class UserShowPage extends Component {

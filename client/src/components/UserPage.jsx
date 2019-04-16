@@ -101,7 +101,6 @@ export default class UserPage extends Component {
                                     {this.state.user.firstName}  
                                     {this.state.user.lastName}
                                     </Card.Title>
-									{/* <Card.Title>{this.state.user.lastName}</Card.Title> */}
 									<Card.Title>{this.state.user.age}</Card.Title>
                                     <Card.Title>{this.state.user.bio}</Card.Title>
                                     <Card.Title>{this.state.user.location}</Card.Title>
@@ -114,7 +113,7 @@ export default class UserPage extends Component {
 												state: { userId: true }
 											}}
 										>
-											Add an Event
+											Edit User
 										</Link>
 									</Button>
 								</Container>
