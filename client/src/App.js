@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-
+import UserLogin from './components/UserLogin';
+import Home from './components/Home';
 class App extends Component {
 	render() {
 		return (
@@ -18,14 +19,14 @@ class App extends Component {
 						// bg="dark"
 						variant="dark"
 					>
-						<Navbar.Brand href="/">WCoder</Navbar.Brand>
+						<Navbar.Brand href="/">W-Oder</Navbar.Brand>
 						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 						<Navbar.Collapse id="responsive-navbar-nav">
 							<Nav className="mr-auto">
 								<NavDropdown title="Women" id="collasible-nav-dropdown">
 									<NavDropdown.Item>
 										<Link to="/apparels" style={{ color: 'black ' }}>
-											Men Apparel
+											Date Woman
 										</Link>
 									</NavDropdown.Item>
 
@@ -34,27 +35,15 @@ class App extends Component {
 							</Nav>
 							<Nav.Link>
 								<Link to="/users" style={{ color: 'white ' }}>
-									User Account
+									Profile Account
 								</Link>
 							</Nav.Link>
-
-							{/* <Nav.Link>
-								<Link to="/cart" style={{ color: 'white ' }}>
-									My Cart
-								</Link>
-							</Nav.Link> */}
 						</Navbar.Collapse>
 					</Navbar>
 
 					<Switch>
-						{/* <Route exact path="/" component={Home} /> */}
-						{/* <Route exact path="/apparels" component={MenClothes} />
-						<Route exact path="/users" component={UserAccount} />
-						<Route exact path="/users/:userId" component={UserPage} />
-						<Route exact path="/apparels/:apparelId" component={ClothesPage} />
-						<Route exact path="/apparels/:apparelId/reviews/:reviewId" component={SingleReview} />
-						{/* <Route exact path="/login" component={LogIn} /> */}
-						{/* <Route exact path="/register" component={Register} />  */} */}
+						<Route exact path="/" component={Home} />
+						<Route exact path="/users" component={UserLogin} />
 					</Switch>
 				</div>
 			</Router>
