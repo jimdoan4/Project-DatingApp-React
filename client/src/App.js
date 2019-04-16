@@ -7,7 +7,8 @@ import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
 import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
-// import Home from './components/Home';
+import UserShowPage from './components/UserShowPage';
+import Home from './components/Home';
 
 class App extends Component {
 	render() {
@@ -38,9 +39,10 @@ class App extends Component {
 					</Navbar>
 
 					<Switch>
-						{/* <Route exact path="/" component={Home} /> */}
+						<Route exact path="/" component={Home} />
 						<Route exact path="/login" component={UserLogin} />
             <Route exact path="/users" component={UserList} />
+            <Route exact path="/users/:userId" component={UserShowPage} />
 					</Switch>
 				</div>
 			</Router>

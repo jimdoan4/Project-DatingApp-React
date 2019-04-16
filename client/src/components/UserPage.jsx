@@ -97,11 +97,14 @@ export default class UserPage extends Component {
 							<Card>
 								<Card.Img variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
-									<Card.Title>{this.state.user.firstName}</Card.Title>
-									<Card.Title>{this.state.user.lastName}</Card.Title>
-									<Card.Title>${this.state.user.age}</Card.Title>
-                                    <Card.Title>${this.state.user.bio}</Card.Title>
-                                    <Card.Title>${this.state.user.location}</Card.Title>
+                                    <Card.Title>
+                                    {this.state.user.firstName}  
+                                    {this.state.user.lastName}
+                                    </Card.Title>
+									{/* <Card.Title>{this.state.user.lastName}</Card.Title> */}
+									<Card.Title>{this.state.user.age}</Card.Title>
+                                    <Card.Title>{this.state.user.bio}</Card.Title>
+                                    <Card.Title>{this.state.user.location}</Card.Title>
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 									<Button style={{ backgroundColor: 'white', borderColor: 'black' }}>
