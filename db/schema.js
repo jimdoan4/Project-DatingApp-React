@@ -10,7 +10,7 @@ const EventSchema = new Schema({
 });
 
 const CommentSchema = new Schema({
-	rating: String,
+	rating: Number,
 	dateAgain: String,
 	photoUrl: String,
 	withWho: String,
@@ -25,6 +25,7 @@ const UserSchema = new Schema({
 	lastName: String,
 	age: Number,
 	location: String,
+	photoUrl: String,
 	bio: String,
 	events: [ EventSchema ],
 	comments: [ CommentSchema ]

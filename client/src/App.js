@@ -11,7 +11,13 @@ class App extends Component {
 		return (
 			<Router>
 				<div>
-					<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+					<Navbar
+						style={{ backgroundColor: '#a00c54' }}
+						collapseOnSelect
+						expand="lg"
+						// bg="dark"
+						variant="dark"
+					>
 						<Navbar.Brand href="/">WCoder</Navbar.Brand>
 						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 						<Navbar.Collapse id="responsive-navbar-nav">
