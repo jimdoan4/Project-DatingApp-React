@@ -33,7 +33,7 @@ class App extends Component {
 								</NavDropdown>
 							</Nav>
 							<Nav.Link>
-								<Link to="/login" style={{ color: 'white ' }}>
+								<Link to="/login/" style={{ color: 'white ' }}>
 									Profile Account
 								</Link>
 							</Nav.Link>

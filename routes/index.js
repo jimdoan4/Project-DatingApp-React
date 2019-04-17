@@ -13,7 +13,6 @@ router.get('/users/:userId', userController.show);
 router.put('/users/:userId', userController.update);
 router.delete('/users/:userId', userController.delete);
 
-
 router.get('/users/:userId/events', eventController.index);
 router.post('/users/:userId/events', eventController.create);
 router.get('/users/:userId/events/:eventId', eventController.show);
