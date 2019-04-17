@@ -41,12 +41,13 @@ class App extends Component {
 					</Navbar>
 
 					<Switch>
+						<Route exact path="/login" component={UserLogin} /> 
 						<Route exact path="/" component={Home} />						
             			<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />   
-						<Route exact path="/login" component={UserLogin} />        			
+						       			
 					</Switch>
 				</div>
 			</Router>
