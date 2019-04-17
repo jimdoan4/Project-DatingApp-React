@@ -12,7 +12,7 @@ export default class UserPage extends Component {
 		userId: this.props.userId,
 		users: [],
 		user: {
-            _id: '',
+			_id: '',
 			userName: '',
 			password: '',
 			firstName: '',
@@ -68,8 +68,8 @@ export default class UserPage extends Component {
 				photoUrl: this.state.user.photoUrl,
 				location: this.state.user.location,
 				bio: this.state.user.bio,
-                comments: {},
-                events: {}
+				comments: {},
+				events: {}
 			})
 			.then((res) => {
 				this.setState({ user: res.data, displayEditForm: false });
@@ -85,36 +85,34 @@ export default class UserPage extends Component {
 
 	render() {
 		if (this.state.redirectToUser) {
-			return <Redirect to={`/users/${this.state.userId}/`} />;
+			return <Redirect to={`/users/`} />;
 		}
 		return (
 			<div>
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
-				<form onSubmit={this.createUser}>
+				<form onSubmit={this.updateUser}>
 					<div style={{ marginTop: '100px', marginBottom: '100px' }}>
 						<Card className="container" style={{ width: '43rem', marginBottom: '40px' }}>
 							<Card>
 								<Card.Img variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
-                                    <Card.Title>
-                                    {this.state.user.firstName}  
-                                    {this.state.user.lastName}
-                                    </Card.Title>
+									<Card.Title>
+										{this.state.user.firstName}
+										{this.state.user.lastName}
+									</Card.Title>
 									<Card.Title>{this.state.user.age}</Card.Title>
-                                    <Card.Title>{this.state.user.bio}</Card.Title>
-                                    <Card.Title>{this.state.user.location}</Card.Title>
+									<Card.Title>{this.state.user.bio}</Card.Title>
+									<Card.Title>{this.state.user.location}</Card.Title>
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
-									<Button style={{ backgroundColor: 'white', borderColor: 'black' }}>
-										<Link
-											to={{
-												pathname: `/users/${this.state.userId}`,
-												state: { userId: true }
-											}}
-										>
+								<Button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '45px' }}>
+								<Link to= {`/users/${this.state.userId}`}>
 											Edit User
-										</Link>
+											</Link>
+									</Button>
+									<Button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }} onClick = {this.deleteUser}>
+											Delete User
 									</Button>
 								</Container>
 							</Card>
@@ -122,6 +120,7 @@ export default class UserPage extends Component {
 					</div>
 				</form>
 			</div>
+			
 		);
 	}
 }

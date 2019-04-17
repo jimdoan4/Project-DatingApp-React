@@ -22,7 +22,7 @@ class App extends Component {
 							<Nav className="mr-auto">
 								<NavDropdown title="Women" id="collasible-nav-dropdown">
 									<NavDropdown.Item>
-										<Link to="/users/:userId" style={{ color: 'black ' }}>
+										<Link to="/users/" style={{ color: 'black ' }}>
 											Date Woman
 										</Link>
 									</NavDropdown.Item>
@@ -40,9 +40,11 @@ class App extends Component {
 
 					<Switch>
 						<Route exact path="/" component={Home} />
+						
 						<Route exact path="/login" component={UserLogin} />
-            <Route exact path="/users" component={UserList} />
-            <Route exact path="/users/:userId" component={UserShowPage} />
+            			<Route exact path="/users" component={UserList} />
+						<Route exact path="/users/:userId" component={UserShowPage} />
+            			
 					</Switch>
 				</div>
 			</Router>

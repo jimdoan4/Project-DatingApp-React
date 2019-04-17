@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserPage from './UserPage';
-import SingleEvent from './SingleEvent';
-import SingleComment from './SingleComment';
+// import SingleUser from './SingleUser';
+// import CommentPage from './CommentPage';
 
 
 export default class UserShowPage extends Component {
@@ -11,10 +11,16 @@ export default class UserShowPage extends Component {
 
 	render() {
 		return (
-			<div className="row">
+			<div className="row" style= {{ marginTop: '50px'}}>
 				<div className="col s12 m4 l3" style= {{ marginTop: '50px'}}>
 					<UserPage userId={this.state.userId} />
 				</div>
+				{/* <div className="col s12 m4 l3" style= {{ marginTop: '50px'}}>
+					<SingleUser userId={this.state.userId} />
+				</div> */}
+                {/* <div className="col s12 m4 l3" style= {{ marginTop: '50px'}}>
+					<CommentPage userId={this.state.userId} />
+				</div> */}
 			</div>
 		);
 	}
