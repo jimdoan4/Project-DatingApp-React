@@ -6,6 +6,7 @@ const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
 
 router.get('/', appController.index);
+
 router.get('/users', userController.index);
 router.post('/users', userController.create);
 router.get('/users/:userId', userController.show);

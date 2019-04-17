@@ -8,6 +8,9 @@ import { NavDropdown } from 'react-bootstrap';
 import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
+// import SingleUser from './components/SingleUser';
+import SingleEvent from './components/SingleEvent';
+import SingleComment from './components/SingleComment';
 import Home from './components/Home';
 
 class App extends Component {
@@ -44,6 +47,9 @@ class App extends Component {
 						<Route exact path="/login" component={UserLogin} />
             			<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
+						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
+						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
+						{/* <Route exact path="/users/:userId/update" component={SingleUser} /> */}
             			
 					</Switch>
 				</div>
