@@ -28,7 +28,6 @@ export default class UserLogin extends Component {
 		redirectToUser: false,
 		displayUserForm: false,
 		userId: this.props.match.params.userId
-		
 	};
 
 	componentDidMount = () => {
@@ -93,9 +92,9 @@ export default class UserLogin extends Component {
 	// handleSignUp = (e) => {
 	// 	e.preventDefault();
 	// 	this.createUser();
-    // };
-    
-    render() {
+	// };
+
+	render() {
 		if (this.state.redirectToUser) {
 			return <Redirect to={`/users}`} />;
 		}
@@ -106,12 +105,14 @@ export default class UserLogin extends Component {
 						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
 					</Container>
 				</Jumbotron> */}
-				<div className="row" style={{
-									marginLeft: '30px',
-									
-                                    marginBottom: '30px',
-                                    marginTop: '50px'
-								}}>
+				<div
+					className="row"
+					style={{
+						marginLeft: '30px',
+						marginBottom: '30px',
+						marginTop: '50px'
+					}}
+				>
 					{this.state.users.map((user) => {
 						return (
 							<div
@@ -119,8 +120,8 @@ export default class UserLogin extends Component {
 								style={{
 									marginLeft: '20px',
 									// marginRight: '20px',
-                                    marginBottom: '20px',
-                                    marginTop: '30px'
+									marginBottom: '20px',
+									marginTop: '30px'
 								}}
 							>
 								<CardGroup className="row">
@@ -134,21 +135,25 @@ export default class UserLogin extends Component {
 											backgroundColor: '#efe8e8'
 										}}
 									>
-											<Card.Img className= 'text-center' style= {{ height: '250px', width: '267px'}} variant="top" src={user.photoUrl} />
+										<Card.Img
+											className="text-center"
+											style={{ height: '250px', width: '267px' }}
+											variant="top"
+											src={user.photoUrl}
+										/>
 
 										<Card.Body>
 											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
-                                            <Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
+											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
 											<Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text>
-                                            <Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
+											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
 											<div key={user._id}>
-										<Link to={`/users/${user._id}`} key={user._id}>
-											<button style= {{marginRight: '16px' }}>Interested</button>
-											</Link>
-											<button onClick = {this.deleteUser}>Not Interested</button>
+												<Link to={`/users/${user._id}`} key={user._id}>
+													<button style={{ marginRight: '16px' }}>Interested</button>
+												</Link>
+												<button onClick={this.deleteUser}>Not Interested</button>
 											</div>
 										</Card.Body>
-										
 									</Card>
 								</CardGroup>
 							</div>

@@ -15,11 +15,11 @@ export default class EventPage extends Component {
 		eventId: this.props.eventId,
 		events: [],
 		newEvent: {
-			    eventName: '',
- 	            time: '',
- 	            price: '',
- 	            withWho: '',
- 	            photoUrl: ''
+			eventName: '',
+			time: '',
+			price: '',
+			withWho: '',
+			photoUrl: ''
 		},
 		redirectToEvent: false,
 		displayEditForm: false
@@ -53,21 +53,21 @@ export default class EventPage extends Component {
 		axios
 			.post(`/api/users/${this.state.userId}/events`, {
 				eventName: this.state.newEvent.eventName,
-                time: this.state.newEvent.time,
-                price: this.state.newEvent.price,
-                withWho: this.state.newEvent.withWho,
-                photoUrl: this.state.newEvent.photoUrl
+				time: this.state.newEvent.time,
+				price: this.state.newEvent.price,
+				withWho: this.state.newEvent.withWho,
+				photoUrl: this.state.newEvent.photoUrl
 			})
 			.then((res) => {
 				const eventsList = [ ...this.state.events ];
 				eventsList.unshift(res.data);
 				this.setState({
 					newEvent: {
-						      eventName: '',
- 	            			  time: '',
- 	            			  price: '',
- 	            			  withWho: '',
- 	            			  photoUrl: ''
+						eventName: '',
+						time: '',
+						price: '',
+						withWho: '',
+						photoUrl: ''
 					},
 					displayEventForm: false,
 					events: eventsList
@@ -87,10 +87,10 @@ export default class EventPage extends Component {
 		axios
 			.put(`/api/users/${this.state.userId}/events`, {
 				eventName: this.state.newEvent.eventName,
-                time: this.state.newEvent.time,
-                price: this.state.newEvent.price,
-                withWho: this.state.newEvent.withWho,
-                photoUrl: this.state.newEvent.photoUrl
+				time: this.state.newEvent.time,
+				price: this.state.newEvent.price,
+				withWho: this.state.newEvent.withWho,
+				photoUrl: this.state.newEvent.photoUrl
 			})
 			.then((res) => {
 				this.setState({ user: res.data, displayEditForm: false });
@@ -99,13 +99,10 @@ export default class EventPage extends Component {
 	};
 
 	deleteEvent = () => {
-        axios
-            .delete(`/api/users/${this.state.userId}/events/${this.state.eventId}`)
-            .then(res => {
-                this.setState({redirectToEvent: true})
-            })
-    }
-
+		axios.delete(`/api/users/${this.state.userId}/events/${this.state.eventId}`).then((res) => {
+			this.setState({ redirectToEvent: true });
+		});
+	};
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -117,8 +114,9 @@ export default class EventPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className= 'text-center'>
-									<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>Event Name: {event.eventName}
+								<Card className="text-center">
+									<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
+										Event Name: {event.eventName}
 									</Link>
 								</Card>
 							</Card>
@@ -128,10 +126,7 @@ export default class EventPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card
-						className="container"
-						style={{ width: '33rem', height: '18rem', paddingTop: '35px' }}
-					>
+					<Card className="container" style={{ width: '23rem', height: '16rem' }}>
 						<Form className="text-center" style={{ display: 'inline-block' }} onSubmit={this.createEvent}>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
@@ -157,27 +152,26 @@ export default class EventPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style= {{ marginLeft: '140px'}} className='text-center'>
-							<Button
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '15px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Add Event
-							</Button>
-							{/* <Link
+							<div style={{ marginLeft: '140px' }} className="text-center">
+								<Button
+									className="text-center"
+									variant="primary"
+									type="submit"
+									style={{
+										marginRight: '140px',
+										paddingLeft: '30px',
+										paddingRight: '30px',
+										marginTop: '15px',
+										marginBottom: '25px'
+									}}
+								>
+									Add Event
+								</Button>
+								{/* <Link
 											className="text-center"
 											to={`users/${this.state.userId}/events/${event._id}`}
 										> */}
-							{/* <Button
+								{/* <Button
 								// onClick = {this.deleteEvent}
 								className='text-center'
 								variant="primary"
@@ -193,7 +187,7 @@ export default class EventPage extends Component {
 							>
 								Edit Event
 							</Button> */}
-							{/* </Link> */}
+								{/* </Link> */}
 							</div>
 						</Form>
 					</Card>

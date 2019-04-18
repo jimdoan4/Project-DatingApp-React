@@ -16,15 +16,22 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<div>
-					<Navbar style={{ backgroundColor: '#a00c54' }} collapseOnSelect expand="lg" variant="dark">
-						<Navbar.Brand href="/">W-Oder</Navbar.Brand>
-						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-						<Navbar.Collapse id="responsive-navbar-nav">
-							<Nav className="mr-auto">
-								<NavDropdown title="Women" id="collasible-nav-dropdown">
-									<NavDropdown.Item>
-										<Link to="/users/" style={{ color: 'black ' }}>
+				<div style={{ color: 'black' }}>
+					<Navbar
+						style={{ backgroundColor: 'white', color: 'black' }}
+						collapseOnSelect
+						expand="lg"
+						variant="dark"
+					>
+						<Navbar.Brand style={{ color: 'black' }} href="/">
+							DATER CODER
+						</Navbar.Brand>
+						<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
+						<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>
+							<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
+								<NavDropdown style={{ color: 'black' }} title="Women" id="collasible-nav-dropdown">
+									<NavDropdown.Item style={{ color: 'black' }}>
+										<Link to="/users/" style={{ color: 'black' }}>
 											Date Woman
 										</Link>
 									</NavDropdown.Item>
@@ -32,8 +39,8 @@ class App extends Component {
 									<NavDropdown.Divider />
 								</NavDropdown>
 							</Nav>
-							<Nav.Link>
-								<Link to="/login/" style={{ color: 'white ' }}>
+							<Nav.Link style={{ color: 'black' }}>
+								<Link to="/login/" style={{ color: 'black' }}>
 									Profile Account
 								</Link>
 							</Nav.Link>
@@ -42,12 +49,11 @@ class App extends Component {
 
 					<Switch>
 						{/* <Route exact path="/login" component={UserLogin} />  */}
-						<Route exact path="/" component={Home} />						
-            			<Route exact path="/users" component={UserList} />
+						<Route exact path="/" component={Home} />
+						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
-						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />   
-						       			
+						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
 					</Switch>
 				</div>
 			</Router>

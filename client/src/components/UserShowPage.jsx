@@ -3,29 +3,32 @@ import UserPage from './UserPage';
 import CommentPage from './CommentPage';
 import EventPage from './EventPage';
 
-
 export default class UserShowPage extends Component {
 	state = {
 		userId: this.props.match.params.userId
-	
 	};
 
 	render() {
 		return (
-			<div className="row" style= {{ marginTop: '10px'}}>
-				<div className="col s12 m4 l3" style= {{ marginTop: '50px'}}>
-					<UserPage userId={this.state.userId} />
+			<div className="container" style={{ marginTop: '10px' }}>
+				<div className="row">
+					<div
+						style={{
+							marginLeft: '70px'
+						}}
+						className="row-sm-5 row-md-6 text-center"
+					>
+						<UserPage userId={this.state.userId} />
+					</div>
+					<div style={{ marginLeft: '60px', marginTop: '40px' }} className=".col-md-4">
+						<EventPage userId={this.state.userId} />
+
+						<div style={{ marginTop: '40px' }} className=".col-md-4">
+							<CommentPage userId={this.state.userId} />
+						</div>
+					</div>
 				</div>
-				<div className="col s12 m4 l3" style= {{ marginTop: '270px'}}>
-					<EventPage userId={this.state.userId} />
-				</div>
-                <div className="col s12 m4 l3" style= {{ marginTop: '80px', marginBottom: '70px'}}>
-					<CommentPage userId={this.state.userId} />
-				</div>
-					
 			</div>
 		);
 	}
 }
-
-

@@ -6,7 +6,7 @@ import { Jumbotron } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import MapContainer from './Map.js'
+// import MapContainer from './Map.js';
 
 export default class UserPage extends Component {
 	state = {
@@ -94,7 +94,10 @@ export default class UserPage extends Component {
 
 				<form onSubmit={this.updateUser}>
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
-						<Card className="container" style={{ width: '43rem', marginBottom: '40px' }}>
+						<Card
+							className="container"
+							style={{ width: '23rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
+						>
 							<Card>
 								<Card.Img variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
@@ -107,26 +110,31 @@ export default class UserPage extends Component {
 									<Card.Title>{this.state.user.location}</Card.Title>
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
-								<Button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '45px' }}>
-								<Link to= {`/users/${this.state.userId}`}>
-											Edit User
-											</Link>
+									<Button
+										style={{
+											backgroundColor: 'white',
+											borderColor: 'black',
+											color: 'black',
+											marginRight: '45px'
+										}}
+									>
+										<Link to={`/users/${this.state.userId}`}>Edit User</Link>
 									</Button>
-									<Button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }} onClick = {this.deleteUser}>
-											Delete User
+									<Button
+										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+										onClick={this.deleteUser}
+									>
+										Delete User
 									</Button>
-									<div style= {{alignItems: 'center', justifyContent: 'center', display: 'flex',  width: '30px', height: '40px', marginTop: '80px', marginLeft: '-46px', marginRight: '205px' }}>
+									{/* <div style= {{alignItems: 'center', justifyContent: 'center', display: 'flex',  width: '30px', height: '40px', marginTop: '80px', marginLeft: '-46px', marginRight: '205px' }}>
 										<MapContainer user={this.state.user.location} />
-										</div>
+										</div> */}
 								</Container>
-								
 							</Card>
-						
 						</Card>
 					</div>
 				</form>
 			</div>
-			
 		);
 	}
 }

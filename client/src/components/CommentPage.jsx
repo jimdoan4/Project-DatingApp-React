@@ -14,12 +14,12 @@ export default class CommentPage extends Component {
 		userId: this.props.userId,
 		comments: [],
 		newComment: {
-			    rating: '',
-	            dateAgain: '',
-	            review: '',
-	            withWho: '',
-                photoUrl: '',
-                lessonLearned: '',
+			rating: '',
+			dateAgain: '',
+			review: '',
+			withWho: '',
+			photoUrl: '',
+			lessonLearned: ''
 		},
 		redirectToComment: false,
 		displayEditForm: false
@@ -53,23 +53,23 @@ export default class CommentPage extends Component {
 		axios
 			.post(`/api/users/${this.state.userId}/comments`, {
 				rating: this.state.newComment.rating,
-                dateAgain: this.state.newComment.dateAgain,
-                review: this.state.newComment.review,
-                withWho: this.state.newComment.withWho,
-                photoUrl: this.state.newComment.photoUrl,
-	            lessonLearned: this.state.newComment.lessonLearned
+				dateAgain: this.state.newComment.dateAgain,
+				review: this.state.newComment.review,
+				withWho: this.state.newComment.withWho,
+				photoUrl: this.state.newComment.photoUrl,
+				lessonLearned: this.state.newComment.lessonLearned
 			})
 			.then((res) => {
 				const commentsList = [ ...this.state.comments ];
 				commentsList.unshift(res.data);
 				this.setState({
 					newComment: {
-						    rating: '',
-	                        dateAgain: '',
-	                        review: '',
-	                        withWho: '',
-                            photoUrl: '',
-                            lessonLearned: ''
+						rating: '',
+						dateAgain: '',
+						review: '',
+						withWho: '',
+						photoUrl: '',
+						lessonLearned: ''
 					},
 					displayCommentForm: false,
 					comments: commentsList
@@ -89,11 +89,11 @@ export default class CommentPage extends Component {
 		axios
 			.put(`/api/users/${this.state.userId}`, {
 				rating: this.state.newComment.rating,
-                dateAgain: this.state.newComment.dateAgain,
-                review: this.state.newComment.review,
-                withWho: this.state.newComment.withWho,
-                photoUrl: this.state.newComment.photoUrl,
-	            lessonLearned: this.state.newComment.lessonLearned
+				dateAgain: this.state.newComment.dateAgain,
+				review: this.state.newComment.review,
+				withWho: this.state.newComment.withWho,
+				photoUrl: this.state.newComment.photoUrl,
+				lessonLearned: this.state.newComment.lessonLearned
 			})
 			.then((res) => {
 				this.setState({ user: res.data, displayEditForm: false });
@@ -101,15 +101,11 @@ export default class CommentPage extends Component {
 		this.getAllComments();
 	};
 
-
 	deleteComment = () => {
-        axios
-            .delete(`/api/users/${this.state.userId}/comments/${this.state.commentId}`)
-            .then(res => {
-                this.setState({redirectToComment: true})
-            })
-	}
-	
+		axios.delete(`/api/users/${this.state.userId}/comments/${this.state.commentId}`).then((res) => {
+			this.setState({ redirectToComment: true });
+		});
+	};
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -121,9 +117,15 @@ export default class CommentPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className= 'text-center'>
-									<p><Link to={`/users/${this.state.userId}/comments/${comment._id}`} key={comment._id}>Review: {comment.review}
-									</Link></p>
+								<Card className="text-center">
+									<p>
+										<Link
+											to={`/users/${this.state.userId}/comments/${comment._id}`}
+											key={comment._id}
+										>
+											Review: {comment.review}
+										</Link>
+									</p>
 									<p>{comment.rating}</p>
 									<p>{comment.dateAgain}</p>
 									<p>{comment.lessonLearned}</p>
@@ -135,10 +137,7 @@ export default class CommentPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card
-						className="container"
-						style={{ width: '33rem', height: '18rem', paddingTop: '35px' }}
-					>
+					<Card className="container" style={{ width: '28rem', height: '16rem', paddingTop: '15px' }}>
 						<Form className="text-center" style={{ display: 'inline-block' }} onSubmit={this.createComment}>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
@@ -164,23 +163,22 @@ export default class CommentPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style= {{ marginLeft: '140px'}} className='text-center'>
-							<Button
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '15px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Add Comment
-							</Button>
-							{/* <Button
+							<div style={{ marginLeft: '140px' }} className="text-center">
+								<Button
+									className="text-center"
+									variant="primary"
+									type="submit"
+									style={{
+										marginRight: '140px',
+										paddingLeft: '30px',
+										paddingRight: '30px',
+										marginTop: '15px',
+										marginBottom: '25px'
+									}}
+								>
+									Add Comment
+								</Button>
+								{/* <Button
 								onClick = {this.deleteComment}
 								className='text-center'
 								variant="primary"
