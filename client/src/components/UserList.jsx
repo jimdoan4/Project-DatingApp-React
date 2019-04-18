@@ -152,7 +152,7 @@ export default class UserLogin extends Component {
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
-												<button onClick={this.deleteUser}>Not Interested</button>
+												<button style= {{color: 'black'}} onClick={this.deleteUser}>Not Interested</button>
 											</div>
 										</Card.Body>
 									</Card>

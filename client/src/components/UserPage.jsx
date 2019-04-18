@@ -110,7 +110,7 @@ export default class UserPage extends Component {
 									<Card.Title>{this.state.user.location}</Card.Title>
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
-									<Button
+									<button
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
@@ -119,13 +119,13 @@ export default class UserPage extends Component {
 										}}
 									>
 										<Link to={`/users/${this.state.userId}`}>Edit User</Link>
-									</Button>
-									<Button
+									</button>
+									<button
 										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 										onClick={this.deleteUser}
 									>
 										Delete User
-									</Button>
+									</button>
 									{/* <div style= {{alignItems: 'center', justifyContent: 'center', display: 'flex',  width: '30px', height: '40px', marginTop: '80px', marginLeft: '-46px', marginRight: '205px' }}>
 										<MapContainer user={this.state.user.location} />
 										</div> */}

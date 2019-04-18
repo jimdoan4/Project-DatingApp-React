@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-import UserLogin from './components/UserLogin';
+import UserLogin from './components/UserLogin.jsx';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
 import SingleEvent from './components/SingleEvent';
@@ -41,7 +41,7 @@ class App extends Component {
 								</NavDropdown>
 							</Nav>
 							<Nav.Link style={{ color: 'black' }}>
-								<Link to="/login" style={{ color: 'black' }}>
+								<Link to="/logins" style={{ color: 'black' }}>
 									Profile Account
 								</Link>
 							</Nav.Link>
@@ -50,11 +50,12 @@ class App extends Component {
 
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/logins" component={UserLogin} /> 
 						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
-						<Route exact ="/login" component={UserLogin} /> 
+						
 					</Switch>
 				</div>
 			</Router>

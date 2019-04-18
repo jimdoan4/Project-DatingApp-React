@@ -14,7 +14,8 @@ export default class UserShowPage extends Component {
 				<div className="row">
 					<div
 						style={{
-							marginLeft: '70px'
+							marginLeft: '70px',
+							color: 'black'
 						}}
 						className="row-sm-5 row-md-6 text-center"
 					>
