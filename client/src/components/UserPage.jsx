@@ -6,6 +6,7 @@ import { Jumbotron } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import MapContainer from './Map.js'
 
 export default class UserPage extends Component {
 	state = {
@@ -92,7 +93,7 @@ export default class UserPage extends Component {
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
 				<form onSubmit={this.updateUser}>
-					<div style={{ marginTop: '100px', marginBottom: '100px' }}>
+					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card className="container" style={{ width: '43rem', marginBottom: '40px' }}>
 							<Card>
 								<Card.Img variant="top" src={this.state.user.photoUrl} alt="top" />
@@ -114,8 +115,13 @@ export default class UserPage extends Component {
 									<Button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }} onClick = {this.deleteUser}>
 											Delete User
 									</Button>
+									<div style= {{alignItems: 'center', justifyContent: 'center', display: 'flex',  width: '30px', height: '40px', marginTop: '80px', marginLeft: '-46px', marginRight: '205px' }}>
+										<MapContainer user={this.state.user.location} />
+										</div>
 								</Container>
+								
 							</Card>
+						
 						</Card>
 					</div>
 				</form>

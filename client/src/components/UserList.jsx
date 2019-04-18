@@ -106,16 +106,21 @@ export default class UserLogin extends Component {
 						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
 					</Container>
 				</Jumbotron> */}
-				<div className="row">
+				<div className="row" style={{
+									marginLeft: '30px',
+									
+                                    marginBottom: '30px',
+                                    marginTop: '50px'
+								}}>
 					{this.state.users.map((user) => {
 						return (
 							<div
 								className="row text-center"
 								style={{
-									marginLeft: '30px',
-									marginRight: '30px',
-                                    marginBottom: '30px',
-                                    marginTop: '50px'
+									marginLeft: '20px',
+									// marginRight: '20px',
+                                    marginBottom: '20px',
+                                    marginTop: '30px'
 								}}
 							>
 								<CardGroup className="row">
@@ -123,12 +128,13 @@ export default class UserLogin extends Component {
 										key={user._id}
 										className="text-center"
 										style={{
-											width: '18.7rem',
+											width: '16.7rem',
 											marginLeft: '30px',
-											marginRight: '30px'
+											marginRight: '30px',
+											backgroundColor: '#efe8e8'
 										}}
 									>
-											<Card.Img className= 'text-center' style= {{ height: '350px', width: '297px'}} variant="top" src={user.photoUrl} />
+											<Card.Img className= 'text-center' style= {{ height: '250px', width: '267px'}} variant="top" src={user.photoUrl} />
 
 										<Card.Body>
 											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
@@ -137,7 +143,7 @@ export default class UserLogin extends Component {
                                             <Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
 											<div key={user._id}>
 										<Link to={`/users/${user._id}`} key={user._id}>
-											<button style= {{marginRight: '20px' }}>Interested</button>
+											<button style= {{marginRight: '16px' }}>Interested</button>
 											</Link>
 											<button onClick = {this.deleteUser}>Not Interested</button>
 											</div>
