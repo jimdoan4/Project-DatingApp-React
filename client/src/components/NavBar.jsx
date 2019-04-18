@@ -41,7 +41,7 @@ export default class NavBar extends Component {
 						</NavDropdown>
 					</Nav>
 					<Nav.Link style={{ color: 'black' }}>
-						<Link to="/logins/" style={{ color: 'black' }}>
+						<Link to="/login/" style={{ color: 'black' }}>
 							Profile Account
 						</Link>
 					</Nav.Link>

@@ -6,7 +6,7 @@ import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class UserLogin extends Component {
+export default class UserLog extends Component {
 	state = {
 		users: [],
 		newUser: {
