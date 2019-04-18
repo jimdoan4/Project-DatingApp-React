@@ -30,3 +30,12 @@ code {
   /* Height of the footer */
   background-color: white;
 }
+
+.zoom {
+  transition: transform .3s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.2); 
+}

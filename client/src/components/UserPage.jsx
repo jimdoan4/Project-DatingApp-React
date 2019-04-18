@@ -99,7 +99,7 @@ export default class UserPage extends Component {
 							style={{ width: '23rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
 						>
 							<Card>
-								<Card.Img variant="top" src={this.state.user.photoUrl} alt="top" />
+								<Card.Img className= 'zoom' variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
 									<Card.Title>
 										{this.state.user.firstName}

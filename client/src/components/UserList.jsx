@@ -137,7 +137,7 @@ export default class UserLogin extends Component {
 										}}
 									>
 										<Card.Img
-											className="text-center"
+											className="text-center zoom"
 											style={{ height: '250px', width: '267px' }}
 											variant="top"
 											src={user.photoUrl}

@@ -126,7 +126,7 @@ export default class EventPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card className="container" style={{ width: '23rem', height: '13rem' }}>
+					<Card className="container" style={{ width: '21rem', height: '19.5rem' }}>
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}

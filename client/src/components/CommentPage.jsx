@@ -137,7 +137,7 @@ export default class CommentPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card className="container" style={{ width: '25rem', height: '14rem', paddingTop: '15px' }}>
+					<Card className="container" style={{ width: '25rem', height: '20.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}

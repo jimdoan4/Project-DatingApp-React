@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-import UserLogin from './components/UserLogin.jsx';
+// import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
 import SingleEvent from './components/SingleEvent';
@@ -32,7 +32,7 @@ class App extends Component {
 							<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
 								<NavDropdown style={{ color: 'black' }} title="Women" id="collasible-nav-dropdown">
 									<NavDropdown.Item style={{ color: 'black' }}>
-										<Link to="/users/" style={{ color: 'black' }}>
+										<Link to="/users" style={{ color: 'black' }}>
 											Date Woman
 										</Link>
 									</NavDropdown.Item>
@@ -50,7 +50,7 @@ class App extends Component {
 
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/logins" component={UserLogin} /> 
+						{/* <Route exact path="/logins" component={UserLogin} />  */}
 						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
