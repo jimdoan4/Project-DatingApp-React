@@ -123,8 +123,9 @@ export default class UserLog extends Component {
 						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="firstName">First Name</Form.Label>
+									<Form.Label style= {{ fontSize: '16px '}}htmlFor="firstName">First Name</Form.Label>
 									<Form.Control
+                                        className= 'text-center'
 										name="firstName"
 										onChange={this.handleChange}
 										value={this.state.newUser.firstName}
@@ -134,20 +135,22 @@ export default class UserLog extends Component {
 								</Form.Group>
 
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="lastName">Last Name</Form.Label>
+									<Form.Label style= {{ fontSize: '16px '}}htmlFor="lastName">Last Name</Form.Label>
 									<Form.Control
+                                        className= 'text-center'
 										name="lastName"
 										onChange={this.handleChange}
 										value={this.state.newUser.lastName}
-										type="password"
+										type="text"
 										placeholder="Enter Last Name"
 									/>
 								</Form.Group>
 							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="userName">Username</Form.Label>
+									<Form.Label style= {{ fontSize: '16px '}}htmlFor="userName">Username</Form.Label>
 									<Form.Control
+                                        className= 'text-center'
 										type="text"
 										name="userName"
 										onChange={this.handleChange}
@@ -157,8 +160,9 @@ export default class UserLog extends Component {
 								</Form.Group>
 
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="password">Password</Form.Label>
+									<Form.Label style= {{ fontSize: '16px '}}htmlFor="password">Password</Form.Label>
 									<Form.Control
+                                        className= 'text-center'
 										name="password"
 										onChange={this.handleChange}
 										value={this.state.newUser.password}
@@ -168,8 +172,9 @@ export default class UserLog extends Component {
 								</Form.Group>
 							</Form.Row>
 							<Form.Group as={Col} controlId="formGridEmail">
-								<Form.Label htmlFor="photoUrl">Photo</Form.Label>
+								<Form.Label style= {{ fontSize: '16px '}}htmlFor="photoUrl">Photo</Form.Label>
 								<Form.Control
+                                    className= 'text-center'
 									name="photoUrl"
 									onChange={this.handleChange}
 									value={this.state.newUser.photoUrl}
@@ -179,8 +184,9 @@ export default class UserLog extends Component {
 							</Form.Group>
 
 							<Form.Group controlId="formGridAddress1">
-								<Form.Label htmlFor="age">Age</Form.Label>
+								<Form.Label style= {{ fontSize: '16px '}}htmlFor="age">Age</Form.Label>
 								<Form.Control
+                                    className= 'text-center'
 									name="age"
 									type="text"
 									onChange={this.handleChange}
@@ -190,8 +196,9 @@ export default class UserLog extends Component {
 							</Form.Group>
 
 							<Form.Group controlId="formGridAddress2">
-								<Form.Label htmlFor="location">Location</Form.Label>
+								<Form.Label style= {{ fontSize: '16px '}}htmlFor="location">Location</Form.Label>
 								<Form.Control
+                                    className= 'text-center'
 									name="location"
 									type="text"
 									onChange={this.handleChange}
@@ -202,8 +209,9 @@ export default class UserLog extends Component {
 
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridCity">
-									<Form.Label htmlFor="bio">Biography</Form.Label>
+									<Form.Label style= {{ fontSize: '16px '}}htmlFor="bio">Biography</Form.Label>
 									<Form.Control
+                                        className= 'text-center'
 										name="bio"
 										type="text"
 										onChange={this.handleChange}

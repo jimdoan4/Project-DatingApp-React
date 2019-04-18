@@ -9,7 +9,7 @@ export default class NavBar extends Component {
 		return (
 			<Navbar style={{ backgroundColor: 'white', color: 'black' }} collapseOnSelect expand="lg" variant="dark">
 				<Navbar.Brand style={{ color: 'black' }} href="/">
-					DATER CODER
+					DATA CODER
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>

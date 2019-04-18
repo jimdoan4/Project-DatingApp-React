@@ -16,7 +16,7 @@ export default class UserLogin extends Component {
 	state = {
 		users: [],
 		newUser: {
-			// _id: '',
+			_id: '',
 			userName: '',
 			password: '',
 			firstName: '',
@@ -102,6 +102,11 @@ export default class UserLogin extends Component {
 	// 	e.preventDefault();
 	// 	this.createUser();
 	// };
+	  toggleUserForm = () => {
+        this.setState((state, props) => {
+            return {displayUserForm: !state.displayUserForm}
+        })
+    }
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -166,6 +171,8 @@ export default class UserLogin extends Component {
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button
+												    key={user._id}
+													onClick={this.toggleUserForm}
 													type="button"
 													data-toggle="collapse"
 													data-target="#collapseExample"
@@ -173,7 +180,7 @@ export default class UserLogin extends Component {
 													aria-controls="collapseExample"
 													style={{ color: 'black' }}
 												>
-													Not Interested
+													 {this.state.displayUserForm === true ? 'This person is blocked' : 'Not Interested'}
 												</button>
 											</div>
 										</Card.Body>

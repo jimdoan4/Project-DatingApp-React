@@ -27,7 +27,7 @@ export default class Home extends Component {
 					className="list-unstyled"
 				>
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://photo.venus.com/im/17078926.jpg?preset=product" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -40,7 +40,7 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://photo.venus.com/im/17078926.jpg?preset=product" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -53,7 +53,7 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://photo.venus.com/im/17078926.jpg?preset=product" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
