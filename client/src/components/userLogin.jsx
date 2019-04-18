@@ -22,8 +22,7 @@ export default class UserLogin extends Component {
 			events: []
 		},
 		displayUserForm: false,
-        redirectToUser: false
-       
+		redirectToUser: false
 	};
 
 	componentDidMount = () => {
@@ -87,10 +86,9 @@ export default class UserLogin extends Component {
 	render() {
 		if (this.state.redirectToUser) {
 			return <Redirect to={`/users/`} />;
-        }
-        
+		}
+
 		return (
-            
 			<div>
 				{this.state.users.map((user) => {
 					return (
@@ -110,9 +108,19 @@ export default class UserLogin extends Component {
 				<div className="container">
 					<Card
 						className="container"
-						style={{ width: '36rem', height: '41.4rem', paddingTop: '35px', marginTop: '20px', marginBottom: '10px' }}
+						style={{
+							width: '36rem',
+							height: '41.4rem',
+							paddingTop: '35px',
+							marginTop: '20px',
+							marginBottom: '98px'
+						}}
 					>
-						<Form className="text-center" style={{ display: 'inline-block', paddingRight: '23px' }} onSubmit={this.handleSignUp}>
+						<Form
+							className="text-center"
+							style={{ display: 'inline-block', paddingRight: '23px' }}
+							onSubmit={this.handleSignUp}
+						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="firstName">First Name</Form.Label>
@@ -169,7 +177,7 @@ export default class UserLogin extends Component {
 									placeholder="Enter a Photo of Yourself"
 								/>
 							</Form.Group>
-							
+
 							<Form.Group controlId="formGridAddress1">
 								<Form.Label htmlFor="age">Age</Form.Label>
 								<Form.Control
@@ -203,21 +211,19 @@ export default class UserLogin extends Component {
 										placeholder="Enter Facts about yourself"
 									/>
 								</Form.Group>
-
 							</Form.Row>
-						
+
 							<div style={{ marginLeft: '140px' }} className="text-center">
 								<Button
 									className="text-center"
-									
 									type="submit"
 									style={{
 										marginRight: '140px',
 										paddingLeft: '30px',
 										paddingRight: '30px',
 										marginTop: '29px',
-                                        marginBottom: '25px',
-                                        backgroundColor: 'grey'
+										marginBottom: '65px',
+										backgroundColor: 'grey'
 									}}
 								>
 									Register

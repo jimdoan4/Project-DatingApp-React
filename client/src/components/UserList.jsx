@@ -80,6 +80,12 @@ export default class UserLogin extends Component {
 		this.findAllUsers();
 	};
 
+	deleteUser = () => {
+		axios.delete(`/api/users/${this.state.userId}`).then((res) => {
+			this.setState({ redirectToUser: true });
+		});
+	};
+
 	// deleteUser = () => {
 	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
 	// 		this.setState({ redirectToUser: true });
@@ -119,8 +125,7 @@ export default class UserLogin extends Component {
 					{this.state.users.map((user) => {
 						return (
 							<div
-					
-								className="row text-center" 
+								className="row text-center"
 								style={{
 									marginLeft: '20px',
 									// marginRight: '20px',
@@ -128,7 +133,7 @@ export default class UserLogin extends Component {
 									marginTop: '30px'
 								}}
 							>
-								<CardGroup className= 'collapse-show' id="collapseExample">
+								<CardGroup className="collapse-show" id="collapseExample">
 									<Card
 										key={user._id}
 										className="text-center"
@@ -157,24 +162,29 @@ export default class UserLogin extends Component {
 												</Link>
 												<button style= {{color: 'black'}} data-toggle="collapse">Not Interested</button>
 											</div> */}
-												<div key={user._id}>
+											<div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
-												<button type= 'button' data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
-												style= {{color: 'black'}}>Not Interested</button>
+												<button
+													type="button"
+													data-toggle="collapse"
+													data-target="#collapseExample"
+													aria-expanded="false"
+													aria-controls="collapseExample"
+													style={{ color: 'black' }}
+												>
+													Not Interested
+												</button>
 											</div>
 										</Card.Body>
-									
 									</Card>
 								</CardGroup>
-									
 							</div>
-							
 						);
 					})}
-						
-					 {/* <ButtonToolbar className="text-center mb-3" aria-label="Toolbar with Button groups">
+
+					{/* <ButtonToolbar className="text-center mb-3" aria-label="Toolbar with Button groups">
 					 <ButtonGroup className= "text-center mr-2" aria-label="First group">
       					<Button variant="secondary">1</Button>
       <Button variant="secondary">2</Button>
@@ -186,9 +196,7 @@ export default class UserLogin extends Component {
     </ButtonGroup>
 	</ButtonToolbar> */}
 				</div>
-			
 			</div>
-			
 		);
 	}
 }

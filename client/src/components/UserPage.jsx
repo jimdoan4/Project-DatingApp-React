@@ -6,7 +6,6 @@ import { Jumbotron } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-// import MapContainer from './Map.js';
 
 export default class UserPage extends Component {
 	state = {
@@ -96,16 +95,15 @@ export default class UserPage extends Component {
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card
 							className="container"
-							style={{ width: '23rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
+							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
 						>
 							<Card>
-								<Card.Img className= 'zoom' variant="top" src={this.state.user.photoUrl} alt="top" />
+								<Card.Img className="zoom" variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
 									<Card.Title>
-										{this.state.user.firstName} 
-									&nbsp;
+										{this.state.user.firstName}
+										&nbsp;
 										{this.state.user.lastName}
-									
 									</Card.Title>
 									<Card.Title>{this.state.user.age}</Card.Title>
 									<Card.Title>{this.state.user.bio}</Card.Title>
@@ -128,9 +126,20 @@ export default class UserPage extends Component {
 									>
 										Delete User
 									</button>
-									{/* <div style= {{alignItems: 'center', justifyContent: 'center', display: 'flex',  width: '30px', height: '40px', marginTop: '80px', marginLeft: '-46px', marginRight: '205px' }}>
+									{/* <div
+										style={{
+											alignItems: 'center',
+											justifyContent: 'center',
+											display: 'flex',
+											width: '30px',
+											height: '40px',
+											marginTop: '80px',
+											marginLeft: '-46px',
+											marginRight: '205px'
+										}}
+									>
 										<MapContainer user={this.state.user.location} />
-										</div> */}
+									</div> */}
 								</Container>
 							</Card>
 						</Card>

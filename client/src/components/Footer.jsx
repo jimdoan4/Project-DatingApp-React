@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
 	render() {
 		return (
-			<footer
-				style={{ bottom: '0', position: 'absolute', width: '100%' }}
-				className="page-footer font-small gray darken-2"
-			>
+			<footer className="page-footer font-small gray darken-2" style={{ paddingBottom: '7px' }}>
 				<div className="container" style={{ color: 'black' }}>
 					<div className="row" style={{ color: 'black' }}>
 						<div className="col-md-12 py-5" style={{ color: 'black' }}>
@@ -41,9 +38,12 @@ export default class Footer extends Component {
 					</div>
 				</div>
 
-				<div className="footer-copyright text-center py-3" style={{ color: 'black' }}>
+				<div className="footer-copyright text-center py-3" style={{ color: 'black', paddingBottom: '90px' }}>
 					© 2019 Copyright:
-					<a href="https://mdbootstrap.com/education/bootstrap/"> Jim Doan</a>
+					<a style={{ paddingBottom: '90px' }} href="https://mdbootstrap.com/education/bootstrap/">
+						{' '}
+						Jim Doan
+					</a>
 				</div>
 			</footer>
 		);

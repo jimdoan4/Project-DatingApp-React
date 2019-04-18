@@ -1,64 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
-import { Navbar } from 'react-bootstrap';
-import { NavDropdown } from 'react-bootstrap';
 import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
+import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
-				<div style={{ color: 'black' }}>
-					<Navbar
-						style={{ backgroundColor: 'white', color: 'black' }}
-						collapseOnSelect
-						expand="lg"
-						variant="dark"
-					>
-						<Navbar.Brand style={{ color: 'black' }} href="/">
-							DATER CODER
-						</Navbar.Brand>
-						<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
-						<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>
-							<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
-								<NavDropdown style={{ color: 'black' }} title="Women" id="collasible-nav-dropdown">
-									<NavDropdown.Item style={{ color: 'black' }}>
-										<Link to="/users" style={{ color: 'black' }}>
-											Date Woman
-										</Link>
-									</NavDropdown.Item>
-
-									<NavDropdown.Divider />
-								</NavDropdown>
-							</Nav>
-							<Nav.Link style={{ color: 'black' }}>
-								<Link to="/logins" style={{ color: 'black' }}>
-									Profile Account
-								</Link>
-							</Nav.Link>
-						</Navbar.Collapse>
-					</Navbar>
-	{/* <div style= {{bottom: '0', position: 'absolute'}}>
-			<Footer>/</Footer>
-			</div> */}
+				<div id="app" style={{ color: 'black' }}>
+					<NavBar />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/logins" component={UserLogin} /> 
-						<Route exact path="/users" component={UserList} />
-						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
-						
+						<Route exact path="/logins" component={UserLogin} />
+						<Route exact path="/users" component={UserList} />
+						<Route exact path="/users/:userId" component={UserShowPage} />
 					</Switch>
+					 <Footer /> 
 				</div>
 			</Router>
 		);
