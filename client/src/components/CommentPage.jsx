@@ -123,12 +123,13 @@ export default class CommentPage extends Component {
 											to={`/users/${this.state.userId}/comments/${comment._id}`}
 											key={comment._id}
 										>
-											Review: {comment.review}
+											Who was my date? {comment.withWho}
 										</Link>
 									</p>
-									<p>{comment.rating}</p>
-									<p>{comment.dateAgain}</p>
-									<p>{comment.lessonLearned}</p>
+									<p>Rating for this date: {comment.rating}</p>
+									<p>Would I go on a second date? {comment.dateAgain}</p>
+									<p>What is your review of this date? {comment.review}</p>
+									<p>What did I learn from this date? {comment.lessonLearned}</p>
 								</Card>
 							</Card>
 						</div>

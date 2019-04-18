@@ -115,9 +115,14 @@ export default class EventPage extends Component {
 						<div>
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: '#efe8e8' }}>
-									<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
+									<Card.Title><Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
 										Event Name: {event.eventName}
 									</Link>
+									</Card.Title>
+									<Card.Title>Average Price: {event.price}</Card.Title>
+										<Card.Title>Who is my date? {event.withWho}</Card.Title>
+											<Card.Title>what time is the event? {event.time}</Card.Title>
+												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 								</Card>
 							</Card>
 						</div>
