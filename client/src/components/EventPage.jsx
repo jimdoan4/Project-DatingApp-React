@@ -114,7 +114,7 @@ export default class EventPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className="text-center">
+								<Card className="text-center" style={{ backgroundColor: '#efe8e8' }}>
 									<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
 										Event Name: {event.eventName}
 									</Link>
@@ -126,8 +126,12 @@ export default class EventPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card className="container" style={{ width: '23rem', height: '16rem' }}>
-						<Form className="text-center" style={{ display: 'inline-block' }} onSubmit={this.createEvent}>
+					<Card className="container" style={{ width: '23rem', height: '13rem' }}>
+						<Form
+							className="text-center"
+							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}
+							onSubmit={this.createEvent}
+						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="eventName">Event Name</Form.Label>
@@ -152,21 +156,21 @@ export default class EventPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '140px' }} className="text-center">
-								<Button
+							<div style={{ marginLeft: '100px' }} className="text-center">
+								<button
 									className="text-center"
 									variant="primary"
 									type="submit"
 									style={{
 										marginRight: '140px',
-										paddingLeft: '30px',
-										paddingRight: '30px',
+										paddingLeft: '60px',
+										paddingRight: '60px',
 										marginTop: '15px',
 										marginBottom: '25px'
 									}}
 								>
 									Add Event
-								</Button>
+								</button>
 								{/* <Link
 											className="text-center"
 											to={`users/${this.state.userId}/events/${event._id}`}

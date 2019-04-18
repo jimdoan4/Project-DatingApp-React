@@ -117,7 +117,7 @@ export default class CommentPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className="text-center">
+								<Card className="text-center" style={{ backgroundColor: '#efe8e8' }}>
 									<p>
 										<Link
 											to={`/users/${this.state.userId}/comments/${comment._id}`}
@@ -137,8 +137,12 @@ export default class CommentPage extends Component {
 				<br />
 				<br />
 				<div className="container">
-					<Card className="container" style={{ width: '28rem', height: '16rem', paddingTop: '15px' }}>
-						<Form className="text-center" style={{ display: 'inline-block' }} onSubmit={this.createComment}>
+					<Card className="container" style={{ width: '25rem', height: '14rem', paddingTop: '15px' }}>
+						<Form
+							className="text-center"
+							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}
+							onSubmit={this.createComment}
+						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
@@ -163,8 +167,8 @@ export default class CommentPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '140px' }} className="text-center">
-								<Button
+							<div style={{ marginLeft: '120px' }} className="text-center">
+								<button
 									className="text-center"
 									variant="primary"
 									type="submit"
@@ -177,7 +181,7 @@ export default class CommentPage extends Component {
 									}}
 								>
 									Add Comment
-								</Button>
+								</button>
 								{/* <Button
 								onClick = {this.deleteComment}
 								className='text-center'

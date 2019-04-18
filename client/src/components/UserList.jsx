@@ -8,6 +8,7 @@ import { Card } from 'react-bootstrap';
 // import { Jumbotron } from 'react-bootstrap';
 // import { Container } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
+import Footer from './Footer';
 
 export default class UserLogin extends Component {
 	state = {
@@ -129,7 +130,7 @@ export default class UserLogin extends Component {
 										key={user._id}
 										className="text-center"
 										style={{
-											width: '16.7rem',
+											width: '18.7rem',
 											marginLeft: '30px',
 											marginRight: '30px',
 											backgroundColor: '#efe8e8'
@@ -157,10 +158,13 @@ export default class UserLogin extends Component {
 									</Card>
 								</CardGroup>
 							</div>
+							// <Footer style= {{ bottom: '0', position: 'absolute'}}>/</Footer>
 						);
 					})}
 				</div>
+				
 			</div>
+			
 		);
 	}
 }

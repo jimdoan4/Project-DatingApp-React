@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-// import UserLogin from './components/UserLogin';
+import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
+// import Footer from './components/Footer.jsx';
 
 class App extends Component {
 	render() {
@@ -48,7 +49,7 @@ class App extends Component {
 					</Navbar>
 
 					<Switch>
-						{/* <Route exact path="/login" component={UserLogin} />  */}
+						<Route exact path="/login" component={UserLogin} /> 
 						<Route exact path="/" component={Home} />
 						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
