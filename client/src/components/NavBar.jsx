@@ -16,14 +16,13 @@ export default class NavBar extends Component {
 					<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
 						<NavDropdown style={{ color: 'black' }} title="Find Your Date" id="collasible-nav-dropdown">
 							<NavDropdown.Item style={{ color: 'black' }}>
-								<Link to="/users" style={{ color: 'black' }}>
+								<Link to="/users/" style={{ color: 'black' }}>
 									Date Woman
 								</Link>
 							</NavDropdown.Item>
-
 							<NavDropdown.Divider />
 							<NavDropdown.Item style={{ color: 'black' }}>
-								<Link to="/users" style={{ color: 'black' }}>
+								<Link to="/users/" style={{ color: 'black' }}>
 									Date Men
 								</Link>
 							</NavDropdown.Item>
@@ -42,7 +41,7 @@ export default class NavBar extends Component {
 						</NavDropdown>
 					</Nav>
 					<Nav.Link style={{ color: 'black' }}>
-						<Link to="/logins" style={{ color: 'black' }}>
+						<Link to="/logins/" style={{ color: 'black' }}>
 							Profile Account
 						</Link>
 					</Nav.Link>

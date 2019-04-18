@@ -18,11 +18,11 @@ class App extends Component {
 					<NavBar />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
-						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
-						<Route exact path="/logins" component={UserLogin} />
-						<Route exact path="/users" component={UserList} />
-						<Route exact path="/users/:userId" component={UserShowPage} />
+						<Route exact path="/users/:userId/events/:eventId/" component={SingleEvent} />
+						<Route exact path="/users/:userId/comments/:commentId/" component={SingleComment} />
+						<Route exact path="/logins/" component={UserLogin} />
+						<Route exact path="/users/" component={UserList} />
+						<Route exact path="/users/:userId/" component={UserShowPage} />
 					</Switch>
 					 <Footer /> 
 				</div>
