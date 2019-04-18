@@ -138,7 +138,7 @@ export default class CommentPage extends Component {
 				<br />
 				{/* <br /> */}
 				<div className="container">
-					<Card className="container" style={{ width: '25rem', height: '20.5rem', paddingTop: '15px' }}>
+					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
@@ -160,11 +160,47 @@ export default class CommentPage extends Component {
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
 									<Form.Control
-										type="withWho"
+										type="text"
 										name="withWho"
 										onChange={this.handleChange}
 										value={this.state.newComment.withWho}
 										placeholder="Enter Your Date's Name"
+									/>
+								</Form.Group>
+							</Form.Row>
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridEmail">
+									<Form.Label htmlFor="rating">Rating? </Form.Label>
+									<Form.Control
+										type="text"
+										name="rating"
+										onChange={this.handleChange}
+										value={this.state.newComment.rating}
+										placeholder="Enter Rating? "
+									/>
+								</Form.Group>
+							</Form.Row>
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridEmail">
+									<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
+									<Form.Control
+										type="text"
+										name="review"
+										onChange={this.handleChange}
+										value={this.state.newComment.review}
+										placeholder="Enter Review "
+									/>
+								</Form.Group>
+							</Form.Row>
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridEmail">
+									<Form.Label htmlFor="lessonLearned">What did you learn from your date?  </Form.Label>
+									<Form.Control
+										type="text"
+										name="lessonLearned"
+										onChange={this.handleChange}
+										value={this.state.newComment.lessonLearned}
+										placeholder="Enter Lesson Learned? "
 									/>
 								</Form.Group>
 							</Form.Row>

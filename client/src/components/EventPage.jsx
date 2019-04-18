@@ -133,11 +133,11 @@ export default class EventPage extends Component {
 				 */}
 				 <div className="container">
 				 
-					<Card className="container" style={{ width: '21rem', height: '19.5rem' }}>
+					<Card className="container" style={{ width: '25rem', height: '35.8rem' }}>
 					
 						 <Form
 							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '25px' }}
+							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '25px', marginTop: '14px' }}
 							onSubmit={this.createEvent}
 						>
 							<Form.Row>
@@ -154,13 +154,37 @@ export default class EventPage extends Component {
 							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Label htmlFor="time">Time:  </Form.Label>
 									<Form.Control
-										type="withWho"
-										name="withWho"
+										type="text"
+										name="time"
 										onChange={this.handleChange}
-										value={this.state.newEvent.withWho}
-										placeholder="Enter Your Date's Name"
+										value={this.state.newEvent.time}
+										placeholder="What time is your date scheduled?"
+									/>
+								</Form.Group>
+							</Form.Row>
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label htmlFor="price">Price? </Form.Label>
+									<Form.Control
+										type="text"
+										name="price"
+										onChange={this.handleChange}
+										value={this.state.newEvent.price}
+										placeholder="Enter the price"
+									/>
+								</Form.Group>
+							</Form.Row>
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label htmlFor="photoUrl">Picture:  </Form.Label>
+									<Form.Control
+										type="text"
+										name="photoUrl"
+										onChange={this.handleChange}
+										value={this.state.newEvent.photoUrl}
+										placeholder="Add a Photo of your Date"
 									/>
 								</Form.Group>
 							</Form.Row>

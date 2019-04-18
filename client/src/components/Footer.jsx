@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
 	render() {
 		return (
-			<footer className="page-footer font-small gray darken-2" style={{ paddingBottom: '7px' }}>
+			<footer className="page-footer font-small grey light-2" style={{ paddingBottom: '5px', color: 'black' }}>
 				<div className="container" style={{ color: 'black' }}>
 					<div className="row" style={{ color: 'black' }}>
 						<div className="col-md-12 py-5" style={{ color: 'black' }}>
@@ -24,8 +24,8 @@ export default class Footer extends Component {
 									<i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
 								</a>
 
-								<a className="ins-ic">
-									<i className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+								<a style= {{color: 'black' }}className="ins-ic">
+									<i style= {{color: 'black' }}className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
 								</a>
 
 								<a style={{ color: 'black' }} className="pin-ic">

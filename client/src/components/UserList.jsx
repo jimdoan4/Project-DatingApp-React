@@ -128,7 +128,6 @@ export default class UserLogin extends Component {
 								className="row text-center"
 								style={{
 									marginLeft: '20px',
-									// marginRight: '20px',
 									marginBottom: '20px',
 									marginTop: '30px'
 								}}

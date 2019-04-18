@@ -39,3 +39,7 @@ code {
 .zoom:hover {
   transform: scale(1.2); 
 }
+
+a {
+  color: black;
+}
