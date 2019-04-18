@@ -14,7 +14,7 @@ export default class NavBar extends Component {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>
 					<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
-						<NavDropdown style={{ color: 'black' }} title="Women" id="collasible-nav-dropdown">
+						<NavDropdown style={{ color: 'black' }} title="Find Your Date" id="collasible-nav-dropdown">
 							<NavDropdown.Item style={{ color: 'black' }}>
 								<Link to="/users" style={{ color: 'black' }}>
 									Date Woman
@@ -22,6 +22,23 @@ export default class NavBar extends Component {
 							</NavDropdown.Item>
 
 							<NavDropdown.Divider />
+							<NavDropdown.Item style={{ color: 'black' }}>
+								<Link to="/users" style={{ color: 'black' }}>
+									Date Men
+								</Link>
+							</NavDropdown.Item>
+							<NavDropdown.Divider />
+							<NavDropdown.Item style={{ color: 'black' }}>
+								<Link to="/users" style={{ color: 'black' }}>
+									Date Gay Men
+								</Link>
+							</NavDropdown.Item>
+								<NavDropdown.Divider />
+							<NavDropdown.Item style={{ color: 'black' }}>
+								<Link to="/users" style={{ color: 'black' }}>
+									Date Lesbian Woman
+								</Link>
+							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 					<Nav.Link style={{ color: 'black' }}>
