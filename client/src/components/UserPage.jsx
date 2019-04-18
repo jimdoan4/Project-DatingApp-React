@@ -102,8 +102,10 @@ export default class UserPage extends Component {
 								<Card.Img className= 'zoom' variant="top" src={this.state.user.photoUrl} alt="top" />
 								<Card.Body>
 									<Card.Title>
-										{this.state.user.firstName}
+										{this.state.user.firstName} 
+									&nbsp;
 										{this.state.user.lastName}
+									
 									</Card.Title>
 									<Card.Title>{this.state.user.age}</Card.Title>
 									<Card.Title>{this.state.user.bio}</Card.Title>
