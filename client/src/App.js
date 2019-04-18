@@ -41,7 +41,7 @@ class App extends Component {
 								</NavDropdown>
 							</Nav>
 							<Nav.Link style={{ color: 'black' }}>
-								<Link to="/login/" style={{ color: 'black' }}>
+								<Link to="/login" style={{ color: 'black' }}>
 									Profile Account
 								</Link>
 							</Nav.Link>
@@ -49,12 +49,12 @@ class App extends Component {
 					</Navbar>
 
 					<Switch>
-						<Route exact path="/login" component={UserLogin} /> 
 						<Route exact path="/" component={Home} />
 						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId" component={SingleComment} />
+						<Route exact ="/login" component={UserLogin} /> 
 					</Switch>
 				</div>
 			</Router>
