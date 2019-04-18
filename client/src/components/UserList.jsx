@@ -8,6 +8,8 @@ import { Card } from 'react-bootstrap';
 // import { Jumbotron } from 'react-bootstrap';
 // import { Container } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap';
 import Footer from './Footer';
 
 export default class UserLogin extends Component {
@@ -117,7 +119,8 @@ export default class UserLogin extends Component {
 					{this.state.users.map((user) => {
 						return (
 							<div
-								className="row text-center"
+					
+								className="row text-center" 
 								style={{
 									marginLeft: '20px',
 									// marginRight: '20px',
@@ -125,12 +128,12 @@ export default class UserLogin extends Component {
 									marginTop: '30px'
 								}}
 							>
-								<CardGroup className="row">
+								<CardGroup className= 'collapse-show' id="collapseExample">
 									<Card
 										key={user._id}
 										className="text-center"
 										style={{
-											width: '18.7rem',
+											width: '16.8rem',
 											marginLeft: '30px',
 											marginRight: '30px',
 											backgroundColor: '#efe8e8'
@@ -148,21 +151,42 @@ export default class UserLogin extends Component {
 											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
 											<Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text>
 											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
-											<div key={user._id}>
+											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
-												<button style= {{color: 'black'}} onClick={this.deleteUser}>Not Interested</button>
+												<button style= {{color: 'black'}} data-toggle="collapse">Not Interested</button>
+											</div> */}
+												<div key={user._id}>
+												<Link to={`/users/${user._id}`} key={user._id}>
+													<button style={{ marginRight: '16px' }}>Interested</button>
+												</Link>
+												<button type= 'button' data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+												style= {{color: 'black'}}>Not Interested</button>
 											</div>
 										</Card.Body>
+									
 									</Card>
 								</CardGroup>
+									
 							</div>
-							// <Footer style= {{ bottom: '0', position: 'absolute'}}>/</Footer>
+							
 						);
 					})}
+						
+					 {/* <ButtonToolbar className="text-center mb-3" aria-label="Toolbar with Button groups">
+					 <ButtonGroup className= "text-center mr-2" aria-label="First group">
+      					<Button variant="secondary">1</Button>
+      <Button variant="secondary">2</Button>
+      <Button variant="secondary">3</Button>
+      <Button variant="secondary">4</Button>
+	    <Button variant="secondary">5</Button>
+		  <Button variant="secondary">6</Button>
+		    <Button variant="secondary">7</Button>
+    </ButtonGroup>
+	</ButtonToolbar> */}
 				</div>
-				
+			
 			</div>
 			
 		);

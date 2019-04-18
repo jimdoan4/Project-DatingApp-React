@@ -21,10 +21,10 @@ export default class UserShowPage extends Component {
 					>
 						<UserPage userId={this.state.userId} />
 					</div>
-					<div style={{ marginLeft: '60px', marginTop: '40px' }} className=".col-md-4">
+					<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-4">
 						<EventPage userId={this.state.userId} />
 
-						<div style={{ marginTop: '100px', marginBottom: '160px' }} className=".col-md-4">
+						<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-4">
 							<CommentPage userId={this.state.userId} />
 						</div>
 					</div>

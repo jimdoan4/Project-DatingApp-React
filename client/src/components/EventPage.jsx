@@ -114,7 +114,7 @@ export default class EventPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className="text-center" style={{ backgroundColor: '#efe8e8' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 									<Card.Title><Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
 										Event Name: {event.eventName}
 									</Link>
@@ -129,12 +129,15 @@ export default class EventPage extends Component {
 					);
 				})}
 				<br />
-				<br />
-				<div className="container">
+				{/* <br />
+				 */}
+				 <div className="container">
+				 
 					<Card className="container" style={{ width: '21rem', height: '19.5rem' }}>
-						<Form
+					
+						 <Form
 							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}
+							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '25px' }}
 							onSubmit={this.createEvent}
 						>
 							<Form.Row>
@@ -200,8 +203,11 @@ export default class EventPage extends Component {
 							</div>
 						</Form>
 					</Card>
+					
 				</div>
+				
 			</div>
+			
 		);
 	}
 }

@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-// import UserLogin from './components/UserLogin';
+import UserLogin from './components/UserLogin';
 import UserList from './components/UserList';
 import UserShowPage from './components/UserShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
-// import Footer from './components/Footer.jsx';
+import Footer from './components/Footer.jsx';
 
 class App extends Component {
 	render() {
@@ -47,10 +47,12 @@ class App extends Component {
 							</Nav.Link>
 						</Navbar.Collapse>
 					</Navbar>
-
+	{/* <div style= {{bottom: '0', position: 'absolute'}}>
+			<Footer>/</Footer>
+			</div> */}
 					<Switch>
 						<Route exact path="/" component={Home} />
-						{/* <Route exact path="/logins" component={UserLogin} />  */}
+						<Route exact path="/logins" component={UserLogin} /> 
 						<Route exact path="/users" component={UserList} />
 						<Route exact path="/users/:userId" component={UserShowPage} />
 						<Route exact path="/users/:userId/events/:eventId" component={SingleEvent} />

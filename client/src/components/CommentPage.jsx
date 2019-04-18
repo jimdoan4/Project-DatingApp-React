@@ -117,7 +117,7 @@ export default class CommentPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className="text-center" style={{ backgroundColor: '#efe8e8' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 									<p>
 										<Link
 											to={`/users/${this.state.userId}/comments/${comment._id}`}
@@ -136,12 +136,12 @@ export default class CommentPage extends Component {
 					);
 				})}
 				<br />
-				<br />
+				{/* <br /> */}
 				<div className="container">
 					<Card className="container" style={{ width: '25rem', height: '20.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: '#efe8e8' }}
+							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
 							onSubmit={this.createComment}
 						>
 							<Form.Row>
