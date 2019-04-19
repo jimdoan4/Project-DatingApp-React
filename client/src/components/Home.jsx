@@ -5,6 +5,7 @@ import { Media } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 
 export default class Home extends Component {
+
 	render() {
 		return (
 			<div>
@@ -76,6 +77,7 @@ export default class Home extends Component {
 					</Media>
 				</ul>
 				{/* <ProgressBar now={60} /> */}
+				{/* <button><a href="http://localhost:8888"> Login to Spotify </a></button> */}
 			</div>
 		);
 	}

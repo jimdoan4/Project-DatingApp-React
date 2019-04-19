@@ -137,6 +137,9 @@ export default class CommentPage extends Component {
 				})}
 				<br />
 				{/* <br /> */}
+				 <button className="" onClick={this.toggleEditForm}>Add an Event</button>
+				   {
+          this.state.displayEditForm ?
 				<div className="container">
 					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
@@ -237,8 +240,10 @@ export default class CommentPage extends Component {
 							</Button> */}
 							</div>
 						</Form>
-					</Card>
-				</div>
+					</Card> 
+				</div> :
+				null
+						}
 			</div>
 		);
 	}

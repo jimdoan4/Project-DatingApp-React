@@ -126,20 +126,7 @@ export default class UserPage extends Component {
 									>
 										Delete User
 									</button>
-									{/* <div
-										style={{
-											alignItems: 'center',
-											justifyContent: 'center',
-											display: 'flex',
-											width: '30px',
-											height: '40px',
-											marginTop: '80px',
-											marginLeft: '-46px',
-											marginRight: '205px'
-										}}
-									>
-										<MapContainer user={this.state.user.location} />
-									</div> */}
+								
 								</Container>
 							</Card>
 						</Card>

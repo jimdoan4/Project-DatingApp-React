@@ -131,8 +131,11 @@ export default class EventPage extends Component {
 				<br />
 				{/* <br />
 				 */}
+				 	 <button className="" onClick={this.toggleEditForm}>Add an Event</button>
+        {
+          this.state.displayEditForm ?
 				 <div className="container">
-				 
+			
 					<Card className="container" style={{ width: '25rem', height: '35.8rem' }}>
 					
 						 <Form
@@ -226,9 +229,10 @@ export default class EventPage extends Component {
 								{/* </Link> */}
 							</div>
 						</Form>
-					</Card>
-					
-				</div>
+					</Card> 
+				</div> :
+				null
+						}
 				
 			</div>
 			
