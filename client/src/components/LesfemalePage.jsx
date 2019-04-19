@@ -28,7 +28,7 @@ export default class LesfemalePage extends Component {
 
 	getSingleLesfemaleData = () => {
 		axios.get(`/api/lesfemales/${this.state.lesfemaleId}`).then((res) => {
-			this.setState({ male: res.data });
+			this.setState({ lesfemale: res.data });
 		});
 	};
 
@@ -91,7 +91,7 @@ export default class LesfemalePage extends Component {
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card
 							className="container"
-							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
+							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#86074e' }}
 						>
 							<Card>
 								<Card.Img className="zoom" variant="top" src={this.state.lesfemale.photoUrl} alt="top" />

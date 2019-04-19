@@ -91,7 +91,7 @@ export default class MalePage extends Component {
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card
 							className="container"
-							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
+							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#1e3959' }}
 						>
 							<Card>
 								<Card.Img className="zoom" variant="top" src={this.state.male.photoUrl} alt="top" />
