@@ -24,17 +24,18 @@ class App extends Component {
 					<NavBar />
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/gaymales/:gaymaleId/" component={GayShowPage} />
+						<Route exact path="/gaymales/" component={GaymaleList} />
+						<Route exact path="/lesfemales/" component={LesfemaleList} />
+						<Route exact path="/lesfemales/:lesfemaleId/" component={LesfemaleShowPage} />
 						<Route exact path="/users/:userId/events/:eventId/" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId/" component={SingleComment} />
 						<Route exact path="/login/" component={UserLog} />
 						<Route exact path="/users/" component={UserList} />
 						<Route exact path="/males/" component={MaleList} />
-						<Route exact path="/gaymales/" component={GaymaleList} />
-						<Route exact path="/lesfemales/" component={LesfemaleList} />
 						<Route exact path="/users/:userId/" component={UserShowPage} />
 						<Route exact path="/males/:maleId/" component={MaleShowPage} />
-						<Route exact path="/gaymales/:gaymaleId/" component={GayShowPage} />
-						<Route exact path="/lesfemales/:lesfemaleId/" component={LesfemaleShowPage} />
+						
 					</Switch>
 					 <Footer /> 
 				</div>

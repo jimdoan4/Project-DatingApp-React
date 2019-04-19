@@ -24,7 +24,7 @@ const gaymaleController = {
 	show: async (req, res) => {
 		try {
 			const gaymaleId = req.params.gaymaleId;
-			const gaymale = await GayMale.findById(gaymaleId);
+			const gaymale = await Gaymale.findById(gaymaleId);
 			res.json(gaymale);
 		} catch (err) {
 			console.log(err);

@@ -19,14 +19,14 @@ router.delete('/males/:maleId/', maleController.delete);
 router.get('/gaymales/', gaymaleController.index);
 router.post('/gaymales/', gaymaleController.create);
 router.get('/gaymales/:gaymaleId/', gaymaleController.show);
-router.get('/gaymales/:gaymaleId/', gaymaleController.update);
-router.get('/gaymales/:gaymaleId/', gaymaleController.delete);
+router.put('/gaymales/:gaymaleId/', gaymaleController.update);
+router.delete('/gaymales/:gaymaleId/', gaymaleController.delete);
 
 router.get('/lesfemales/', lesfemaleController.index);
 router.post('/lesfemales/', lesfemaleController.create);
 router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
-router.get('/lesfemales/:lesfemaleId/', lesfemaleController.update);
-router.get('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
+router.put('/lesfemales/:lesfemaleId/', lesfemaleController.update);
+router.delete('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
 
 router.get('/users/', userController.index);
 router.post('/users/', userController.create);

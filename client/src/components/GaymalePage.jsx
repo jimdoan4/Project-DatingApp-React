@@ -28,7 +28,7 @@ export default class GaymalePage extends Component {
 
 	getSingleGaymaleData = () => {
 		axios.get(`/api/gaymales/${this.state.gaymaleId}`).then((res) => {
-			this.setState({ male: res.data });
+			this.setState({ gaymale: res.data });
 		});
 	};
 

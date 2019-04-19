@@ -48,7 +48,7 @@ const lesfemaleController = {
 			const lesfemaleId = req.params.lesfemaleId;
 			await Lesfemale.findByIdAndRemove(lesfemaleId);
 			res.json({
-				msg: `Successfully Deleted ${lesfemalerId}`
+				msg: `Successfully Deleted ${lesfemaleId}`
 			});
 		} catch (err) {
 			console.log(err);

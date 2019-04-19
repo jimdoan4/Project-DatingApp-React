@@ -3,7 +3,7 @@ import GaymalePage from './GaymalePage';
 // import CommentPage from './CommentPage';
 // import EventPage from './EventPage';
 
-export default class GaymaleShowPage extends Component {
+export default class GayShowPage extends Component {
 	state = {
 		gaymaleId: this.props.match.params.gaymaleId
 	};
