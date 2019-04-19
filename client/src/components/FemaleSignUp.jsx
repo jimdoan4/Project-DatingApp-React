@@ -6,9 +6,9 @@ import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class UserLog extends Component {
+export default class FemaleSignUp extends Component {
 	state = {
-		users: [],
+		lesfemales: [],
 		newUser: {
 			firstName: '',
 			lastName: '',
@@ -19,24 +19,23 @@ export default class UserLog extends Component {
 			comments: [],
 			events: []
 		},
-		displayUserForm: false,
+		displayFemaleForm: false,
 		redirectToUser: false
 	};
 
 	componentDidMount = () => {
-		this.findAllUsers();
-	
+		this.findAllLesfemales();
 	};
 
-	findAllUsers = () => {
-		axios.get('/api/users/').then((res) => {
-			this.setState({ users: res.data });
+	findAllLesfemales = () => {
+		axios.get('/api/lesfemales/').then((res) => {
+			this.setState({ lesfemales: res.data });
 		});
 	};
 
-	createUser = (e) => {
+	createFemale = (e) => {
 		axios
-			.post('/api/users/', {
+			.post('/api/lesfemales/', {
 				password: this.state.newUser.password,
 				userName: this.state.newUser.userName,
 				firstName: this.state.newUser.firstName,
@@ -44,51 +43,46 @@ export default class UserLog extends Component {
 				age: this.state.newUser.age,
 				photoUrl: this.state.newUser.photoUrl,
 				location: this.state.newUser.location,
-				bio: this.state.newUser.bio,
-				comments: [],
-				events: []
+				bio: this.state.newUser.bio
 			})
 			.then((res) => {
-				const usersList = [ this.state.users ];
-				usersList.unshift(res.data);
+				const lesfemalesList = [ this.state.lesfemale ];
+				lesfemalesList.unshift(res.data);
 				this.setState({
 					newUser: {
-						userName: '',
-						password: '',
 						firstName: '',
 						lastName: '',
 						age: '',
 						photoUrl: '',
 						location: '',
-						bio: '',
-						comments: {},
-						events: {}
+						bio: ''
 					},
-					displayUserForm: false,
-					users: usersList
+					displayFemaleForm: false,
+					lesfemales: lesfemalesList
 				});
 			});
-		this.findAllUsers();
+		this.findAllLesfemales();
 	};
 
-	handleChange = (e) => {
-		const changeNewUser = { ...this.state.newUser };
-		changeNewUser[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewUser });
+	handleFemaleChange = (e) => {
+		const changeNewFemale = { ...this.state.newFemale };
+		changeNewFemale[e.target.name] = e.target.value;
+		this.setState({ newUser: changeNewFemale });
 	};
 
 
 	toggleEditForm = () => {
 		this.setState((state, props) => {
-			return { displayUserForm: !state.displayUserForm };
+			return { displayFemaleForm: !state.displayFemaleForm };
 		});
 	};
 
 
-	handleSignUp = (e) => {
+	handleFemaleSignUp = (e) => {
 		e.preventDefault();
-		this.createUser();
-	};
+		this.createFemale();
+    };
+
 
 
 	render() {
@@ -98,24 +92,17 @@ export default class UserLog extends Component {
 
 		return (
 			<div>
-				{this.state.users.map((user) => {
+				{this.state.lesfemales.map((lesfemale) => {
 					return (
 						<div>
-							{/* <Card>
-								<Card.Body className="text-center">
-									<Link to={`/users/${user._id}`} key={user._id}>
-										Welcome: <img src= '{user.photoUrl}'/>
-									</Link>
-								</Card.Body>
-							</Card> */}
 						</div>
 					);
 				})}
 				<br />
 				<br />
-				 <button className="" onClick={this.toggleEditForm}>Straight Women</button>
+				 <button className="" onClick={this.toggleEditForm}>Lesbian Women</button>
         {
-          this.state.displayUserForm ?
+          this.state.displayFemaleForm ?
 				<div className="container">
 					<Card
 						className="container"
@@ -130,7 +117,7 @@ export default class UserLog extends Component {
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', paddingRight: '23px' }}
-							onSubmit={this.handleSignUp}
+							onSubmit={this.handleFemaleSignUp}
 						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
@@ -140,7 +127,7 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleChange}
+										onChange={this.handleFemaleChange}
 										value={this.state.newUser.firstName}
 										type="text"
 										placeholder="Enter First Name"
@@ -154,7 +141,7 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleChange}
+										onChange={this.handleFemaleChange}
 										value={this.state.newUser.lastName}
 										type="text"
 										placeholder="Enter Last Name"
@@ -169,7 +156,7 @@ export default class UserLog extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleChange}
+									onChange={this.handleFemaleChange}
 									value={this.state.newUser.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
@@ -184,7 +171,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="age"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleFemaleChange}
 									value={this.state.newUser.age}
 									placeholder="Enter your Age"
 								/>
@@ -198,7 +185,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleFemaleChange}
 									value={this.state.newUser.location}
 									placeholder="Apartment, studio, or floor"
 								/>
@@ -213,7 +200,7 @@ export default class UserLog extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleChange}
+										onChange={this.handleFemaleChange}
 										value={this.state.newUser.bio}
 										placeholder="Enter Facts about yourself"
 									/>
@@ -222,7 +209,7 @@ export default class UserLog extends Component {
 
 							<div style={{ marginLeft: '140px' }} className="text-center">
 								<Button
-									onclick={this.createUser}
+									onclick={this.createFemale}
 									className="text-center"
 									type="submit"
 									style={{
@@ -239,10 +226,11 @@ export default class UserLog extends Component {
 							</div>
 						</Form>
 					</Card>
-				</div> :
-				 null
+				</div> 
+				: null
 								}
-					</div>			
+                    </div>
+                    			
 		
 		);
 	}

@@ -12,7 +12,8 @@ import LesfemaleShowPage from './components/LesfemaleShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
-import UserLog from './components/UserLog';
+// import UserLog from './components/UserLog';
+import MainSignUpPage from './components/MainSignUpPage';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -25,7 +26,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/users" component={UserList} />
-						<Route exact path="/login/" component={UserLog} />
+						<Route exact path="/login/" component={MainSignUpPage} />
 						<Route exact path="/males/:maleId/" component={MaleShowPage} />
 						<Route exact path="/gaymales/:gaymaleId/" component={GayShowPage} />
 						<Route exact path="/gaymales/" component={GaymaleList} />

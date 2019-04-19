@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
@@ -6,9 +7,9 @@ import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class UserLog extends Component {
+export default class MaleSignUp extends Component {
 	state = {
-		users: [],
+		males: [],
 		newUser: {
 			firstName: '',
 			lastName: '',
@@ -16,27 +17,26 @@ export default class UserLog extends Component {
 			photoUrl: '',
 			location: '',
 			bio: '',
-			comments: [],
-			events: []
-		},
-		displayUserForm: false,
+			mcomments: [],
+			mevents: []
+		},	
+		displayMaleForm: false,
 		redirectToUser: false
 	};
 
-	componentDidMount = () => {
-		this.findAllUsers();
-	
+	componentDidMount = () => {	
+		this.findAllMales();
 	};
 
-	findAllUsers = () => {
-		axios.get('/api/users/').then((res) => {
-			this.setState({ users: res.data });
+	findAllMales = () => {
+		axios.get('/api/males/').then((res) => {
+			this.setState({ males: res.data });
 		});
 	};
 
-	createUser = (e) => {
+	createMale = (e) => {
 		axios
-			.post('/api/users/', {
+			.post('/api/males/', {
 				password: this.state.newUser.password,
 				userName: this.state.newUser.userName,
 				firstName: this.state.newUser.firstName,
@@ -49,8 +49,8 @@ export default class UserLog extends Component {
 				events: []
 			})
 			.then((res) => {
-				const usersList = [ this.state.users ];
-				usersList.unshift(res.data);
+				const malesList = [ this.state.males ];
+				malesList.unshift(res.data);
 				this.setState({
 					newUser: {
 						userName: '',
@@ -60,62 +60,53 @@ export default class UserLog extends Component {
 						age: '',
 						photoUrl: '',
 						location: '',
-						bio: '',
-						comments: {},
-						events: {}
+						bio: ''
 					},
-					displayUserForm: false,
-					users: usersList
+					displayMaleForm: false,
+					males: malesList
 				});
 			});
-		this.findAllUsers();
+		this.findAllMales();
 	};
 
-	handleChange = (e) => {
-		const changeNewUser = { ...this.state.newUser };
-		changeNewUser[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewUser });
+
+
+	handleMaleChange = (e) => {
+		const changeNewMale = { ...this.state.newMale };
+		changeNewMale[e.target.name] = e.target.value;
+		this.setState({ newUser: changeNewMale });
 	};
 
 
 	toggleEditForm = () => {
 		this.setState((state, props) => {
-			return { displayUserForm: !state.displayUserForm };
+			return { displayMaleForm: !state.displayMaleForm };
 		});
 	};
 
-
-	handleSignUp = (e) => {
+	handleMaleSignUp = (e) => {
 		e.preventDefault();
-		this.createUser();
+		this.createMale();
 	};
-
-
+    
 	render() {
 		if (this.state.redirectToUser) {
 			return <Redirect to={`/users/:userId`} />;
 		}
 
 		return (
-			<div>
-				{this.state.users.map((user) => {
+			<div>   
+        {this.state.males.map((male) => {
 					return (
 						<div>
-							{/* <Card>
-								<Card.Body className="text-center">
-									<Link to={`/users/${user._id}`} key={user._id}>
-										Welcome: <img src= '{user.photoUrl}'/>
-									</Link>
-								</Card.Body>
-							</Card> */}
 						</div>
 					);
 				})}
 				<br />
 				<br />
-				 <button className="" onClick={this.toggleEditForm}>Straight Women</button>
+				 <button className="" onClick={this.toggleEditForm}>Straight Men</button>
         {
-          this.state.displayUserForm ?
+          this.state.displayMaleForm ?
 				<div className="container">
 					<Card
 						className="container"
@@ -130,7 +121,7 @@ export default class UserLog extends Component {
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', paddingRight: '23px' }}
-							onSubmit={this.handleSignUp}
+							onSubmit={this.handleMaleSignUp}
 						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
@@ -140,7 +131,7 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleChange}
+										onChange={this.handleMaleChange}
 										value={this.state.newUser.firstName}
 										type="text"
 										placeholder="Enter First Name"
@@ -154,14 +145,14 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleChange}
+										onChange={this.handleMaleChange}
 										value={this.state.newUser.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
 								</Form.Group>
 							</Form.Row>
-						
+					
 							<Form.Group as={Col} controlId="formGridEmail">
 								<Form.Label style={{ fontSize: '16px ' }} htmlFor="photoUrl">
 									Photo
@@ -169,7 +160,7 @@ export default class UserLog extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleChange}
+									onChange={this.handleMaleChange}
 									value={this.state.newUser.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
@@ -184,7 +175,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="age"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleMaleChange}
 									value={this.state.newUser.age}
 									placeholder="Enter your Age"
 								/>
@@ -198,7 +189,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleMaleChange}
 									value={this.state.newUser.location}
 									placeholder="Apartment, studio, or floor"
 								/>
@@ -213,7 +204,7 @@ export default class UserLog extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleChange}
+										onChange={this.handleMaleChange}
 										value={this.state.newUser.bio}
 										placeholder="Enter Facts about yourself"
 									/>
@@ -222,7 +213,7 @@ export default class UserLog extends Component {
 
 							<div style={{ marginLeft: '140px' }} className="text-center">
 								<Button
-									onclick={this.createUser}
+									onclick={this.createMale}
 									className="text-center"
 									type="submit"
 									style={{
@@ -239,11 +230,14 @@ export default class UserLog extends Component {
 							</div>
 						</Form>
 					</Card>
-				</div> :
-				 null
+				</div> 
+				: null
 								}
-					</div>			
+								
+							</div>			
 		
 		);
 	}
 }
+
+	

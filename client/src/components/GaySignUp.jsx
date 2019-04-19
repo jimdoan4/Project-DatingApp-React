@@ -6,37 +6,35 @@ import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class UserLog extends Component {
+export default class GaySignUp extends Component {
 	state = {
-		users: [],
+		gaymales: [],
 		newUser: {
 			firstName: '',
 			lastName: '',
 			age: '',
 			photoUrl: '',
 			location: '',
-			bio: '',
-			comments: [],
-			events: []
+			bio: ''
 		},
-		displayUserForm: false,
+		displayGayForm: false,
 		redirectToUser: false
 	};
 
 	componentDidMount = () => {
-		this.findAllUsers();
+		this.findAllGaymales();
 	
 	};
 
-	findAllUsers = () => {
-		axios.get('/api/users/').then((res) => {
-			this.setState({ users: res.data });
+	findAllGaymales = () => {
+		axios.get('/api/gaymales/').then((res) => {
+			this.setState({ gaymales: res.data });
 		});
 	};
-
-	createUser = (e) => {
+	
+	createGaymale = (e) => {
 		axios
-			.post('/api/users/', {
+			.post('/api/gaymales/', {
 				password: this.state.newUser.password,
 				userName: this.state.newUser.userName,
 				firstName: this.state.newUser.firstName,
@@ -44,13 +42,11 @@ export default class UserLog extends Component {
 				age: this.state.newUser.age,
 				photoUrl: this.state.newUser.photoUrl,
 				location: this.state.newUser.location,
-				bio: this.state.newUser.bio,
-				comments: [],
-				events: []
+				bio: this.state.newUser.bio
 			})
 			.then((res) => {
-				const usersList = [ this.state.users ];
-				usersList.unshift(res.data);
+				const gaymalesList = [ this.state.gaymales ];
+				gaymalesList.unshift(res.data);
 				this.setState({
 					newUser: {
 						userName: '',
@@ -60,34 +56,31 @@ export default class UserLog extends Component {
 						age: '',
 						photoUrl: '',
 						location: '',
-						bio: '',
-						comments: {},
-						events: {}
+						bio: ''
 					},
-					displayUserForm: false,
-					users: usersList
+					displayGayForm: false,
+					gaymales: gaymalesList
 				});
 			});
-		this.findAllUsers();
+		this.findAllGaymales();
 	};
 
-	handleChange = (e) => {
-		const changeNewUser = { ...this.state.newUser };
-		changeNewUser[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewUser });
+	handleGaymaleChange = (e) => {
+		const changeNewGaymale = { ...this.state.newGaymale };
+		changeNewGaymale[e.target.name] = e.target.value;
+		this.setState({ newUser: changeNewGaymale });
 	};
 
 
 	toggleEditForm = () => {
 		this.setState((state, props) => {
-			return { displayUserForm: !state.displayUserForm };
+			return { displayGayForm: !state.displayGayForm };
 		});
 	};
 
-
-	handleSignUp = (e) => {
+	handleGaySignUp = (e) => {
 		e.preventDefault();
-		this.createUser();
+		this.createGaymale();
 	};
 
 
@@ -98,7 +91,7 @@ export default class UserLog extends Component {
 
 		return (
 			<div>
-				{this.state.users.map((user) => {
+				{this.state.gaymales.map((gaymale) => {
 					return (
 						<div>
 							{/* <Card>
@@ -113,9 +106,9 @@ export default class UserLog extends Component {
 				})}
 				<br />
 				<br />
-				 <button className="" onClick={this.toggleEditForm}>Straight Women</button>
+				 <button className="" onClick={this.toggleEditForm}>Gay Men</button>
         {
-          this.state.displayUserForm ?
+          this.state.displayGayForm ?
 				<div className="container">
 					<Card
 						className="container"
@@ -130,7 +123,7 @@ export default class UserLog extends Component {
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', paddingRight: '23px' }}
-							onSubmit={this.handleSignUp}
+							onSubmit={this.handleGaySignUp}
 						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
@@ -140,7 +133,7 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleChange}
+										onChange={this.handleGaymaleChange}
 										value={this.state.newUser.firstName}
 										type="text"
 										placeholder="Enter First Name"
@@ -154,14 +147,14 @@ export default class UserLog extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleChange}
+										onChange={this.handleGaymaleChange}
 										value={this.state.newUser.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
 								</Form.Group>
 							</Form.Row>
-						
+					
 							<Form.Group as={Col} controlId="formGridEmail">
 								<Form.Label style={{ fontSize: '16px ' }} htmlFor="photoUrl">
 									Photo
@@ -169,7 +162,7 @@ export default class UserLog extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleChange}
+									onChange={this.handleGaymaleChange}
 									value={this.state.newUser.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
@@ -184,7 +177,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="age"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleGaymaleChange}
 									value={this.state.newUser.age}
 									placeholder="Enter your Age"
 								/>
@@ -198,7 +191,7 @@ export default class UserLog extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleChange}
+									onChange={this.handleGaymaleChange}
 									value={this.state.newUser.location}
 									placeholder="Apartment, studio, or floor"
 								/>
@@ -213,7 +206,7 @@ export default class UserLog extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleChange}
+										onChange={this.handleGaymaleChange}
 										value={this.state.newUser.bio}
 										placeholder="Enter Facts about yourself"
 									/>
@@ -222,7 +215,7 @@ export default class UserLog extends Component {
 
 							<div style={{ marginLeft: '140px' }} className="text-center">
 								<Button
-									onclick={this.createUser}
+									onclick={this.createGaymale}
 									className="text-center"
 									type="submit"
 									style={{
@@ -239,8 +232,8 @@ export default class UserLog extends Component {
 							</div>
 						</Form>
 					</Card>
-				</div> :
-				 null
+				</div> 
+				: null
 								}
 					</div>			
 		

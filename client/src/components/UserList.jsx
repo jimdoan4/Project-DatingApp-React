@@ -29,7 +29,7 @@ export default class UserList extends Component {
 			events: []
 		},
 		redirectToUser: false,
-		displayUserForm: false,
+		displayUserForm: true,
 		userId: this.props.match.params.userId
 	};
 
@@ -98,13 +98,10 @@ export default class UserList extends Component {
 		this.setState({ newUser: changeNewUser });
 	};
 
-	// handleSignUp = (e) => {
-	// 	e.preventDefault();
-	// 	this.createUser();
-	// };
-	  toggleUserForm = () => {
+
+	toggleUserForm = () => {
         this.setState((state, props) => {
-            return {displayUserForm: !state.displayUserForm}
+            return {displayUserForm: state.displayUserForm}
         })
     }
 
@@ -119,6 +116,8 @@ export default class UserList extends Component {
 						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
 					</Container>
 				</Jumbotron> */}
+		{
+          this.state.displayUserForm ?
 				<div
 					className="row"
 					style={{
@@ -180,7 +179,7 @@ export default class UserList extends Component {
 													aria-controls="collapseExample"
 													style={{ color: 'black' }}
 												>
-													 {this.state.displayUserForm === true ? 'This person is blocked' : 'Not Interested'}
+													 Not Interested
 												</button>
 											</div>
 										</Card.Body>
@@ -201,7 +200,9 @@ export default class UserList extends Component {
 		    <Button variant="secondary">7</Button>
     </ButtonGroup>
 	</ButtonToolbar> */}
-				</div>
+				</div> :
+				null
+}
 			</div>
 		);
 	}
