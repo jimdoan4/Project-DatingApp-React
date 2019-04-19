@@ -24,7 +24,9 @@ const great = new Comment({
 	review: 'She was so funny',
 	lessonLearned: 'Relax next time and do not drink too much'
 });
-const male = new Male({
+
+//straight male 
+const m1 = new Male({
 	firstName: 'James',
 	lastName: 'Han',
     photoUrl: 'http://www.modelsearchuk.com/BIR_0176.JPG',
@@ -35,10 +37,10 @@ const male = new Male({
 	comments: [ great ]
 });
 
-const gaymale = new Gaymale({
-	firstName: 'Joe',
-	lastName: 'Hender',
-    photoUrl: 'https://mediaslide-europe.storage.googleapis.com/models1/pictures/2892/10290/profile-1536250406-54c38beb13750f6fe1e7427914035bec.jpg',
+const m2 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://i.pinimg.com/originals/e5/6b/79/e56b799b365e63c41041feb38fb7e965.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
@@ -46,10 +48,10 @@ const gaymale = new Gaymale({
 	comments: [ great ]
 });
 
-const female = new Lesfemale({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-    photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
+const m3 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://feedbox.com/wp-content/uploads/2018/04/this-guys-tinder-experiment-shows-how-differently-girls-respond-to-hot-guys.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
@@ -57,7 +59,74 @@ const female = new Lesfemale({
 	comments: [ great ]
 });
 
-const a = new Male({
+const m4 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://i.pinimg.com/originals/6f/6a/d8/6f6ad850a31e051d40d309f675df27e2.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m5 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://i.pinimg.com/236x/45/93/76/459376136f5fb331926028a5d87e0c7d.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m6 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://i.pinimg.com/originals/70/03/e1/7003e1116cc4b92f7f902c154d194fd9.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m7 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://mediaslide-europe.storage.googleapis.com/success/pictures/2784/6700/large-1515419345-f30817cb31e089ee83dcc874af4611ee.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m8 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'http://www.celebs.gallery/wp-content/uploads/2015/07/zac-efron-we-are-your-friends-promos_2.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m9 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://img.izismile.com/img/img3/20100225/most_beautiful_men_25.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+//gaymale
+const gm1 = new Gaymale({
 	firstName: 'James',
 	lastName: 'Han',
     photoUrl: 'https://i.pinimg.com/736x/e4/e7/8c/e4e78c0a1bf12d307b589227de626a0b--gorgeous-men-beautiful-people.jpg',
@@ -68,6 +137,218 @@ const a = new Male({
 	comments: [ great ]
 });
 
+
+const gm2 = new Gaymale({
+	firstName: 'Joe',
+	lastName: 'Hender',
+    photoUrl: 'https://intersalon.ee/wp-content/uploads/2016/09/14141661_1110944172309568_98520967740312348_n.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm3 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/D2E9/production/_94639935_stefan3.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm4 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://data.whicdn.com/images/89546444/original.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm5 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://pbs.twimg.com/media/CjFOwxiW0AAoiqG.jpg:large',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+const gm6 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://www.famousbirthdays.com/faces/tomlin-stefan-pierre-image.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm7 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/vitalijus-1-1522322806.jpeg?crop=1xw:1xh;center,top&resize=480:*',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm8 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://mars.nasa.gov/people/images/profile/1x1/rfrancis-22826-profile-hi_F9C4E5F6-5645-4186-9A35995CDA924E4A.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm9 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://beautifyatlanta.com/wp-content/uploads/parser/alex-jones-beard-1.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm10 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+//female
+const f1 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://cdn.shopify.com/s/files/1/2714/9310/products/76781_1_50a648ed-fce4-4445-8157-2749cb7afcf3_775x.JPG?v=1554145796?w=331',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f2 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://www.poeticjusticejeans.com//media/catalog/product/l/i/little-black-dress-lace-panel-sides-poetic-justice-maja-ho16409pr-sd.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f3 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://s3-us-west-1.amazonaws.com/www.vivaglammagazine.com/wp-content/uploads/2019/02/how-to-style-your-little-black-dress-elegant-lbd-with-nice-heels.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f4 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://cdn.shopify.com/s/files/1/0293/9277/products/12-05-18_Studio_2_13-25-56_72450_Black_0427_JD_JF_600x.jpg?v=1544202558',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f5 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://media.nastygal.com/i/nastygal/agg86163_black_xl?$product_image_category_page_horizontal_filters_desktop$',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f6 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://cdn.executiveponies.com/media/catalog/product/t/n/tn_dancing_mood_dress_in_black_sequin.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f7 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://cdn.shopify.com/s/files/1/2714/9310/products/Unique_Vintage_Black_Beaded_Sequin_Margaux_Sleeved_Fringe_Flapper_Dress_1_099c18d6-04b8-4bb2-8c06-ff1c12660f93_1024x1024.jpg?v=1545251688',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f8 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f9 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://dynamic.zacdn.com/drcoBc6vpsHB-aBopTGP1fs3l7w=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/ripe-maternity-1581-2065341-1.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f10 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+
+// straight female
 const sara = new User({
 	userName: 'Sara4',
 	password: 'password',
@@ -238,12 +519,37 @@ const samsssss = new User({
 
 
 Lesfemale.deleteMany({})
-	.then(() => female.save())
+	.then(() => f1.save())
+	.then(() => f2.save())
+	.then(() => f3.save())
+	.then(() => f4.save())
+	.then(() => f6.save())
+	.then(() => f5.save())
+	.then(() => f7.save())
+	.then(() => f8.save())
+	.then(() => f9.save())
+	.then(() => f10.save())
 Gaymale.deleteMany({})
-	.then(() => gaymale.save())
+	.then(() => gm1.save())
+	.then(() => gm2.save())
+	.then(() => gm3.save())
+	.then(() => gm4.save())
+	.then(() => gm5.save())
+	.then(() => gm6.save())
+	.then(() => gm7.save())
+	.then(() => gm8.save())
+	.then(() => gm9.save())
+	.then(() => gm10.save())
 Male.deleteMany({})
-	.then(() => a.save())
-	.then(() => male.save())
+	.then(() => m1.save())
+	.then(() => m2.save())
+	.then(() => m3.save())
+	.then(() => m4.save())
+	.then(() => m5.save())
+	.then(() => m6.save())
+	.then(() => m7.save())
+	.then(() => m8.save())
+	.then(() => m9.save())
 User.deleteMany({})
 	.then(() => sara.save())
     .then(() => abby.save())
