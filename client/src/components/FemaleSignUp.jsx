@@ -83,8 +83,6 @@ export default class FemaleSignUp extends Component {
 		this.createFemale();
     };
 
-
-
 	render() {
 		if (this.state.redirectToUser) {
 			return <Redirect to={`/users/:userId`} />;

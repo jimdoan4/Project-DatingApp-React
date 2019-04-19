@@ -36,11 +36,6 @@ export default class CommentPage extends Component {
 		this.getAllComments();
 	};
 
-	toggleEditForm = () => {
-		this.setState((state, props) => {
-			return { displayEditForm: !state.displayEditForm };
-		});
-	};
 
 	handleChange = (e) => {
 		const changeNewComment = { ...this.state.newComment };
@@ -101,6 +96,12 @@ export default class CommentPage extends Component {
 		this.getAllComments();
 	};
 
+	toggleEditForm = () => {
+		this.setState((state, props) => {
+			return { displayEditForm: !state.displayEditForm };
+		});
+	};
+
 	deleteComment = () => {
 		axios.delete(`/api/users/${this.state.userId}/comments/${this.state.commentId}`).then((res) => {
 			this.setState({ redirectToComment: true });
@@ -108,7 +109,7 @@ export default class CommentPage extends Component {
 	};
 
 	render() {
-		if (this.state.redirectToUser) {
+		if (this.state.redirectToComment) {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
@@ -136,8 +137,8 @@ export default class CommentPage extends Component {
 					);
 				})}
 				<br />
-				{/* <br /> */}
-				 <button className="" onClick={this.toggleEditForm}>Add an Event</button>
+				<br />
+				 <button className="" onClick={this.toggleEditForm}>Add a Review</button>
 				   {
           this.state.displayEditForm ?
 				<div className="container">
@@ -241,8 +242,8 @@ export default class CommentPage extends Component {
 							</div>
 						</Form>
 					</Card> 
-				</div> :
-				null
+				</div> 
+				: null
 						}
 			</div>
 		);

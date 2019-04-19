@@ -18,6 +18,7 @@ export default class MainSignUpPage extends Component {
 	render() {
 		return (
 			<div style= {{ marginBottom: '524px' }} className= 'text-center'>
+            <h1>Choose Your Preference</h1>
 	<Container>
   <Row>
     <Col><UserLog userId={this.state.userId} /></Col>
