@@ -30,14 +30,14 @@ export default class UserLog extends Component {
 	};
 
 	findAllUsers = () => {
-		axios.get('/api/users').then((res) => {
+		axios.get('/api/users/').then((res) => {
 			this.setState({ users: res.data });
 		});
 	};
 
 	createUser = (e) => {
 		axios
-			.post('/api/users', {
+			.post('/api/users/', {
 				password: this.state.newUser.password,
 				userName: this.state.newUser.userName,
 				firstName: this.state.newUser.firstName,
@@ -123,9 +123,11 @@ export default class UserLog extends Component {
 						>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label style= {{ fontSize: '16px '}}htmlFor="firstName">First Name</Form.Label>
+									<Form.Label style={{ fontSize: '16px ' }} htmlFor="firstName">
+										First Name
+									</Form.Label>
 									<Form.Control
-                                        className= 'text-center'
+										className="text-center"
 										name="firstName"
 										onChange={this.handleChange}
 										value={this.state.newUser.firstName}
@@ -135,9 +137,11 @@ export default class UserLog extends Component {
 								</Form.Group>
 
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label style= {{ fontSize: '16px '}}htmlFor="lastName">Last Name</Form.Label>
+									<Form.Label style={{ fontSize: '16px ' }} htmlFor="lastName">
+										Last Name
+									</Form.Label>
 									<Form.Control
-                                        className= 'text-center'
+										className="text-center"
 										name="lastName"
 										onChange={this.handleChange}
 										value={this.state.newUser.lastName}
@@ -146,23 +150,27 @@ export default class UserLog extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label style= {{ fontSize: '16px '}}htmlFor="userName">Username</Form.Label>
+							{/* <Form.Row> */}
+							{/* <Form.Group as={Col} controlId="formGridEmail">
+									<Form.Label style={{ fontSize: '16px ' }} htmlFor="userName">
+										Username
+									</Form.Label>
 									<Form.Control
-                                        className= 'text-center'
+										className="text-center"
 										type="text"
 										name="userName"
 										onChange={this.handleChange}
 										value={this.state.newUser.userName}
 										placeholder="Enter Username"
 									/>
-								</Form.Group>
+								</Form.Group> */}
 
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label style= {{ fontSize: '16px '}}htmlFor="password">Password</Form.Label>
+							{/* <Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label style={{ fontSize: '16px ' }} htmlFor="password">
+										Password
+									</Form.Label>
 									<Form.Control
-                                        className= 'text-center'
+										className="text-center"
 										name="password"
 										onChange={this.handleChange}
 										value={this.state.newUser.password}
@@ -170,11 +178,13 @@ export default class UserLog extends Component {
 										placeholder="Enter Password"
 									/>
 								</Form.Group>
-							</Form.Row>
+							</Form.Row> */}
 							<Form.Group as={Col} controlId="formGridEmail">
-								<Form.Label style= {{ fontSize: '16px '}}htmlFor="photoUrl">Photo</Form.Label>
+								<Form.Label style={{ fontSize: '16px ' }} htmlFor="photoUrl">
+									Photo
+								</Form.Label>
 								<Form.Control
-                                    className= 'text-center'
+									className="text-center"
 									name="photoUrl"
 									onChange={this.handleChange}
 									value={this.state.newUser.photoUrl}
@@ -184,9 +194,11 @@ export default class UserLog extends Component {
 							</Form.Group>
 
 							<Form.Group controlId="formGridAddress1">
-								<Form.Label style= {{ fontSize: '16px '}}htmlFor="age">Age</Form.Label>
+								<Form.Label style={{ fontSize: '16px ' }} htmlFor="age">
+									Age
+								</Form.Label>
 								<Form.Control
-                                    className= 'text-center'
+									className="text-center"
 									name="age"
 									type="text"
 									onChange={this.handleChange}
@@ -196,9 +208,11 @@ export default class UserLog extends Component {
 							</Form.Group>
 
 							<Form.Group controlId="formGridAddress2">
-								<Form.Label style= {{ fontSize: '16px '}}htmlFor="location">Location</Form.Label>
+								<Form.Label style={{ fontSize: '16px ' }} htmlFor="location">
+									Location
+								</Form.Label>
 								<Form.Control
-                                    className= 'text-center'
+									className="text-center"
 									name="location"
 									type="text"
 									onChange={this.handleChange}
@@ -209,9 +223,11 @@ export default class UserLog extends Component {
 
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridCity">
-									<Form.Label style= {{ fontSize: '16px '}}htmlFor="bio">Biography</Form.Label>
+									<Form.Label style={{ fontSize: '16px ' }} htmlFor="bio">
+										Biography
+									</Form.Label>
 									<Form.Control
-                                        className= 'text-center'
+										className="text-center"
 										name="bio"
 										type="text"
 										onChange={this.handleChange}
@@ -223,6 +239,7 @@ export default class UserLog extends Component {
 
 							<div style={{ marginLeft: '140px' }} className="text-center">
 								<Button
+									onclick={this.createUser}
 									className="text-center"
 									type="submit"
 									style={{

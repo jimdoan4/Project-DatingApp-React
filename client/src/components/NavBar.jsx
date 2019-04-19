@@ -15,25 +15,25 @@ export default class NavBar extends Component {
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>
 					<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
 						<NavDropdown style={{ color: 'black' }} title="Find Your Date" id="collasible-nav-dropdown">
-							<NavDropdown.Item className= 'text-center' style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
 								<Link to="/users/" style={{ color: 'black' }}>
 									Woman
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item className= 'text-center' style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
 								<Link to="/males/" style={{ color: 'black' }}>
 									Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item className= 'text-center' style={{ color: 'black' }}>
-								<Link className= 'text-center' to="/gaymales/" style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
+								<Link className="text-center" to="/gaymales/" style={{ color: 'black' }}>
 									Gay Men
 								</Link>
 							</NavDropdown.Item>
-								<NavDropdown.Divider />
-							<NavDropdown.Item className= 'text-center' style={{ color: 'black' }}>
+							<NavDropdown.Divider />
+							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
 								<Link to="/lesfemales/" style={{ color: 'black' }}>
 									Lesbian Women
 								</Link>

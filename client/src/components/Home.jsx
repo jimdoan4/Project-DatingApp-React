@@ -13,21 +13,19 @@ export default class Home extends Component {
 					fluid
 					style={{ opacity: '6', width: '100%' }}
 				/>
-				{/* <ReactFilestack
-					apikey={'ANUWoYooqTeyXM5XxoW0yz'}
-					buttonText="Click me"
-					buttonClass="classname"
-					// options={options}
-					onSuccess={this.yourCallbackFunction}
-					preload={true}
-				/> */}
 
 				<ul
 					style={{ marginTop: '50px', marginLeft: '100px', marginRight: '100px', marginBottom: '40px' }}
 					className="list-unstyled"
 				>
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
+						<img
+							width={64}
+							height={64}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/>
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -40,7 +38,13 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
+						<img
+							width={64}
+							height={64}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/>
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -53,7 +57,13 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
+						<img
+							width={64}
+							height={64}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/>
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>

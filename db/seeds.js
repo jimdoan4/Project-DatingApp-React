@@ -457,8 +457,6 @@ const f12 = new Lesfemale({
 
 // straight female
 const sara = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Sara',
 	lastName: 'Henderson',
 	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg',
@@ -470,8 +468,6 @@ const sara = new User({
 });
 
 const abby = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Abby',
 	lastName: 'Fowler',
 	photoUrl: 'http://s2.favim.com/orig/34/dress-fashion-girl-grey-long-hair-Favim.com-273028.jpg',
@@ -483,8 +479,6 @@ const abby = new User({
 });
 
 const tony = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Katie',
 	lastName: 'Bar',
 	photoUrl:
@@ -498,7 +492,6 @@ const tony = new User({
 
 const jackie = new User({
 	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Molly',
 	lastName: 'Patterson',
 	photoUrl:
@@ -511,8 +504,6 @@ const jackie = new User({
 });
 
 const carla = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Kacy',
 	lastName: 'Doan',
 	photoUrl: 'http://www.topdatingapp.net/wp-content/uploads/2018/07/bbw6-1.jpg',
@@ -524,8 +515,6 @@ const carla = new User({
 });
 
 const amy = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Ruby',
 	lastName: 'Falls',
 	photoUrl: 'http://www.1backgrounds.com/wp-content/uploads/2018/07/Plus-Size-Jeans-For-Curvy-Women-13.jpg',
@@ -537,8 +526,6 @@ const amy = new User({
 });
 
 const molly = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Valley',
 	lastName: 'Hall',
 	photoUrl:
@@ -551,8 +538,6 @@ const molly = new User({
 });
 
 const sam = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Kate',
 	lastName: 'Jones',
 	photoUrl: 'https://i.pinimg.com/originals/04/60/89/046089396c1efa078ef20bb90213062a.jpg',
@@ -564,8 +549,6 @@ const sam = new User({
 });
 
 const sams = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Veronica',
 	lastName: 'Doan',
 	photoUrl: 'https://images.hellogiggles.com/uploads/2016/09/25054631/51502.0.zoom_.jpg',
@@ -577,8 +560,6 @@ const sams = new User({
 });
 
 const samss = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Dora',
 	lastName: 'Explorer',
 	photoUrl: 'http://cdn.theeverygirl.com/wp-content/uploads/2016/03/lbd.jpg',
@@ -590,8 +571,6 @@ const samss = new User({
 });
 
 const samsss = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Mandy',
 	lastName: 'Hones',
 	photoUrl: 'https://i.pinimg.com/originals/ee/fa/25/eefa25d95d883d0d1d10557170a8cfc9.jpg',
@@ -603,8 +582,6 @@ const samsss = new User({
 });
 
 const samssss = new User({
-	userName: 'Sara4',
-	password: 'password',
 	firstName: 'Pam',
 	lastName: 'Anderson',
 	photoUrl: 'https://photo.venus.com/im/17078926.jpg?preset=product',
@@ -615,19 +592,19 @@ const samssss = new User({
 	comments: [ great ]
 });
 
-const samsssss = new User({
-	userName: 'Sara4',
-	password: 'password',
-	firstName: 'Snookie',
-	lastName: 'Harrow',
-	photoUrl:
-		'https://images.express.com/is/image/expressfashion/0094_07922309_0058?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from GA Tech am ready to start dating again. I love cats and coding Java on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
-});
+// const samsssss = new User({
+// 	userName: 'Sara4',
+// 	password: 'password',
+// 	firstName: 'Snookie',
+// 	lastName: 'Harrow',
+// 	photoUrl:
+// 		'https://images.express.com/is/image/expressfashion/0094_07922309_0058?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon',
+// 	age: 28,
+// 	location: 'Fulton, Georgia',
+// 	bio: 'I just graduated from GA Tech am ready to start dating again. I love cats and coding Java on a daily basis',
+// 	events: [ ihop ],
+// 	comments: [ great ]
+// });
 
 Gaymale.deleteMany({})
 	.then(() => gm1.save())
@@ -641,8 +618,8 @@ Gaymale.deleteMany({})
 	.then(() => gm9.save())
 	.then(() => gm10.save())
 	.then(() => gm11.save())
-	.then(() => gm12.save())
-	.then(() => console.log('Successful Save'));
+	.then(() => gm12.save());
+// .then(() => console.log('Successful Save'));
 Male.deleteMany({})
 	.then(() => m1.save())
 	.then(() => m2.save())
@@ -655,8 +632,8 @@ Male.deleteMany({})
 	.then(() => m9.save())
 	.then(() => m10.save())
 	.then(() => m11.save())
-	.then(() => m12.save())
-	.then(() => console.log('Successful Save'));
+	.then(() => m12.save());
+// .then(() => console.log('Successful Save'));
 Lesfemale.deleteMany({})
 	.then(() => f1.save())
 	.then(() => f2.save())
@@ -669,8 +646,8 @@ Lesfemale.deleteMany({})
 	.then(() => f9.save())
 	.then(() => f10.save())
 	.then(() => f11.save())
-	.then(() => f12.save())
-	.then(() => console.log('Successful Save'));
+	.then(() => f12.save());
+// .then(() => console.log('Successful Save'));
 User.deleteMany({})
 	.then(() => sara.save())
 	.then(() => abby.save())
