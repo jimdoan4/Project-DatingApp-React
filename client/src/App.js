@@ -6,6 +6,9 @@ import MaleList from './components/MaleList';
 import GaymaleList from './components/GaymaleList';
 import LesfemaleList from './components/LesfemaleList';
 import UserShowPage from './components/UserShowPage';
+import MaleShowPage from './components/MaleShowPage';
+import GayShowPage from './components/GayShowPage';
+import LesfemaleShowPage from './components/LesfemaleShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
@@ -29,6 +32,9 @@ class App extends Component {
 						<Route exact path="/gaymales/" component={GaymaleList} />
 						<Route exact path="/lesfemales/" component={LesfemaleList} />
 						<Route exact path="/users/:userId/" component={UserShowPage} />
+						<Route exact path="/males/:maleId/" component={MaleShowPage} />
+						<Route exact path="/gaymales/:gaymaleId/" component={GayShowPage} />
+						<Route exact path="/lesfemales/:lesfemaleId/" component={LesfemaleShowPage} />
 					</Switch>
 					 <Footer /> 
 				</div>

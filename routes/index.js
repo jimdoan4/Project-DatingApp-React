@@ -12,35 +12,39 @@ router.get('/', appController.index);
 
 router.get('/males/', maleController.index);
 router.post('/males/', maleController.create);
-router.get('/males/:maleId', maleController.show);
-// router.put('/males/:maleId', maleController.update);
-// router.delete('/males/:maleId', maleController.delete);
+router.get('/males/:maleId/', maleController.show);
+router.put('/males/:maleId/', maleController.update);
+router.delete('/males/:maleId/', maleController.delete);
 
 router.get('/gaymales/', gaymaleController.index);
 router.post('/gaymales/', gaymaleController.create);
-router.get('/gaymales/:gaymaleId', gaymaleController.show);
+router.get('/gaymales/:gaymaleId/', gaymaleController.show);
+router.get('/gaymales/:gaymaleId/', gaymaleController.update);
+router.get('/gaymales/:gaymaleId/', gaymaleController.delete);
 
 router.get('/lesfemales/', lesfemaleController.index);
 router.post('/lesfemales/', lesfemaleController.create);
-router.get('/lesfemales/:lesfemaleId', lesfemaleController.show);
+router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
+router.get('/lesfemales/:lesfemaleId/', lesfemaleController.update);
+router.get('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
 
 router.get('/users/', userController.index);
 router.post('/users/', userController.create);
-router.get('/users/:userId', userController.show);
-router.put('/users/:userId', userController.update);
-router.delete('/users/:userId', userController.delete);
+router.get('/users/:userId/', userController.show);
+router.put('/users/:userId/', userController.update);
+router.delete('/users/:userId/', userController.delete);
 
-router.get('/users/:userId/events', eventController.index);
-router.post('/users/:userId/events', eventController.create);
-router.get('/users/:userId/events/:eventId', eventController.show);
-router.put('/users/:userId/events/:eventId', eventController.update);
-router.delete('/users/:userId/events/:eventId', eventController.delete);
+router.get('/users/:userId/events/', eventController.index);
+router.post('/users/:userId/events/', eventController.create);
+router.get('/users/:userId/events/:eventId/', eventController.show);
+router.put('/users/:userId/events/:eventId/', eventController.update);
+router.delete('/users/:userId/events/:eventId/', eventController.delete);
 
-router.get('/users/:userId/comments', commentController.index);
-router.post('/users/:userId/comments', commentController.create);
-router.get('/users/:userId/comments/:commentId', commentController.show);
-router.put('/users/:userId/comments/:commentId', commentController.update);
-router.delete('/users/:userId/comments/:commentId', commentController.delete);
+router.get('/users/:userId/comments/', commentController.index);
+router.post('/users/:userId/comments/', commentController.create);
+router.get('/users/:userId/comments/:commentId/', commentController.show);
+router.put('/users/:userId/comments/:commentId/', commentController.update);
+router.delete('/users/:userId/comments/:commentId/', commentController.delete);
 
 
 module.exports = router;

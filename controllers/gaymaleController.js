@@ -1,6 +1,5 @@
 const Gaymale = require('../models/Gaymale.js');
 
-
 const gaymaleController = {
    index: (req, res) => {
 		Gaymale.find()
@@ -35,10 +34,10 @@ const gaymaleController = {
 },
 	update: async (req, res) => {
 		try {
-			const userId = req.params.userId;
-			const updatedUser = req.body;
-			const savedUser = await User.findByIdAndUpdate(userId, updatedUser);
-			res.json(savedUser);
+			const gaymaleId = req.params.gaymaleId;
+			const updatedGaymale = req.body;
+			const savedGaymale = await Gaymale.findByIdAndUpdate(gaymaleId, updatedGaymale);
+			res.json(savedGaymale);
 		} catch (err) {
 			console.log(err);
 			res.status(500).json(err);
@@ -46,10 +45,10 @@ const gaymaleController = {
 	},
 	delete: async (req, res) => {
 		try {
-			const userId = req.params.userId;
-			await User.findByIdAndRemove(userId);
+			const gaymaleId = req.params.gaymaleId;
+			await Gaymale.findByIdAndRemove(gaymaleId);
 			res.json({
-				msg: `Successfully Deleted ${userId}`
+				msg: `Successfully Deleted ${gaymaleId}`
 			});
 		} catch (err) {
 			console.log(err);

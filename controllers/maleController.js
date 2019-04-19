@@ -35,10 +35,10 @@ const maleController = {
 },
 	update: async (req, res) => {
 		try {
-			const userId = req.params.userId;
-			const updatedUser = req.body;
-			const savedUser = await User.findByIdAndUpdate(userId, updatedUser);
-			res.json(savedUser);
+			const maleId = req.params.maleId;
+			const updatedMale = req.body;
+			const savedMale = await Male.findByIdAndUpdate(maleId, updatedMale);
+			res.json(savedMale);
 		} catch (err) {
 			console.log(err);
 			res.status(500).json(err);
@@ -46,10 +46,10 @@ const maleController = {
 	},
 	delete: async (req, res) => {
 		try {
-			const userId = req.params.userId;
-			await User.findByIdAndRemove(userId);
+			const maleId = req.params.maleId;
+			await Male.findByIdAndRemove(maleId);
 			res.json({
-				msg: `Successfully Deleted ${userId}`
+				msg: `Successfully Deleted ${maleId}`
 			});
 		} catch (err) {
 			console.log(err);

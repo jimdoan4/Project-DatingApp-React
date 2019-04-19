@@ -1,4 +1,3 @@
-
 const express = require('express');
 const logger = require('morgan');
 const app = express();
@@ -12,7 +11,7 @@ app.use(express.static(__dirname + '/client/build'));
 
 app.use('/api/', routes);
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
 	res.sendFile(__dirname + '/client/build/index.html');
 });
 const PORT = process.env.PORT || 3001;
