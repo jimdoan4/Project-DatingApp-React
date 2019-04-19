@@ -11,7 +11,6 @@ export default class Home extends Component {
 				<Image
 					src="https://gq-images.condecdn.net/image/ed5oqpqRqPZ/crop/1620/f/dating_apps_1_gq_17may18_ge.jpg"
 					fluid
-				
 					style={{ opacity: '6' }}
 				/>
 				{/* <ReactFilestack
@@ -28,7 +27,7 @@ export default class Home extends Component {
 					className="list-unstyled"
 				>
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -41,7 +40,7 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>
@@ -54,7 +53,7 @@ export default class Home extends Component {
 					</Media>
 
 					<Media as="li">
-						<img width={64} height={64} className="mr-3" src="holder.js/64x64" alt="Generic placeholder" />
+						<img width={64} height={64} className="mr-3" src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg" alt="Generic placeholder" />
 						<Media.Body>
 							<h5>List-based media object</h5>
 							<p>

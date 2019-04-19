@@ -136,10 +136,11 @@ export default class LesfemaleList extends Component {
 										key={lesfemale._id}
 										className="text-center"
 										style={{
+                                            color: 'white',
 											width: '16.8rem',
 											marginLeft: '30px',
 											marginRight: '30px',
-											backgroundColor: '#efe8e8'
+											backgroundColor: '#86074e'
 										}}
 									>
 										<Card.Img
@@ -150,10 +151,10 @@ export default class LesfemaleList extends Component {
 										/>
 
 										<Card.Body>
-											<Card.Title style={{ color: 'black' }}>{lesfemale.firstName}</Card.Title>
-											<Card.Title style={{ color: 'black' }}>{lesfemale.age}</Card.Title>
-											<Card.Text style={{ color: 'black' }}>{lesfemale.bio}</Card.Text>
-											<Card.Text style={{ color: 'black' }}>{lesfemale.location}</Card.Text>
+											<Card.Title style={{ color: 'white' }}>{lesfemale.firstName}</Card.Title>
+											<Card.Title style={{ color: 'white' }}>{lesfemale.age}</Card.Title>
+											<Card.Text style={{ color: 'white' }}>{lesfemale.bio}</Card.Text>
+											<Card.Text style={{ color: 'white' }}>{lesfemale.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>

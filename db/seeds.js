@@ -125,6 +125,39 @@ const m9 = new Male({
 	comments: [ great ]
 });
 
+const m10 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&w=1000&q=80',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m11 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'http://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-guy-3.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const m12 = new Male({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://i.pinimg.com/736x/cd/09/e1/cd09e11b6742515a7e6237688d16cfa9--top-male-models-male-model-photos.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
 //gaymale
 const gm1 = new Gaymale({
 	firstName: 'James',
@@ -229,6 +262,28 @@ const gm10 = new Gaymale({
 	firstName: 'James',
 	lastName: 'Han',
     photoUrl: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm11 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://www.face-agency.co.uk/images/uploads/models/large/1470043935-21.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const gm12 = new Gaymale({
+	firstName: 'James',
+	lastName: 'Han',
+    photoUrl: 'https://www.wllawsd.com/wp-content/uploads/2018/06/daniel-1.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
@@ -347,6 +402,28 @@ const f10 = new Lesfemale({
 	comments: [ great ]
 });
 
+const f11 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'https://assets.capitalfm.com/2018/23/lilliya-scarlett-instagram-1528814125-custom-0.png',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
+const f12 = new Lesfemale({
+	firstName: 'Jackie',
+	lastName: 'Hank',
+    photoUrl: 'http://cdn01.cdn.justjared.com/wp-content/uploads/2015/05/rdma-portraits/hailee-steinfeld-rumer-willis-pose-for-just-jared-portrait-session-11.jpg',
+	age: 28,
+	location: 'Fulton, Georgia',
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
+	events: [ ihop ],
+	comments: [ great ]
+});
+
 
 // straight female
 const sara = new User({
@@ -452,6 +529,7 @@ const sam = new User({
 	events: [ ihop ],
 	comments: [ great ]
 });
+
 const sams = new User({
 	userName: 'Sara4',
 	password: 'password',
@@ -529,6 +607,8 @@ Lesfemale.deleteMany({})
 	.then(() => f8.save())
 	.then(() => f9.save())
 	.then(() => f10.save())
+	.then(() => f11.save())
+	// .then(() => f12.save())
 Gaymale.deleteMany({})
 	.then(() => gm1.save())
 	.then(() => gm2.save())
@@ -540,6 +620,8 @@ Gaymale.deleteMany({})
 	.then(() => gm8.save())
 	.then(() => gm9.save())
 	.then(() => gm10.save())
+	.then(() => gm11.save())
+	.then(() => gm12.save())
 Male.deleteMany({})
 	.then(() => m1.save())
 	.then(() => m2.save())
@@ -550,6 +632,9 @@ Male.deleteMany({})
 	.then(() => m7.save())
 	.then(() => m8.save())
 	.then(() => m9.save())
+	.then(() => m10.save())
+	.then(() => m11.save())
+	.then(() => m12.save())
 User.deleteMany({})
 	.then(() => sara.save())
     .then(() => abby.save())

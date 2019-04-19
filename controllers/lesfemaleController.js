@@ -1,6 +1,5 @@
 const Lesfemale = require('../models/Lesfemale.js');
 
-
 const lesfemaleController = {
    index: (req, res) => {
 		Lesfemale.find()

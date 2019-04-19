@@ -116,7 +116,7 @@ export default class MaleList extends Component {
 				<div
 					className="row"
 					style={{
-						marginLeft: '30px',
+						marginLeft: '20px',
 						marginBottom: '30px',
 						marginTop: '50px'
 					}}
@@ -139,7 +139,7 @@ export default class MaleList extends Component {
 											width: '16.8rem',
 											marginLeft: '30px',
 											marginRight: '30px',
-											backgroundColor: '#efe8e8'
+											backgroundColor: '#1e3959'
 										}}
 									>
 										<Card.Img
@@ -150,10 +150,10 @@ export default class MaleList extends Component {
 										/>
 
 										<Card.Body>
-											<Card.Title style={{ color: 'black' }}>{male.firstName}</Card.Title>
-											<Card.Title style={{ color: 'black' }}>{male.age}</Card.Title>
-											<Card.Text style={{ color: 'black' }}>{male.bio}</Card.Text>
-											<Card.Text style={{ color: 'black' }}>{male.location}</Card.Text>
+											<Card.Title style={{ color: 'white' }}>{male.firstName}</Card.Title>
+											<Card.Title style={{ color: 'white' }}>{male.age}</Card.Title>
+											<Card.Text style={{ color: 'white' }}>{male.bio}</Card.Text>
+											<Card.Text style={{ color: 'white' }}>{male.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>

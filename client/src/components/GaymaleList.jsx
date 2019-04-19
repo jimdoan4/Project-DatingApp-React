@@ -139,7 +139,7 @@ export default class GaymaleList extends Component {
 											width: '16.8rem',
 											marginLeft: '30px',
 											marginRight: '30px',
-											backgroundColor: '#efe8e8'
+											backgroundColor: '#adbfd4'
 										}}
 									>
 										<Card.Img
