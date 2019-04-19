@@ -12,79 +12,67 @@ import { ButtonGroup } from 'react-bootstrap';
 import { ButtonToolbar } from 'react-bootstrap';
 import Footer from './Footer';
 
-export default class UserList extends Component {
+export default class MaleList extends Component {
 	state = {
-		users: [],
-		newUser: {
+		males: [],
+		newMale: {
 			_id: '',
-			userName: '',
-			password: '',
 			firstName: '',
 			lastName: '',
 			age: '',
 			photoUrl: '',
 			location: '',
-			bio: '',
-			comments: [],
-			events: []
+			bio: ''
 		},
 		redirectToUser: false,
 		displayUserForm: false,
-		userId: this.props.match.params.userId
+		maleId: this.props.match.params.maleId
 	};
 
 	componentDidMount = () => {
-		this.findAllUsers();
+		this.findAllMales();
 	};
 
-	findAllUsers = () => {
-		axios.get('/api/users').then((res) => {
-			this.setState({ users: res.data });
+	findAllMales = () => {
+		axios.get('/api/males/').then((res) => {
+			this.setState({ males: res.data });
 		});
 	};
 
-	createUser = (e) => {
-		axios
-			.post('/api/users', {
-				password: this.state.newUser.password,
-				userName: this.state.newUser.userName,
-				firstName: this.state.newUser.firstName,
-				lastName: this.state.newUser.lastName,
-				age: this.state.newUser.age,
-				photoUrl: this.state.newUser.photoUrl,
-				location: this.state.newUser.location,
-				bio: this.state.newUser.bio,
-				comments: [],
-				events: []
-			})
-			.then((res) => {
-				const usersList = [ this.state.users ];
-				usersList.unshift(res.data);
-				this.setState({
-					newUser: {
-						userName: '',
-						password: '',
-						firstName: '',
-						lastName: '',
-						age: '',
-						photoUrl: '',
-						location: '',
-						bio: '',
-						comments: {},
-						events: {}
-					},
-					displayUserForm: false,
-					users: usersList
-				});
-			});
-		this.findAllUsers();
-	};
-
-	deleteUser = () => {
-		axios.delete(`/api/users/${this.state.userId}`).then((res) => {
-			this.setState({ redirectToUser: true });
-		});
-	};
+	// createUser = (e) => {
+	// 	axios
+	// 		.post('/api/users', {
+	// 			password: this.state.newUser.password,
+	// 			userName: this.state.newUser.userName,
+	// 			firstName: this.state.newUser.firstName,
+	// 			lastName: this.state.newUser.lastName,
+	// 			age: this.state.newUser.age,
+	// 			photoUrl: this.state.newUser.photoUrl,
+	// 			location: this.state.newUser.location,
+	// 			bio: this.state.newUser.bio,
+	// 			comments: [],
+	// 			events: []
+	// 		})
+	// 		.then((res) => {
+	// 			const malesList = [ this.state.males ];
+	// 			malesList.unshift(res.data);
+	// 			this.setState({
+	// 				newMale: {
+	// 					firstName: '',
+	// 					lastName: '',
+	// 					age: '',
+	// 					photoUrl: '',
+	// 					location: '',
+	// 					bio: '',
+	// 					comments: {},
+	// 					events: {}
+	// 				},
+	// 				displayUserForm: false,
+	// 				males: malesList
+	// 			});
+	// 		});
+	// 	this.findAllMales();
+	// };
 
 	// deleteUser = () => {
 	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
@@ -92,25 +80,31 @@ export default class UserList extends Component {
 	// 	});
 	// };
 
-	handleChange = (e) => {
-		const changeNewUser = { ...this.state.newUser };
-		changeNewUser[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewUser });
-	};
+	// deleteUser = () => {
+	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
+	// 		this.setState({ redirectToUser: true });
+	// 	});
+	// };
+
+	// handleChange = (e) => {
+	// 	const changeNewUser = { ...this.state.newUser };
+	// 	changeNewUser[e.target.name] = e.target.value;
+	// 	this.setState({ newUser: changeNewUser });
+	// };
 
 	// handleSignUp = (e) => {
 	// 	e.preventDefault();
 	// 	this.createUser();
 	// };
-	  toggleUserForm = () => {
-        this.setState((state, props) => {
-            return {displayUserForm: !state.displayUserForm}
-        })
-    }
+	//   toggleUserForm = () => {
+    //     this.setState((state, props) => {
+    //         return {displayUserForm: !state.displayUserForm}
+    //     })
+    // }
 
 	render() {
 		if (this.state.redirectToUser) {
-			return <Redirect to={`/users}`} />;
+			return <Redirect to={`/males}`} />;
 		}
 		return (
 			<div>
@@ -127,7 +121,7 @@ export default class UserList extends Component {
 						marginTop: '50px'
 					}}
 				>
-					{this.state.users.map((user) => {
+					{this.state.males.map((male) => {
 						return (
 							<div
 								className="row text-center"
@@ -139,7 +133,7 @@ export default class UserList extends Component {
 							>
 								<CardGroup className="collapse-show" id="collapseExample">
 									<Card
-										key={user._id}
+										key={male._id}
 										className="text-center"
 										style={{
 											width: '16.8rem',
@@ -152,26 +146,26 @@ export default class UserList extends Component {
 											className="text-center zoom"
 											style={{ height: '250px', width: '267px' }}
 											variant="top"
-											src={user.photoUrl}
+											src={male.photoUrl}
 										/>
 
 										<Card.Body>
-											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
-											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
-											<Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text>
-											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
+											<Card.Title style={{ color: 'black' }}>{male.firstName}</Card.Title>
+											<Card.Title style={{ color: 'black' }}>{male.age}</Card.Title>
+											<Card.Text style={{ color: 'black' }}>{male.bio}</Card.Text>
+											<Card.Text style={{ color: 'black' }}>{male.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button style= {{color: 'black'}} data-toggle="collapse">Not Interested</button>
 											</div> */}
-											<div key={user._id}>
-												<Link to={`/users/${user._id}`} key={user._id}>
+											<div key={male._id}>
+												<Link to={`/males/${male._id}`} key={male._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button
-												    key={user._id}
+												    key={male._id}
 													onClick={this.toggleUserForm}
 													type="button"
 													data-toggle="collapse"

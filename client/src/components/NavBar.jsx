@@ -22,19 +22,19 @@ export default class NavBar extends Component {
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item style={{ color: 'black' }}>
-								<Link to="/users/" style={{ color: 'black' }}>
+								<Link to="/males/" style={{ color: 'black' }}>
 									Date Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item style={{ color: 'black' }}>
-								<Link to="/users" style={{ color: 'black' }}>
+								<Link to="/gaymales/" style={{ color: 'black' }}>
 									Date Gay Men
 								</Link>
 							</NavDropdown.Item>
 								<NavDropdown.Divider />
 							<NavDropdown.Item style={{ color: 'black' }}>
-								<Link to="/users" style={{ color: 'black' }}>
+								<Link to="/lesfemales/" style={{ color: 'black' }}>
 									Date Lesbian Woman
 								</Link>
 							</NavDropdown.Item>

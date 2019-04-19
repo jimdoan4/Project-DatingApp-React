@@ -18,6 +18,33 @@ const CommentSchema = new Schema({
 	lessonLearned: String
 });
 
+const MaleSchema = new Schema({
+	firstName: String,
+	lastName: String,
+	age: Number,
+	location: String,
+	photoUrl: String,
+	bio: String
+});
+
+const GaymaleSchema = new Schema({
+	firstName: String,
+	lastName: String,
+	age: Number,
+	location: String,
+	photoUrl: String,
+	bio: String
+});
+
+const LesfemaleSchema = new Schema({
+	firstName: String,
+	lastName: String,
+	age: Number,
+	location: String,
+	photoUrl: String,
+	bio: String
+});
+
 const UserSchema = new Schema({
 	userName: String,
 	password: String,
@@ -34,5 +61,8 @@ const UserSchema = new Schema({
 module.exports = {
 	CommentSchema: CommentSchema,
 	EventSchema: EventSchema,
+	MaleSchema: MaleSchema,
+	GaymaleSchema: GaymaleSchema,
+	LesfemaleSchema: LesfemaleSchema,
 	UserSchema: UserSchema
 };

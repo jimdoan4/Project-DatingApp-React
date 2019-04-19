@@ -9,11 +9,9 @@ body {
   background-color: #f7f7f7;
   background-size: cover;
   /* background-image: url('https://www.washingtonian.com/wp-content/uploads/2018/11/datingapps-istock-2048x1111.jpg'); */
-  /* opacity: 0.97; */
-  margin:0;
+   margin:0;
    padding:0;
    height:100%;
-
 }
 
 code {
