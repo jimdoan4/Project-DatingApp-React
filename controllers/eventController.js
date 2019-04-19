@@ -1,6 +1,7 @@
 const Event = require('../models/Event.js');
 const User = require('../models/User.js');
 
+
 const eventController = {
 	index: (req, res) => {
 		User.findById(req.params.userId)
@@ -24,6 +25,7 @@ const eventController = {
 				console.log(err);
 			});
 	},
+	
 	show: (req, res) => {
 		User.findById(req.params.userId)
 			.then((user) => {
@@ -34,6 +36,7 @@ const eventController = {
 				console.log(err);
 			});
 	},
+
 	update: (req, res) => {
 		User.findById(req.params.userId)
 			.then((user) => {
@@ -46,6 +49,7 @@ const eventController = {
 				console.log(err);
 			});
 	},
+
 	delete: (req, res) => {
 		User.findById(req.params.userId)
 			.then((user) => {
@@ -57,7 +61,7 @@ const eventController = {
 			.catch((err) => {
 				console.log(err);
 			});
-	}
+	},
 };
 
 module.exports = eventController;

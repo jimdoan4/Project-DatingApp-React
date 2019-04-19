@@ -11,7 +11,7 @@ export default class Home extends Component {
 				<Image
 					src="https://gq-images.condecdn.net/image/ed5oqpqRqPZ/crop/1620/f/dating_apps_1_gq_17may18_ge.jpg"
 					fluid
-					style={{ opacity: '6' }}
+					style={{ opacity: '6', width: '100%' }}
 				/>
 				{/* <ReactFilestack
 					apikey={'ANUWoYooqTeyXM5XxoW0yz'}

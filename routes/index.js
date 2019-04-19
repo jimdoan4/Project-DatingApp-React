@@ -3,8 +3,10 @@ const router = express.Router();
 const appController = require('../controllers/appController.js');
 const maleController = require('../controllers/maleController.js');
 const eventController = require('../controllers/eventController');
+const meventController = require('../controllers/meventController');
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
+const mcommentController = require('../controllers/mcommentController');
 const gaymaleController = require('../controllers/gaymaleController.js');
 const lesfemaleController = require('../controllers/lesfemaleController.js');
 
@@ -20,6 +22,18 @@ router.post('/males/', maleController.create);
 router.get('/males/:maleId/', maleController.show);
 router.put('/males/:maleId/', maleController.update);
 router.delete('/males/:maleId/', maleController.delete);
+
+router.get('/males/:maleId/mevents/', meventController.index);
+router.post('/males/:maleId/mevents/', meventController.create);
+router.get('/males/:maleId/mevents/:meventId/', meventController.show);
+router.put('/males/:maleId/mevents/:meventId/', meventController.update);
+router.delete('/males/:maleId/mevents/:meventId/', meventController.delete);
+
+router.get('/males/:maleId/mcomments/', mcommentController.index);
+router.post('/males/:maleId/mcomments/', mcommentController.create);
+router.get('/males/:maleId/mcomments/:mcommentId/', mcommentController.show);
+router.put('/males/:maleId/mcomments/:mcommentId/', mcommentController.update);
+router.delete('/males/:maleId/mcomments/:mcommentId/', mcommentController.delete);
 
 router.get('/gaymales/', gaymaleController.index);
 router.post('/gaymales/', gaymaleController.create);

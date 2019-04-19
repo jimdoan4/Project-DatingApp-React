@@ -158,7 +158,7 @@ export default class UserList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
 											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
-											<Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text>
+											{/* <Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>

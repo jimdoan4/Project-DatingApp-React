@@ -152,7 +152,7 @@ export default class MaleList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'white' }}>{male.firstName}</Card.Title>
 											<Card.Title style={{ color: 'white' }}>{male.age}</Card.Title>
-											<Card.Text style={{ color: 'white' }}>{male.bio}</Card.Text>
+											{/* <Card.Text style={{ color: 'white' }}>{male.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'white' }}>{male.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>

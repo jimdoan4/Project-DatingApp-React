@@ -153,7 +153,7 @@ export default class LesfemaleList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'white' }}>{lesfemale.firstName}</Card.Title>
 											<Card.Title style={{ color: 'white' }}>{lesfemale.age}</Card.Title>
-											<Card.Text style={{ color: 'white' }}>{lesfemale.bio}</Card.Text>
+											{/* <Card.Text style={{ color: 'white' }}>{lesfemale.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'white' }}>{lesfemale.location}</Card.Text>
 											{/* <div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>

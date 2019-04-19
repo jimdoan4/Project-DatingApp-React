@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MalePage from './MalePage';
-// import CommentPage from './CommentPage';
-// import EventPage from './EventPage';
+import MeventPage from './MeventPage';
+import McommentPage from './McommentPage';
 
 export default class MaleShowPage extends Component {
 	state = {
@@ -21,13 +21,13 @@ export default class MaleShowPage extends Component {
 					>
 						<MalePage maleId={this.state.maleId} />
 					</div>
-					{/* <div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-4">
-						<EventPage userId={this.state.userId} />
+					<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-4">
+						<MeventPage maleId={this.state.maleId} />
 
 						<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-4">
-							<CommentPage userId={this.state.userId} /> */}
-						{/* </div> */}
-					{/* </div> */}
+							<McommentPage maleId={this.state.maleId} />
+						</div>
+					</div>
 				</div>
 			</div>
 		);
