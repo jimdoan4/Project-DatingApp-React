@@ -43,7 +43,7 @@ export default class LesfemalePage extends Component {
 	};
 
 	handleChange = (e) => {
-		const updatedLesfemale = { ...this.state.gaymale };
+		const updatedLesfemale = { ...this.state.lesfemale };
 		updatedLesfemale[e.target.name] = e.target.value;
 		this.setState({ lesfemale: updatedLesfemale });
 	};
@@ -57,11 +57,11 @@ export default class LesfemalePage extends Component {
 	updateLesfemale = (e) => {
 		e.preventDefault();
 		axios
-			.put(`/api/lesfemale/${this.state.lesfemaleId}`, {
+			.put(`/api/lesfemales/${this.state.lesfemaleId}`, {
 				firstName: this.state.lesfemale.firstName,
 				lastName: this.state.lesfemale.lastName,
-				age: this.state.gaymale.age,
-				photoUrl: this.state.glesfemale.photoUrl,
+				age: this.state.lesfemale.age,
+				photoUrl: this.state.lesfemale.photoUrl,
 				location: this.state.lesfemale.location,
 				bio: this.state.lesfemale.bio,
 				comments: {},
@@ -74,7 +74,7 @@ export default class LesfemalePage extends Component {
 	};
 
 	deleteLesfemale = () => {
-		axios.delete(`/api/lesfemale/${this.state.lesfemaleId}`).then((res) => {
+		axios.delete(`/api/lesfemales/${this.state.lesfemaleId}`).then((res) => {
 			this.setState({ redirectToLesfemale: true });
 		});
 	};

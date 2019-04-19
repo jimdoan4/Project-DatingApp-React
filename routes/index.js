@@ -9,6 +9,11 @@ const gaymaleController = require('../controllers/gaymaleController.js');
 const lesfemaleController = require('../controllers/lesfemaleController.js');
 
 router.get('/', appController.index);
+router.get('/lesfemales/', lesfemaleController.index);
+router.post('/lesfemales/', lesfemaleController.create);
+router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
+router.put('/lesfemales/:lesfemaleId/', lesfemaleController.update);
+router.delete('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
 
 router.get('/males/', maleController.index);
 router.post('/males/', maleController.create);
@@ -21,12 +26,6 @@ router.post('/gaymales/', gaymaleController.create);
 router.get('/gaymales/:gaymaleId/', gaymaleController.show);
 router.put('/gaymales/:gaymaleId/', gaymaleController.update);
 router.delete('/gaymales/:gaymaleId/', gaymaleController.delete);
-
-router.get('/lesfemales/', lesfemaleController.index);
-router.post('/lesfemales/', lesfemaleController.create);
-router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
-router.put('/lesfemales/:lesfemaleId/', lesfemaleController.update);
-router.delete('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
 
 router.get('/users/', userController.index);
 router.post('/users/', userController.create);
