@@ -12,12 +12,14 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div>
+				<div className= 'containers'>
 				<Image
-					src="https://gq-images.condecdn.net/image/ed5oqpqRqPZ/crop/1620/f/dating_apps_1_gq_17may18_ge.jpg"
+					src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
 					fluid
 					style={{ opacity: '6', width: '100%' }}
 				/>
-
+				<div className='centered'><p className='centered'>Get Lucky today.</p><p> Find your Match.</p></div>
+</div>
 				<ul
 					style={{ marginTop: '50px', marginLeft: '100px', marginRight: '100px', marginBottom: '40px' }}
 					className="list-unstyled"

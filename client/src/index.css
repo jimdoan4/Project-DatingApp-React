@@ -41,3 +41,19 @@ code {
 a {
   color: black;
 }
+.containers {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+.centered {
+  position: absolute;
+  top: 54%;
+  left: 2%;
+ 
+  /* transform: translate(-50%, -50%); */
+  font-size: 56px;
+font-family: 'Noticia Text', serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Bungee Inline', cursive;
+}

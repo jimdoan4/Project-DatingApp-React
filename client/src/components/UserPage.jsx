@@ -95,7 +95,7 @@ export default class UserPage extends Component {
 					<div style={{ marginTop: '30px', marginBottom: '30px' }}>
 						<Card
 							className="container"
-							style={{ width: '22rem', marginBottom: '10px', backgroundColor: '#efe8e8' }}
+							style={{ width: '28rem', marginBottom: '10px', backgroundColor: '#efe8e8' }}
 						>
 							<Card>
 								<Card.Img className="zoom" variant="top" src={this.state.user.photoUrl} alt="top" />
