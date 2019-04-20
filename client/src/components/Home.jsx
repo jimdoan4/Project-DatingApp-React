@@ -8,18 +8,53 @@ import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 
 export default class Home extends Component {
-
 	render() {
 		return (
 			<div>
-				<div className= 'containers'>
-				<Image
-					src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
-					fluid
-					style={{ opacity: '6', width: '100%' }}
-				/>
-				<div className='centered'><p className='centered'>Get Lucky today.</p><p> Find your Match.</p></div>
-</div>
+				<div className="containers">
+					<Image
+						src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
+						fluid
+						style={{ opacity: '.9', width: '100%' }}
+					/>
+					<div className="centered">
+						<p>Get Lucky today.</p>
+						<p> Find your Match.</p>
+					</div>
+				</div>
+				<Container className="text-center">
+					<h1>New members. Check them out!</h1>
+					<Row>
+						<Row style={{ marginRight: '20px' }} xs>
+							<img
+								className="centered"
+								width={284}
+								height={294}
+								className="mr-3"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginRight: '20px' }} xs={{ order: 12 }}>
+							<img
+								width={284}
+								height={294}
+								className="mr-3"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row xs={{ order: 1 }}>
+							<img
+								width={284}
+								height={294}
+								className="mr-3"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+					</Row>
+				</Container>
 				<ul
 					style={{ marginTop: '50px', marginLeft: '100px', marginRight: '100px', marginBottom: '40px' }}
 					className="list-unstyled"
@@ -81,33 +116,6 @@ export default class Home extends Component {
 						</Media.Body>
 					</Media>
 				</ul>
-				<Container>
-  <Row>
-    <Row style= {{ marginRight: '20px' }} xs><img
-							
-							width={284}
-							height={294}
-							className="mr-3"
-							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-							alt="Generic placeholder"
-						/></Row>
-    <Row style= {{ marginRight: '20px' }} xs={{ order: 12 }}><img
-							width={284}
-							height={294}
-							className="mr-3"
-							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-							alt="Generic placeholder"
-						/></Row>
-    <Row xs={{ order: 1 }}><img
-							width={284}
-							height={294}
-							className="mr-3"
-							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-							alt="Generic placeholder"
-						/></Row>
-						 
-  </Row>
-</Container>
 			</div>
 		);
 	}
