@@ -8,7 +8,7 @@ const Event = require('../models/Event.js');
 const Mevent = require('../models/Mevent.js');
 const Male = require('../models/Male.js');
 const Gaymale = require('../models/Gaymale.js');
-const Lesfemale = require('../models/Lesfemale.js');
+const Lesfemales = require('../models/Lesfemales.js');
 
 const ihop = new Event({
 	eventName: 'Houstons Bar and Grill',
