@@ -8,7 +8,7 @@ const Event = require('../models/Event.js');
 const Mevent = require('../models/Mevent.js');
 const Male = require('../models/Male.js');
 const Gaymale = require('../models/Gaymale.js');
-const Lesfemales = require('../models/Lesfemales.js');
+const Lesfemale = require('../models/Lesfemale.js');
 
 const ihop = new Event({
 	eventName: 'Houstons Bar and Grill',
@@ -315,7 +315,7 @@ const gm12 = new Gaymale({
 });
 
 //female
-const f1 = new Lesfemales({
+const f1 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -327,7 +327,7 @@ const f1 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f2 = new Lesfemales({
+const f2 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -339,7 +339,7 @@ const f2 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f3 = new Lesfemales({
+const f3 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -351,7 +351,7 @@ const f3 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f4 = new Lesfemales({
+const f4 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -363,7 +363,7 @@ const f4 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f5 = new Lesfemales({
+const f5 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -375,7 +375,7 @@ const f5 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f6 = new Lesfemales({
+const f6 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://cdn.executiveponies.com/media/catalog/product/t/n/tn_dancing_mood_dress_in_black_sequin.jpg',
@@ -386,7 +386,7 @@ const f6 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f7 = new Lesfemales({
+const f7 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -398,7 +398,7 @@ const f7 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f8 = new Lesfemales({
+const f8 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg',
@@ -409,7 +409,7 @@ const f8 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f9 = new Lesfemales({
+const f9 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -421,7 +421,7 @@ const f9 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f10 = new Lesfemales({
+const f10 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
@@ -432,7 +432,7 @@ const f10 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f11 = new Lesfemales({
+const f11 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://assets.capitalfm.com/2018/23/lilliya-scarlett-instagram-1528814125-custom-0.png',
@@ -443,7 +443,7 @@ const f11 = new Lesfemales({
 	comments: [ great ]
 });
 
-const f12 = new Lesfemales({
+const f12 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -634,7 +634,7 @@ Male.deleteMany({})
 	.then(() => m11.save())
 	.then(() => m12.save());
 // .then(() => console.log('Successful Save'));
-Lesfemales.deleteMany({})
+Lesfemale.deleteMany({})
 	.then(() => f1.save())
 	.then(() => f2.save())
 	.then(() => f3.save())

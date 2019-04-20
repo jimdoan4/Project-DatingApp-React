@@ -1,4 +1,4 @@
-const Lesfemales = require('../models/Lesfemales.js');
+const Lesfemale = require('../models/Lesfemale.js');
 
 const lesfemaleController = {
    index: (req, res) => {
