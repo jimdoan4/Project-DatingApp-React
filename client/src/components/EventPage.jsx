@@ -8,6 +8,7 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export default class EventPage extends Component {
 	state = {
@@ -117,14 +118,18 @@ export default class EventPage extends Component {
 		}
 		return (
 			<div>
+				<h3>Set up a Date with your MATCH</h3>
+							<button onClick= {this.toggleEventForm}>List of Scheduled Events</button>
 				{this.state.events.map((event) => {
 					return (
-						<div>
-							<h3>Set up a Date with your MATCH</h3>
-							<button onClick= {this.toggleEventForm}>List of Scheduled Events</button>
+						
+						<div className= ''>
+							
 							 {
           this.state.displayEventForm ?
 							// <Card>
+							<Col>
+								
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 								
 									<p>
@@ -137,17 +142,16 @@ export default class EventPage extends Component {
 											<p>what time is the event? {event.time}</p>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 												<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}><button>Edit Event</button></Link>
-								</Card> :
-							// </Card> :
+								</Card> 
+					
+							</Col> :
 							null
 							 }
 						</div> 
 						
 					);
 				})}
-				{/* <br /> */}
-				{/* <br />
-				 */}
+			
 				 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add an Event</button>
         {
           this.state.displayEditForm ?

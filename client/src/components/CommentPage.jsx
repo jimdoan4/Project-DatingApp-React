@@ -8,6 +8,7 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export default class CommentPage extends Component {
 	state = {
@@ -121,28 +122,33 @@ export default class CommentPage extends Component {
 		}
 		return (
 			<div>
+				<h3>Write A Review about Your DATE</h3>
+							<button onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</button>
 				{this.state.comments.map((comment) => {
 					return (
-						<div>
-							<h3>Write A Review about Your DATE</h3>
-							<button onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</button>
-							 {
-          this.state.displayCommentForm ?
 						
+						<div className= 'row'>
+							
+							 {
+		  this.state.displayCommentForm ?
+		  
+						<Col>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
-									<p>
+									
 									
 									<p>
 											Who was my date? {comment.withWho}
 										</p>
-									</p>
+									
 									<p>Rating for this date: {comment.rating}</p>
 									<p>Would I go on a second date? {comment.dateAgain}</p>
 									<p>What is your review of this date? {comment.review}</p>
 									<p>What did I learn from this date? {comment.lessonLearned}</p>
 										<Link to={`/users/${this.state.userId}/comments/${comment._id}`} key={comment._id}><button>Edit Review</button></Link>
-								</Card> :
-							null
+								</Card> 
+							
+							 </Col> :
+							 null
 							 }
 						</div>
 					);

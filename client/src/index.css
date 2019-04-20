@@ -119,20 +119,32 @@ a {
 
 .centered {
   position: absolute;
-  top: 54%;
+  top: 34%;
   left: 2%;
-
-  /* transform: translate(-50%, -50%); */
   font-size: 56px;
-  /* font-family: 'Noticia Text', serif;
-  font-family: 'Noto Sans', sans-serif;
-  font-family: 'Bungee Inline', cursive; */
   font-family: 'Noticia Text', serif;
 font-family: 'Noto Sans', sans-serif;
 font-family: 'Bungee Inline', cursive;
 font-family: 'Nobile', sans-serif;
 }
 
+.centereds {
+  border: none;
+   box-shadow: 1px 1px#f7f7f7;
+  position: absolute;
+  top: 74%;
+  left: 0%;
+  font-size: 13px;
+  font-family: 'Noticia Text', serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Nobile', sans-serif;
+}
+.homebox {
+     box-shadow: 1px 1px #f7f7f7;
+      border: none;
+      background-color: #f7f7f7;
+}
 .one {
   position: absolute;
   height: 100%;

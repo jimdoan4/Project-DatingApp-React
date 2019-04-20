@@ -117,26 +117,30 @@ export default class MeventPage extends Component {
 		}
 		return (
 			<div>
+					<h3>Set up a Date with your MATCH</h3>
+							<button onClick= {this.toggleDateForm}>List of Scheduled Events</button>
 				{this.state.mevents.map((mevent) => {
 					return (
 						<div>
-							<h3>Set up a Date with your MATCH</h3>
-							<Button onClick= {this.toggleDateForm}>List of Scheduled Events</Button>
+						
 							 {
-          this.state.displayDateForm ?
-							<Card>
+		  this.state.displayDateForm ?
+		  <Col>
+							
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
-								<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button>Edit</button></Link>
-									<Card.Title>
+								
+									<p>
 										Event Name: {mevent.eventName}
-									</Card.Title>
-									<Card.Title>Time: {mevent.time}</Card.Title>
-									<Card.Title>Average Price: {mevent.price}</Card.Title>
-										<Card.Title>Who is my date? {mevent.withWho}</Card.Title>
-											<Card.Title>what time is the event? {mevent.time}</Card.Title>
+									</p>
+									<p>Time: {mevent.time}</p>
+									<p>Average Price: {mevent.price}</p>
+										<p>Who is my date? {mevent.withWho}</p>
+											<p>what time is the event? {mevent.time}</p>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-								</Card>
-							</Card> :
+												<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button>Edit Event</button></Link>
+							
+							</Card> 
+							</Col> :
 							null 
 							 }
 						</div>

@@ -6,6 +6,7 @@ import { Image } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Jumbotron } from 'react-bootstrap';
 
 export default class Home extends Component {
@@ -32,19 +33,63 @@ export default class Home extends Component {
 							<p> Find your Match.</p>
 							</Container>
 					</div>
-					{/* <Card
-						style={{ paddingBottom: '70px', backgroundColor: 'white', opacity: '.8', position: 'absolute' }}
-						className="centered text-center frontpage"
+					<Card
+						style={{ paddingBottom: '4px', backgroundColor: '#f7f7f7', opacity: '6', position: 'absolute' }}
+						className="centereds text-center"
 					>
-						<Container style= {{marginTop: '120px'}}>
-						<p>Get Lucky today.</p>
-							<p> Find your Match.</p>
+						<Container style= {{marginTop: '20px'}}>
+						 <Row>
+							 <Col>
+						<Card className= 'homebox' style={{ width: '14rem', height: '14rem' }}>
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Card.Link href="#">Card Link</Card.Link>
+    <Card.Link href="#">Another Link</Card.Link>
+  </Card.Body>
+</Card>
+</Col>
+ <Col>
+						<Card className= 'homebox' style={{ width: '14rem', height: '14rem' }}>
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Card.Link href="#">Card Link</Card.Link>
+    <Card.Link href="#">Another Link</Card.Link>
+  </Card.Body>
+</Card>
+</Col>
+ <Col>
+						<Card className= 'homebox' style={{ width: '14rem', height: '14rem' }}>
+  <Card.Body>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Card.Link href="#">Card Link</Card.Link>
+    <Card.Link href="#">Another Link</Card.Link>
+  </Card.Body>
+</Card>
+</Col>
+</Row>
 							</Container>
-					</Card> */}
+					</Card>
+
 				</div>
+
 				<div style= {{backgroundColor: '', width: '100%', paddingBottom: '74px', paddingTop: '16px', opacity: ''}}>
 				<Container className="text-center">
-					<h1 className="members" style={{ marginTop: '30px', marginBottom: '50px' }}>
+					<h1 className="members" style={{ marginTop: '100px', marginBottom: '50px' }}>
 						New members. Check them out!
 					</h1>
 					<Row>

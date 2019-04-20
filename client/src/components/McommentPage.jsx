@@ -120,29 +120,30 @@ export default class McommentPage extends Component {
 		}
 		return (
 			<div>
+				<h3>Write A Review about Your DATE</h3>
+							<button onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
-							<h3>Write A Review about Your DATE</h3>
-							<Button onClick= {this.toggleReviewForm}>List of Scheduled Events</Button>
+							
 							 {
-          this.state.displayReviewForm ?
-							<Card>
+		  this.state.displayReviewForm ?
+		  <Col>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
-									<p>
-										<Link
-											to={`/males/${this.state.maleId}/mcomments/${mcomment._id}`}
-											key={mcomment._id}
-										>
-											Who was my date? {mcomment.withWho}
-										</Link>
-									</p>
 									<p>Rating for this date: {mcomment.rating}</p>
 									<p>Would I go on a second date? {mcomment.dateAgain}</p>
 									<p>What is your review of this date? {mcomment.review}</p>
 									<p>What did I learn from this date? {mcomment.lessonLearned}</p>
-								</Card>
-							</Card> :
+										<p>
+											Who was my date? {mcomment.withWho}</p>
+												<Link
+											to={`/males/${this.state.maleId}/mcomments/${mcomment._id}`}
+											key={mcomment._id}
+										><button>Edit Review</button>
+										</Link>
+								
+							</Card> 
+							</Col> :
 							null
 							 }
 						</div>
