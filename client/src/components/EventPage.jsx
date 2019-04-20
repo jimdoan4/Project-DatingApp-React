@@ -119,6 +119,7 @@ export default class EventPage extends Component {
 										Event Name: {event.eventName}
 									</Link>
 									</Card.Title>
+									<Card.Title>Time: {event.time}</Card.Title>
 									<Card.Title>Average Price: {event.price}</Card.Title>
 										<Card.Title>Who is my date? {event.withWho}</Card.Title>
 											<Card.Title>what time is the event? {event.time}</Card.Title>
@@ -128,15 +129,15 @@ export default class EventPage extends Component {
 						</div>
 					);
 				})}
-				<br />
+				{/* <br /> */}
 				{/* <br />
 				 */}
-				 	 <button className="" onClick={this.toggleEditForm}>Add an Event</button>
+				 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add an Event</button>
         {
           this.state.displayEditForm ?
 				 <div className="container">
 			
-					<Card className="container" style={{ width: '25rem', height: '35.8rem' }}>
+					<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
 					
 						 <Form
 							className="text-center"
@@ -147,6 +148,7 @@ export default class EventPage extends Component {
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="eventName">Event Name</Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
 										name="eventName"
 										onChange={this.handleChange}
@@ -159,7 +161,8 @@ export default class EventPage extends Component {
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="time">Time:  </Form.Label>
 									<Form.Control
-										type="text"
+									className= 'text-center'
+										type="number"
 										name="time"
 										onChange={this.handleChange}
 										value={this.state.newEvent.time}
@@ -171,7 +174,8 @@ export default class EventPage extends Component {
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="price">Price? </Form.Label>
 									<Form.Control
-										type="text"
+									className= 'text-center'
+										type="number"
 										name="price"
 										onChange={this.handleChange}
 										value={this.state.newEvent.price}
@@ -181,13 +185,27 @@ export default class EventPage extends Component {
 							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="photoUrl">Picture:  </Form.Label>
+									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
-										name="photoUrl"
+										name="withWho"
 										onChange={this.handleChange}
-										value={this.state.newEvent.photoUrl}
-										placeholder="Add a Photo of your Date"
+										value={this.state.newEvent.withWho}
+										placeholder="Enter your date's name"
+									/>
+								</Form.Group>
+							</Form.Row>
+								<Form.Row>
+								<Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Control
+									className= 'text-center'
+										type="text"
+										name="withWho"
+										onChange={this.handleChange}
+										value={this.state.newEvent.withWho}
+										placeholder="Enter your date's name"
 									/>
 								</Form.Group>
 							</Form.Row>
@@ -200,8 +218,8 @@ export default class EventPage extends Component {
 										marginRight: '140px',
 										paddingLeft: '60px',
 										paddingRight: '60px',
-										marginTop: '15px',
-										marginBottom: '25px'
+										marginTop: '1px',
+										marginBottom: '15px'
 									}}
 								>
 									Add Event

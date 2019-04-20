@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import UserPage from './UserPage';
 import CommentPage from './CommentPage';
 import EventPage from './EventPage';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 export default class UserShowPage extends Component {
 	state = {
@@ -10,8 +13,22 @@ export default class UserShowPage extends Component {
 
 	render() {
 		return (
-			<div className="container" style={{ marginTop: '10px' }}>
-				<div className="row">
+			<div style={{ marginTop: '10px' }}>
+			<Container>
+  <Row className="justify-content-md-center text-center">
+    
+    <Col md="auto"><UserPage userId={this.state.userId} /></Col>
+   
+  </Row>
+  <Row>
+    <Col className= 'text-center'><EventPage userId={this.state.userId} /></Col>
+    {/* <Col md="auto">Variable width content</Col> */}
+    <Col className= 'text-center'>
+      <CommentPage userId={this.state.userId} />
+    </Col>
+  </Row>
+</Container>
+				{/* <div className="row">
 					<div
 						style={{
 							marginLeft: '70px',
@@ -28,8 +45,9 @@ export default class UserShowPage extends Component {
 							<CommentPage userId={this.state.userId} />
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		);
 	}
 }
+

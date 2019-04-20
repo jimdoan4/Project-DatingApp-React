@@ -118,7 +118,7 @@ export default class CommentPage extends Component {
 					return (
 						<div>
 							<Card>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
 									<p>
 										<Link
 											to={`/users/${this.state.userId}/comments/${comment._id}`}
@@ -136,34 +136,23 @@ export default class CommentPage extends Component {
 						</div>
 					);
 				})}
-				<br />
-				<br />
-				 <button className="" onClick={this.toggleEditForm}>Add a Review</button>
+				{/* {/* <br /> */}
+				{/* <br /> */}
+				 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add a Review</button>
 				   {
           this.state.displayEditForm ?
-				<div className="container">
+				<div className="container text-center">
 					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"
 							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
 							onSubmit={this.createComment}
 						>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
-									<Form.Control
-										type="text"
-										name="dateAgain"
-										onChange={this.handleChange}
-										value={this.state.newComment.dateAgain}
-										placeholder="Data Again? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
+						<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
 										name="withWho"
 										onChange={this.handleChange}
@@ -176,7 +165,8 @@ export default class CommentPage extends Component {
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="rating">Rating? </Form.Label>
 									<Form.Control
-										type="text"
+									className= 'text-center'
+										type="number"
 										name="rating"
 										onChange={this.handleChange}
 										value={this.state.newComment.rating}
@@ -186,8 +176,24 @@ export default class CommentPage extends Component {
 							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
+									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
+									<Form.Control
+									className= 'text-center'
+										type="text"
+										name="dateAgain"
+										onChange={this.handleChange}
+										value={this.state.newComment.dateAgain}
+										placeholder="Data Again? "
+									/>
+								</Form.Group>
+							</Form.Row>
+							
+							
+							<Form.Row>
+								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
 										name="review"
 										onChange={this.handleChange}
@@ -200,6 +206,7 @@ export default class CommentPage extends Component {
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="lessonLearned">What did you learn from your date?  </Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
 										name="lessonLearned"
 										onChange={this.handleChange}
@@ -217,7 +224,7 @@ export default class CommentPage extends Component {
 										marginRight: '140px',
 										paddingLeft: '30px',
 										paddingRight: '30px',
-										marginTop: '15px',
+										marginTop: '10px',
 										marginBottom: '25px'
 									}}
 								>

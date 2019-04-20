@@ -119,20 +119,23 @@ export default class MeventPage extends Component {
 										Event Name: {mevent.eventName}
 									</Link>
 									</Card.Title>
+									<Card.Title>Time: {mevent.time}</Card.Title>
 									<Card.Title>Average Price: {mevent.price}</Card.Title>
 										<Card.Title>Who is my date? {mevent.withWho}</Card.Title>
 											<Card.Title>what time is the event? {mevent.time}</Card.Title>
-											
+												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 								</Card>
 							</Card>
 						</div>
 					);
 				})}
 				<br />
-			
+						 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleMeventForm}>Add an Event</button>
+        {
+          this.state.displayMeventForm ?
 				 <div className="container">
 				 
-					<Card className="container" style={{ width: '25rem', height: '35.8rem' }}>
+					<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
 					
 						 <Form
 							className="text-center"
@@ -143,6 +146,7 @@ export default class MeventPage extends Component {
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="eventName">Event Name</Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
 										name="eventName"
 										onChange={this.handleChange}
@@ -155,7 +159,8 @@ export default class MeventPage extends Component {
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="time">Time:  </Form.Label>
 									<Form.Control
-										type="text"
+									className= 'text-center'
+										type="number"
 										name="time"
 										onChange={this.handleChange}
 										value={this.state.newMevent.time}
@@ -167,7 +172,8 @@ export default class MeventPage extends Component {
 								<Form.Group as={Col} controlId="formGridPassword">
 									<Form.Label htmlFor="price">Price? </Form.Label>
 									<Form.Control
-										type="text"
+									className= 'text-center'
+										type="number"
 										name="price"
 										onChange={this.handleChange}
 										value={this.state.newMevent.price}
@@ -177,13 +183,27 @@ export default class MeventPage extends Component {
 							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="photoUrl">Picture:  </Form.Label>
+									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
 									<Form.Control
+									className= 'text-center'
 										type="text"
-										name="photoUrl"
+										name="withWho"
 										onChange={this.handleChange}
-										value={this.state.newMevent.photoUrl}
-										placeholder="Add a Photo of your Date"
+										value={this.state.newMevent.withWho}
+										placeholder="Enter your date's name"
+									/>
+								</Form.Group>
+							</Form.Row>
+								<Form.Row>
+								<Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Control
+									className= 'text-center'
+										type="text"
+										name="withWho"
+										onChange={this.handleChange}
+										value={this.state.newMevent.withWho}
+										placeholder="Enter your date's name"
 									/>
 								</Form.Group>
 							</Form.Row>
@@ -196,18 +216,40 @@ export default class MeventPage extends Component {
 										marginRight: '140px',
 										paddingLeft: '60px',
 										paddingRight: '60px',
-										marginTop: '15px',
-										marginBottom: '25px'
+										marginTop: '1px',
+										marginBottom: '15px'
 									}}
 								>
 									Add Event
 								</button>
-								
+								{/* <Link
+											className="text-center"
+											to={`users/${this.state.userId}/events/${event._id}`}
+										> */}
+								{/* <Button
+								// onClick = {this.deleteEvent}
+								className='text-center'
+								variant="primary"
+								type="submit"
+								style={{
+									marginRight: '140px',
+									paddingLeft: '30px',
+									paddingRight: '30px',
+									marginTop: '7px',
+									marginBottom: '25px'
+									
+								}}
+							>
+								Edit Event
+							</Button> */}
+								{/* </Link> */}
 							</div>
 						</Form>
-					</Card>
+					</Card> 
 					
-				</div>
+				</div> :
+				null
+						}
 				
 			</div>
 			

@@ -92,10 +92,10 @@ export default class UserPage extends Component {
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
 				<form onSubmit={this.updateUser}>
-					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
+					<div style={{ marginTop: '30px', marginBottom: '30px' }}>
 						<Card
 							className="container"
-							style={{ width: '24rem', marginBottom: '20px', backgroundColor: '#efe8e8' }}
+							style={{ width: '22rem', marginBottom: '10px', backgroundColor: '#efe8e8' }}
 						>
 							<Card>
 								<Card.Img className="zoom" variant="top" src={this.state.user.photoUrl} alt="top" />

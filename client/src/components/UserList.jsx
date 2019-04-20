@@ -29,7 +29,7 @@ export default class UserList extends Component {
 			events: []
 		},
 		redirectToUser: false,
-		displayUserForm: true,
+		// displayUserForm: !false,
 		userId: this.props.match.params.userId
 	};
 
@@ -42,6 +42,7 @@ export default class UserList extends Component {
 			this.setState({ users: res.data });
 		});
 	};
+
 
 	createUser = (e) => {
 		axios
@@ -86,11 +87,6 @@ export default class UserList extends Component {
 		});
 	};
 
-	// deleteUser = () => {
-	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
-	// 		this.setState({ redirectToUser: true });
-	// 	});
-	// };
 
 	handleChange = (e) => {
 		const changeNewUser = { ...this.state.newUser };
@@ -101,9 +97,11 @@ export default class UserList extends Component {
 
 	toggleUserForm = () => {
         this.setState((state, props) => {
-            return {displayUserForm: state.displayUserForm}
+            return {displayUserForm: !state.displayUserForm}
         })
-    }
+	}
+
+
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -116,8 +114,8 @@ export default class UserList extends Component {
 						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
 					</Container>
 				</Jumbotron> */}
-		{
-          this.state.displayUserForm ?
+		{/* {
+          this.state.displayUserForms ? */}
 				<div
 					className="row"
 					style={{
@@ -171,12 +169,9 @@ export default class UserList extends Component {
 												</Link>
 												<button
 												    key={user._id}
-													onClick={this.toggleUserForm}
+													// onClick={this.toggleUsersForm}
 													type="button"
-													data-toggle="collapse"
-													data-target="#collapseExample"
-													aria-expanded="false"
-													aria-controls="collapseExample"
+									
 													style={{ color: 'black' }}
 												>
 													 Not Interested

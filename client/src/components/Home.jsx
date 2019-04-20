@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 // import { Redirect, Link } from 'react-router-dom';
 import { Media } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export default class Home extends Component {
 
@@ -21,8 +24,8 @@ export default class Home extends Component {
 				>
 					<Media as="li">
 						<img
-							width={64}
-							height={64}
+							width={284}
+							height={294}
 							className="mr-3"
 							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 							alt="Generic placeholder"
@@ -40,8 +43,8 @@ export default class Home extends Component {
 
 					<Media as="li">
 						<img
-							width={64}
-							height={64}
+							width={284}
+							height={294}
 							className="mr-3"
 							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 							alt="Generic placeholder"
@@ -59,8 +62,8 @@ export default class Home extends Component {
 
 					<Media as="li">
 						<img
-							width={64}
-							height={64}
+							width={284}
+							height={294}
 							className="mr-3"
 							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 							alt="Generic placeholder"
@@ -76,8 +79,33 @@ export default class Home extends Component {
 						</Media.Body>
 					</Media>
 				</ul>
-				{/* <ProgressBar now={60} /> */}
-				{/* <button><a href="http://localhost:8888"> Login to Spotify </a></button> */}
+				<Container>
+  <Row>
+    <Row style= {{ marginRight: '20px' }} xs><img
+							
+							width={284}
+							height={294}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/></Row>
+    <Row style= {{ marginRight: '20px' }} xs={{ order: 12 }}><img
+							width={284}
+							height={294}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/></Row>
+    <Row xs={{ order: 1 }}><img
+							width={284}
+							height={294}
+							className="mr-3"
+							src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+							alt="Generic placeholder"
+						/></Row>
+						 
+  </Row>
+</Container>
 			</div>
 		);
 	}
