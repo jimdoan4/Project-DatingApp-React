@@ -126,9 +126,9 @@ export default class MeventPage extends Component {
           this.state.displayDateForm ?
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
-									<Card.Title><Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}>
+								<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button>Edit</button></Link>
+									<Card.Title>
 										Event Name: {mevent.eventName}
-									</Link>
 									</Card.Title>
 									<Card.Title>Time: {mevent.time}</Card.Title>
 									<Card.Title>Average Price: {mevent.price}</Card.Title>

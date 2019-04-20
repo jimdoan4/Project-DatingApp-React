@@ -180,7 +180,7 @@ export default class SingleComment extends Component {
 									borderColor: 'black'
 								}}
 							>
-								Edit Comment
+								Edit Review
 							</button>
 							<button
 								style={{
@@ -194,7 +194,7 @@ export default class SingleComment extends Component {
 								}}
 								onClick={this.deleteComment}
 							>
-								Delete Comment
+								Delete Review
 							</button>
 						</div>
 					</div>

@@ -121,22 +121,24 @@ export default class EventPage extends Component {
 					return (
 						<div>
 							<h3>Set up a Date with your MATCH</h3>
-							<Button onClick= {this.toggleEventForm}>List of Scheduled Events</Button>
+							<button onClick= {this.toggleEventForm}>List of Scheduled Events</button>
 							 {
           this.state.displayEventForm ?
-							<Card>
+							// <Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
-									<Card.Title><Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
+								
+									<p>
 										Event Name: {event.eventName}
-									</Link>
-									</Card.Title>
-									<Card.Title>Time: {event.time}</Card.Title>
-									<Card.Title>Average Price: {event.price}</Card.Title>
-										<Card.Title>Who is my date? {event.withWho}</Card.Title>
-											<Card.Title>what time is the event? {event.time}</Card.Title>
+									
+									</p>
+									<p>Time: {event.time}</p>
+									<p>Average Price: {event.price}</p>
+										<p>Who is my date? {event.withWho}</p>
+											<p>what time is the event? {event.time}</p>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-								</Card>
-							</Card> :
+												<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}><button>Edit Event</button></Link>
+								</Card> :
+							// </Card> :
 							null
 							 }
 						</div> 
