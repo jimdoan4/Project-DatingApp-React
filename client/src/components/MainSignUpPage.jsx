@@ -9,30 +9,36 @@ import { Col } from 'react-bootstrap';
 
 export default class MainSignUpPage extends Component {
 	state = {
-        userId: this.props.match.params.userId,
-        maleId: this.props.match.params.maleId,
-        gaymaleId: this.props.match.params.gaymaleId,
-        lesfemaleId: this.props.match.params.lesfemaleId
+		userId: this.props.match.params.userId,
+		maleId: this.props.match.params.maleId,
+		gaymaleId: this.props.match.params.gaymaleId,
+		lesfemaleId: this.props.match.params.lesfemaleId
 	};
 
 	render() {
 		return (
-			<div style= {{ marginBottom: '524px' }} className= 'text-center'>
-            <h1>Choose Your Preference</h1>
-	<Container>
-  <Row>
-    <Col><UserLog userId={this.state.userId} /></Col>
-  
-    <Col><MaleSignUp maleId={this.state.maleId} /></Col>
+			<div className="one" style={{ marginBottom: '524px' }} className="text-center">
+				<h1 style={{ marginTop: '43px' }}>Choose Your Preference</h1>
+				<Container>
+					<Row>
+						<Col>
+							<UserLog userId={this.state.userId} />
+						</Col>
 
-    <Col><FemaleSignUp lesfemaleId={this.state.lesfemaleId} /></Col>
- 
-    <Col><GaySignUp gaymaleId={this.state.gaymaleId} /></Col>
-  </Row>
-</Container>
+						<Col>
+							<MaleSignUp maleId={this.state.maleId} />
+						</Col>
+
+						<Col>
+							<FemaleSignUp lesfemaleId={this.state.lesfemaleId} />
+						</Col>
+
+						<Col>
+							<GaySignUp gaymaleId={this.state.gaymaleId} />
+						</Col>
+					</Row>
+				</Container>
 			</div>
 		);
 	}
 }
-
- 

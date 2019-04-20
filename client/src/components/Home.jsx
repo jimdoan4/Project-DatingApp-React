@@ -23,9 +23,9 @@ export default class Home extends Component {
 					</div>
 				</div>
 				<Container className="text-center">
-					<h1>New members. Check them out!</h1>
+					<h1 style={{ marginTop: '55px' }}>New members. Check them out!</h1>
 					<Row>
-						<Row style={{ marginRight: '20px' }} xs>
+						<Row style={{ marginLeft: '130px' }} xs>
 							<img
 								className="centered"
 								width={284}
@@ -55,6 +55,9 @@ export default class Home extends Component {
 						</Row>
 					</Row>
 				</Container>
+				<h1 style={{ marginTop: '55px' }} className="text-center">
+					Member of the Week!
+				</h1>
 				<ul
 					style={{ marginTop: '50px', marginLeft: '100px', marginRight: '100px', marginBottom: '40px' }}
 					className="list-unstyled"
@@ -115,6 +118,9 @@ export default class Home extends Component {
 							</p>
 						</Media.Body>
 					</Media>
+					<h1 style={{ marginTop: '55px' }} className="text-center">
+						Now available on mobile App. Find your match on your convenience.{' '}
+					</h1>
 				</ul>
 			</div>
 		);

@@ -9,9 +9,9 @@ body {
   background-color: #f7f7f7;
   background-size: cover;
   /* background-image: url('https://www.washingtonian.com/wp-content/uploads/2018/11/datingapps-istock-2048x1111.jpg'); */
-   margin:0;
-   padding:0;
-   height:100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 code {
@@ -30,30 +30,38 @@ code {
 }
 
 .zoom {
-  transition: transform .3s; /* Animation */
+  transition: transform .3s;
+  /* Animation */
   margin: 0 auto;
 }
 
 .zoom:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 a {
   color: black;
 }
+
 .containers {
   position: relative;
   text-align: center;
   color: black;
 }
+
 .centered {
   position: absolute;
   top: 54%;
   left: 2%;
- 
+
   /* transform: translate(-50%, -50%); */
   font-size: 56px;
-font-family: 'Noticia Text', serif;
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Bungee Inline', cursive;
+  font-family: 'Noticia Text', serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Bungee Inline', cursive;
+}
+
+.one {
+  position: absolute;
+  height: 100%;
 }
