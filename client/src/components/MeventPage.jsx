@@ -22,7 +22,8 @@ export default class MeventPage extends Component {
 			photoUrl: ''
 		},
 		redirectToMevent: false,
-		displayMeventForm: false
+		displayMeventForm: false,
+		displayDateForm: false
 	};
 
 	getAllMevents = () => {
@@ -39,6 +40,12 @@ export default class MeventPage extends Component {
 	toggleMeventForm = () => {
 		this.setState((state, props) => {
 			return { displayMeventForm: !state.displayMeventForm };
+		});
+	};
+
+	toggleDateForm = () => {
+		this.setState((state, props) => {
+			return { displayDateForm: !state.displayDateForm };
 		});
 	};
 
@@ -113,6 +120,10 @@ export default class MeventPage extends Component {
 				{this.state.mevents.map((mevent) => {
 					return (
 						<div>
+							<h3>Set up a Date with your MATCH</h3>
+							<Button onClick= {this.toggleDateForm}>List of Scheduled Events</Button>
+							 {
+          this.state.displayDateForm ?
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 									<Card.Title><Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}>
@@ -125,7 +136,9 @@ export default class MeventPage extends Component {
 											<Card.Title>what time is the event? {mevent.time}</Card.Title>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 								</Card>
-							</Card>
+							</Card> :
+							null 
+							 }
 						</div>
 					);
 				})}

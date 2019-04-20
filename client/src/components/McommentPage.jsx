@@ -22,7 +22,8 @@ export default class McommentPage extends Component {
 			lessonLearned: ''
 		},
 		redirectToMcomment: false,
-		displayMcommentForm: false
+		displayMcommentForm: false,
+		displayReviewForm: false
 	};
 
 	getAllMcomments = () => {
@@ -39,6 +40,12 @@ export default class McommentPage extends Component {
 	toggleMcommentForm = () => {
 		this.setState((state, props) => {
 			return { displayMcommentForm: !state.displayMcommentForm };
+		});
+	};
+
+	toggleReviewForm = () => {
+		this.setState((state, props) => {
+			return { displayReviewForm: !state.displayReviewForm };
 		});
 	};
 
@@ -116,6 +123,10 @@ export default class McommentPage extends Component {
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
+							<h3>Write A Review about Your DATE</h3>
+							<Button onClick= {this.toggleReviewForm}>List of Scheduled Events</Button>
+							 {
+          this.state.displayReviewForm ?
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
 									<p>
@@ -131,7 +142,9 @@ export default class McommentPage extends Component {
 									<p>What is your review of this date? {mcomment.review}</p>
 									<p>What did I learn from this date? {mcomment.lessonLearned}</p>
 								</Card>
-							</Card>
+							</Card> :
+							null
+							 }
 						</div>
 					);
 				})}

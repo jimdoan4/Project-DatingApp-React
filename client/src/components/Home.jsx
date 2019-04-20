@@ -6,6 +6,7 @@ import { Image } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 
 export default class Home extends Component {
 	render() {
@@ -43,7 +44,7 @@ export default class Home extends Component {
 				</div>
 				<div style= {{backgroundColor: '', width: '100%', paddingBottom: '74px', paddingTop: '16px', opacity: ''}}>
 				<Container className="text-center">
-					<h1 className="members" style={{ marginTop: '55px', marginBottom: '50px' }}>
+					<h1 className="members" style={{ marginTop: '30px', marginBottom: '50px' }}>
 						New members. Check them out!
 					</h1>
 					<Row>
@@ -199,6 +200,15 @@ export default class Home extends Component {
 					</Row>
 				</Container>
 				</div>
+			
+				<div className= 'containers'>
+				
+				<Image
+						src="https://image.freepik.com/free-photo/lesbian-couple-love_53876-15899.jpg"
+						fluid
+						style={{ opacity: '.8', width: '100%', height: '600px' }}
+					/>
+					</div>
 				<h1 style={{ marginTop: '55px' }} className="text-center">
 					Member of the Week!
 				</h1>
@@ -206,6 +216,7 @@ export default class Home extends Component {
 					style={{ marginTop: '50px', marginLeft: '100px', marginRight: '100px', marginBottom: '40px' }}
 					className="list-unstyled"
 				>
+				<div>
 					<Media as="li">
 						<img
 							width={284}
@@ -262,6 +273,16 @@ export default class Home extends Component {
 							</p>
 						</Media.Body>
 					</Media>
+					</div> 
+						{/* <div className= 'containers'>
+				
+				<Image
+						src="https://image.freepik.com/free-photo/lesbian-couple-love_53876-15899.jpg"
+						fluid
+						style={{ opacity: '.8', width: '100%', height: '600px' }}
+					/>
+					</div> */} 
+
 					<h1 style={{ marginTop: '55px' }} className="text-center">
 						Now available on mobile App. Find your match on your convenience.{' '}
 					</h1>

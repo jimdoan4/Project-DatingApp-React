@@ -22,7 +22,8 @@ export default class CommentPage extends Component {
 			lessonLearned: ''
 		},
 		redirectToComment: false,
-		displayEditForm: false
+		displayEditForm: false,
+		displayCommentForm: false
 	};
 
 	getAllComments = () => {
@@ -102,6 +103,12 @@ export default class CommentPage extends Component {
 		});
 	};
 
+	toggleCommentForm = () => {
+		this.setState((state, props) => {
+			return { displayCommentForm: !state.displayCommentForm };
+		});
+	};
+
 	deleteComment = () => {
 		axios.delete(`/api/users/${this.state.userId}/comments/${this.state.commentId}`).then((res) => {
 			this.setState({ redirectToComment: true });
@@ -117,6 +124,10 @@ export default class CommentPage extends Component {
 				{this.state.comments.map((comment) => {
 					return (
 						<div>
+							<h3>Write A Review about Your DATE</h3>
+							<Button onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</Button>
+							 {
+          this.state.displayCommentForm ?
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
 									<p>
@@ -132,7 +143,9 @@ export default class CommentPage extends Component {
 									<p>What is your review of this date? {comment.review}</p>
 									<p>What did I learn from this date? {comment.lessonLearned}</p>
 								</Card>
-							</Card>
+							</Card> :
+							null
+							 }
 						</div>
 					);
 				})}

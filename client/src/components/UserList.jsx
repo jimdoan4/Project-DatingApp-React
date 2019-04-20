@@ -29,7 +29,7 @@ export default class UserList extends Component {
 			events: []
 		},
 		redirectToUser: false,
-		// displayUserForm: !false,
+		displayUserForm: false,
 		userId: this.props.match.params.userId
 	};
 
@@ -114,9 +114,8 @@ export default class UserList extends Component {
 						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
 					</Container>
 				</Jumbotron> */}
-		{/* {
-          this.state.displayUserForms ? */}
-				<div
+		
+				 <div
 					className="row"
 					style={{
 						marginLeft: '30px',
@@ -134,7 +133,9 @@ export default class UserList extends Component {
 									marginTop: '30px'
 								}}
 							>
-								<CardGroup className="collapse-show" id="collapseExample">
+							{/* {
+          this.state.displayUserForms ? */}
+								 <CardGroup>
 									<Card
 										key={user._id}
 										className="text-center"
@@ -169,7 +170,7 @@ export default class UserList extends Component {
 												</Link>
 												<button
 												    key={user._id}
-													// onClick={this.toggleUsersForm}
+													onClick={this.toggleUserForm}
 													type="button"
 									
 													style={{ color: 'black' }}
@@ -179,7 +180,8 @@ export default class UserList extends Component {
 											</div>
 										</Card.Body>
 									</Card>
-								</CardGroup>
+								</CardGroup> 
+							
 							</div>
 						);
 					})}
@@ -195,10 +197,12 @@ export default class UserList extends Component {
 		    <Button variant="secondary">7</Button>
     </ButtonGroup>
 	</ButtonToolbar> */}
-				</div> 
-				{/* null
-} */}
+				 </div> 
+		
+			}
+				
 			</div>
+				
 		);
 	}
 }

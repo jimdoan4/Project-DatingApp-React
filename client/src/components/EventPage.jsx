@@ -22,7 +22,8 @@ export default class EventPage extends Component {
 			photoUrl: ''
 		},
 		redirectToEvent: false,
-		displayEditForm: false
+		displayEditForm: false,
+		displayEvenForm: false
 	};
 
 	getAllEvents = () => {
@@ -39,6 +40,12 @@ export default class EventPage extends Component {
 	toggleEditForm = () => {
 		this.setState((state, props) => {
 			return { displayEditForm: !state.displayEditForm };
+		});
+	};
+
+	toggleEventForm = () => {
+		this.setState((state, props) => {
+			return { displayEventForm: !state.displayEventForm };
 		});
 	};
 
@@ -113,6 +120,10 @@ export default class EventPage extends Component {
 				{this.state.events.map((event) => {
 					return (
 						<div>
+							<h3>Set up a Date with your MATCH</h3>
+							<Button onClick= {this.toggleEventForm}>List of Scheduled Events</Button>
+							 {
+          this.state.displayEventForm ?
 							<Card>
 								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 									<Card.Title><Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}>
@@ -125,8 +136,11 @@ export default class EventPage extends Component {
 											<Card.Title>what time is the event? {event.time}</Card.Title>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 								</Card>
-							</Card>
-						</div>
+							</Card> :
+							null
+							 }
+						</div> 
+						
 					);
 				})}
 				{/* <br /> */}
