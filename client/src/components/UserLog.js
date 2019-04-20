@@ -221,6 +221,7 @@ export default class UserLog extends Component {
 							</Form.Row>
 
 							<div style={{ marginLeft: '140px' }} className="text-center">
+						
 								<Button
 									onclick={this.createUser}
 									className="text-center"
@@ -236,6 +237,7 @@ export default class UserLog extends Component {
 								>
 									Register
 								</Button>
+							
 							</div>
 						</Form>
 					</Card>

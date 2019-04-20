@@ -39,6 +39,45 @@ code {
   transform: scale(1.2);
 }
 
+.zoomer {
+  transition: transform .6s;
+  /* Animation */
+  margin: 0 auto;
+}
+
+.zoomer:hover {
+  transform: scale(1.6);
+}
+
+.members {
+  animation: move 4s repeat;
+  -webkit-animation: move 4s;
+}
+
+@keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 a {
   color: black;
 }

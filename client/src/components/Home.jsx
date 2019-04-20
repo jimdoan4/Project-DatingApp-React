@@ -23,32 +23,155 @@ export default class Home extends Component {
 					</div>
 				</div>
 				<Container className="text-center">
-					<h1 style={{ marginTop: '55px' }}>New members. Check them out!</h1>
+					<h1 className="members" style={{ marginTop: '55px', marginBottom: '50px' }}>
+						New members. Check them out!
+					</h1>
 					<Row>
-						<Row style={{ marginLeft: '130px' }} xs>
+						<Row style={{ marginLeft: '125px', marginRight: '20px' }} xs>
 							<img
+								style={{ marginRight: '20px' }}
 								className="centered"
-								width={284}
-								height={294}
-								className="mr-3"
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
 								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 								alt="Generic placeholder"
 							/>
 						</Row>
 						<Row style={{ marginRight: '20px' }} xs={{ order: 12 }}>
 							<img
-								width={284}
-								height={294}
-								className="mr-3"
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
 								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 								alt="Generic placeholder"
 							/>
 						</Row>
 						<Row xs={{ order: 1 }}>
 							<img
-								width={284}
-								height={294}
-								className="mr-3"
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+					</Row>
+				</Container>
+				<Container style={{ marginTop: '15px' }} className="text-center">
+					<Row>
+						<Row style={{ marginLeft: '125px', marginRight: '20px' }} xs>
+							<img
+								style={{ marginRight: '20px' }}
+								className="centered"
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginRight: '20px' }} xs={{ order: 12 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+					</Row>
+				</Container>
+				<Container style={{ marginTop: '15px' }} className="text-center">
+					<Row>
+						<Row style={{ marginLeft: '125px', marginRight: '20px' }} xs>
+							<img
+								style={{ marginRight: '20px' }}
+								className="centered"
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginRight: '20px' }} xs={{ order: 12 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+						</Row>
+						<Row style={{ marginLeft: '20px' }} xs={{ order: 1 }}>
+							<img
+								width={144}
+								height={154}
+								className="mr-3 zoomer"
 								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
 								alt="Generic placeholder"
 							/>
