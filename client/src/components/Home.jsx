@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Media } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 
 export default class Home extends Component {
@@ -13,15 +13,35 @@ export default class Home extends Component {
 			<div>
 				<div className="containers">
 					<Image
+						src="https://media3.giphy.com/media/H7oFmrAMuE5by/giphy.gif"
+						fluid
+						style={{ opacity: '9', width: '100%' }}
+					/>
+					{/* <Image
 						src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
 						fluid
-						style={{ opacity: '.9', width: '100%' }}
-					/>
-					<div className="centered">
+						style={{ opacity: '5', width: '100%' }}
+					/> */}
+						<div
+						style={{ paddingBottom: '70px', backgroundColor: '', color: 'white', opacity: '3', position: 'absolute' }}
+						className="centered text-center frontpage"
+					>
+						<Container style= {{marginTop: '20px'}}>
 						<p>Get Lucky today.</p>
-						<p> Find your Match.</p>
+							<p> Find your Match.</p>
+							</Container>
 					</div>
+					{/* <Card
+						style={{ paddingBottom: '70px', backgroundColor: 'white', opacity: '.8', position: 'absolute' }}
+						className="centered text-center frontpage"
+					>
+						<Container style= {{marginTop: '120px'}}>
+						<p>Get Lucky today.</p>
+							<p> Find your Match.</p>
+							</Container>
+					</Card> */}
 				</div>
+				<div style= {{backgroundColor: '', width: '100%', paddingBottom: '74px', paddingTop: '16px', opacity: ''}}>
 				<Container className="text-center">
 					<h1 className="members" style={{ marginTop: '55px', marginBottom: '50px' }}>
 						New members. Check them out!
@@ -178,6 +198,7 @@ export default class Home extends Component {
 						</Row>
 					</Row>
 				</Container>
+				</div>
 				<h1 style={{ marginTop: '55px' }} className="text-center">
 					Member of the Week!
 				</h1>

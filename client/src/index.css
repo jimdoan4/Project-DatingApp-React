@@ -78,6 +78,35 @@ code {
   }
 }
 
+.frontpage {
+  animation: move 2s repeat;
+  -webkit-animation: move 2s;
+}
+
+@keyframes move {
+  from {
+    margin-top: 100%;
+    /* width: 100%; */
+  }
+
+  to {
+    margin-top: 0%;
+    /* width: 100%; */
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-top: 100%;
+    /* width: 300%; */
+  }
+
+  to {
+    margin-top: 0%;
+    /* width: 100%; */
+  }
+}
+
 a {
   color: black;
 }
@@ -95,9 +124,13 @@ a {
 
   /* transform: translate(-50%, -50%); */
   font-size: 56px;
-  font-family: 'Noticia Text', serif;
+  /* font-family: 'Noticia Text', serif;
   font-family: 'Noto Sans', sans-serif;
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Inline', cursive; */
+  font-family: 'Noticia Text', serif;
+font-family: 'Noto Sans', sans-serif;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Nobile', sans-serif;
 }
 
 .one {
