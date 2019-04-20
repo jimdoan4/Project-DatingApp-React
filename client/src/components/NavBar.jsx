@@ -9,12 +9,12 @@ export default class NavBar extends Component {
 		return (
 			<Navbar style={{ backgroundColor: 'white', color: 'black' }} collapseOnSelect expand="lg" variant="dark">
 				<Navbar.Brand style={{ color: 'black' }} href="/">
-					DATA CODER
+					SUAVE
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: 'black' }}>
 					<Nav className="mr-auto" style={{ backgroundColor: 'GRAY' }}>
-						<NavDropdown style={{ color: 'black' }} title="Find Your Date" id="collasible-nav-dropdown">
+						<NavDropdown style={{ color: 'black' }} title="Find Your Match" id="collasible-nav-dropdown">
 							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
 								<Link to="/users/" style={{ color: 'black' }}>
 									Woman

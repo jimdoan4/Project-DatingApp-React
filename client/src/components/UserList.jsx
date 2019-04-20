@@ -195,9 +195,9 @@ export default class UserList extends Component {
 		    <Button variant="secondary">7</Button>
     </ButtonGroup>
 	</ButtonToolbar> */}
-				</div> :
-				null
-}
+				</div> 
+				{/* null
+} */}
 			</div>
 		);
 	}
