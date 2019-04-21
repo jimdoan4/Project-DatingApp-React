@@ -15,9 +15,9 @@ export default class Home extends Component {
 			<div>
 				<div className="containers">
 					<Image
-						src="https://media3.giphy.com/media/H7oFmrAMuE5by/giphy.gif"
+						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
 						fluid
-						style={{ opacity: '9', width: '100%' }}
+						style={{ opacity: '3', width: '100%' }}
 					/>
 
 					<div
@@ -31,67 +31,72 @@ export default class Home extends Component {
 						className="centered text-center frontpage"
 					>
 						<Container style={{ marginTop: '20px' }}>
-							<p>Get Lucky today.</p>
+							<p style={{ color: 'white' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
 					</div>
-					<Card
-						style={{ paddingBottom: '4px', backgroundColor: '#720F1D', opacity: '6', position: 'absolute' }}
+					{/* <Card
+						style={{
+							paddingBottom: '4px',
+							backgroundColor: '#720F1D',
+							opacity: '9',
+							position: 'absolute'
+						}}
 						className="centereds text-center"
-					>
-						<Container style={{ marginTop: '20px' }}>
-							<Row>
-								<Col>
-									<Card className="homebox" style={{ width: '20rem', height: '20rem' }}>
-										<Card.Body>
-											<Card.Subtitle className="homebox mb-2 text-muted">Nr. 01</Card.Subtitle>
-											<Card.Title>Find your Match</Card.Title>
+					> */}
+					<Container className="centereds text-center" style={{ marginTop: '20px' }}>
+						<Row>
+							<Col>
+								<Card className="" style={{ width: '20rem', height: '20rem', opacity: '4' }}>
+									<Card.Body>
+										<Card.Subtitle className="homebox mb-2 text-muted">Nr. 01</Card.Subtitle>
+										<Card.Title>Find your Match</Card.Title>
 
-											<Card.Text>
-												Some quick example text to build on the card title and make up the bulk
-												of the card's content.
-											</Card.Text>
-											<Card.Link className="homebox" href="#">
-												Card Link
-											</Card.Link>
-										</Card.Body>
-									</Card>
-								</Col>
-								<Col>
-									<Card className="homebox" style={{ width: '20rem', height: '20rem' }}>
-										<Card.Body>
-											<Card.Subtitle className="mb-2 text-muted homebox">Nr. 02</Card.Subtitle>
-											<Card.Title>Set a PLACE to meet</Card.Title>
+										<Card.Text>
+											Some quick example text to build on the card title and make up the bulk of
+											the card's content.
+										</Card.Text>
+										<Card.Link className="homebox" href="#">
+											Card Link
+										</Card.Link>
+									</Card.Body>
+								</Card>
+							</Col>
+							<Col>
+								<Card className="" style={{ width: '20rem', height: '20rem' }}>
+									<Card.Body>
+										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 02</Card.Subtitle>
+										<Card.Title>Set a PLACE to meet</Card.Title>
 
-											<Card.Text>
-												Some quick example text to build on the card title and make up the bulk
-												of the card's content.
-											</Card.Text>
-											<Card.Link className="homebox" href="#">
-												Card Link
-											</Card.Link>
-										</Card.Body>
-									</Card>
-								</Col>
-								<Col>
-									<Card className="homebox" style={{ width: '20rem', height: '20rem' }}>
-										<Card.Body>
-											<Card.Subtitle className="mb-2 text-muted homebox">Nr. 03</Card.Subtitle>
-											<Card.Title>Give your date a REVIEW</Card.Title>
+										<Card.Text>
+											Some quick example text to build on the card title and make up the bulk of
+											the card's content.
+										</Card.Text>
+										<Card.Link className="homebox" href="#">
+											Card Link
+										</Card.Link>
+									</Card.Body>
+								</Card>
+							</Col>
+							<Col>
+								<Card className="" style={{ width: '20rem', height: '20rem' }}>
+									<Card.Body>
+										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 03</Card.Subtitle>
+										<Card.Title>Give your date a REVIEW</Card.Title>
 
-											<Card.Text>
-												Some quick example text to build on the card title and make up the bulk
-												of the card's content.
-											</Card.Text>
-											<Card.Link className="homebox" href="#">
-												Card Link
-											</Card.Link>
-										</Card.Body>
-									</Card>
-								</Col>
-							</Row>
-						</Container>
-					</Card>
+										<Card.Text>
+											Some quick example text to build on the card title and make up the bulk of
+											the card's content.
+										</Card.Text>
+										<Card.Link className="homebox" href="#">
+											Card Link
+										</Card.Link>
+									</Card.Body>
+								</Card>
+							</Col>
+						</Row>
+					</Container>
+					{/* </Card> */}
 				</div>
 
 				<div
@@ -104,7 +109,7 @@ export default class Home extends Component {
 					}}
 				>
 					<Container className="text-center">
-						<h1 className="members" style={{ marginTop: '190px', marginBottom: '50px' }}>
+						<h1 className="members" style={{ marginTop: '280px', marginBottom: '50px' }}>
 							New members. Check them out!
 						</h1>
 						<Row>
