@@ -1,10 +1,45 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { render } from 'react-dom';
+import axios from 'axios';
 import { Nav } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import Weather from "./Weather";
+import InputField from "./InputField";
 
 export default class NavBar extends Component {
+	 constructor() {
+    super();
+    this.state = {
+      weather: [],
+      temp: [],
+      clouds: []
+    };
+  }
+
+  getWeather = query => {
+    axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=imperial&appid=f92c1f4990b0574d4a4e4d3dd556f388`)
+      .then(response => {
+        this.setState({
+          weather: response.data.list[0],
+          temp: response.data.list[0].main.temp,
+          clouds: response.data.list[0].weather[0].description
+        });
+      })
+      .catch(error => {
+        console.log('Error', error);
+      });
+  };
+
+  queryWeather = (event, cityName) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      cityName = event.target.value;
+      this.getWeather(cityName);
+    }
+  }
 	render() {
 		return (
 			<Navbar style={{ backgroundColor: 'white', color: 'black' }} collapseOnSelect expand="lg" variant="dark">
@@ -40,13 +75,36 @@ export default class NavBar extends Component {
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
+					{/* <Nav.Link style={{ color: 'black' }}>
+						<Link to="/login/" style={{ color: '#720F1D' }}>
+							Profile Account
+						</Link>
+					</Nav.Link> */}
+					
+					
+				</Navbar.Collapse>
 					<Nav.Link style={{ color: 'black' }}>
 						<Link to="/login/" style={{ color: '#720F1D' }}>
 							Profile Account
 						</Link>
 					</Nav.Link>
-				</Navbar.Collapse>
+				<Dropdown>
+  <Dropdown.Toggle variant="" id="dropdown-basic">
+					 <InputField queryWeather= {this.queryWeather} />
+					 </Dropdown.Toggle>
+					  <Dropdown.Menu>
+    <Dropdown.Item href=""><Weather
+           city={this.state.weather.name}
+          temp={this.state.temp}
+          clouds={this.state.clouds}
+          /></Dropdown.Item>
+ 
+  </Dropdown.Menu>
+</Dropdown>
+				
 			</Navbar>
 		);
 	}
 }
+
+
