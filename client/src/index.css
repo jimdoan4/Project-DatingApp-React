@@ -154,27 +154,3 @@ a {
   height: 100%;
 }
 
-.content {
-  padding-top: 2em;
-  text-align: center;
-}
-
-input {
-  font-size: 1.2em;
-  text-align: center;
-}
-
-.weather {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.weather p:nth-child(odd) {
-  margin-right: 1em;
-  text-align: right;
-  width: 49vw;
-}
-
-.weather p:nth-child(even) {
-  width: 10vw;
-}

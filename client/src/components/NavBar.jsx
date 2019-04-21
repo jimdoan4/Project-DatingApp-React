@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import axios from 'axios';
 import { Nav } from 'react-bootstrap';
 import { Dropdown } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap';
+import { DropdownButton } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
 import Weather from "./Weather";
@@ -88,19 +90,25 @@ export default class NavBar extends Component {
 							Profile Account
 						</Link>
 					</Nav.Link>
-				<Dropdown>
-  <Dropdown.Toggle variant="" id="dropdown-basic">
-					 <InputField queryWeather= {this.queryWeather} />
-					 </Dropdown.Toggle>
-					  <Dropdown.Menu>
+ <InputField queryWeather= {this.queryWeather} />
+				<ButtonToolbar>
+    {['down'].map(direction => (
+		 <DropdownButton
+        drop={direction}
+        variant="secondary"
+        title={` Drop ${direction} `}
+        id={`dropdown-button-drop-${direction}`}
+        key={direction}>
+					
+					
     <Dropdown.Item href=""><Weather
-           city={this.state.weather.name}
-          temp={this.state.temp}
+           city={this.state.weather.name} 
+          temp={this.state.temp} F
           clouds={this.state.clouds}
           /></Dropdown.Item>
- 
-  </Dropdown.Menu>
-</Dropdown>
+</DropdownButton>
+    ))}
+  </ButtonToolbar>
 				
 			</Navbar>
 		);
