@@ -17,7 +17,7 @@ export default class MainSignUpPage extends Component {
 
 	render() {
 		return (
-			<div className="one text-center" style={{ marginBottom: '524px' }}>
+			<div className="text-center" style={{ marginBottom: '524px' }}>
 				<h1 style={{ marginTop: '43px' }}>Choose Your Preference</h1>
 				<Container>
 					<Row>

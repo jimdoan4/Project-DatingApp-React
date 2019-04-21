@@ -26,7 +26,7 @@ export default class Home extends Component {
 						style={{
 							paddingBottom: '70px',
 							backgroundColor: '',
-							color: '#720F1D',
+							color: '#e1122f',
 							opacity: '3',
 							position: 'absolute'
 						}}
@@ -36,6 +36,7 @@ export default class Home extends Component {
 							<p style={{ color: 'white' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
+						<button style= {{backgroundColor: '#e1122f', color: 'white', fontSize: '14px'}}>Join Now</button>
 					</div>
 					{/* <Card
 						style={{
@@ -49,7 +50,7 @@ export default class Home extends Component {
 					<Container className="centereds text-center" style={{ marginTop: '20px' }}>
 						<Row>
 							<Col>
-								<Card className="" style={{ width: '20rem', height: '20rem', opacity: '4' }}>
+								<Card className="homebox" style={{ width: '29rem', height: '26rem', opacity: '4', left: '0%' }}>
 									<Card.Body>
 										<Card.Subtitle className="homebox mb-2 text-muted">Nr. 01</Card.Subtitle>
 										<Card.Title>Find your Match</Card.Title>
@@ -65,7 +66,7 @@ export default class Home extends Component {
 								</Card>
 							</Col>
 							<Col>
-								<Card className="" style={{ width: '20rem', height: '20rem' }}>
+								<Card className="homebox" style={{ width: '29rem', height: '25rem', backgroundColor: 'red' }}>
 									<Card.Body>
 										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 02</Card.Subtitle>
 										<Card.Title>Set a PLACE to meet</Card.Title>
@@ -80,8 +81,8 @@ export default class Home extends Component {
 									</Card.Body>
 								</Card>
 							</Col>
-							<Col>
-								<Card className="" style={{ width: '20rem', height: '20rem' }}>
+							{/* <Col>
+								<Card className="homebox" style={{ width: '29rem', height: '29rem', backgroundColor: 'red' }}>
 									<Card.Body>
 										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 03</Card.Subtitle>
 										<Card.Title>Give your date a REVIEW</Card.Title>
@@ -95,7 +96,7 @@ export default class Home extends Component {
 										</Card.Link>
 									</Card.Body>
 								</Card>
-							</Col>
+							</Col> */}
 						</Row>
 					</Container>
 					{/* </Card> */}
@@ -111,7 +112,7 @@ export default class Home extends Component {
 					}}
 				>
 					<Container className="text-center">
-						<h1 className="members" style={{ marginTop: '280px', marginBottom: '50px' }}>
+						<h1 className="members" style={{ marginTop: '380px', marginBottom: '50px' }}>
 							New members. Check them out!
 						</h1>
 						<Row>

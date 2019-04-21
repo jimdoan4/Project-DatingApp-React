@@ -45,33 +45,33 @@ export default class NavBar extends Component {
 	render() {
 		return (
 			<Navbar style={{ backgroundColor: 'white', color: 'black' }} collapseOnSelect expand="lg" variant="dark">
-				<Navbar.Brand style={{ color: '#720F1D' }} href="/">
+				<Navbar.Brand style={{ color: '#e1122f' }} href="/">
 					SUAVE
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: '#720F1D' }} />
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: '#e1122f' }} />
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: '#720F1D' }}>
-					<Nav className="mr-auto" style={{ backgroundColor: '#720F1D', color: '#720F1D' }}>
+					<Nav className="mr-auto" style={{ backgroundColor: '#e1122f', color: '#720F1D' }}>
 						<NavDropdown style={{ color: '#720F1D' }} title="Find Your Match" id="collasible-nav-dropdown">
-							<NavDropdown.Item className="text-center" style={{ color: '#720F1D' }}>
-								<Link to="/users/" style={{ color: '#720F1D' }}>
+							<NavDropdown.Item className="text-center" style={{ color: '#e1122f' }}>
+								<Link to="/users/" style={{ color: '#e1122f' }}>
 									Woman
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/males/" style={{ color: '#720F1D' }}>
+								<Link to="/males/" style={{ color: '#e1122f' }}>
 									Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link className="text-center" to="/gaymales/" style={{ color: '#720F1D' }}>
+								<Link className="text-center" to="/gaymales/" style={{ color: '#e1122f' }}>
 									Gay Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/lesfemales/" style={{ color: '#720F1D' }}>
+								<Link to="/lesfemales/" style={{ color: '#e1122f' }}>
 									Lesbian Women
 								</Link>
 							</NavDropdown.Item>
@@ -86,19 +86,20 @@ export default class NavBar extends Component {
 					
 				</Navbar.Collapse>
 					<Nav.Link style={{ color: 'black' }}>
-						<Link to="/login/" style={{ color: '#720F1D' }}>
+						<Link to="/login/" style={{ color: '#e1122f' }}>
 							Profile Account
 						</Link>
 					</Nav.Link>
  <InputField queryWeather= {this.queryWeather} />
 				<ButtonToolbar>
-    {['down'].map(direction => (
+    {['left'].map(direction => (
 		 <DropdownButton
         drop={direction}
         variant="secondary"
-        title={` Drop ${direction} `}
+        // title={` Drop ${direction} `}
         id={`dropdown-button-drop-${direction}`}
-        key={direction}>
+        key={direction}
+		>
 					
 					
     <Dropdown.Item href=""><Weather
