@@ -123,28 +123,31 @@ a {
   left: 2%;
   font-size: 56px;
   font-family: 'Noticia Text', serif;
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Bungee Inline', cursive;
-font-family: 'Nobile', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Bungee Inline', cursive;
+  font-family: 'Nobile', sans-serif;
 }
 
 .centereds {
   border: none;
-   box-shadow: 1px 1px#f7f7f7;
+  box-shadow: 1px 1px#720F1D;
   position: absolute;
   top: 74%;
   left: 0%;
-  font-size: 13px;
+  font-size: 16px;
   font-family: 'Noticia Text', serif;
-font-family: 'Noto Sans', sans-serif;
-font-family: 'Bungee Inline', cursive;
-font-family: 'Nobile', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Bungee Inline', cursive;
+  font-family: 'Nobile', sans-serif;
 }
+
 .homebox {
-     box-shadow: 1px 1px #f7f7f7;
-      border: none;
-      background-color: #f7f7f7;
+  box-shadow: 1px 1px #720F1D;
+  border: none;
+  color: white;
+  background-color: #720F1D;
 }
+
 .one {
   position: absolute;
   height: 100%;
