@@ -134,9 +134,8 @@ export default class CommentPage extends Component {
 		  this.state.displayCommentForm ?
 		  
 						<Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
-									
-									
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px', marginTop: '26px' }}>
+
 									<p>
 											Who was my date? {comment.withWho}
 										</p>

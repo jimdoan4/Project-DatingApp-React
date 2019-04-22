@@ -13,21 +13,23 @@ export default class MaleShowPage extends Component {
 
 	render() {
 		return (
-			<div style={{ marginTop: '10px' }}>
-			<Container>
-  <Row className="justify-content-md-center text-center">
-    
-    <Col md="auto"><MalePage maleId={this.state.maleId} /></Col>
+	<div className="row text-center">
+					<div
+						style={{
+							marginLeft: '90px',
+							color: 'black'
+						}}
+						className="row-sm-5 row-md-6 text-center"><MalePage maleId={this.state.maleId} /></div>
+										<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-8 text-center">
+						<MeventPage maleId={this.state.maleId} />
    
-  </Row>
-  <Row>
-    <Col className= 'text-center'><MeventPage maleId={this.state.maleId} /></Col>
-    <Col className= 'text-center'>
+	<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-8 text-center">
       <McommentPage maleId={this.state.maleId} />
-    </Col>
-  </Row>
-</Container>
+    </div>
+
 			</div>
+				</div>
+			
 		);
 	}
 }

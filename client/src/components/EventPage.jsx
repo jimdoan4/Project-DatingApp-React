@@ -152,7 +152,8 @@ export default class EventPage extends Component {
 						
 					);
 				})}
-			<div className= 'text-center col' style= {{ marginTop: '30px'}}>
+<Col>
+			<div className= 'text-center' style= {{ marginTop: '30px'}}>
 				 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add an Event</button>
         {
           this.state.displayEditForm ?
@@ -273,7 +274,10 @@ export default class EventPage extends Component {
 				: null
 						}
 				</div>
+					</Col>
+			
 				</div>
+			
 			</div>
 			
 		);

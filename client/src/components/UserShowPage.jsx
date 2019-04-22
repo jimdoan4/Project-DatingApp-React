@@ -36,7 +36,7 @@ export default class UserShowPage extends Component {
 				 <div className="row text-center">
 					<div
 						style={{
-							marginLeft: '70px',
+							marginLeft: '90px',
 							color: 'black'
 						}}
 						className="row-sm-5 row-md-6 text-center"
