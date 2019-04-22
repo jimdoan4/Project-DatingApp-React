@@ -37,7 +37,7 @@ const geventController = {
  	update: (req, res) => {
  		Gaymale.findById(req.params.gaymaleId)
  			.then((gaymale) => {
- 				const updatedGevent = male.gevents.id(req.params.geventId);
+ 				const updatedGevent = gaymale.gevents.id(req.params.geventId);
  				updatedGevent.set(req.body);
  				gaymale.save();
  				res.json(updatedGevent);
@@ -50,7 +50,7 @@ const geventController = {
  	delete: (req, res) => {
  		Gaymale.findById(req.params.gaymaleId)
  			.then((gaymale) => {
- 				const filterGevents = male.gevents.filter((gevent) => gevent._id != req.params.geventId);
+ 				const filterGevents = gaymale.gevents.filter((gevent) => gevent._id != req.params.geventId);
  				gaymale.gevents = filterGevents;
  				gaymale.save();
  				res.json(gaymale.gevents);

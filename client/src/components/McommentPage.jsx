@@ -108,9 +108,11 @@ export default class McommentPage extends Component {
 		this.getAllMcomments();
 	};
 
-	deleteMcomment = () => {
-		axios.delete(`/api/males/${this.state.maleId}/mcomments/${this.state.mcommentId}`).then((res) => {
-			this.setState({ redirectToMcomment: true });
+
+	deleteMcomment = (e, mcomment) => {
+		e.preventDefault()
+		axios.delete(`/api/males/${this.state.maleId}/mcomments/${mcomment._id}`).then((res) => {
+			this.getAllMcomments()
 		});
 	};
 
@@ -142,6 +144,13 @@ export default class McommentPage extends Component {
 											key={mcomment._id}
 										><button>Edit Review</button>
 										</Link>
+										<button
+												    key={mcomment._id}
+													onClick={(e) => this.deleteMcomment(e, mcomment)}
+													
+												>
+													Delete Review
+												</button>
 								
 							</Card> 
 							</Col> :

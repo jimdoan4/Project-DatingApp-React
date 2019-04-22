@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class GcommentPage extends Component {
+export default class Gcomment extends Component {
 	state = {
 		gaymaleId: this.props.gaymaleId,
 		gcomments: [],
@@ -108,9 +108,10 @@ export default class GcommentPage extends Component {
 		this.getAllGcomments();
 	};
 
-	deleteGcomment = () => {
-		axios.delete(`/api/gaymales/${this.state.gaymaleId}/gcomments/${this.state.gcommentId}`).then((res) => {
-			this.setState({ redirectToGcomment: true });
+	deleteGcomment = (e, gcomment) => {
+        e.preventDefault();
+		axios.delete(`/api/gaymales/${this.state.gaymaleId}/gcomments/${gcomment._id}`).then((res) => {
+				this.getAllGcomments();
 		});
 	};
 
@@ -142,6 +143,13 @@ export default class GcommentPage extends Component {
 											key={gcomment._id}
 										><button>Edit Review</button>
 										</Link>
+                                        	<button
+												    key={gcomment._id}
+													onClick={(e) => this.deleteGcomment(e, gcomment)}
+													
+												>
+													Delete Review
+												</button>
 								
 							</Card> 
 							</Col> :

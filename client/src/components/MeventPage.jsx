@@ -105,9 +105,11 @@ export default class MeventPage extends Component {
 		this.getAllMevents();
 	};
 
-	deleteMevent = () => {
-		axios.delete(`/api/males/${this.state.maleId}/mevents/${this.state.meventId}`).then((res) => {
-			this.setState({ redirectToMevent: true });
+
+	deleteMevent = (e, mevent) => {
+		e.preventDefault()
+		axios.delete(`/api/males/${this.state.maleId}/mevents/${mevent._id}`).then((res) => {
+			this.getAllMevents()
 		});
 	};
 
@@ -138,6 +140,13 @@ export default class MeventPage extends Component {
 											<p>what time is the event? {mevent.time}</p>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
 												<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button>Edit Event</button></Link>
+													<button
+												    key={mevent._id}
+													onClick={(e) => this.deleteMevent(e, mevent)}
+													
+												>
+													Delete Event
+												</button>
 							
 							</Card> 
 							</Col> :

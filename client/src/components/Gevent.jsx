@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-export default class GeventPage extends Component {
+export default class Gevent extends Component {
 	state = {
 		gaymaleId: this.props.gaymaleId,
 		geventId: this.props.geventId,
@@ -80,7 +80,7 @@ export default class GeventPage extends Component {
 					gevents: geventsList
 				});
 			});
-		this.getAllMevents();
+		this.getAllGevents();
 	};
 
 	handleChange = (e) => {
@@ -105,9 +105,11 @@ export default class GeventPage extends Component {
 		this.getAllGevents();
 	};
 
-	deleteGevent = () => {
-		axios.delete(`/api/gaymales/${this.state.gaymaleId}/gevents/${this.state.geventId}`).then((res) => {
-			this.setState({ redirectToGevent: true });
+    
+    deleteGevent = (e, gevent) => {
+		e.preventDefault()
+		axios.delete(`/api/gaymales/${this.state.gaymaleId}/gevents/${gevent._id}`).then((res) => {
+			this.getAllGevents();
 		});
 	};
 
@@ -138,7 +140,13 @@ export default class GeventPage extends Component {
 										<p>Who is my date? {gevent.withWho}</p>
 											<p>what time is the event? {gevent.time}</p>
 												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-												<Link to={`/gaymales/${this.state.gaymaleId}/mevents/${gevent._id}`} key={gevent._id}><button>Edit Event</button></Link>
+												<Link to={`/gaymales/${this.state.gaymaleId}/gevents/${gevent._id}`} key={gevent._id}><button>Edit Event</button></Link>
+                                                <button
+												    key={gevent._id}
+													onClick={(e) => this.deleteGevent(e, gevent)}	
+												>
+													Delete Event
+												</button>
 							
 							</Card> 
 							</Col> :
