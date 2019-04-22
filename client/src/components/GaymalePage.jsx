@@ -19,8 +19,8 @@ export default class GaymalePage extends Component {
 			photoUrl: '',
 			location: '',
 			bio: '',
-			comments: [],
-			events: []
+			gcomments: [],
+			gevents: []
 		},
 		redirectToGaymale: false,
 		displayGayEditForm: false
@@ -63,9 +63,9 @@ export default class GaymalePage extends Component {
 				age: this.state.gaymale.age,
 				photoUrl: this.state.gaymale.photoUrl,
 				location: this.state.gaymale.location,
-				bio: this.state.gaymale.bio
-				// gcomments: {},
-				// gevents: {}
+				bio: this.state.gaymale.bio,
+				gcomments: {},
+				gevents: {}
 			})
 			.then((res) => {
 				this.setState({ gaymale: res.data, displayGayEditForm: false });
