@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+const Lesfemale = require('../models/Lesfemale.js');
 const User = require('../models/User.js');
 const Comment = require('../models/Comment.js');
 const Mcomment = require('../models/Mcomment.js');
@@ -10,7 +11,7 @@ const Male = require('../models/Male.js');
 const Gaymale = require('../models/Gaymale.js');
 const Gcomment = require('../models/Gcomment.js');
 const Gevent = require('../models/Gevent.js');
-const Lesfemale = require('../models/Lesfemale.js');
+
 
 const ihop = new Event({
 	eventName: 'Houstons Bar and Grill',
@@ -334,6 +335,7 @@ const gm12 = new Gaymale({
 });
 
 //female
+
 const f1 = new Lesfemale({
 	firstName: 'Jackie',
 	lastName: 'Hank',
@@ -341,9 +343,8 @@ const f1 = new Lesfemale({
 		'https://cdn.shopify.com/s/files/1/2714/9310/products/76781_1_50a648ed-fce4-4445-8157-2749cb7afcf3_775x.JPG?v=1554145796?w=331',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+
 });
 
 const f2 = new Lesfemale({
@@ -353,9 +354,8 @@ const f2 = new Lesfemale({
 		'https://www.poeticjusticejeans.com//media/catalog/product/l/i/little-black-dress-lace-panel-sides-poetic-justice-maja-ho16409pr-sd.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f3 = new Lesfemale({
@@ -365,9 +365,8 @@ const f3 = new Lesfemale({
 		'https://s3-us-west-1.amazonaws.com/www.vivaglammagazine.com/wp-content/uploads/2019/02/how-to-style-your-little-black-dress-elegant-lbd-with-nice-heels.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f4 = new Lesfemale({
@@ -377,9 +376,8 @@ const f4 = new Lesfemale({
 		'https://cdn.shopify.com/s/files/1/0293/9277/products/12-05-18_Studio_2_13-25-56_72450_Black_0427_JD_JF_600x.jpg?v=1544202558',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f5 = new Lesfemale({
@@ -389,9 +387,8 @@ const f5 = new Lesfemale({
 		'https://media.nastygal.com/i/nastygal/agg86163_black_xl?$product_image_category_page_horizontal_filters_desktop$',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f6 = new Lesfemale({
@@ -400,9 +397,8 @@ const f6 = new Lesfemale({
 	photoUrl: 'https://cdn.executiveponies.com/media/catalog/product/t/n/tn_dancing_mood_dress_in_black_sequin.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+
 });
 
 const f7 = new Lesfemale({
@@ -412,9 +408,8 @@ const f7 = new Lesfemale({
 		'https://cdn.shopify.com/s/files/1/2714/9310/products/Unique_Vintage_Black_Beaded_Sequin_Margaux_Sleeved_Fringe_Flapper_Dress_1_099c18d6-04b8-4bb2-8c06-ff1c12660f93_1024x1024.jpg?v=1545251688',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+
 });
 
 const f8 = new Lesfemale({
@@ -423,9 +418,8 @@ const f8 = new Lesfemale({
 	photoUrl: 'https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f9 = new Lesfemale({
@@ -435,9 +429,8 @@ const f9 = new Lesfemale({
 		'https://dynamic.zacdn.com/drcoBc6vpsHB-aBopTGP1fs3l7w=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/ripe-maternity-1581-2065341-1.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f10 = new Lesfemale({
@@ -446,9 +439,8 @@ const f10 = new Lesfemale({
 	photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+	
 });
 
 const f11 = new Lesfemale({
@@ -457,9 +449,8 @@ const f11 = new Lesfemale({
 	photoUrl: 'https://assets.capitalfm.com/2018/23/lilliya-scarlett-instagram-1528814125-custom-0.png',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+
 });
 
 const f12 = new Lesfemale({
@@ -469,9 +460,8 @@ const f12 = new Lesfemale({
 		'http://cdn01.cdn.justjared.com/wp-content/uploads/2015/05/rdma-portraits/hailee-steinfeld-rumer-willis-pose-for-just-jared-portrait-session-11.jpg',
 	age: 28,
 	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
+
 });
 
 // straight female
@@ -611,19 +601,6 @@ const samssss = new User({
 	comments: [ great ]
 });
 
-// const samsssss = new User({
-// 	userName: 'Sara4',
-// 	password: 'password',
-// 	firstName: 'Snookie',
-// 	lastName: 'Harrow',
-// 	photoUrl:
-// 		'https://images.express.com/is/image/expressfashion/0094_07922309_0058?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon',
-// 	age: 28,
-// 	location: 'Fulton, Georgia',
-// 	bio: 'I just graduated from GA Tech am ready to start dating again. I love cats and coding Java on a daily basis',
-// 	events: [ ihop ],
-// 	comments: [ great ]
-// });
 
 Gaymale.deleteMany({})
 	.then(() => gm1.save())
