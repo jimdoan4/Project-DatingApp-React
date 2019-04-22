@@ -118,12 +118,12 @@ export default class GaymalePage extends Component {
 									
 									</button>
 									
-									<button
+									{/* <button
 										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 										onClick={this.deleteGaymale}
 									>
 										Delete User
-									</button>
+									</button> */}
 								
 								</Container>
 							</Card>

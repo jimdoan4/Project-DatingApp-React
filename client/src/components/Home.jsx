@@ -46,68 +46,7 @@ export default class Home extends Component {
 						</Container>
 						{/* <Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button> */}
 					</div>
-					{/* <Card
-						style={{
-							paddingBottom: '4px',
-							backgroundColor: '#720F1D',
-							opacity: '9',
-							position: 'absolute'
-						}}
-						className="centereds text-center"
-					> */}
-					{/* <Container className="centereds text-center" style={{ marginTop: '20px' }}>
-						<Row>
-							<Col>
-								<Card className="homebox" style={{ width: '29rem', height: '26rem', opacity: '4', left: '0%' }}>
-									<Card.Body>
-										<Card.Subtitle className="homebox mb-2 text-muted">Nr. 01</Card.Subtitle>
-										<Card.Title>Find your Match</Card.Title>
-
-										<Card.Text>
-											Some quick example text to build on the card title and make up the bulk of
-											the card's content.
-										</Card.Text>
-										<Card.Link className="homebox" href="#">
-											Card Link
-										</Card.Link>
-									</Card.Body>
-								</Card>
-							</Col>
-							<Col>
-								<Card className="homebox" style={{ width: '29rem', height: '25rem', backgroundColor: 'red' }}>
-									<Card.Body>
-										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 02</Card.Subtitle>
-										<Card.Title>Set a PLACE to meet</Card.Title>
-
-										<Card.Text>
-											Some quick example text to build on the card title and make up the bulk of
-											the card's content.
-										</Card.Text>
-										<Card.Link className="homebox" href="#">
-											Card Link
-										</Card.Link>
-									</Card.Body>
-								</Card>
-							</Col>
-							{/* <Col>
-								<Card className="homebox" style={{ width: '29rem', height: '29rem', backgroundColor: 'red' }}>
-									<Card.Body>
-										<Card.Subtitle className="mb-2 text-muted homebox">Nr. 03</Card.Subtitle>
-										<Card.Title>Give your date a REVIEW</Card.Title>
-
-										<Card.Text>
-											Some quick example text to build on the card title and make up the bulk of
-											the card's content.
-										</Card.Text>
-										<Card.Link className="homebox" href="#">
-											Card Link
-										</Card.Link>
-									</Card.Body>
-								</Card>
-							</Col> */}
-						{/* </Row>
-					</Container> */}
-					{/* </Card> */}
+					
 				</div> 
 
 				<div
@@ -326,7 +265,14 @@ export default class Home extends Component {
 							/>
 							</Card>
 							</div>
-				<h1 style={{ marginTop: '445px' }} className="text-center">
+							<div style= {{backgroundColor: 'black', marginTop: '445px'}}>
+						<Image
+					src="https://wallup.net/wp-content/uploads/2016/05/13/329627-Deepika_Padukone.jpg"
+					fluid
+					style={{ opacity: '.79', width: '100%', zIndex: '1' }}
+				/>
+				</div>
+				<h1 style={{ marginTop: '35px' }} className="text-center">
 					Member of the Week!
 				</h1>
 				<ul

@@ -107,6 +107,7 @@ export default class MalePage extends Component {
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 									<button
+									className= 'text-center'
 										onClick={this.toggleMaleForm}
 										style={{
 											backgroundColor: 'white',
@@ -118,12 +119,7 @@ export default class MalePage extends Component {
 										Edit User
 									
 									</button>
-									<button
-										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
-										onClick={this.deleteMale}
-									>
-										Delete User
-									</button>
+								
 								
 								</Container>
 							</Card>

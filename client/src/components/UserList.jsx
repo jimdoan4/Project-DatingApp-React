@@ -82,8 +82,6 @@ export default class UserList extends Component {
 	};
 
 
-	
-
 	deleteUser = (e, user) => {
 		e.preventDefault()
 		axios.delete(`/api/users/${user._id}`).then((res) => {
@@ -143,7 +141,7 @@ export default class UserList extends Component {
 								 <CardGroup>
 									<Card
 										key={user._id}
-										className="text-center hidden"
+										className="text-center"
 										style={{
 											width: '16.8rem',
 											marginLeft: '30px',

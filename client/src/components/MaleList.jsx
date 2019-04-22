@@ -39,68 +39,12 @@ export default class MaleList extends Component {
 		});
 	};
 
-	// createUser = (e) => {
-	// 	axios
-	// 		.post('/api/users', {
-	// 			password: this.state.newUser.password,
-	// 			userName: this.state.newUser.userName,
-	// 			firstName: this.state.newUser.firstName,
-	// 			lastName: this.state.newUser.lastName,
-	// 			age: this.state.newUser.age,
-	// 			photoUrl: this.state.newUser.photoUrl,
-	// 			location: this.state.newUser.location,
-	// 			bio: this.state.newUser.bio,
-	// 			comments: [],
-	// 			events: []
-	// 		})
-	// 		.then((res) => {
-	// 			const malesList = [ this.state.males ];
-	// 			malesList.unshift(res.data);
-	// 			this.setState({
-	// 				newMale: {
-	// 					firstName: '',
-	// 					lastName: '',
-	// 					age: '',
-	// 					photoUrl: '',
-	// 					location: '',
-	// 					bio: '',
-	// 					comments: {},
-	// 					events: {}
-	// 				},
-	// 				displayUserForm: false,
-	// 				males: malesList
-	// 			});
-	// 		});
-	// 	this.findAllMales();
-	// };
-
-	// deleteUser = () => {
-	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
-	// 		this.setState({ redirectToUser: true });
-	// 	});
-	// };
-
-	// deleteUser = () => {
-	// 	axios.delete(`/api/users/${this.state.userId}`).then((res) => {
-	// 		this.setState({ redirectToUser: true });
-	// 	});
-	// };
-
-	// handleChange = (e) => {
-	// 	const changeNewUser = { ...this.state.newUser };
-	// 	changeNewUser[e.target.name] = e.target.value;
-	// 	this.setState({ newUser: changeNewUser });
-	// };
-
-	// handleSignUp = (e) => {
-	// 	e.preventDefault();
-	// 	this.createUser();
-	// };
-	//   toggleUserForm = () => {
-    //     this.setState((state, props) => {
-    //         return {displayUserForm: !state.displayUserForm}
-    //     })
-    // }
+	deleteMale = (e, male) => {
+		e.preventDefault()
+		axios.delete(`/api/males/${male._id}`).then((res) => {
+			this.findAllMales()
+		});
+	};
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -166,15 +110,11 @@ export default class MaleList extends Component {
 												</Link>
 												<button
 												    key={male._id}
-													onClick={this.toggleUserForm}
+													onClick={(e) => this.deleteMale(e, male)}
 													type="button"
-													data-toggle="collapse"
-													data-target="#collapseExample"
-													aria-expanded="false"
-													aria-controls="collapseExample"
 													style={{ color: 'black' }}
 												>
-													 {this.state.displayUserForm === true ? 'This person is blocked' : 'Not Interested'}
+													 Not Interested
 												</button>
 											</div>
 										</Card.Body>

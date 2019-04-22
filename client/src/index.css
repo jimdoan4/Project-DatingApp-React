@@ -189,12 +189,6 @@ a {
   height: 100%;
 }
 
-.clicker {
-/* width:100px;
-height:100px; */
-outline:none;
-cursor:pointer;
-}
 
 .hidden{
 display:none;
