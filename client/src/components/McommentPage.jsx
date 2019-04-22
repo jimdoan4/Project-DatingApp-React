@@ -121,7 +121,7 @@ export default class McommentPage extends Component {
 		return (
 			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>Write A Review about Your DATE</button>
 							<div className= 'row'>
 				{this.state.mcomments.map((mcomment) => {
 					return (
@@ -163,19 +163,6 @@ export default class McommentPage extends Component {
 							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
 							onSubmit={this.createMcomment}
 						>
-						<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.withWho}
-										placeholder="Enter Your Date's Name"
-									/>
-								</Form.Group>
-							</Form.Row>
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="rating">Rating? </Form.Label>
@@ -189,6 +176,20 @@ export default class McommentPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
+						<Form.Row>
+								<Form.Group as={Col} controlId="formGridPassword">
+									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Control
+									className= 'text-center'
+										type="text"
+										name="withWho"
+										onChange={this.handleChange}
+										value={this.state.newMcomment.withWho}
+										placeholder="Enter Your Date's Name"
+									/>
+								</Form.Group>
+							</Form.Row>
+						
 							<Form.Row>
 								<Form.Group as={Col} controlId="formGridEmail">
 									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>

@@ -19,8 +19,8 @@ export default class MalePage extends Component {
 			photoUrl: '',
 			location: '',
 			bio: '',
-			comments: [],
-			events: []
+			mcomments: [],
+			mevents: []
 		},
 		redirectToMale: false,
 		displayMaleForm: false
