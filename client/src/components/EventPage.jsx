@@ -117,9 +117,10 @@ export default class EventPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Set up a Date with your MATCH</h3>
-							<button onClick= {this.toggleEventForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleEventForm}>List of Scheduled Events</button>
+							<div className= 'row'>
 				{this.state.events.map((event) => {
 					return (
 						
@@ -130,7 +131,7 @@ export default class EventPage extends Component {
 							// <Card>
 							<Col>
 								
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px', marginTop: '26px' }}>
 								
 									<p>
 										Event Name: {event.eventName}
@@ -151,7 +152,7 @@ export default class EventPage extends Component {
 						
 					);
 				})}
-			
+			<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add an Event</button>
         {
           this.state.displayEditForm ?
@@ -268,10 +269,11 @@ export default class EventPage extends Component {
 							</div>
 						</Form>
 					</Card> 
-				</div> :
-				null
+				</div> 
+				: null
 						}
-				
+				</div>
+				</div>
 			</div>
 			
 		);

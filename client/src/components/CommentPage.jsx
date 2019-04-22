@@ -121,19 +121,20 @@ export default class CommentPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</button>
+							<div className= 'row'>
 				{this.state.comments.map((comment) => {
 					return (
 						
-						<div className= 'row'>
+						<div className= ''>
 							
 							 {
 		  this.state.displayCommentForm ?
 		  
 						<Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
 									
 									
 									<p>
@@ -155,10 +156,11 @@ export default class CommentPage extends Component {
 				})}
 				{/* {/* <br /> */}
 				{/* <br /> */}
+					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add a Review</button>
 				   {
           this.state.displayEditForm ?
-				<div className="container text-center">
+				<div className="container">
 					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"
@@ -232,17 +234,17 @@ export default class CommentPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '120px' }} className="text-center">
+							<div style={{ marginLeft: '100px' }} className="text-center">
 								<button
 									className="text-center"
 									variant="primary"
 									type="submit"
 									style={{
 										marginRight: '140px',
-										paddingLeft: '30px',
-										paddingRight: '30px',
-										marginTop: '10px',
-										marginBottom: '25px'
+										paddingLeft: '60px',
+										paddingRight: '60px',
+										marginTop: '1px',
+										marginBottom: '15px'
 									}}
 								>
 									Add Comment
@@ -269,6 +271,8 @@ export default class CommentPage extends Component {
 				</div> 
 				: null
 						}
+						</div>
+						</div>
 			</div>
 		);
 	}

@@ -8,6 +8,7 @@ import { Container } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 export default class Home extends Component {
@@ -36,7 +37,7 @@ export default class Home extends Component {
 							<p style={{ color: 'white' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
-						<button style= {{backgroundColor: '#e1122f', color: 'white', fontSize: '14px'}}>Join Now</button>
+						<Button style= {{backgroundColor: 'red', color: 'white', fontSize: '14px'}}>Join Now</Button>
 					</div>
 					{/* <Card
 						style={{
@@ -47,7 +48,7 @@ export default class Home extends Component {
 						}}
 						className="centereds text-center"
 					> */}
-					<Container className="centereds text-center" style={{ marginTop: '20px' }}>
+					{/* <Container className="centereds text-center" style={{ marginTop: '20px' }}>
 						<Row>
 							<Col>
 								<Card className="homebox" style={{ width: '29rem', height: '26rem', opacity: '4', left: '0%' }}>
@@ -97,10 +98,10 @@ export default class Home extends Component {
 									</Card.Body>
 								</Card>
 							</Col> */}
-						</Row>
-					</Container>
+						{/* </Row>
+					</Container> */}
 					{/* </Card> */}
-				</div>
+				</div> 
 
 				<div
 					style={{
@@ -112,7 +113,7 @@ export default class Home extends Component {
 					}}
 				>
 					<Container className="text-center">
-						<h1 className="members" style={{ marginTop: '380px', marginBottom: '50px' }}>
+						<h1 className="members" style={{ marginTop: '40px', marginBottom: '50px' }}>
 							New members. Check them out!
 						</h1>
 						<Row>
@@ -269,13 +270,13 @@ export default class Home extends Component {
 					</Container>
 				</div>
 
-				<div className="containers">
+				{/* <div className="containers">
 					<Image
 						src="https://image.freepik.com/free-photo/lesbian-couple-love_53876-15899.jpg"
 						fluid
 						style={{ opacity: '.8', width: '100%', height: '600px' }}
 					/>
-				</div>
+				</div> */}
 				<h1 style={{ marginTop: '55px' }} className="text-center">
 					Member of the Week!
 				</h1>

@@ -5,6 +5,7 @@ import EventPage from './EventPage';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 export default class UserShowPage extends Component {
 	state = {
@@ -13,22 +14,26 @@ export default class UserShowPage extends Component {
 
 	render() {
 		return (
-			<div style={{ marginTop: '10px' }}>
-			<Container>
-  <Row className="justify-content-md-center text-center">
+// 			<div style={{ marginTop: '10px' }}>
+// 			<Container>
+//   <Row className="text-center">
     
-    <Col md="auto"><UserPage userId={this.state.userId} /></Col>
+//     <Col sm={8}><UserPage userId={this.state.userId} /></Col>
    
-  </Row>
-  <Row>
-    <Col className= 'text-center'><EventPage userId={this.state.userId} /></Col>
-    {/* <Col md="auto">Variable width content</Col> */}
-    <Col className= 'text-center'>
-      <CommentPage userId={this.state.userId} />
-    </Col>
-  </Row>
-</Container>
-				{/* <div className="row">
+//   {/* </Row>
+//   <Row> */}
+//     <Col sm={4} className= 'text-center'><EventPage userId={this.state.userId} /></Col>
+// 		<Row className= 'text-center'>
+//       <Col sm><CommentPage userId={this.state.userId} /></Col>
+//     </Row>
+// 		 </Row>
+ 
+    
+	
+ 
+// </Container>
+
+				 <div className="row text-center">
 					<div
 						style={{
 							marginLeft: '70px',
@@ -38,15 +43,20 @@ export default class UserShowPage extends Component {
 					>
 						<UserPage userId={this.state.userId} />
 					</div>
-					<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-4">
+
+
+					<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-8 text-center">
 						<EventPage userId={this.state.userId} />
 
-						<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-4">
+						<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-8 text-center">
 							<CommentPage userId={this.state.userId} />
 						</div>
+					
 					</div>
-				</div> */}
-			</div>
+					{/* </Card> */}
+				</div> 
+			
+		
 		);
 	}
 }
