@@ -119,9 +119,10 @@ export default class GcommentPage extends Component {
 			return <Redirect to={`/gaymales/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+                            	<div className= 'row'>
 				{this.state.gcomments.map((gcomment) => {
 					return (
 						<div>
@@ -129,7 +130,7 @@ export default class GcommentPage extends Component {
 							 {
 		  this.state.displayReviewForm ?
 		  <Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px', marginTop: '26px' }}>
 									<p>Rating for this date: {gcomment.rating}</p>
 									<p>Would I go on a second date? {gcomment.dateAgain}</p>
 									<p>What is your review of this date? {gcomment.review}</p>
@@ -150,7 +151,8 @@ export default class GcommentPage extends Component {
 					);
 				})}
 				<br />
-				{/* <br /> */}
+                {/* <br /> */}
+                	<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				<button style= {{marginBottom: '20px'}} onClick={this.toggleGcommentForm}>Add a Review</button>
 				   {
           this.state.displayGcommentForm ?
@@ -264,7 +266,9 @@ export default class GcommentPage extends Component {
 					</Card> 
 				</div> 
 				: null
-						}
+                        }
+                        </div>
+						</div>
 			</div>
 		);
 	}

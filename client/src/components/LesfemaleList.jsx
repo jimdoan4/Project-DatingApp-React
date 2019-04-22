@@ -134,7 +134,7 @@ export default class LesfemaleList extends Component {
 								<CardGroup className="collapse-show" id="collapseExample">
 									<Card
 										key={lesfemale._id}
-										className="text-center"
+										className="text-center hidden"
 										style={{
                                             color: 'white',
 											width: '16.8rem',

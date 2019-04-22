@@ -14,24 +14,6 @@ export default class UserShowPage extends Component {
 
 	render() {
 		return (
-// 			<div style={{ marginTop: '10px' }}>
-// 			<Container>
-//   <Row className="text-center">
-    
-//     <Col sm={8}><UserPage userId={this.state.userId} /></Col>
-   
-//   {/* </Row>
-//   <Row> */}
-//     <Col sm={4} className= 'text-center'><EventPage userId={this.state.userId} /></Col>
-// 		<Row className= 'text-center'>
-//       <Col sm><CommentPage userId={this.state.userId} /></Col>
-//     </Row>
-// 		 </Row>
- 
-    
-	
- 
-// </Container>
 
 				 <div className="row text-center">
 					<div
@@ -53,7 +35,7 @@ export default class UserShowPage extends Component {
 						</div>
 					
 					</div>
-					{/* </Card> */}
+				
 				</div> 
 			
 		

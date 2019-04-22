@@ -134,7 +134,7 @@ export default class GaymaleList extends Component {
 								<CardGroup className="collapse-show" id="collapseExample">
 									<Card
 										key={gaymale._id}
-										className="text-center"
+										className="text-center hidden"
 										style={{
 											width: '16.8rem',
 											marginLeft: '30px',

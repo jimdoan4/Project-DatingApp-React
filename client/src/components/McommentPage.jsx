@@ -119,9 +119,10 @@ export default class McommentPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+							<div className= 'row'>
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
@@ -129,7 +130,7 @@ export default class McommentPage extends Component {
 							 {
 		  this.state.displayReviewForm ?
 		  <Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px',  marginTop: '26px' }}>
 									<p>Rating for this date: {mcomment.rating}</p>
 									<p>Would I go on a second date? {mcomment.dateAgain}</p>
 									<p>What is your review of this date? {mcomment.review}</p>
@@ -149,8 +150,9 @@ export default class McommentPage extends Component {
 						</div>
 					);
 				})}
-				<br />
+			
 				{/* <br /> */}
+					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				<button style= {{marginBottom: '20px'}} onClick={this.toggleMcommentForm}>Add a Review</button>
 				   {
           this.state.displayMcommentForm ?
@@ -228,17 +230,17 @@ export default class McommentPage extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '120px' }} className="text-center">
+							<div style={{ marginLeft: '100px' }} className="text-center">
 								<button
 									className="text-center"
 									variant="primary"
 									type="submit"
 									style={{
 										marginRight: '140px',
-										paddingLeft: '30px',
-										paddingRight: '30px',
-										marginTop: '10px',
-										marginBottom: '25px'
+										paddingLeft: '60px',
+										paddingRight: '60px',
+										marginTop: '1px',
+										marginBottom: '15px'
 									}}
 								>
 									Add Comment
@@ -265,6 +267,8 @@ export default class McommentPage extends Component {
 				</div> 
 				: null
 						}
+							</div>
+						</div>
 			</div>
 		);
 	}

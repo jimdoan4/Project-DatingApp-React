@@ -117,14 +117,14 @@ export default class EventPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className= 'text=center' style={{marginLeft: '90px'}}>
+			<div className= 'text-center' style={{marginLeft: '90px'}}>
 				<h3>Set up a Date with your MATCH</h3>
 							<button style={{marginTop: '14px'}} onClick= {this.toggleEventForm}>List of Scheduled Events</button>
 							<div className= 'row'>
 				{this.state.events.map((event) => {
 					return (
 						
-						<div className= ''>
+						<div>
 							
 							 {
           this.state.displayEventForm ?

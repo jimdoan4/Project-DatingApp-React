@@ -116,9 +116,9 @@ export default class MeventPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text-center' style={{marginLeft: '90px'}}>
 					<h3>Set up a Date with your MATCH</h3>
-							<button onClick= {this.toggleDateForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}}  onClick= {this.toggleDateForm}>List of Scheduled Events</button>
 				{this.state.mevents.map((mevent) => {
 					return (
 						<div>
@@ -127,7 +127,7 @@ export default class MeventPage extends Component {
 		  this.state.displayDateForm ?
 		  <Col>
 							
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
+								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px', marginTop: '26px' }}>
 								
 									<p>
 										Event Name: {mevent.eventName}
@@ -146,7 +146,9 @@ export default class MeventPage extends Component {
 						</div>
 					);
 				})}
-				<br />
+				
+				<Col>
+					<div className= 'text-center' style= {{ marginTop: '30px'}}>
 						 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleMeventForm}>Add an Event</button>
         {
           this.state.displayMeventForm ?
@@ -264,11 +266,16 @@ export default class MeventPage extends Component {
 						</Form>
 					</Card> 
 					
-				</div> :
-				null
+				</div> 
+				: null
 						}
+						</div>
+							</Col>
 				
-			</div>
+				</div>
+			
+			// </div>
+			
 			
 		);
 	}

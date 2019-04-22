@@ -116,9 +116,10 @@ export default class GeventPage extends Component {
 			return <Redirect to={`/gaymales/`} />;
 		}
 		return (
-			<div>
+			<div className= 'text=center' style={{marginLeft: '90px'}}>
 					<h3>Set up a Date with your MATCH</h3>
-							<button onClick= {this.toggleDateForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleDateForm}>List of Scheduled Events</button>
+                            	<div className= 'row'>
 				{this.state.gevents.map((gevent) => {
 					return (
 						<div>
@@ -147,6 +148,8 @@ export default class GeventPage extends Component {
 					);
 				})}
 				<br />
+                <Col>
+			<div className= 'text-center' style= {{ marginTop: '30px'}}>
 						 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleGeventForm}>Add an Event</button>
         {
           this.state.displayGeventForm ?
@@ -266,7 +269,11 @@ export default class GeventPage extends Component {
 					
 				</div> :
 				null
-						}
+                        }
+                       </div>
+					</Col>
+                    	</div>
+			
 				
 			</div>
 			

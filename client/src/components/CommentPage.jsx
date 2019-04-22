@@ -128,7 +128,7 @@ export default class CommentPage extends Component {
 				{this.state.comments.map((comment) => {
 					return (
 						
-						<div className= ''>
+						<div>
 							
 							 {
 		  this.state.displayCommentForm ?
@@ -159,7 +159,7 @@ export default class CommentPage extends Component {
 				 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add a Review</button>
 				   {
           this.state.displayEditForm ?
-				<div className="container">
+				<div className="container text-center">
 					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
 							className="text-center"

@@ -81,9 +81,13 @@ export default class UserList extends Component {
 		this.findAllUsers();
 	};
 
-	deleteUser = () => {
-		axios.delete(`/api/users/${this.state.userId}`).then((res) => {
-			this.setState({ redirectToUser: true });
+
+	
+
+	deleteUser = (e, user) => {
+		e.preventDefault()
+		axios.delete(`/api/users/${user._id}`).then((res) => {
+			this.findAllUsers()
 		});
 	};
 
@@ -98,7 +102,8 @@ export default class UserList extends Component {
 	toggleUserForm = () => {
         this.setState((state, props) => {
             return {displayUserForm: !state.displayUserForm}
-        })
+		})
+		
 	}
 
 
@@ -138,7 +143,7 @@ export default class UserList extends Component {
 								 <CardGroup>
 									<Card
 										key={user._id}
-										className="text-center"
+										className="text-center hidden"
 										style={{
 											width: '16.8rem',
 											marginLeft: '30px',
@@ -158,19 +163,15 @@ export default class UserList extends Component {
 											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
 											{/* <Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
-											{/* <div key={user._id}>
-												<Link to={`/users/${user._id}`} key={user._id}>
-													<button style={{ marginRight: '16px' }}>Interested</button>
-												</Link>
-												<button style= {{color: 'black'}} data-toggle="collapse">Not Interested</button>
-											</div> */}
+										
 											<div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
+												
 												<button
 												    key={user._id}
-													onClick={this.toggleUserForm}
+													onClick={(e) => this.deleteUser(e, user)}
 													type="button"
 									
 													style={{ color: 'black' }}
@@ -198,8 +199,7 @@ export default class UserList extends Component {
     </ButtonGroup>
 	</ButtonToolbar> */}
 				 </div> 
-		
-			}
+
 				
 			</div>
 				

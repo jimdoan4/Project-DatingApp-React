@@ -44,7 +44,7 @@ export default class Home extends Component {
 							<p style={{ color: 'black' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
-						<Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button>
+						{/* <Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button> */}
 					</div>
 					{/* <Card
 						style={{
