@@ -23,7 +23,7 @@ export default class MalePage extends Component {
 			events: []
 		},
 		redirectToMale: false,
-		displayEditForm: false
+		displayMaleForm: false
 	};
 
 	getSingleMaleData = () => {
@@ -36,22 +36,22 @@ export default class MalePage extends Component {
 		this.getSingleMaleData();
 	};
 
-	toggleEditForm = () => {
+	toggleMaleForm = () => {
 		this.setState((state, props) => {
-			return { displayEditForm: !state.displayEditForm };
+			return { displayMaleForm: !state.displayMaleForm };
 		});
 	};
 
 	handleChange = (e) => {
-		const updatedMale = { ...this.state.male };
-		updatedMale[e.target.name] = e.target.value;
-		this.setState({ male: updatedMale });
+		const updateMale = { ...this.state.male };
+		updateMale[e.target.name] = e.target.value;
+		this.setState({ male: updateMale });
 	};
 
 	handleChange = (e) => {
 		const newMale = { ...this.state.male };
 		newMale[e.target.name] = e.target.value;
-		this.setState({ currentMale: newMale });
+		this.setState({ male: newMale });
 	};
 
 	updateMale = (e) => {
@@ -64,11 +64,11 @@ export default class MalePage extends Component {
 				photoUrl: this.state.male.photoUrl,
 				location: this.state.male.location,
 				bio: this.state.male.bio,
-				comments: {},
-				events: {}
+				mcomments: {},
+				mevents: {}
 			})
 			.then((res) => {
-				this.setState({ male: res.data, displayEditForm: false });
+				this.setState({ male: res.data, displayMaleForm: false });
 			});
 		this.getSingleMaleData();
 	};
@@ -87,7 +87,7 @@ export default class MalePage extends Component {
 			<div>
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
-				<form onSubmit={this.updateMale}>
+				{/* <form onSubmit={this.updateMale}> */}
 					<div style={{ marginTop: '30px', marginBottom: '30px' }}>
 						<Card
 							className="container"
@@ -107,6 +107,7 @@ export default class MalePage extends Component {
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 									<button
+										onClick={this.toggleMaleForm}
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
@@ -114,7 +115,8 @@ export default class MalePage extends Component {
 											marginRight: '45px'
 										}}
 									>
-										<Link to={`/males/${this.state.maleId}`}>Edit User</Link>
+										Edit User
+									
 									</button>
 									<button
 										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
@@ -122,25 +124,124 @@ export default class MalePage extends Component {
 									>
 										Delete User
 									</button>
-									{/* <div
-										style={{
-											alignItems: 'center',
-											justifyContent: 'center',
-											display: 'flex',
-											width: '30px',
-											height: '40px',
-											marginTop: '80px',
-											marginLeft: '-46px',
-											marginRight: '205px'
-										}}
-									>
-										<MapContainer user={this.state.user.location} />
-									</div> */}
+								
 								</Container>
 							</Card>
 						</Card>
 					</div>
-				</form>
+			
+	{this.state.displayMaleForm ? 
+										<form style= {{marginTop: '50px', marginRight: '50px'}} onSubmit={this.updateMale} className="col">
+											<div className="col">
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '30px' }}
+														htmlFor="firstName"
+													>
+														First Name
+													</label>
+													<input
+														style={{ height: '50px', width: '320px' }}
+														className="text-center"
+														id="firstName"
+														type="text"
+														name="firstName"
+														onChange={this.handleChange}
+														value={this.state.male.firstName}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="lastName"
+													>
+														Last Name{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="lastName"
+														type="text"
+														name="lastName"
+														onChange={this.handleChange}
+														value={this.state.male.lastName}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="age"
+													>
+														Age{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="age"
+														type="number"
+														name="age"
+														onChange={this.handleChange}
+														value={this.state.male.age}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="bio"
+													>
+														Biography
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="bio"
+														type="text"
+														name="bio"
+														onChange={this.handleChange}
+														value={this.state.male.bio}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="location"
+													>
+														Location{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="location"
+														type="text"
+														name="location"
+														onChange={this.handleChange}
+														value={this.state.male.location}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="photoUrl"
+													>
+														Photo:{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="photoUrl"
+														type="text"
+														name="photoUrl"
+														onChange={this.handleChange}
+														value={this.state.male.photoUrl}
+													/>
+												</div>
+											</div>
+											<div className="text-center" style={{ marginTop: '20px' }}>
+												<button className="text-center">Submit</button>
+											</div>
+											</form> :
+											null
+									}
 			</div>
 		);
 	}

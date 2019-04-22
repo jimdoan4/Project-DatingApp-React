@@ -15,6 +15,7 @@ export default class NavBar extends Component {
 	 constructor() {
     super();
     this.state = {
+	  name: [],
       weather: [],
       temp: [],
       clouds: []
@@ -25,6 +26,7 @@ export default class NavBar extends Component {
     axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=imperial&appid=f92c1f4990b0574d4a4e4d3dd556f388`)
       .then(response => {
         this.setState({
+		//  name: response.data.list[0].weather.name,
           weather: response.data.list[0],
           temp: response.data.list[0].main.temp,
           clouds: response.data.list[0].weather[0].description
@@ -103,8 +105,9 @@ export default class NavBar extends Component {
 					
 					
     <Dropdown.Item href=""><Weather
+	    //    location={this.state.name} 
            city={this.state.weather.name} 
-          temp={this.state.temp} F
+          temp={this.state.temp} 
           clouds={this.state.clouds}
           /></Dropdown.Item>
 </DropdownButton>

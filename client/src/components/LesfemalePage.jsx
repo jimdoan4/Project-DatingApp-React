@@ -23,7 +23,7 @@ export default class LesfemalePage extends Component {
 			events: []
 		},
 		redirectToLesfemale: false,
-		displayEditForm: false
+		displayLesbianForm: false
 	};
 
 	getSingleLesfemaleData = () => {
@@ -36,22 +36,22 @@ export default class LesfemalePage extends Component {
 		this.getSingleLesfemaleData();
 	};
 
-	toggleEditForm = () => {
+	toggleLesbianForm = () => {
 		this.setState((state, props) => {
-			return { displayEditForm: !state.displayEditForm };
+			return { displayLesbianForm: !state.displayLesbianForm };
 		});
 	};
 
 	handleChange = (e) => {
-		const updatedLesfemale = { ...this.state.lesfemale };
-		updatedLesfemale[e.target.name] = e.target.value;
-		this.setState({ lesfemale: updatedLesfemale });
+		const updateLesfemale = { ...this.state.lesfemale };
+		updateLesfemale[e.target.name] = e.target.value;
+		this.setState({ lesfemale: updateLesfemale });
 	};
 
 	handleChange = (e) => {
 		const newLesfemale = { ...this.state.lesfemale };
 		newLesfemale[e.target.name] = e.target.value;
-		this.setState({ currentLesfemale: newLesfemale });
+		this.setState({ lesfemale: newLesfemale });
 	};
 
 	updateLesfemale = (e) => {
@@ -64,11 +64,11 @@ export default class LesfemalePage extends Component {
 				photoUrl: this.state.lesfemale.photoUrl,
 				location: this.state.lesfemale.location,
 				bio: this.state.lesfemale.bio,
-				comments: {},
-				events: {}
+				// comments: {},
+				// events: {}
 			})
 			.then((res) => {
-				this.setState({ lesfemale: res.data, displayEditForm: false });
+				this.setState({ lesfemale: res.data, displayLesbianForm: false });
 			});
 		this.getSingleLesfemaleData();
 	};
@@ -87,7 +87,7 @@ export default class LesfemalePage extends Component {
 			<div>
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
-				<form onSubmit={this.updateLesfemale}>
+	
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card
 							className="container"
@@ -107,6 +107,7 @@ export default class LesfemalePage extends Component {
 								</Card.Body>
 								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 									<button
+										onClick={this.toggleLesbianForm}
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
@@ -114,7 +115,8 @@ export default class LesfemalePage extends Component {
 											marginRight: '45px'
 										}}
 									>
-										<Link to={`/lesfemales/${this.state.lesfemaleId}`}>Edit User</Link>
+										Edit User
+									
 									</button>
 									<button
 										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
@@ -122,25 +124,123 @@ export default class LesfemalePage extends Component {
 									>
 										Delete User
 									</button>
-									{/* <div
-										style={{
-											alignItems: 'center',
-											justifyContent: 'center',
-											display: 'flex',
-											width: '30px',
-											height: '40px',
-											marginTop: '80px',
-											marginLeft: '-46px',
-											marginRight: '205px'
-										}}
-									>
-										<MapContainer user={this.state.user.location} />
-									</div> */}
+							
 								</Container>
 							</Card>
 						</Card>
 					</div>
-				</form>
+				{this.state.displayLesbianForm ? 
+										<form style= {{marginTop: '50px', marginRight: '50px'}} onSubmit={this.updateLesfemale} className="col">
+											<div className="col">
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '30px' }}
+														htmlFor="firstName"
+													>
+														First Name
+													</label>
+													<input
+														style={{ height: '50px', width: '320px' }}
+														className="text-center"
+														id="firstName"
+														type="text"
+														name="firstName"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.firstName}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="lastName"
+													>
+														Last Name{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="lastName"
+														type="text"
+														name="lastName"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.lastName}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="age"
+													>
+														Age{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="age"
+														type="number"
+														name="age"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.age}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="bio"
+													>
+														Biography
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="bio"
+														type="text"
+														name="bio"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.bio}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="location"
+													>
+														Location{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="location"
+														type="text"
+														name="location"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.location}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="photoUrl"
+													>
+														Photo:{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="photoUrl"
+														type="text"
+														name="photoUrl"
+														onChange={this.handleChange}
+														value={this.state.lesfemale.photoUrl}
+													/>
+												</div>
+											</div>
+											<div className="text-center" style={{ marginTop: '20px' }}>
+												<button className="text-center">Submit</button>
+											</div>
+											</form> :
+											null
+									}
 			</div>
 		);
 	}
