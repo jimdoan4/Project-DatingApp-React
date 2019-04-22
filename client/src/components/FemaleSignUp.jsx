@@ -9,18 +9,17 @@ import { Col } from 'react-bootstrap';
 export default class FemaleSignUp extends Component {
 	state = {
 		lesfemales: [],
-		newUser: {
+		newLesfemale: {
 			firstName: '',
 			lastName: '',
 			age: '',
 			photoUrl: '',
 			location: '',
-			bio: '',
-			comments: [],
-			events: []
+			bio: ''
+			
 		},
 		displayFemaleForm: false,
-		redirectToUser: false
+		redirectToLesfemale: false
 	};
 
 	componentDidMount = () => {
@@ -36,20 +35,20 @@ export default class FemaleSignUp extends Component {
 	createFemale = (e) => {
 		axios
 			.post('/api/lesfemales/', {
-				password: this.state.newUser.password,
-				userName: this.state.newUser.userName,
-				firstName: this.state.newUser.firstName,
-				lastName: this.state.newUser.lastName,
-				age: this.state.newUser.age,
-				photoUrl: this.state.newUser.photoUrl,
-				location: this.state.newUser.location,
-				bio: this.state.newUser.bio
+				password: this.state.newLesfemale.password,
+				userName: this.state.newLesfemale.userName,
+				firstName: this.state.newLesfemale.firstName,
+				lastName: this.state.newLesfemale.lastName,
+				age: this.state.newLesfemale.age,
+				photoUrl: this.state.newLesfemale.photoUrl,
+				location: this.state.newLesfemale.location,
+				bio: this.state.newLesfemale.bio
 			})
 			.then((res) => {
 				const lesfemalesList = [ this.state.lesfemale ];
 				lesfemalesList.unshift(res.data);
 				this.setState({
-					newUser: {
+					newLesfemale: {
 						firstName: '',
 						lastName: '',
 						age: '',
@@ -64,10 +63,10 @@ export default class FemaleSignUp extends Component {
 		this.findAllLesfemales();
 	};
 
-	handleFemaleChange = (e) => {
-		const changeNewFemale = { ...this.state.newFemale };
+	handleChange = (e) => {
+		const changeNewFemale = { ...this.state.newLesfemale };
 		changeNewFemale[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewFemale });
+		this.setState({ newLesfemale: changeNewFemale });
 	};
 
 
@@ -84,8 +83,8 @@ export default class FemaleSignUp extends Component {
     };
 
 	render() {
-		if (this.state.redirectToUser) {
-			return <Redirect to={`/users/:userId`} />;
+		if (this.state.redirectToLesfemale) {
+			return <Redirect to={`/lesfemales/:lesfemaleId`} />;
 		}
 
 		return (
@@ -125,8 +124,8 @@ export default class FemaleSignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleFemaleChange}
-										value={this.state.newUser.firstName}
+										onChange={this.handleChange}
+										value={this.state.newLesfemale.firstName}
 										type="text"
 										placeholder="Enter First Name"
 									/>
@@ -139,8 +138,8 @@ export default class FemaleSignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleFemaleChange}
-										value={this.state.newUser.lastName}
+										onChange={this.handleChange}
+										value={this.state.newLesfemale.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
@@ -154,8 +153,8 @@ export default class FemaleSignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleFemaleChange}
-									value={this.state.newUser.photoUrl}
+									onChange={this.handleChange}
+									value={this.state.newLesfemale.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
 								/>
@@ -168,9 +167,9 @@ export default class FemaleSignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="age"
-									type="text"
-									onChange={this.handleFemaleChange}
-									value={this.state.newUser.age}
+									type="number"
+									onChange={this.handleChange}
+									value={this.state.newLesfemale.age}
 									placeholder="Enter your Age"
 								/>
 							</Form.Group>
@@ -183,8 +182,8 @@ export default class FemaleSignUp extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleFemaleChange}
-									value={this.state.newUser.location}
+									onChange={this.handleChange}
+									value={this.state.newLesfemale.location}
 									placeholder="Apartment, studio, or floor"
 								/>
 							</Form.Group>
@@ -198,8 +197,8 @@ export default class FemaleSignUp extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleFemaleChange}
-										value={this.state.newUser.bio}
+										onChange={this.handleChange}
+										value={this.state.newLesfemale.bio}
 										placeholder="Enter Facts about yourself"
 									/>
 								</Form.Group>

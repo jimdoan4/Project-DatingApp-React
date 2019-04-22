@@ -10,7 +10,7 @@ import { Col } from 'react-bootstrap';
 export default class MaleSignUp extends Component {
 	state = {
 		males: [],
-		newUser: {
+		newMale: {
 			firstName: '',
 			lastName: '',
 			age: '',
@@ -21,7 +21,7 @@ export default class MaleSignUp extends Component {
 			mevents: []
 		},	
 		displayMaleForm: false,
-		redirectToUser: false
+		redirectToMale: false
 	};
 
 	componentDidMount = () => {	
@@ -37,22 +37,21 @@ export default class MaleSignUp extends Component {
 	createMale = (e) => {
 		axios
 			.post('/api/males/', {
-				password: this.state.newUser.password,
-				userName: this.state.newUser.userName,
-				firstName: this.state.newUser.firstName,
-				lastName: this.state.newUser.lastName,
-				age: this.state.newUser.age,
-				photoUrl: this.state.newUser.photoUrl,
-				location: this.state.newUser.location,
-				bio: this.state.newUser.bio,
-				comments: [],
-				events: []
+				password: this.state.newMale.password,
+				userName: this.state.newMale.userName,
+				firstName: this.state.newMale.firstName,
+				lastName: this.state.newMale.lastName,
+				age: this.state.newMale.age,
+				photoUrl: this.state.newMale.photoUrl,
+				location: this.state.newMale.location,
+				bio: this.state.newMale.bio
+			
 			})
 			.then((res) => {
 				const malesList = [ this.state.males ];
 				malesList.unshift(res.data);
 				this.setState({
-					newUser: {
+					newMale: {
 						userName: '',
 						password: '',
 						firstName: '',
@@ -71,10 +70,10 @@ export default class MaleSignUp extends Component {
 
 
 
-	handleMaleChange = (e) => {
+	handleChange = (e) => {
 		const changeNewMale = { ...this.state.newMale };
 		changeNewMale[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewMale });
+		this.setState({ newMale: changeNewMale });
 	};
 
 
@@ -90,8 +89,8 @@ export default class MaleSignUp extends Component {
 	};
     
 	render() {
-		if (this.state.redirectToUser) {
-			return <Redirect to={`/users/:userId`} />;
+		if (this.state.redirectToMale) {
+			return <Redirect to={`/males/:maleId`} />;
 		}
 
 		return (
@@ -131,8 +130,8 @@ export default class MaleSignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleMaleChange}
-										value={this.state.newUser.firstName}
+										onChange={this.handleChange}
+										value={this.state.newMale.firstName}
 										type="text"
 										placeholder="Enter First Name"
 									/>
@@ -145,8 +144,8 @@ export default class MaleSignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleMaleChange}
-										value={this.state.newUser.lastName}
+										onChange={this.handleChange}
+										value={this.state.newMale.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
@@ -160,8 +159,8 @@ export default class MaleSignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleMaleChange}
-									value={this.state.newUser.photoUrl}
+									onChange={this.handleChange}
+									value={this.state.newMale.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
 								/>
@@ -174,9 +173,9 @@ export default class MaleSignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="age"
-									type="text"
-									onChange={this.handleMaleChange}
-									value={this.state.newUser.age}
+									type="number"
+									onChange={this.handleChange}
+									value={this.state.newMale.age}
 									placeholder="Enter your Age"
 								/>
 							</Form.Group>
@@ -189,8 +188,8 @@ export default class MaleSignUp extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleMaleChange}
-									value={this.state.newUser.location}
+									onChange={this.handleChange}
+									value={this.state.newMale.location}
 									placeholder="Apartment, studio, or floor"
 								/>
 							</Form.Group>
@@ -204,8 +203,8 @@ export default class MaleSignUp extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleMaleChange}
-										value={this.state.newUser.bio}
+										onChange={this.handleChange}
+										value={this.state.newMale.bio}
 										placeholder="Enter Facts about yourself"
 									/>
 								</Form.Group>

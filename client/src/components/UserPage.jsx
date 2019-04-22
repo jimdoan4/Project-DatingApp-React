@@ -115,8 +115,8 @@ export default class UserPage extends Component {
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
-											color: 'black',
-											marginRight: '45px'
+											color: 'black'
+											// marginRight: '10px'
 										}}
 									>
 										Edit User

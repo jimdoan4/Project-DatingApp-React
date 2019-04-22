@@ -112,8 +112,8 @@ export default class MalePage extends Component {
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
-											color: 'black',
-											marginRight: '45px'
+											color: 'black'
+											
 										}}
 									>
 										Edit User

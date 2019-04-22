@@ -9,7 +9,7 @@ import { Col } from 'react-bootstrap';
 export default class GaySignUp extends Component {
 	state = {
 		gaymales: [],
-		newUser: {
+		newGaymale: {
 			firstName: '',
 			lastName: '',
 			age: '',
@@ -18,7 +18,7 @@ export default class GaySignUp extends Component {
 			bio: ''
 		},
 		displayGayForm: false,
-		redirectToUser: false
+		redirectToGaymale: false
 	};
 
 	componentDidMount = () => {
@@ -35,20 +35,20 @@ export default class GaySignUp extends Component {
 	createGaymale = (e) => {
 		axios
 			.post('/api/gaymales/', {
-				password: this.state.newUser.password,
-				userName: this.state.newUser.userName,
-				firstName: this.state.newUser.firstName,
-				lastName: this.state.newUser.lastName,
-				age: this.state.newUser.age,
-				photoUrl: this.state.newUser.photoUrl,
-				location: this.state.newUser.location,
-				bio: this.state.newUser.bio
+				password: this.state.newGaymale.password,
+				userName: this.state.newGaymale.userName,
+				firstName: this.state.newGaymale.firstName,
+				lastName: this.state.newGaymale.lastName,
+				age: this.state.newGaymale.age,
+				photoUrl: this.state.newGaymale.photoUrl,
+				location: this.state.newGaymale.location,
+				bio: this.state.newGaymale.bio
 			})
 			.then((res) => {
 				const gaymalesList = [ this.state.gaymales ];
 				gaymalesList.unshift(res.data);
 				this.setState({
-					newUser: {
+					newGaymale: {
 						userName: '',
 						password: '',
 						firstName: '',
@@ -65,10 +65,10 @@ export default class GaySignUp extends Component {
 		this.findAllGaymales();
 	};
 
-	handleGaymaleChange = (e) => {
+	handleChange = (e) => {
 		const changeNewGaymale = { ...this.state.newGaymale };
 		changeNewGaymale[e.target.name] = e.target.value;
-		this.setState({ newUser: changeNewGaymale });
+		this.setState({ newGaymale: changeNewGaymale });
 	};
 
 
@@ -85,8 +85,8 @@ export default class GaySignUp extends Component {
 
 
 	render() {
-		if (this.state.redirectToUser) {
-			return <Redirect to={`/users/:userId`} />;
+		if (this.state.redirectToGaymale) {
+			return <Redirect to={`/gaymales/:gaymaleId`} />;
 		}
 
 		return (
@@ -133,8 +133,8 @@ export default class GaySignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="firstName"
-										onChange={this.handleGaymaleChange}
-										value={this.state.newUser.firstName}
+										onChange={this.handleChange}
+										value={this.state.newGaymale.firstName}
 										type="text"
 										placeholder="Enter First Name"
 									/>
@@ -147,8 +147,8 @@ export default class GaySignUp extends Component {
 									<Form.Control
 										className="text-center"
 										name="lastName"
-										onChange={this.handleGaymaleChange}
-										value={this.state.newUser.lastName}
+										onChange={this.handleChange}
+										value={this.state.newGaymale.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
@@ -162,8 +162,8 @@ export default class GaySignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="photoUrl"
-									onChange={this.handleGaymaleChange}
-									value={this.state.newUser.photoUrl}
+									onChange={this.handleChange}
+									value={this.state.newGaymale.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
 								/>
@@ -176,9 +176,9 @@ export default class GaySignUp extends Component {
 								<Form.Control
 									className="text-center"
 									name="age"
-									type="text"
-									onChange={this.handleGaymaleChange}
-									value={this.state.newUser.age}
+									type="number"
+									onChange={this.handleChange}
+									value={this.state.newGaymale.age}
 									placeholder="Enter your Age"
 								/>
 							</Form.Group>
@@ -191,8 +191,8 @@ export default class GaySignUp extends Component {
 									className="text-center"
 									name="location"
 									type="text"
-									onChange={this.handleGaymaleChange}
-									value={this.state.newUser.location}
+									onChange={this.handleChange}
+									value={this.state.newGaymale.location}
 									placeholder="Apartment, studio, or floor"
 								/>
 							</Form.Group>
@@ -206,8 +206,8 @@ export default class GaySignUp extends Component {
 										className="text-center"
 										name="bio"
 										type="text"
-										onChange={this.handleGaymaleChange}
-										value={this.state.newUser.bio}
+										onChange={this.handleChange}
+										value={this.state.newGaymale.bio}
 										placeholder="Enter Facts about yourself"
 									/>
 								</Form.Group>

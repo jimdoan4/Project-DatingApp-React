@@ -111,8 +111,8 @@ export default class LesfemalePage extends Component {
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
-											color: 'black',
-											marginRight: '45px'
+											color: 'black'
+							
 										}}
 									>
 										Edit User
