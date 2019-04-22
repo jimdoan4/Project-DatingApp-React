@@ -17,27 +17,34 @@ export default class Home extends Component {
 		return (
 			<div>
 				<div className="containers">
-					<Image
+					{/* <Image
 						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
 						fluid
 						style={{ opacity: '3', width: '100%' }}
-					/>
+					/> */}
+					<div style= {{backgroundColor: 'black'}}>
+						<Image
+					src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
+					fluid
+					style={{ opacity: '.79', width: '100%', zIndex: '1' }}
+				/>
+				</div>
 
 					<div
 						style={{
 							paddingBottom: '70px',
 							backgroundColor: '',
-							color: '#e1122f',
+							color: 'black',
 							opacity: '3',
 							position: 'absolute'
 						}}
 						className="centered text-center frontpage"
 					>
-						<Container style={{ marginTop: '20px' }}>
-							<p style={{ color: 'white' }}>Get Lucky today.</p>
+						<Container style={{ marginTop: '20px', opacity: '3' }}>
+							<p style={{ color: 'black' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
-						<Button style= {{backgroundColor: 'red', color: 'white', fontSize: '14px'}}>Join Now</Button>
+						<Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button>
 					</div>
 					{/* <Card
 						style={{
@@ -270,14 +277,56 @@ export default class Home extends Component {
 					</Container>
 				</div>
 
-				{/* <div className="containers">
-					<Image
-						src="https://image.freepik.com/free-photo/lesbian-couple-love_53876-15899.jpg"
+	
+			
+					 <Image
+						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
 						fluid
-						style={{ opacity: '.8', width: '100%', height: '600px' }}
+						style={{ opacity: '3', width: '100%' }}
 					/>
-				</div> */}
-				<h1 style={{ marginTop: '55px' }} className="text-center">
+					
+	<div className= 'member1 row text-center' style= {{ marginBottom: '65px', marginTop: '75px'}}>		
+	<Card style= {{ marginRight: '35px'}}>
+						<img 
+								width={234}
+								height={244}
+								className="mr-3 row text-center"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+							</Card>
+							<Card style= {{ marginRight: '35px'}}>
+							<img
+						
+								width={234}
+								height={244}
+								className="mr-3 row"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+							</Card>
+							<Card style= {{ marginRight: '35px'}}>
+							<img
+						
+								width={234}
+								height={244}
+								className="mr-3 row"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+							</Card>
+							<Card>
+							<img
+						
+								width={234}
+								height={244}
+								className="mr-3 row"
+								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
+								alt="Generic placeholder"
+							/>
+							</Card>
+							</div>
+				<h1 style={{ marginTop: '445px' }} className="text-center">
 					Member of the Week!
 				</h1>
 				<ul

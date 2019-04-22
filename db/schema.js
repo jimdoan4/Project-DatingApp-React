@@ -106,6 +106,6 @@ module.exports = {
 	GaymaleSchema: GaymaleSchema,
 	GeventSchema: GeventSchema,
 	GcommentSchema: GcommentSchema,
-	LesfemaleSchema: LesfemaleSchema
+	LesfemaleSchema: LesfemaleSchema,
 	
 };
