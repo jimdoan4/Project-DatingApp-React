@@ -8,6 +8,8 @@ const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentController');
 const mcommentController = require('../controllers/mcommentController');
 const gaymaleController = require('../controllers/gaymaleController.js');
+const gcommentController = require('../controllers/gcommentController');
+const geventController = require('../controllers/geventController');
 const lesfemaleController = require('../controllers/lesfemaleController.js');
 
 router.get('/', appController.index);
@@ -47,6 +49,18 @@ router.post('/gaymales/', gaymaleController.create);
 router.get('/gaymales/:gaymaleId/', gaymaleController.show);
 router.put('/gaymales/:gaymaleId/', gaymaleController.update);
 router.delete('/gaymales/:gaymaleId/', gaymaleController.delete);
+
+router.get('/gaymales/:gaymaleId/gevents', geventController.index);
+router.post('/gaymales/:gaymaleId/gevents', geventController.create);
+router.get('/gaymales/:gaymaleId/gevents/:geventId', geventController.show);
+router.put('/gaymales/:gaymaleId/gevents/:geventId', geventController.update);
+router.delete('/gaymales/:gaymaleId/gevents/:geventId', geventController.delete);
+
+router.get('/gaymales/:gaymaleId/gcomments', gcommentController.index);
+router.post('/gaymales/:gaymaleId/gcomments', gcommentController.create);
+router.get('/gaymales/:gaymaleId/gcomments/:gcommentId', gcommentController.show);
+router.put('/gaymales/:gaymaleId/gcomments/:gcommentId', gcommentController.update);
+router.delete('/gaymales/:gaymaleId/gcomments/:gcommentId', gcommentController.delete);
 
 router.get('/users/:userId/events/', eventController.index);
 router.post('/users/:userId/events/', eventController.create);

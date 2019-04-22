@@ -8,6 +8,8 @@ const Event = require('../models/Event.js');
 const Mevent = require('../models/Mevent.js');
 const Male = require('../models/Male.js');
 const Gaymale = require('../models/Gaymale.js');
+const Gcomment = require('../models/Gcomment.js');
+const Gevent = require('../models/Gevent.js');
 const Lesfemale = require('../models/Lesfemale.js');
 
 const ihop = new Event({
@@ -28,6 +30,23 @@ const great = new Comment({
 });
 
 const ihops = new Mevent({
+	eventName: 'Houstons Bar and Grill',
+	time: 7,
+	price: 20.0,
+	withWho: 'Sara Henderson',
+	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg'
+});
+
+const great1 = new Gcomment({
+	rating: 9,
+	dateAgain: 'Yes',
+	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg',
+	withWho: 'Sara Henderson',
+	review: 'She was so funny',
+	lessonLearned: 'Relax next time and do not drink too much'
+});
+
+const ihop1 = new Gevent({
 	eventName: 'Houstons Bar and Grill',
 	time: 7,
 	price: 20.0,
@@ -188,8 +207,8 @@ const gm1 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm2 = new Gaymale({
@@ -199,8 +218,8 @@ const gm2 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm3 = new Gaymale({
@@ -210,8 +229,8 @@ const gm3 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm4 = new Gaymale({
@@ -221,8 +240,8 @@ const gm4 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop ],
+	gcomments: [ great ]
 });
 
 const gm5 = new Gaymale({
@@ -232,8 +251,8 @@ const gm5 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 const gm6 = new Gaymale({
 	firstName: 'James',
@@ -242,8 +261,8 @@ const gm6 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm7 = new Gaymale({
@@ -254,8 +273,8 @@ const gm7 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm8 = new Gaymale({
@@ -266,8 +285,8 @@ const gm8 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm9 = new Gaymale({
@@ -277,8 +296,8 @@ const gm9 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm10 = new Gaymale({
@@ -288,8 +307,8 @@ const gm10 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm11 = new Gaymale({
@@ -299,8 +318,8 @@ const gm11 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 const gm12 = new Gaymale({
@@ -310,8 +329,8 @@ const gm12 = new Gaymale({
 	age: 28,
 	location: 'Fulton, Georgia',
 	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	events: [ ihop ],
-	comments: [ great ]
+	gevents: [ ihop1 ],
+	gcomments: [ great1 ]
 });
 
 //female
@@ -618,8 +637,8 @@ Gaymale.deleteMany({})
 	.then(() => gm9.save())
 	.then(() => gm10.save())
 	.then(() => gm11.save())
-	.then(() => gm12.save());
-  
+	.then(() => gm12.save())
+	.then(() => console.log('Successful Save'))
 Male.deleteMany({})
 	.then(() => m1.save())
 	.then(() => m2.save())
@@ -632,8 +651,8 @@ Male.deleteMany({})
 	.then(() => m9.save())
 	.then(() => m10.save())
 	.then(() => m11.save())
-	.then(() => m12.save());
-// .then(() => console.log('Successful Save'));
+	.then(() => m12.save())
+	.then(() => console.log('Successful Save'))
 Lesfemale.deleteMany({})
 	.then(() => f1.save())
 	.then(() => f2.save())
@@ -646,8 +665,8 @@ Lesfemale.deleteMany({})
 	.then(() => f9.save())
 	.then(() => f10.save())
 	.then(() => f11.save())
-	.then(() => f12.save());
-// .then(() => console.log('Successful Save'));
+	.then(() => f12.save())
+	.then(() => console.log('Successful Save'))
 User.deleteMany({})
 	.then(() => sara.save())
 	.then(() => abby.save())
