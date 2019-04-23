@@ -89,7 +89,7 @@ export default class GaymalePage extends Component {
 
 					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 						<Card
-							className="container"
+							className=""
 							style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}
 						>
 							<Card>

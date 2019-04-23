@@ -90,7 +90,7 @@ export default class MalePage extends Component {
 				{/* <form onSubmit={this.updateMale}> */}
 					<div style={{ marginTop: '30px', marginBottom: '30px' }}>
 						<Card
-							className="container"
+							className=""
 							style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#1e3959' }}
 						>
 							<Card>

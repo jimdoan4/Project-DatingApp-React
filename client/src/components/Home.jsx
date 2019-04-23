@@ -10,31 +10,37 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
-
 export default class Home extends Component {
-
 	render() {
 		return (
-			<div>
-				<div className="containers">
+			<div className="main">
+				<div style={{ backgroundColor: 'black', height: '100%' }}>
+					<Image
+						className="rockstar "
+						src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
+						fluid
+						style={{ opacity: '3', width: '100%', backgroundSize: 'cover' }}
+					/>
+
+					{/* <div> */}
 					{/* <Image
 						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
 						fluid
 						style={{ opacity: '3', width: '100%' }}
 					/> */}
-					<div style= {{backgroundColor: 'black'}}>
-						<Image
-					src="http://www.desktopimages.org/pictures/2012/0704/1/brunettes-women-megan-fox-long-hair-white-background-1920x1080-wallpaper-560980.jpg"
-					fluid
-					style={{ opacity: '.79', width: '100%', zIndex: '1' }}
-				/>
-				</div>
-
+					{/* <div style={{ backgroundColor: 'black', height: '100%' }}>
+						{/* <Image
+							className="rockstar main"
+							src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
+							fluid
+							style={{ opacity: '3', width: '100%', backgroundSize: 'cover' }}
+						/> */}
+					{/* </div> */}
 					<div
 						style={{
 							paddingBottom: '70px',
 							backgroundColor: '',
-							color: 'black',
+							color: 'red',
 							opacity: '3',
 							position: 'absolute'
 						}}
@@ -44,11 +50,71 @@ export default class Home extends Component {
 							<p style={{ color: 'black' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
 						</Container>
-						{/* <Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button> */}
-					</div>
+							<button class="buttoncenter">
+								Join Now
+								
+							</button>
 					
-				</div> 
+					</div>
+				</div>
 
+				{/* <Container style={{ marginTop: '55px' }}>
+					<Row>
+						<Col>
+							<Card style={{ width: '23rem' }} className="member3">
+								<Card.Img
+									style={{ height: '23rem' }}
+									variant="top"
+									src="https://cdn.fstoppers.com/styles/med-16-9/s3/lead/2017/05/clay-cook-fstoppers-how-to-use-colored-gels-create-electric-editorial-photography-header.jpg"
+								/>
+							</Card>
+						</Col>
+						<Col>
+							<Card style={{ width: '23rem' }} className="member2">
+								<Card.Img
+									style={{ height: '23rem' }}
+									variant=""
+									src="http://www.liveonbeauty.org/upload/2018/09/08/creative-rim-light-tutorial-rim-lighting-l-50a7de6a07039d8c.jpg"
+								/>
+							</Card>
+						</Col>
+						<Col>
+							<Card style={{ width: '23rem' }} className="member4">
+								<Card.Img
+									style={{ height: '23rem' }}
+									variant="top"
+									src="https://cdn.shopify.com/s/files/1/0974/7950/files/pomme-copie_web_1024x1024.png?v=1551296343"
+								/>
+							</Card>
+						</Col>
+					</Row>
+				</Container>
+
+				<Container className="text-center" style={{ marginTop: '400px' }}>
+					<Row>
+						<Col>
+							<Image
+								className="rockstar"
+								style={{ width: '100%' }}
+								src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
+							/>
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
+							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
+						</Col>
+						<Col>
+							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
+							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
+						</Col>
+						<Col>
+							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
+							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
+						</Col>
+					</Row>
+				</Container>
 				<div
 					style={{
 						backgroundColor: '',
@@ -59,7 +125,7 @@ export default class Home extends Component {
 					}}
 				>
 					<Container className="text-center">
-						<h1 className="members" style={{ marginTop: '40px', marginBottom: '50px' }}>
+						<h1 className="members" style={{ marginTop: '400px', marginBottom: '50px' }}>
 							New members. Check them out!
 						</h1>
 						<Row>
@@ -214,65 +280,9 @@ export default class Home extends Component {
 							</Row>
 						</Row>
 					</Container>
-				</div>
+				</div> */}
 
-	
-			
-					 <Image
-						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
-						fluid
-						style={{ opacity: '3', width: '100%' }}
-					/>
-					
-	<div className= 'member1 row text-center' style= {{ marginBottom: '65px', marginTop: '75px'}}>		
-	<Card style= {{ marginRight: '35px'}}>
-						<img 
-								width={234}
-								height={244}
-								className="mr-3 row text-center"
-								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-								alt="Generic placeholder"
-							/>
-							</Card>
-							<Card style= {{ marginRight: '35px'}}>
-							<img
-						
-								width={234}
-								height={244}
-								className="mr-3 row"
-								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-								alt="Generic placeholder"
-							/>
-							</Card>
-							<Card style= {{ marginRight: '35px'}}>
-							<img
-						
-								width={234}
-								height={244}
-								className="mr-3 row"
-								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-								alt="Generic placeholder"
-							/>
-							</Card>
-							<Card>
-							<img
-						
-								width={234}
-								height={244}
-								className="mr-3 row"
-								src="https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg"
-								alt="Generic placeholder"
-							/>
-							</Card>
-							</div>
-							<div style= {{backgroundColor: 'black', marginTop: '445px'}}>
-						<Image
-					src="https://wallup.net/wp-content/uploads/2016/05/13/329627-Deepika_Padukone.jpg"
-					fluid
-					style={{ opacity: '.79', width: '100%', zIndex: '1' }}
-				/>
-				</div>
-				<h1 style={{ marginTop: '35px' }} className="text-center">
+				{/* <h1 style={{ marginTop: '35px' }} className="text-center">
 					Member of the Week!
 				</h1>
 				<ul
@@ -336,22 +346,12 @@ export default class Home extends Component {
 								</p>
 							</Media.Body>
 						</Media>
-					</div>
-					{/* <div className= 'containers'>
-				
-				<Image
-						src="https://image.freepik.com/free-photo/lesbian-couple-love_53876-15899.jpg"
-						fluid
-						style={{ opacity: '.8', width: '100%', height: '600px' }}
-					/>
 					</div> */}
 
-					<h1 style={{ marginTop: '55px' }} className="text-center">
-						Now available on mobile App. Find your match on your convenience.{' '}
-					</h1>
-				</ul>
-			
-		
+				{/* <h1 style={{ marginTop: '55px' }} className="text-center">
+					Now available on mobile App. Find your match on your convenience.{' '}
+				</h1> */}
+				{/* </ul> */}
 			</div>
 		);
 	}

@@ -36,9 +36,8 @@ class App extends Component {
 						<Route exact path="/users/:userId/comments/:commentId/" component={SingleComment} />
 						<Route exact path="/males/" component={MaleList} />
 						<Route exact path="/users/:userId/" component={UserShowPage} />
-								
 					</Switch>
-					 <Footer /> 
+					<Footer />
 				</div>
 			</Router>
 		);

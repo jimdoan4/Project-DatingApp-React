@@ -7,8 +7,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f7f7;
-  background-size: cover;
-  /* background-image: url('https://www.washingtonian.com/wp-content/uploads/2018/11/datingapps-istock-2048x1111.jpg'); */
+  /* background-size: cover;
+  background: no-repeat center fixed;
+  background-image: url('https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w'); */
+  /* opacity: .9; */
+  /* -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite; */
   margin: 0;
   padding: 0;
   height: 100%;
@@ -110,7 +115,7 @@ code {
 .member1 {
   position: absolute;
 
- 
+
   left: 17%;
   animation: move 30s repeat;
   -webkit-animation: move 4s;
@@ -119,6 +124,105 @@ code {
 @keyframes move {
   from {
     margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 80%;
+    width: 100%;
+  }
+}
+
+.member2 {
+  position: absolute;
+
+
+  left: 0%;
+  animation: move 30s repeat;
+  -webkit-animation: move 4s;
+}
+
+@keyframes move {
+  from {
+    margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 80%;
+    width: 100%;
+  }
+}
+
+.member3 {
+  position: absolute;
+
+
+  left: 0%;
+  animation: move 30s repeat;
+  -webkit-animation: move 4s;
+}
+
+@keyframes move {
+  from {
+    margin-left: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-bottom: 80%;
+    width: 300%;
+  }
+
+  to {
+    margin-bottom: 80%;
+    width: 100%;
+  }
+}
+
+.member4 {
+  position: absolute;
+
+
+  left: 0%;
+  animation: move 30s repeat;
+  -webkit-animation: move 4s;
+}
+
+@keyframes move {
+  from {
+    margin-right: 80%;
     width: 300%;
   }
 
@@ -152,8 +256,8 @@ a {
 
 .centered {
   position: absolute;
-  top: 44%;
-  left: 2%;
+  top: 40%;
+  left: 38%;
   color: white;
   font-size: 36px;
   font-family: 'Noticia Text', serif;
@@ -164,9 +268,9 @@ a {
 
 .centereds {
   border: none;
-  box-shadow:  #f7f7f7;
+  box-shadow: #f7f7f7;
   position: absolute;
-   /* background-color: #f7f7f7; */
+  /* background-color: #f7f7f7; */
   top: 84%;
   left: -1.4%;
   font-size: 16px;
@@ -189,13 +293,77 @@ a {
   height: 100%;
 }
 
+.rockstar:hover {
+  background-color: green;
+  /* opacity: .9; */
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
 
-.hidden{
-display:none;
-height:500px;
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+
+.hidden {
+  display: none;
+  height: 500px;
 
 }
 
-.clicker:focus + .hidden{
-display:block;
+.clicker:focus+.hidden {
+  display: block;
 }
+
+/* .main {
+
+  background-size: cover;
+  background: no-repeat center fixed;
+  /* background-image: url('https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w'); */
+  /* opacity: .9; */
+  /* -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite; */
+  /* margin: 0;
+  padding: 0;
+  height: 100%; */
+/* }  */
+
+.buttoncenter {
+   border-top: 1px solid #426d87;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#e8e8e8), to(#ffffff));
+   background: -webkit-linear-gradient(top, #e8e8e8, #ffffff);
+   background: -moz-linear-gradient(top, #e8e8e8, #ffffff);
+   background: -ms-linear-gradient(top, #e8e8e8, #ffffff);
+   background: -o-linear-gradient(top, #e8e8e8, #ffffff);
+   padding: 13.5px 27px;
+   -webkit-border-radius: 29px;
+   -moz-border-radius: 29px;
+   border-radius: 29px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #000000;
+   font-size: 18px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #ffffff;
+   background: #ffffff;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }

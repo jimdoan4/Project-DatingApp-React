@@ -78,26 +78,23 @@ export default class NavBar extends Component {
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
-						<Nav.Link style={{ color: 'black' }}>
-						<Link to="/login/" style={{ color: 'black' }}>
-							Profile Account
-						</Link>
-					</Nav.Link>
+				
 					
 					 <InputField queryWeather= {this.queryWeather} />
-				<ButtonToolbar>
+				<ButtonToolbar style= {{marginRight: '20px'}}>
     {['left'].map(direction => (
 		 <DropdownButton
+		 style={{color: 'black'}}
         drop={direction}
-        variant="secondary"
+				// variant="secondary"
+				placeholder='x'
         // title={` Drop ${direction} `}
         id={`dropdown-button-drop-${direction}`}
         key={direction}
 		>
-					
-					
-    <Dropdown.Item href=""><Weather
-           city={this.state.weather.name} 
+
+    <Dropdown.Item style={{marginTop: '15px', paddingLeft: '20px', paddingRight: '20px'}}><Weather 
+          city={this.state.weather.name} 
           temp={this.state.temp} 
           clouds={this.state.clouds}
           /></Dropdown.Item>
@@ -105,27 +102,11 @@ export default class NavBar extends Component {
     ))}
   </ButtonToolbar>
 				</Navbar.Collapse>
-				
- {/* <InputField queryWeather= {this.queryWeather} />
-				<ButtonToolbar>
-    {['left'].map(direction => (
-		 <DropdownButton
-        drop={direction}
-        variant="secondary"
-        // title={` Drop ${direction} `}
-        id={`dropdown-button-drop-${direction}`}
-        key={direction}
-		>
-					
-					
-    <Dropdown.Item href=""><Weather
-           city={this.state.weather.name} 
-          temp={this.state.temp} 
-          clouds={this.state.clouds}
-          /></Dropdown.Item>
-</DropdownButton>
-    ))}
-  </ButtonToolbar> */}
+						<Nav.Link style={{ color: 'black' }}>
+						<Link to="/login/" style={{ color: 'black' }}>
+							Profile Account
+						</Link>
+					</Nav.Link>
 				
 			</Navbar>
 		);
