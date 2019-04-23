@@ -252,27 +252,7 @@ export default class Gevent extends Component {
 								>
 									Add Event
 								</button>
-								{/* <Link
-											className="text-center"
-											to={`users/${this.state.userId}/events/${event._id}`}
-										> */}
-								{/* <Button
-								// onClick = {this.deleteEvent}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Edit Event
-							</Button> */}
-								{/* </Link> */}
+							
 							</div>
 						</Form>
 					</Card> 

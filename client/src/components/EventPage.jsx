@@ -246,28 +246,7 @@ export default class EventPage extends Component {
 								>
 									Add Event
 								</button>
-							
-								{/* <Link
-											className="text-center"
-											to={`users/${this.state.userId}/events/${event._id}`}
-										> */}
-								{/* <Button
-								// onClick = {this.deleteEvent}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Edit Event
-							</Button> */}
-								{/* </Link> */}
+			
 							</Container>
 						</Form>
 					</Card> 
@@ -285,27 +264,3 @@ export default class EventPage extends Component {
 	}
 }
 
-{/* <Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
-						<button
-										onClick={this.toggleUserForm}
-										style={{
-											backgroundColor: 'white',
-											borderColor: 'black',
-											color: 'black',
-											marginRight: '10px'
-										}}
-									>
-										Edit Account
-									
-									</button>
-									
-									
-									<button
-										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
-										onClick={this.deleteUser}
-									>
-										Delete Account
-									</button> 
-									
-								
-								</Container> */}

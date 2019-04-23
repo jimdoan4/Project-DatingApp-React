@@ -164,8 +164,7 @@ export default class CommentPage extends Component {
 						</div>
 					);
 				})}
-				{/* {/* <br /> */}
-				{/* <br /> */}
+
 					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add a Review</button>
 				   {

@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 const Weather = props =>
   <div className='weather'>
-     {/* <p>City: </p>
-    <p>{props.location}</p>  */}
-
     <div>City: 
     <p>{props.city}</p>
     </div>

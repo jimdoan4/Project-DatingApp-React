@@ -94,13 +94,7 @@ export default class GaySignUp extends Component {
 				{this.state.gaymales.map((gaymale) => {
 					return (
 						<div>
-							{/* <Card>
-								<Card.Body className="text-center">
-									<Link to={`/users/${user._id}`} key={user._id}>
-										Welcome: <img src= '{user.photoUrl}'/>
-									</Link>
-								</Card.Body>
-							</Card> */}
+						
 						</div>
 					);
 				})}

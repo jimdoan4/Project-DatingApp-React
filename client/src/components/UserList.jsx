@@ -112,11 +112,7 @@ export default class UserList extends Component {
 		}
 		return (
 			<div>
-				{/* <Jumbotron fluid className="man" style={{ height: '26rem' }}>
-					<Container className="homefont" style={{ marginTop: '210px' }}>
-						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
-					</Container>
-				</Jumbotron> */}
+		
 		
 				 <div
 					className="row"
@@ -184,17 +180,7 @@ export default class UserList extends Component {
 						);
 					})}
 
-					{/* <ButtonToolbar className="text-center mb-3" aria-label="Toolbar with Button groups">
-					 <ButtonGroup className= "text-center mr-2" aria-label="First group">
-      					<Button variant="secondary">1</Button>
-      <Button variant="secondary">2</Button>
-      <Button variant="secondary">3</Button>
-      <Button variant="secondary">4</Button>
-	    <Button variant="secondary">5</Button>
-		  <Button variant="secondary">6</Button>
-		    <Button variant="secondary">7</Button>
-    </ButtonGroup>
-	</ButtonToolbar> */}
+
 				 </div> 
 
 				

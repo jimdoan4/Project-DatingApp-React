@@ -12,7 +12,6 @@ export default class UserPage extends Component {
 		userId: this.props.userId,
 		users: [],
 		user: {
-			// _id: '',
 			userName: '',
 			password: '',
 			firstName: '',
@@ -88,9 +87,7 @@ export default class UserPage extends Component {
 		}
 		return (
 			<div>
-				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
-				{/* <form onSubmit={this.updateUser}> */}
 					<div style={{ marginTop: '30px', marginBottom: '40px' }}>
 						<Card
 							className=""

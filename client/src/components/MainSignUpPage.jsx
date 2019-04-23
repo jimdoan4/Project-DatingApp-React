@@ -13,7 +13,7 @@ export default class MainSignUpPage extends Component {
 		maleId: this.props.match.params.maleId,
 		gaymaleId: this.props.match.params.gaymaleId,
 		lesbianId: this.props.match.params.lesbianId
-		// lesfemaleId: this.props.match.params.lesfemaleId
+	
 	};
 
 	render() {

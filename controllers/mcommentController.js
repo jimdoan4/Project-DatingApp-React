@@ -45,6 +45,7 @@ const mcommentController = {
 			.catch((err) => {
 				console.log(err);
 			});
+
 	},
 	delete: (req, res) => {
 		Male.findById(req.params.maleId)
