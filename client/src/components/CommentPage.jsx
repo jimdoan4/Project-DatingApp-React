@@ -110,9 +110,10 @@ export default class CommentPage extends Component {
 		});
 	};
 
-	deleteComment = () => {
-		axios.delete(`/api/users/${this.state.userId}/comments/${this.state.commentId}`).then((res) => {
-			this.setState({ redirectToComment: true });
+	deleteComment = (e, comment) => {
+		e.preventDefault();
+		axios.delete(`/api/users/${this.state.userId}/comments/${comment._id}`).then((res) => {
+			this.getAllComments();
 		});
 	};
 
@@ -144,7 +145,17 @@ export default class CommentPage extends Component {
 									<p>Would I go on a second date? {comment.dateAgain}</p>
 									<p>What is your review of this date? {comment.review}</p>
 									<p>What did I learn from this date? {comment.lessonLearned}</p>
-										<Link to={`/users/${this.state.userId}/comments/${comment._id}`} key={comment._id}><button>Edit Review</button></Link>
+										
+										<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
+													<Link to={`/users/${this.state.userId}/comments/${comment._id}`} key={comment._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Review</button></Link>
+													<button
+										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+										key={comment._id}
+													onClick={(e) => this.deleteComment(e, comment)}
+									>
+										Delete Review
+									</button> 
+									</Container>
 								</Card> 
 							
 							 </Col> :
@@ -248,22 +259,7 @@ export default class CommentPage extends Component {
 								>
 									Add Comment
 								</button>
-								{/* <Button
-								onClick = {this.deleteComment}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Delete Comment
-							</Button> */}
+							
 							</div>
 						</Form>
 					</Card> 

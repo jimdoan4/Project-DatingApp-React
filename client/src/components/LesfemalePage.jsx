@@ -111,19 +111,20 @@ export default class LesfemalePage extends Component {
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
-											color: 'black'
+											color: 'black',
+											marginRight: '10px'
 							
 										}}
 									>
-										Edit User
+										Edit Account
 									
 									</button>
-									{/* <button
+									<button
 										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 										onClick={this.deleteLesfemale}
 									>
-										Delete User
-									</button> */}
+										Delete Account
+									</button>
 							
 								</Container>
 							</Card>

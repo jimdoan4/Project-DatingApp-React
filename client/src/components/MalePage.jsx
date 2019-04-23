@@ -112,14 +112,20 @@ export default class MalePage extends Component {
 										style={{
 											backgroundColor: 'white',
 											borderColor: 'black',
-											color: 'black'
+											color: 'black',
+											marginRight: '10px'
 											
 										}}
 									>
-										Edit User
+										Edit Account
 									
 									</button>
-								
+								<button
+										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+										onClick={this.deleteMale}
+									>
+										Delete Account
+									</button>
 								
 								</Container>
 							</Card>

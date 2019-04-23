@@ -106,11 +106,14 @@ export default class EventPage extends Component {
 		this.getAllEvents();
 	};
 
-	deleteEvent = () => {
-		axios.delete(`/api/users/${this.state.userId}/events/${this.state.eventId}`).then((res) => {
-			this.setState({ redirectToEvent: true });
+	deleteEvent = (e, event) => {
+		e.preventDefault()
+		axios.delete(`/api/users/${this.state.userId}/events/${event._id}`).then((res) => {
+				this.getAllEvents()
 		});
 	};
+
+
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -140,9 +143,17 @@ export default class EventPage extends Component {
 									<p>Time: {event.time}</p>
 									<p>Average Price: {event.price}</p>
 										<p>Who is my date? {event.withWho}</p>
-											<p>what time is the event? {event.time}</p>
-												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-												<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}><button>Edit Event</button></Link>
+											<p>What time is the event? {event.time}</p>
+												<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
+												<Link to={`/users/${this.state.userId}/events/${event._id}`} key={event._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Event</button></Link>
+													<button
+										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+										key={event._id}
+													onClick={(e) => this.deleteEvent(e, event)}
+									>
+										Delete Event
+									</button> 
+									</Container>
 								</Card> 
 					
 							</Col> :
@@ -159,7 +170,7 @@ export default class EventPage extends Component {
           this.state.displayEditForm ?
 				 <div className="container">
 			
-					<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
+					<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
 					
 						 <Form
 							className="text-center"
@@ -219,33 +230,23 @@ export default class EventPage extends Component {
 								</Form.Group>
 							</Form.Row>
 								<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newEvent.withWho}
-										placeholder="Enter your date's name"
-									/>
-								</Form.Group>
+							
 							</Form.Row>
-							<div style={{ marginLeft: '100px' }} className="text-center">
+							<Container style={{ marginLeft: '15px', textAlign: 'center' }} className="text-center">
 								<button
 									className="text-center"
 									variant="primary"
 									type="submit"
 									style={{
-										marginRight: '140px',
-										paddingLeft: '60px',
-										paddingRight: '60px',
-										marginTop: '1px',
-										marginBottom: '15px'
+										backgroundColor: 'white',
+											borderColor: 'black',
+											color: 'black',
+											marginRight: '10px'
 									}}
 								>
 									Add Event
 								</button>
+							
 								{/* <Link
 											className="text-center"
 											to={`users/${this.state.userId}/events/${event._id}`}
@@ -267,7 +268,7 @@ export default class EventPage extends Component {
 								Edit Event
 							</Button> */}
 								{/* </Link> */}
-							</div>
+							</Container>
 						</Form>
 					</Card> 
 				</div> 
@@ -283,3 +284,28 @@ export default class EventPage extends Component {
 		);
 	}
 }
+
+{/* <Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
+						<button
+										onClick={this.toggleUserForm}
+										style={{
+											backgroundColor: 'white',
+											borderColor: 'black',
+											color: 'black',
+											marginRight: '10px'
+										}}
+									>
+										Edit Account
+									
+									</button>
+									
+									
+									<button
+										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+										onClick={this.deleteUser}
+									>
+										Delete Account
+									</button> 
+									
+								
+								</Container> */}

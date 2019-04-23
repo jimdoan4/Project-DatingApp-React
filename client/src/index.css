@@ -7,13 +7,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f7f7;
-  /* background-size: cover;
-  background: no-repeat center fixed;
-  background-image: url('https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w'); */
-  /* opacity: .9; */
-  /* -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
-  -webkit-mask-size: 200%;
-  animation: shine 2s infinite; */
+/* background-size: cover; 
+  background: no-repeat center fixed; */
+
   margin: 0;
   padding: 0;
   height: 100%;

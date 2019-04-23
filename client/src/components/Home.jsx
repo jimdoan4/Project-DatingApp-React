@@ -13,51 +13,64 @@ import { Button } from 'react-bootstrap';
 export default class Home extends Component {
 	render() {
 		return (
-			<div className="main">
-				<div style={{ backgroundColor: 'black', height: '100%' }}>
-					<Image
-						className="rockstar "
-						src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
-						fluid
-						style={{ opacity: '3', width: '100%', backgroundSize: 'cover' }}
-					/>
-
-					{/* <div> */}
+			<div>
+				<div className="containers">
 					{/* <Image
 						src="https://media3.giphy.com/media/13drGMGklYVr0Y/giphy.gif"
 						fluid
 						style={{ opacity: '3', width: '100%' }}
 					/> */}
-					{/* <div style={{ backgroundColor: 'black', height: '100%' }}>
-						{/* <Image
-							className="rockstar main"
-							src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
+					<div style={{ backgroundColor: '' }}>
+						<Image
+							src="https://c1.staticflickr.com/5/4479/38133605732_0558b48ea8_b.jpg"
 							fluid
-							style={{ opacity: '3', width: '100%', backgroundSize: 'cover' }}
-						/> */}
-					{/* </div> */}
+							style={{ opacity: '3', width: '100%', zIndex: '' }}
+						/>
+					</div> 
+
 					<div
-						style={{
+						 style={{
 							paddingBottom: '70px',
-							backgroundColor: '',
+						backgroundColor: '',
 							color: 'red',
-							opacity: '3',
-							position: 'absolute'
-						}}
-						className="centered text-center frontpage"
+						opacity: '3',
+						position: 'absolute'
+					 }}
+						lassName="centered text-center frontpage"
 					>
 						<Container style={{ marginTop: '20px', opacity: '3' }}>
-							<p style={{ color: 'black' }}>Get Lucky today.</p>
+							<p style={{ color: 'white' }}>Get Lucky today.</p>
 							<p> Find your Match.</p>
-						</Container>
-							<button class="buttoncenter">
-								Join Now
-								
-							</button>
-					
+						</Container> */}
+						<Button style= {{backgroundColor: 'black', color: 'white', fontSize: '12px'}}>Join Now</Button> */}
 					</div>
 				</div>
-
+{/* <Container className="text-center" style= {{ marginBottom: '100px'}}> */}
+					{/* <Row>
+						<Col>
+							<Image
+								className="rockstar"
+								style={{ width: '100%', height: '100%', backgroundSize: 'cover',  backgroundPosition: 'center',  backgroundRepeat: 'no-repeat' }}
+								src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
+							/>
+						</Col>
+					</Row> */}
+					{/* <Row>
+						<Col style= {{fontSize: '35px'}}>
+							Find your Match.
+						</Col>
+						<Col style= {{fontSize: '35px'}}>
+							Set a Date with your Match.
+						</Col>
+						<Col style= {{fontSize: '35px'}}>
+							Rate your Date.
+						</Col>
+					</Row>
+					<Container className= 'text-center' style= {{marginTop: '40px'}}>
+				<button>Join Now</button>
+				</Container>
+				</Container> */}
+				
 				{/* <Container style={{ marginTop: '55px' }}>
 					<Row>
 						<Col>
@@ -89,32 +102,7 @@ export default class Home extends Component {
 						</Col>
 					</Row>
 				</Container>
-
-				<Container className="text-center" style={{ marginTop: '400px' }}>
-					<Row>
-						<Col>
-							<Image
-								className="rockstar"
-								style={{ width: '100%' }}
-								src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
-							/>
-						</Col>
-					</Row>
-					<Row>
-						<Col>
-							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
-							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
-						</Col>
-						<Col>
-							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
-							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
-						</Col>
-						<Col>
-							Prosecutors say tennis broadcaster and coach Justin Gimelstob pleaded no contest to
-							misdemeanor assault for attacking a former friend in Los Angeles on Halloween 2017.
-						</Col>
-					</Row>
-				</Container>
+				
 				<div
 					style={{
 						backgroundColor: '',
