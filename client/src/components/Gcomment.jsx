@@ -122,7 +122,7 @@ export default class Gcomment extends Component {
 		return (
 			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>List of Scheduled Events</button>
+							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>List of Your date REVIEWS</button>
                             	<div className= 'row'>
 				{this.state.gcomments.map((gcomment) => {
 					return (

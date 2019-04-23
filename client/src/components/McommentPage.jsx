@@ -123,8 +123,8 @@ export default class McommentPage extends Component {
 		return (
 			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
-							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>Write A Review about Your DATE</button>
-							{/* <div className= 'row'> */}
+							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>Lists of Your Date REVIEWS</button>
+						
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
