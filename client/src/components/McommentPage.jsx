@@ -139,18 +139,20 @@ export default class McommentPage extends Component {
 									<p>What did I learn from this date? {mcomment.lessonLearned}</p>
 										<p>
 											Who was my date? {mcomment.withWho}</p>
+											<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
 												<Link
 											to={`/males/${this.state.maleId}/mcomments/${mcomment._id}`}
 											key={mcomment._id}
-										><button>Edit Review</button>
+										><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Review</button>
 										</Link>
 										<button
 												    key={mcomment._id}
 													onClick={(e) => this.deleteMcomment(e, mcomment)}
-													
+													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 												>
 													Delete Review
 												</button>
+												</Container>
 								
 							</Card> 
 							</Col> :

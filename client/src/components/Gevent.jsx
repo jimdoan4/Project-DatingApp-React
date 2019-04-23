@@ -139,14 +139,16 @@ export default class Gevent extends Component {
 									<p>Average Price: {gevent.price}</p>
 										<p>Who is my date? {gevent.withWho}</p>
 											<p>what time is the event? {gevent.time}</p>
-												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-												<Link to={`/gaymales/${this.state.gaymaleId}/gevents/${gevent._id}`} key={gevent._id}><button>Edit Event</button></Link>
+											<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
+												<Link to={`/gaymales/${this.state.gaymaleId}/gevents/${gevent._id}`} key={gevent._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Event</button></Link>
                                                 <button
 												    key={gevent._id}
-													onClick={(e) => this.deleteGevent(e, gevent)}	
+													onClick={(e) => this.deleteGevent(e, gevent)}
+													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}	
 												>
 													Delete Event
 												</button>
+												</Container>
 							
 							</Card> 
 							</Col> :
@@ -163,7 +165,7 @@ export default class Gevent extends Component {
           this.state.displayGeventForm ?
 				 <div className="container">
 				 
-					<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
+					<Card className="container" style={{ width: '25rem', height: '40.8rem' }}>
 					
 						 <Form
 							className="text-center"
@@ -224,7 +226,7 @@ export default class Gevent extends Component {
 							</Form.Row>
 								<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
 									<Form.Control
 									className= 'text-center'
 										type="text"
@@ -235,7 +237,7 @@ export default class Gevent extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '100px' }} className="text-center">
+							<div style={{ marginLeft: '110px' }} className="text-center">
 								<button
 									className="text-center"
 									variant="primary"

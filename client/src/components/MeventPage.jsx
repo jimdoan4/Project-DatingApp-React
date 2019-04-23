@@ -138,15 +138,16 @@ export default class MeventPage extends Component {
 									<p>Average Price: {mevent.price}</p>
 										<p>Who is my date? {mevent.withWho}</p>
 											<p>what time is the event? {mevent.time}</p>
-												{/* <Card.Title>{event.photoUrl}</Card.Title> */}
-												<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button>Edit Event</button></Link>
+												<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
+												<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Event</button></Link>
 													<button
 												    key={mevent._id}
 													onClick={(e) => this.deleteMevent(e, mevent)}
-													
+													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 												>
 													Delete Event
 												</button>
+												</Container>
 							
 							</Card> 
 							</Col> :
@@ -223,17 +224,7 @@ export default class MeventPage extends Component {
 								</Form.Group>
 							</Form.Row>
 								<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newMevent.withWho}
-										placeholder="Enter your date's name"
-									/>
-								</Form.Group>
+							
 							</Form.Row>
 							<div style={{ marginLeft: '100px' }} className="text-center">
 								<button

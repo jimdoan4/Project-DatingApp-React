@@ -138,18 +138,20 @@ export default class Gcomment extends Component {
 									<p>What did I learn from this date? {gcomment.lessonLearned}</p>
 										<p>
 											Who was my date? {gcomment.withWho}</p>
+												<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
 												<Link
 											to={`/gaymales/${this.state.gaymaleId}/gcomments/${gcomment._id}`}
 											key={gcomment._id}
-										><button>Edit Review</button>
+										><button  style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Review</button>
 										</Link>
                                         	<button
 												    key={gcomment._id}
 													onClick={(e) => this.deleteGcomment(e, gcomment)}
-													
+													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
 												>
 													Delete Review
 												</button>
+												</Container>
 								
 							</Card> 
 							</Col> :
@@ -173,7 +175,7 @@ export default class Gcomment extends Component {
 						>
 						<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
 									<Form.Control
 									className= 'text-center'
 										type="text"
@@ -238,8 +240,9 @@ export default class Gcomment extends Component {
 									/>
 								</Form.Group>
 							</Form.Row>
-							<div style={{ marginLeft: '120px' }} className="text-center">
+							<div style={{ marginLeft: '146px' }} className="text-center">
 								<button
+								onClick= {this.createGcomment}
 									className="text-center"
 									variant="primary"
 									type="submit"
@@ -253,22 +256,7 @@ export default class Gcomment extends Component {
 								>
 									Add Comment
 								</button>
-								{/* <Button
-								onClick = {this.deleteComment}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Delete Comment
-							</Button> */}
+							
 							</div>
 						</Form>
 					</Card> 
