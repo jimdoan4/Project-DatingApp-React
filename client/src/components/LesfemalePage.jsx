@@ -6,6 +6,7 @@ import { Jumbotron } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+
 export default class LesfemalePage extends Component {
 	state = {
 		lesbianId: this.props.lesbianId,
@@ -18,8 +19,8 @@ export default class LesfemalePage extends Component {
 			photoUrl: '',
 			location: '',
 			bio: '',
-			comments: [],
-			events: []
+			// comments: [],
+			// events: []
 		},
 		redirectToLesbian: false,
 		displayLesbianForm: false
@@ -62,7 +63,7 @@ export default class LesfemalePage extends Component {
 				age: this.state.lesbian.age,
 				photoUrl: this.state.lesbian.photoUrl,
 				location: this.state.lesbian.location,
-				bio: this.state.lesbian.bio,
+				bio: this.state.lesbian.bio
 				// comments: {},
 				// events: {}
 			})

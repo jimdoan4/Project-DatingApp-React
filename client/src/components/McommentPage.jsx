@@ -12,18 +12,19 @@ import { Col } from 'react-bootstrap';
 export default class McommentPage extends Component {
 	state = {
 		maleId: this.props.maleId,
+		mcommentId: this.props.mcommentId,
 		mcomments: [],
 		newMcomment: {
 			rating: '',
 			dateAgain: '',
 			review: '',
 			withWho: '',
-			photoUrl: '',
 			lessonLearned: ''
 		},
 		redirectToMcomment: false,
 		displayMcommentForm: false,
-		displayReviewForm: false
+		displayReviewForm: false,
+		displayEditForm: false
 	};
 
 	getAllMcomments = () => {
@@ -49,6 +50,12 @@ export default class McommentPage extends Component {
 		});
 	};
 
+	toggleEditForm = (comment) => {
+		this.setState((state, props) => {
+			return { displayEditForm: !state.displayEditForm, newMcomment: comment };
+		});
+	};
+
 	handleChange = (e) => {
 		const changeNewMcomment = { ...this.state.newMcomment };
 		changeNewMcomment[e.target.name] = e.target.value;
@@ -63,7 +70,6 @@ export default class McommentPage extends Component {
 				dateAgain: this.state.newMcomment.dateAgain,
 				review: this.state.newMcomment.review,
 				withWho: this.state.newMcomment.withWho,
-				photoUrl: this.state.newMcomment.photoUrl,
 				lessonLearned: this.state.newMcomment.lessonLearned
 			})
 			.then((res) => {
@@ -75,7 +81,6 @@ export default class McommentPage extends Component {
 						dateAgain: '',
 						review: '',
 						withWho: '',
-						photoUrl: '',
 						lessonLearned: ''
 					},
 					displayMcommentForm: false,
@@ -85,27 +90,22 @@ export default class McommentPage extends Component {
 		this.getAllMcomments();
 	};
 
-	handleChange = (e) => {
-		const changedMcomment = { ...this.state.newMcomment };
-		changedMcomment[e.target.name] = e.target.value;
-		this.setState({ newMcomment: changedMcomment });
-	};
+
 
 	updateMcomment = (e) => {
 		e.preventDefault();
 		axios
-			.put(`/api/males/${this.state.maleId}`, {
-				rating: this.state.Mcomment.rating,
-				dateAgain: this.state.Mcomment.dateAgain,
-				review: this.state.Mcomment.review,
-				withWho: this.state.Mcomment.withWho,
-				photoUrl: this.state.Mcomment.photoUrl,
-				lessonLearned: this.state.Mcomment.lessonLearned
+			.put(`/api/males/${this.state.maleId}/mcomments/${this.state.newMcomment._id}}`, {
+				rating: this.state.newMcomment.rating,
+				dateAgain: this.state.newMcomment.dateAgain,
+				review: this.state.newMcomment.review,
+				withWho: this.state.newMcomment.withWho,
+				lessonLearned: this.state.newMcomment.lessonLearned
 			})
 			.then((res) => {
-				this.setState({ male: res.data, displayMcommentForm: false });
+					this.getAllMcomments();
 			});
-		this.getAllMcomments();
+	
 	};
 
 
@@ -124,7 +124,7 @@ export default class McommentPage extends Component {
 			<div className= 'text=center' style={{marginLeft: '90px'}}>
 				<h3>Write A Review about Your DATE</h3>
 							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>Write A Review about Your DATE</button>
-							<div className= 'row'>
+							{/* <div className= 'row'> */}
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
@@ -139,12 +139,10 @@ export default class McommentPage extends Component {
 									<p>What did I learn from this date? {mcomment.lessonLearned}</p>
 										<p>
 											Who was my date? {mcomment.withWho}</p>
-											<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
-												<Link
-											to={`/males/${this.state.maleId}/mcomments/${mcomment._id}`}
-											key={mcomment._id}
-										><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Review</button>
-										</Link>
+										<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
+												<Link key={mcomment._id}>
+												<button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }} key={mcomment._id} onClick={() => this.toggleEditForm(mcomment)}>Edit Review</button>
+													</Link>
 										<button
 												    key={mcomment._id}
 													onClick={(e) => this.deleteMcomment(e, mcomment)}
@@ -161,12 +159,12 @@ export default class McommentPage extends Component {
 						</div>
 					);
 				})}
-			
-				{/* <br /> */}
+		
+				<Col>
 					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
 				<button style= {{marginBottom: '20px'}} onClick={this.toggleMcommentForm}>Add a Review</button>
 				   {
-          this.state.displayMcommentForm ?
+          			this.state.displayMcommentForm ?
 				<div className="container text-center">
 					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
 						<Form
@@ -189,7 +187,7 @@ export default class McommentPage extends Component {
 							</Form.Row>
 						<Form.Row>
 								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+									<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
 									<Form.Control
 									className= 'text-center'
 										type="text"
@@ -257,30 +255,112 @@ export default class McommentPage extends Component {
 								>
 									Add Comment
 								</button>
-								{/* <Button
-								onClick = {this.deleteComment}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Delete Comment
-							</Button> */}
+						
 							</div>
 						</Form>
 					</Card> 
 				</div> 
-				: null
+				 : null
 						}
 							</div>
-						</div>
+						</Col>
+
+						{this.state.displayEditForm ? 
+										<form onSubmit={this.updateMcomment} style= {{marginTop: '50px', marginRight: '50px'}} className="col">
+											<div className="col">
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '30px' }}
+														htmlFor="rating"
+													>
+														Rating
+													</label>
+													<input
+														style={{ height: '50px', width: '320px' }}
+														className="text-center"
+														id="rating"
+														type="number"
+														name="rating"
+														onChange={this.handleChange}
+														value={this.state.newMcomment.rating}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '30px' }}
+														htmlFor="withWho"
+													>
+														Who was your DATE: 
+													</label>
+													<input
+														style={{ height: '50px', width: '320px' }}
+														className="text-center"
+														id="withWho"
+														type="text"
+														name="withWho"
+														onChange={this.handleChange}
+														value={this.state.newMcomment.withWho}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="dateAgain"
+													>
+														Would you date this person again:{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="dateAgain"
+														type="text"
+														name="dateAgain"
+														onChange={this.handleChange}
+														value={this.state.newMcomment.dateAgain}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="review"
+													>
+														Review your Date: {' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="review"
+														type="text"
+														name="review"
+														onChange={this.handleChange}
+														value={this.state.newMcomment.review}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="lessonLearned"
+													>
+														What did you learn about your Date?
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="lessonLearned"
+														type="text"
+														name="lessonLearned"
+														onChange={this.handleChange}
+														value={this.state.newMcomment.lessonLearned}
+													/>
+												</div>
+												
+											</div>
+											<div className="text-center" style={{ marginTop: '20px' }}>
+												<button className="text-center">Submit</button>
+											</div>
+											</form> :
+											null
+									}
 			</div>
 		);
 	}

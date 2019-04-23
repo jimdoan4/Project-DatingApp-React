@@ -136,8 +136,7 @@ export default class UserList extends Component {
 									marginTop: '30px'
 								}}
 							>
-							{/* {
-          this.state.displayUserForms ? */}
+		
 								 <CardGroup>
 									<Card
 										key={user._id}

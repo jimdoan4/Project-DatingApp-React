@@ -12,7 +12,6 @@ import LesfemaleShowPage from './components/LesfemaleShowPage';
 import SingleEvent from './components/SingleEvent';
 import SingleComment from './components/SingleComment';
 import Home from './components/Home';
-// import UserLog from './components/UserLog';
 import MainSignUpPage from './components/MainSignUpPage';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
@@ -30,8 +29,8 @@ class App extends Component {
 						<Route exact path="/males/:maleId/" component={MaleShowPage} />
 						<Route exact path="/gaymales/:gaymaleId/" component={GayShowPage} />
 						<Route exact path="/gaymales/" component={GaymaleList} />
-						<Route exact path="/lesfemales/" component={LesfemaleList} />
-						<Route exact path="/lesfemales/:lesfemaleId/" component={LesfemaleShowPage} />
+						<Route exact path="/lesbians/" component={LesfemaleList} />
+						<Route exact path="/lesbians/:lesbianId/" component={LesfemaleShowPage} />
 						<Route exact path="/users/:userId/events/:eventId/" component={SingleEvent} />
 						<Route exact path="/users/:userId/comments/:commentId/" component={SingleComment} />
 						<Route exact path="/males/" component={MaleList} />

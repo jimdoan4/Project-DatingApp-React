@@ -72,7 +72,7 @@ export default class NavBar extends Component {
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/lesfemales/" style={{ color: 'black' }}>
+								<Link to="/lesbians/" style={{ color: 'black' }}>
 									Lesbian Women
 								</Link>
 							</NavDropdown.Item>

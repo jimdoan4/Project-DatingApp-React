@@ -18,12 +18,14 @@ export default class MeventPage extends Component {
 			eventName: '',
 			time: '',
 			price: '',
-			withWho: '',
-			photoUrl: ''
+			withWho: ''
+		
 		},
+		
 		redirectToMevent: false,
 		displayMeventForm: false,
-		displayDateForm: false
+		displayDateForm: false,
+		displayEditForm: false
 	};
 
 	getAllMevents = () => {
@@ -49,6 +51,12 @@ export default class MeventPage extends Component {
 		});
 	};
 
+	toggleEditForm = (event) => {
+		this.setState((state, props) => {
+			return { displayEditForm: !state.displayEditForm, newMevent: event };
+		});
+	};
+
 	handleChange = (e) => {
 		const changeNewMevent = { ...this.state.newMevent };
 		changeNewMevent[e.target.name] = e.target.value;
@@ -62,8 +70,8 @@ export default class MeventPage extends Component {
 				eventName: this.state.newMevent.eventName,
 				time: this.state.newMevent.time,
 				price: this.state.newMevent.price,
-				withWho: this.state.newMevent.withWho,
-				photoUrl: this.state.newMevent.photoUrl
+				withWho: this.state.newMevent.withWho
+			
 			})
 			.then((res) => {
 				const meventsList = [ ...this.state.mevents ];
@@ -73,8 +81,7 @@ export default class MeventPage extends Component {
 						eventName: '',
 						time: '',
 						price: '',
-						withWho: '',
-						photoUrl: ''
+						withWho: ''
 					},
 					displayMeventForm: false,
 					mevents: meventsList
@@ -83,28 +90,21 @@ export default class MeventPage extends Component {
 		this.getAllMevents();
 	};
 
-	handleChange = (e) => {
-		const changedMevent = { ...this.state.newMevent };
-		changedMevent[e.target.name] = e.target.value;
-		this.setState({ newMevent: changedMevent });
-	};
 
 	updateMevent = (e) => {
 		e.preventDefault();
 		axios
-			.put(`/api/males/${this.state.maleId}/mevents`, {
+			.put(`/api/males/${this.state.maleId}/mevents/${this.state.newMevent._id}`, {
 				eventName: this.state.newMevent.eventName,
 				time: this.state.newMevent.time,
 				price: this.state.newMevent.price,
-				withWho: this.state.newMevent.withWho,
-				photoUrl: this.state.neMevent.photoUrl
+				withWho: this.state.newMevent.withWho
 			})
 			.then((res) => {
-				this.setState({ male: res.data, displayMeventForm: false });
+				this.getAllMevents()
 			});
-		this.getAllMevents();
+		
 	};
-
 
 	deleteMevent = (e, mevent) => {
 		e.preventDefault()
@@ -134,12 +134,14 @@ export default class MeventPage extends Component {
 									<p>
 										Event Name: {mevent.eventName}
 									</p>
-									<p>Time: {mevent.time}</p>
+									<p>What time is the Event: {mevent.time}</p>
 									<p>Average Price: {mevent.price}</p>
 										<p>Who is my date? {mevent.withWho}</p>
-											<p>what time is the event? {mevent.time}</p>
+										
 												<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
-												<Link to={`/males/${this.state.maleId}/mevents/${mevent._id}`} key={mevent._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Event</button></Link>
+												<Link key={mevent._id}>
+												<button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }} key={mevent._id} onClick={() => this.toggleEditForm(mevent)}>Edit Event</button>
+												</Link>
 													<button
 												    key={mevent._id}
 													onClick={(e) => this.deleteMevent(e, mevent)}
@@ -241,40 +243,100 @@ export default class MeventPage extends Component {
 								>
 									Add Event
 								</button>
-								{/* <Link
-											className="text-center"
-											to={`users/${this.state.userId}/events/${event._id}`}
-										> */}
-								{/* <Button
-								// onClick = {this.deleteEvent}
-								className='text-center'
-								variant="primary"
-								type="submit"
-								style={{
-									marginRight: '140px',
-									paddingLeft: '30px',
-									paddingRight: '30px',
-									marginTop: '7px',
-									marginBottom: '25px'
-									
-								}}
-							>
-								Edit Event
-							</Button> */}
-								{/* </Link> */}
+							
 							</div>
 						</Form>
 					</Card> 
 					
 				</div> 
 				: null
+			
 						}
 						</div>
 							</Col>
+								{this.state.displayEditForm ? 
+										<form onSubmit={this.updateMevent} style= {{marginTop: '50px', marginRight: '50px'}} className="col">
+											<div className="col">
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '30px' }}
+														htmlFor="firstName"
+													>
+														Event Name
+													</label>
+													<input
+														style={{ height: '50px', width: '320px' }}
+														className="text-center"
+														id="eventName"
+														type="text"
+														name="eventName"
+														onChange={this.handleChange}
+														value={this.state.newMevent.eventName}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="lastName"
+													>
+														What time is the Event:{' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="time"
+														type="text"
+														name="time"
+														onChange={this.handleChange}
+														value={this.state.newMevent.time}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="age"
+													>
+														Price: {' '}
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="price"
+														type="number"
+														name="price"
+														onChange={this.handleChange}
+														value={this.state.newMevent.price}
+													/>
+												</div>
+												<div className="col s12 m6 text-center">
+													<label
+														style={{ marginRight: '30px', marginTop: '40px' }}
+														htmlFor="bio"
+													>
+														With Who?
+													</label>
+													<input
+														style={{ height: '54px', width: '390px', marginRight: '53px' }}
+														className="text-center"
+														id="withWho"
+														type="text"
+														name="withWho"
+														onChange={this.handleChange}
+														value={this.state.newMevent.withWho}
+													/>
+												</div>
+												
+											</div>
+											<div className="text-center" style={{ marginTop: '20px' }}>
+												<button className="text-center">Submit</button>
+											</div>
+											</form> :
+											null
+									}
+			
 				
 				</div>
 			
-			// </div>
 			
 			
 		);
