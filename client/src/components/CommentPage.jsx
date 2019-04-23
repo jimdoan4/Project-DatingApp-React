@@ -38,7 +38,6 @@ export default class CommentPage extends Component {
 		this.getAllComments();
 	};
 
-
 	handleChange = (e) => {
 		const changeNewComment = { ...this.state.newComment };
 		changeNewComment[e.target.name] = e.target.value;
@@ -122,151 +121,182 @@ export default class CommentPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className= 'text=center' style={{marginLeft: '90px'}}>
+			<div className="text=center" style={{ marginLeft: '90px' }}>
 				<h3>Write A Review about Your DATE</h3>
-							<button style={{marginTop: '14px'}} onClick= {this.toggleCommentForm}>List of Your Date REVIEWS</button>
-							<div className= 'row'>
-				{this.state.comments.map((comment) => {
-					return (
-						
-						<div>
-							
-							 {
-		  this.state.displayCommentForm ?
-		  
-						<Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px', marginTop: '26px' }}>
+				<button style={{ marginTop: '14px' }} onClick={this.toggleCommentForm}>
+					List of Your Date REVIEWS
+				</button>
+				<div className="row">
+					{this.state.comments.map((comment) => {
+						return (
+							<div>
+								{this.state.displayCommentForm ? (
+									<Col>
+										<Card
+											className="text-center"
+											style={{
+												backgroundColor: 'white',
+												paddingLeft: '24px',
+												paddingRight: '24px',
+												paddingTop: '24px',
+												paddingBottom: '24px',
+												marginTop: '26px'
+											}}
+										>
+											<p>Who was my date? {comment.withWho}</p>
 
-									<p>
-											Who was my date? {comment.withWho}
-										</p>
-									
-									<p>Rating for this date: {comment.rating}</p>
-									<p>Would I go on a second date? {comment.dateAgain}</p>
-									<p>What is your review of this date? {comment.review}</p>
-									<p>What did I learn from this date? {comment.lessonLearned}</p>
-										
-										<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
-													<Link to={`/users/${this.state.userId}/comments/${comment._id}`} key={comment._id}><button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }}>Edit Review</button></Link>
+											<p>Rating for this date: {comment.rating}</p>
+											<p>Would I go on a second date? {comment.dateAgain}</p>
+											<p>What is your review of this date? {comment.review}</p>
+											<p>What did I learn from this date? {comment.lessonLearned}</p>
+
+											<Container
+												style={{ marginLeft: '0px', textAlign: 'center' }}
+												className="text-center"
+											>
+												<Link
+													to={`/users/${this.state.userId}/comments/${comment._id}`}
+													key={comment._id}
+												>
 													<button
-										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
-										key={comment._id}
+														style={{
+															backgroundColor: 'white',
+															borderColor: 'black',
+															color: 'black',
+															marginRight: '10px'
+														}}
+													>
+														Edit Review
+													</button>
+												</Link>
+												<button
+													style={{
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black'
+													}}
+													key={comment._id}
 													onClick={(e) => this.deleteComment(e, comment)}
-									>
-										Delete Review
-									</button> 
-									</Container>
-								</Card> 
-							
-							 </Col> :
-							 null
-							 }
-						</div>
-					);
-				})}
-
-					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
-				 <button style= {{marginBottom: '20px'}} onClick={this.toggleEditForm}>Add a Review</button>
-				   {
-          this.state.displayEditForm ?
-				<div className="container text-center">
-					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
-						<Form
-							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
-							onSubmit={this.createComment}
-						>
-						<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newComment.withWho}
-										placeholder="Enter Your Date's Name"
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="rating">Rating? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="number"
-										name="rating"
-										onChange={this.handleChange}
-										value={this.state.newComment.rating}
-										placeholder="Enter Rating? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="dateAgain"
-										onChange={this.handleChange}
-										value={this.state.newComment.dateAgain}
-										placeholder="Data Again? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							
-							
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="review"
-										onChange={this.handleChange}
-										value={this.state.newComment.review}
-										placeholder="Enter Review "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="lessonLearned">What did you learn from your date?  </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="lessonLearned"
-										onChange={this.handleChange}
-										value={this.state.newComment.lessonLearned}
-										placeholder="Enter Lesson Learned? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<div style={{ marginLeft: '100px' }} className="text-center">
-								<button
-									className="text-center"
-									variant="primary"
-									type="submit"
-									style={{
-										marginRight: '140px',
-										paddingLeft: '60px',
-										paddingRight: '60px',
-										marginTop: '1px',
-										marginBottom: '15px'
-									}}
-								>
-									Add Comment
-								</button>
-							
+												>
+													Delete Review
+												</button>
+											</Container>
+										</Card>
+									</Col>
+								) : null}
 							</div>
-						</Form>
-					</Card> 
-				</div> 
-				: null
-						}
-						</div>
-						</div>
+						);
+					})}
+
+					<div className="text-center col" style={{ marginTop: '30px' }}>
+						<button style={{ marginBottom: '20px' }} onClick={this.toggleEditForm}>
+							Add a Review
+						</button>
+						{this.state.displayEditForm ? (
+							<div className="container text-center">
+								<Card
+									className="container"
+									style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}
+								>
+									<Form
+										className="text-center"
+										style={{
+											display: 'inline-block',
+											backgroundColor: 'white',
+											paddingRight: '23px'
+										}}
+										onSubmit={this.createComment}
+									>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridPassword">
+												<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="withWho"
+													onChange={this.handleChange}
+													value={this.state.newComment.withWho}
+													placeholder="Enter Your Date's Name"
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="rating">Rating? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="number"
+													name="rating"
+													onChange={this.handleChange}
+													value={this.state.newComment.rating}
+													placeholder="Enter Rating? "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="dateAgain"
+													onChange={this.handleChange}
+													value={this.state.newComment.dateAgain}
+													placeholder="Data Again? "
+												/>
+											</Form.Group>
+										</Form.Row>
+
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="review"
+													onChange={this.handleChange}
+													value={this.state.newComment.review}
+													placeholder="Enter Review "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="lessonLearned">
+													What did you learn from your date?{' '}
+												</Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="lessonLearned"
+													onChange={this.handleChange}
+													value={this.state.newComment.lessonLearned}
+													placeholder="Enter Lesson Learned? "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<div style={{ marginLeft: '100px' }} className="text-center">
+											<button
+												className="text-center"
+												variant="primary"
+												type="submit"
+												style={{
+													marginRight: '140px',
+													paddingLeft: '60px',
+													paddingRight: '60px',
+													marginTop: '1px',
+													marginBottom: '15px'
+												}}
+											>
+												Add Comment
+											</button>
+										</div>
+									</Form>
+								</Card>
+							</div>
+						) : null}
+					</div>
+				</div>
 			</div>
 		);
 	}

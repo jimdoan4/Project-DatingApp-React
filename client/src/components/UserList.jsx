@@ -43,7 +43,6 @@ export default class UserList extends Component {
 		});
 	};
 
-
 	createUser = (e) => {
 		axios
 			.post('/api/users', {
@@ -81,14 +80,12 @@ export default class UserList extends Component {
 		this.findAllUsers();
 	};
 
-
 	deleteUser = (e, user) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/users/${user._id}`).then((res) => {
-			this.findAllUsers()
+			this.findAllUsers();
 		});
 	};
-
 
 	handleChange = (e) => {
 		const changeNewUser = { ...this.state.newUser };
@@ -96,15 +93,11 @@ export default class UserList extends Component {
 		this.setState({ newUser: changeNewUser });
 	};
 
-
 	toggleUserForm = () => {
-        this.setState((state, props) => {
-            return {displayUserForm: !state.displayUserForm}
-		})
-		
-	}
-
-
+		this.setState((state, props) => {
+			return { displayUserForm: !state.displayUserForm };
+		});
+	};
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -112,9 +105,7 @@ export default class UserList extends Component {
 		}
 		return (
 			<div>
-		
-		
-				 <div
+				<div
 					className="row"
 					style={{
 						marginLeft: '30px',
@@ -132,8 +123,7 @@ export default class UserList extends Component {
 									marginTop: '30px'
 								}}
 							>
-		
-								 <CardGroup>
+								<CardGroup>
 									<Card
 										key={user._id}
 										className="text-center"
@@ -156,36 +146,29 @@ export default class UserList extends Component {
 											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
 											{/* <Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
-										
+
 											<div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
-												
+
 												<button
-												    key={user._id}
+													key={user._id}
 													onClick={(e) => this.deleteUser(e, user)}
 													type="button"
-									
 													style={{ color: 'black' }}
 												>
-													 Not Interested
+													Not Interested
 												</button>
 											</div>
 										</Card.Body>
 									</Card>
-								</CardGroup> 
-							
+								</CardGroup>
 							</div>
 						);
 					})}
-
-
-				 </div> 
-
-				
+				</div>
 			</div>
-				
 		);
 	}
 }

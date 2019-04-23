@@ -39,15 +39,12 @@ export default class GaymaleList extends Component {
 		});
 	};
 
-
 	deleteGaymale = (e, gaymale) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/gaymales/${gaymale._id}`).then((res) => {
-			this.findAllGaymales()
+			this.findAllGaymales();
 		});
 	};
-
-
 
 	render() {
 		if (this.state.redirectToUser) {
@@ -55,11 +52,6 @@ export default class GaymaleList extends Component {
 		}
 		return (
 			<div>
-				{/* <Jumbotron fluid className="man" style={{ height: '26rem' }}>
-					<Container className="homefont" style={{ marginTop: '210px' }}>
-						<h1 style={{ fontSize: '50px', fontWeight: 'bold', color: 'white' }}>Let it Breathe</h1>
-					</Container>
-				</Jumbotron> */}
 				<div
 					className="row"
 					style={{
@@ -99,20 +91,15 @@ export default class GaymaleList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'black' }}>{gaymale.firstName}</Card.Title>
 											<Card.Title style={{ color: 'black' }}>{gaymale.age}</Card.Title>
-											{/* <Card.Text style={{ color: 'black' }}>{gaymale.bio}</Card.Text> */}
+
 											<Card.Text style={{ color: 'black' }}>{gaymale.location}</Card.Text>
-											{/* <div key={user._id}>
-												<Link to={`/users/${user._id}`} key={user._id}>
-													<button style={{ marginRight: '16px' }}>Interested</button>
-												</Link>
-												<button style= {{color: 'black'}} data-toggle="collapse">Not Interested</button>
-											</div> */}
+
 											<div key={gaymale._id}>
 												<Link to={`/gaymales/${gaymale._id}`} key={gaymale._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button
-												    key={gaymale._id}
+													key={gaymale._id}
 													onClick={(e) => this.deleteGaymale(e, gaymale)}
 													type="button"
 													style={{ color: 'black' }}
@@ -126,8 +113,6 @@ export default class GaymaleList extends Component {
 							</div>
 						);
 					})}
-
-		
 				</div>
 			</div>
 		);

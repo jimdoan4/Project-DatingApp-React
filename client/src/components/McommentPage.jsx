@@ -90,8 +90,6 @@ export default class McommentPage extends Component {
 		this.getAllMcomments();
 	};
 
-
-
 	updateMcomment = (e) => {
 		e.preventDefault();
 		axios
@@ -103,16 +101,14 @@ export default class McommentPage extends Component {
 				lessonLearned: this.state.newMcomment.lessonLearned
 			})
 			.then((res) => {
-					this.getAllMcomments();
+				this.getAllMcomments();
 			});
-	
 	};
 
-
 	deleteMcomment = (e, mcomment) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/males/${this.state.maleId}/mcomments/${mcomment._id}`).then((res) => {
-			this.getAllMcomments()
+			this.getAllMcomments();
 		});
 	};
 
@@ -121,246 +117,265 @@ export default class McommentPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div className= 'text=center' style={{marginLeft: '90px'}}>
+			<div className="text=center" style={{ marginLeft: '90px' }}>
 				<h3>Write A Review about Your DATE</h3>
-							<button style={{marginTop: '14px'}} onClick= {this.toggleReviewForm}>Lists of Your Date REVIEWS</button>
-						
+				<button style={{ marginTop: '14px' }} onClick={this.toggleReviewForm}>
+					Lists of Your Date REVIEWS
+				</button>
+
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
-							
-							 {
-		  this.state.displayReviewForm ?
-		  <Col>
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '7px',  marginTop: '26px' }}>
-									<p>Rating for this date: {mcomment.rating}</p>
-									<p>Would I go on a second date? {mcomment.dateAgain}</p>
-									<p>What is your review of this date? {mcomment.review}</p>
-									<p>What did I learn from this date? {mcomment.lessonLearned}</p>
-										<p>
-											Who was my date? {mcomment.withWho}</p>
-										<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
-												<Link key={mcomment._id}>
-												<button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }} key={mcomment._id} onClick={() => this.toggleEditForm(mcomment)}>Edit Review</button>
-													</Link>
-										<button
-												    key={mcomment._id}
-													onClick={(e) => this.deleteMcomment(e, mcomment)}
-													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+							{this.state.displayReviewForm ? (
+								<Col>
+									<Card
+										className="text-center"
+										style={{
+											backgroundColor: 'white',
+											paddingLeft: '24px',
+											paddingRight: '24px',
+											paddingTop: '24px',
+											paddingBottom: '7px',
+											marginTop: '26px'
+										}}
+									>
+										<p>Rating for this date: {mcomment.rating}</p>
+										<p>Would I go on a second date? {mcomment.dateAgain}</p>
+										<p>What is your review of this date? {mcomment.review}</p>
+										<p>What did I learn from this date? {mcomment.lessonLearned}</p>
+										<p>Who was my date? {mcomment.withWho}</p>
+										<Container
+											style={{ marginLeft: '0px', textAlign: 'center' }}
+											className="text-center"
+										>
+											<Link key={mcomment._id}>
+												<button
+													style={{
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black',
+														marginRight: '10px'
+													}}
+													key={mcomment._id}
+													onClick={() => this.toggleEditForm(mcomment)}
 												>
-													Delete Review
+													Edit Review
 												</button>
-												</Container>
-								
-							</Card> 
-							</Col> :
-							null
-							 }
+											</Link>
+											<button
+												key={mcomment._id}
+												onClick={(e) => this.deleteMcomment(e, mcomment)}
+												style={{
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
+												}}
+											>
+												Delete Review
+											</button>
+										</Container>
+									</Card>
+								</Col>
+							) : null}
 						</div>
 					);
 				})}
-		
-				<Col>
-					<div className= 'text-center col' style= {{ marginTop: '30px'}}>
-				<button style= {{marginBottom: '20px'}} onClick={this.toggleMcommentForm}>Add a Review</button>
-				   {
-          			this.state.displayMcommentForm ?
-				<div className="container text-center">
-					<Card className="container" style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}>
-						<Form
-							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '23px' }}
-							onSubmit={this.createMcomment}
-						>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="rating">Rating? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="number"
-										name="rating"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.rating}
-										placeholder="Enter Rating? "
-									/>
-								</Form.Group>
-							</Form.Row>
-						<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.withWho}
-										placeholder="Enter Your Date's Name"
-									/>
-								</Form.Group>
-							</Form.Row>
-						
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="dateAgain"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.dateAgain}
-										placeholder="Data Again? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							
-							
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="review"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.review}
-										placeholder="Enter Review "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="lessonLearned">What did you learn from your date?  </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="lessonLearned"
-										onChange={this.handleChange}
-										value={this.state.newMcomment.lessonLearned}
-										placeholder="Enter Lesson Learned? "
-									/>
-								</Form.Group>
-							</Form.Row>
-							<div style={{ marginLeft: '100px' }} className="text-center">
-								<button
-									className="text-center"
-									variant="primary"
-									type="submit"
-									style={{
-										marginRight: '140px',
-										paddingLeft: '60px',
-										paddingRight: '60px',
-										marginTop: '1px',
-										marginBottom: '15px'
-									}}
-								>
-									Add Comment
-								</button>
-						
-							</div>
-						</Form>
-					</Card> 
-				</div> 
-				 : null
-						}
-							</div>
-						</Col>
 
-						{this.state.displayEditForm ? 
-										<form onSubmit={this.updateMcomment} style= {{marginTop: '50px', marginRight: '50px'}} className="col">
-											<div className="col">
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '30px' }}
-														htmlFor="rating"
-													>
-														Rating
-													</label>
-													<input
-														style={{ height: '50px', width: '320px' }}
-														className="text-center"
-														id="rating"
-														type="number"
-														name="rating"
-														onChange={this.handleChange}
-														value={this.state.newMcomment.rating}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '30px' }}
-														htmlFor="withWho"
-													>
-														Who was your DATE: 
-													</label>
-													<input
-														style={{ height: '50px', width: '320px' }}
-														className="text-center"
-														id="withWho"
-														type="text"
-														name="withWho"
-														onChange={this.handleChange}
-														value={this.state.newMcomment.withWho}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="dateAgain"
-													>
-														Would you date this person again:{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="dateAgain"
-														type="text"
-														name="dateAgain"
-														onChange={this.handleChange}
-														value={this.state.newMcomment.dateAgain}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="review"
-													>
-														Review your Date: {' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="review"
-														type="text"
-														name="review"
-														onChange={this.handleChange}
-														value={this.state.newMcomment.review}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="lessonLearned"
-													>
-														What did you learn about your Date?
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="lessonLearned"
-														type="text"
-														name="lessonLearned"
-														onChange={this.handleChange}
-														value={this.state.newMcomment.lessonLearned}
-													/>
-												</div>
-												
-											</div>
-											<div className="text-center" style={{ marginTop: '20px' }}>
-												<button className="text-center">Submit</button>
-											</div>
-											</form> :
-											null
-									}
+				<Col>
+					<div className="text-center col" style={{ marginTop: '30px' }}>
+						<button style={{ marginBottom: '20px' }} onClick={this.toggleMcommentForm}>
+							Add a Review
+						</button>
+						{this.state.displayMcommentForm ? (
+							<div className="container text-center">
+								<Card
+									className="container"
+									style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}
+								>
+									<Form
+										className="text-center"
+										style={{
+											display: 'inline-block',
+											backgroundColor: 'white',
+											paddingRight: '23px'
+										}}
+										onSubmit={this.createMcomment}
+									>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="rating">Rating? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="number"
+													name="rating"
+													onChange={this.handleChange}
+													value={this.state.newMcomment.rating}
+													placeholder="Enter Rating? "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridPassword">
+												<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="withWho"
+													onChange={this.handleChange}
+													value={this.state.newMcomment.withWho}
+													placeholder="Enter Your Date's Name"
+												/>
+											</Form.Group>
+										</Form.Row>
+
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="dateAgain"
+													onChange={this.handleChange}
+													value={this.state.newMcomment.dateAgain}
+													placeholder="Data Again? "
+												/>
+											</Form.Group>
+										</Form.Row>
+
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="review"
+													onChange={this.handleChange}
+													value={this.state.newMcomment.review}
+													placeholder="Enter Review "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="lessonLearned">
+													What did you learn from your date?{' '}
+												</Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="lessonLearned"
+													onChange={this.handleChange}
+													value={this.state.newMcomment.lessonLearned}
+													placeholder="Enter Lesson Learned? "
+												/>
+											</Form.Group>
+										</Form.Row>
+										<div style={{ marginLeft: '100px' }} className="text-center">
+											<button
+												className="text-center"
+												variant="primary"
+												type="submit"
+												style={{
+													marginRight: '140px',
+													paddingLeft: '60px',
+													paddingRight: '60px',
+													marginTop: '1px',
+													marginBottom: '15px'
+												}}
+											>
+												Add Comment
+											</button>
+										</div>
+									</Form>
+								</Card>
+							</div>
+						) : null}
+					</div>
+				</Col>
+
+				{this.state.displayEditForm ? (
+					<form
+						onSubmit={this.updateMcomment}
+						style={{ marginTop: '50px', marginRight: '50px' }}
+						className="col"
+					>
+						<div className="col">
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="rating">
+									Rating
+								</label>
+								<input
+									style={{ height: '50px', width: '320px' }}
+									className="text-center"
+									id="rating"
+									type="number"
+									name="rating"
+									onChange={this.handleChange}
+									value={this.state.newMcomment.rating}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="withWho">
+									Who was your DATE:
+								</label>
+								<input
+									style={{ height: '50px', width: '320px' }}
+									className="text-center"
+									id="withWho"
+									type="text"
+									name="withWho"
+									onChange={this.handleChange}
+									value={this.state.newMcomment.withWho}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="dateAgain">
+									Would you date this person again:{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="dateAgain"
+									type="text"
+									name="dateAgain"
+									onChange={this.handleChange}
+									value={this.state.newMcomment.dateAgain}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="review">
+									Review your Date: {' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="review"
+									type="text"
+									name="review"
+									onChange={this.handleChange}
+									value={this.state.newMcomment.review}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="lessonLearned">
+									What did you learn about your Date?
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="lessonLearned"
+									type="text"
+									name="lessonLearned"
+									onChange={this.handleChange}
+									value={this.state.newMcomment.lessonLearned}
+								/>
+							</div>
+						</div>
+						<div className="text-center" style={{ marginTop: '20px' }}>
+							<button className="text-center">Submit</button>
+						</div>
+					</form>
+				) : null}
 			</div>
 		);
 	}

@@ -14,33 +14,47 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div>
-<Container className="text-center" style= {{ marginBottom: '100px'}}> 
-					 <Row>
+				<Container className="text-center" style={{ marginBottom: '100px' }}>
+					<Row>
 						<Col>
 							<Image
 								className="rockstar"
-								style={{ width: '100%', height: '100%', backgroundSize: 'cover',  backgroundPosition: 'center',  backgroundRepeat: 'no-repeat' }}
+								style={{
+									width: '100%',
+									height: '100%',
+									backgroundSize: 'cover',
+									backgroundPosition: 'center',
+									backgroundRepeat: 'no-repeat'
+								}}
 								src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
 							/>
 						</Col>
-					</Row> 
-					<Row>
-						<Col style= {{fontSize: '35px'}}>
-							Find your Match.
-						</Col>
-						<Col style= {{fontSize: '35px'}}>
-							Set a Date with your Match.
-						</Col>
-						<Col style= {{fontSize: '35px'}}>
-							Rate your Date.
-						</Col>
 					</Row>
-					<Container className= 'text-center' style= {{marginTop: '40px'}}>
-						<Link to="/login/" style={{ color: 'black' }}>
-				<button>Join Now</button>
-				</Link>
+					<Row style={{ marginTop: '55px' }}>
+						<Col style={{ fontSize: '35px' }}>Find your Match.</Col>
+						<Col style={{ fontSize: '35px' }}>Set a Date with your Match.</Col>
+						<Col style={{ fontSize: '35px' }}>Rate your Date.</Col>
+					</Row>
+					<Container className="text-center" style={{ marginTop: '40px' }}>
+						<Link className="" to="/login/" style={{ color: 'black' }}>
+							<button
+								className="join"
+								style={{
+									backgroundColor: 'grey',
+									borderColor: 'white',
+									color: 'white',
+									marginRight: '10px',
+									paddingLeft: '50px',
+									paddingRight: '50px',
+									paddingTop: '15px',
+									paddingBottom: '15px'
+								}}
+							>
+								Join Now
+							</button>
+						</Link>
+					</Container>
 				</Container>
-				</Container> 
 			</div>
 		);
 	}

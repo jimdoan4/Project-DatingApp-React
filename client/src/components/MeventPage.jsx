@@ -19,9 +19,8 @@ export default class MeventPage extends Component {
 			time: '',
 			price: '',
 			withWho: ''
-		
 		},
-		
+
 		redirectToMevent: false,
 		displayMeventForm: false,
 		displayDateForm: false,
@@ -71,7 +70,6 @@ export default class MeventPage extends Component {
 				time: this.state.newMevent.time,
 				price: this.state.newMevent.price,
 				withWho: this.state.newMevent.withWho
-			
 			})
 			.then((res) => {
 				const meventsList = [ ...this.state.mevents ];
@@ -90,7 +88,6 @@ export default class MeventPage extends Component {
 		this.getAllMevents();
 	};
 
-
 	updateMevent = (e) => {
 		e.preventDefault();
 		axios
@@ -101,15 +98,14 @@ export default class MeventPage extends Component {
 				withWho: this.state.newMevent.withWho
 			})
 			.then((res) => {
-				this.getAllMevents()
+				this.getAllMevents();
 			});
-		
 	};
 
 	deleteMevent = (e, mevent) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/males/${this.state.maleId}/mevents/${mevent._id}`).then((res) => {
-			this.getAllMevents()
+			this.getAllMevents();
 		});
 	};
 
@@ -118,227 +114,232 @@ export default class MeventPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div className= 'text-center' style={{marginLeft: '90px'}}>
-					<h3>Set up a Date with your MATCH</h3>
-							<button style={{marginTop: '14px'}}  onClick= {this.toggleDateForm}>List of Scheduled Events</button>
+			<div className="text-center" style={{ marginLeft: '90px' }}>
+				<h3>Set up a Date with your MATCH</h3>
+				<button style={{ marginTop: '14px' }} onClick={this.toggleDateForm}>
+					List of Scheduled Events
+				</button>
 				{this.state.mevents.map((mevent) => {
 					return (
 						<div>
-						
-							 {
-		  this.state.displayDateForm ?
-		  <Col>
-							
-								<Card className="text-center" style={{ backgroundColor: 'white', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px', marginTop: '26px' }}>
-								
-									<p>
-										Event Name: {mevent.eventName}
-									</p>
-									<p>What time is the Event: {mevent.time}</p>
-									<p>Average Price: {mevent.price}</p>
+							{this.state.displayDateForm ? (
+								<Col>
+									<Card
+										className="text-center"
+										style={{
+											backgroundColor: 'white',
+											paddingLeft: '24px',
+											paddingRight: '24px',
+											paddingTop: '24px',
+											paddingBottom: '24px',
+											marginTop: '26px'
+										}}
+									>
+										<p>Event Name: {mevent.eventName}</p>
+										<p>What time is the Event: {mevent.time}</p>
+										<p>Average Price: {mevent.price}</p>
 										<p>Who is my date? {mevent.withWho}</p>
-										
-												<Container style={{ marginLeft: '0px', textAlign: 'center' }} className="text-center">
-												<Link key={mevent._id}>
-												<button style={{ backgroundColor: 'white', borderColor: 'black', color: 'black', marginRight: '10px' }} key={mevent._id} onClick={() => this.toggleEditForm(mevent)}>Edit Event</button>
-												</Link>
-													<button
-												    key={mevent._id}
-													onClick={(e) => this.deleteMevent(e, mevent)}
-													style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+
+										<Container
+											style={{ marginLeft: '0px', textAlign: 'center' }}
+											className="text-center"
+										>
+											<Link key={mevent._id}>
+												<button
+													style={{
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black',
+														marginRight: '10px'
+													}}
+													key={mevent._id}
+													onClick={() => this.toggleEditForm(mevent)}
 												>
-													Delete Event
+													Edit Event
 												</button>
-												</Container>
-							
-							</Card> 
-							</Col> :
-							null 
-							 }
+											</Link>
+											<button
+												key={mevent._id}
+												onClick={(e) => this.deleteMevent(e, mevent)}
+												style={{
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
+												}}
+											>
+												Delete Event
+											</button>
+										</Container>
+									</Card>
+								</Col>
+							) : null}
 						</div>
 					);
 				})}
-				
+
 				<Col>
-					<div className= 'text-center' style= {{ marginTop: '30px'}}>
-						 	 <button style= {{marginBottom: '20px'}} onClick={this.toggleMeventForm}>Add an Event</button>
-        {
-          this.state.displayMeventForm ?
-				 <div className="container">
-				 
-					<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
-					
-						 <Form
-							className="text-center"
-							style={{ display: 'inline-block', backgroundColor: 'white', paddingRight: '25px', marginTop: '14px' }}
-							onSubmit={this.createMevent}
-						>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridEmail">
-									<Form.Label htmlFor="eventName">Event Name</Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="eventName"
-										onChange={this.handleChange}
-										value={this.state.newMevent.eventName}
-										placeholder="Enter Event"
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="time">Time:  </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="number"
-										name="time"
-										onChange={this.handleChange}
-										value={this.state.newMevent.time}
-										placeholder="What time is your date scheduled?"
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="price">Price? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="number"
-										name="price"
-										onChange={this.handleChange}
-										value={this.state.newMevent.price}
-										placeholder="Enter the price"
-									/>
-								</Form.Group>
-							</Form.Row>
-							<Form.Row>
-								<Form.Group as={Col} controlId="formGridPassword">
-									<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
-									<Form.Control
-									className= 'text-center'
-										type="text"
-										name="withWho"
-										onChange={this.handleChange}
-										value={this.state.newMevent.withWho}
-										placeholder="Enter your date's name"
-									/>
-								</Form.Group>
-							</Form.Row>
-								<Form.Row>
-							
-							</Form.Row>
-							<div style={{ marginLeft: '100px' }} className="text-center">
-								<button
-									className="text-center"
-									variant="primary"
-									type="submit"
-									style={{
-										marginRight: '140px',
-										paddingLeft: '60px',
-										paddingRight: '60px',
-										marginTop: '1px',
-										marginBottom: '15px'
-									}}
-								>
-									Add Event
-								</button>
-							
+					<div className="text-center" style={{ marginTop: '30px' }}>
+						<button style={{ marginBottom: '20px' }} onClick={this.toggleMeventForm}>
+							Add an Event
+						</button>
+						{this.state.displayMeventForm ? (
+							<div className="container">
+								<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
+									<Form
+										className="text-center"
+										style={{
+											display: 'inline-block',
+											backgroundColor: 'white',
+											paddingRight: '25px',
+											marginTop: '14px'
+										}}
+										onSubmit={this.createMevent}
+									>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridEmail">
+												<Form.Label htmlFor="eventName">Event Name</Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="eventName"
+													onChange={this.handleChange}
+													value={this.state.newMevent.eventName}
+													placeholder="Enter Event"
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridPassword">
+												<Form.Label htmlFor="time">Time: </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="number"
+													name="time"
+													onChange={this.handleChange}
+													value={this.state.newMevent.time}
+													placeholder="What time is your date scheduled?"
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridPassword">
+												<Form.Label htmlFor="price">Price? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="number"
+													name="price"
+													onChange={this.handleChange}
+													value={this.state.newMevent.price}
+													placeholder="Enter the price"
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row>
+											<Form.Group as={Col} controlId="formGridPassword">
+												<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+												<Form.Control
+													className="text-center"
+													type="text"
+													name="withWho"
+													onChange={this.handleChange}
+													value={this.state.newMevent.withWho}
+													placeholder="Enter your date's name"
+												/>
+											</Form.Group>
+										</Form.Row>
+										<Form.Row />
+										<div style={{ marginLeft: '100px' }} className="text-center">
+											<button
+												className="text-center"
+												variant="primary"
+												type="submit"
+												style={{
+													marginRight: '140px',
+													paddingLeft: '60px',
+													paddingRight: '60px',
+													marginTop: '1px',
+													marginBottom: '15px'
+												}}
+											>
+												Add Event
+											</button>
+										</div>
+									</Form>
+								</Card>
 							</div>
-						</Form>
-					</Card> 
-					
-				</div> 
-				: null
-			
-						}
+						) : null}
+					</div>
+				</Col>
+				{this.state.displayEditForm ? (
+					<form
+						onSubmit={this.updateMevent}
+						style={{ marginTop: '50px', marginRight: '50px' }}
+						className="col"
+					>
+						<div className="col">
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="firstName">
+									Event Name
+								</label>
+								<input
+									style={{ height: '50px', width: '320px' }}
+									className="text-center"
+									id="eventName"
+									type="text"
+									name="eventName"
+									onChange={this.handleChange}
+									value={this.state.newMevent.eventName}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="lastName">
+									What time is the Event:{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="time"
+									type="text"
+									name="time"
+									onChange={this.handleChange}
+									value={this.state.newMevent.time}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="age">
+									Price: {' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="price"
+									type="number"
+									name="price"
+									onChange={this.handleChange}
+									value={this.state.newMevent.price}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="bio">
+									With Who?
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="withWho"
+									type="text"
+									name="withWho"
+									onChange={this.handleChange}
+									value={this.state.newMevent.withWho}
+								/>
+							</div>
 						</div>
-							</Col>
-								{this.state.displayEditForm ? 
-										<form onSubmit={this.updateMevent} style= {{marginTop: '50px', marginRight: '50px'}} className="col">
-											<div className="col">
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '30px' }}
-														htmlFor="firstName"
-													>
-														Event Name
-													</label>
-													<input
-														style={{ height: '50px', width: '320px' }}
-														className="text-center"
-														id="eventName"
-														type="text"
-														name="eventName"
-														onChange={this.handleChange}
-														value={this.state.newMevent.eventName}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="lastName"
-													>
-														What time is the Event:{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="time"
-														type="text"
-														name="time"
-														onChange={this.handleChange}
-														value={this.state.newMevent.time}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="age"
-													>
-														Price: {' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="price"
-														type="number"
-														name="price"
-														onChange={this.handleChange}
-														value={this.state.newMevent.price}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="bio"
-													>
-														With Who?
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="withWho"
-														type="text"
-														name="withWho"
-														onChange={this.handleChange}
-														value={this.state.newMevent.withWho}
-													/>
-												</div>
-												
-											</div>
-											<div className="text-center" style={{ marginTop: '20px' }}>
-												<button className="text-center">Submit</button>
-											</div>
-											</form> :
-											null
-									}
-			
-				
-				</div>
-			
-			
-			
+						<div className="text-center" style={{ marginTop: '20px' }}>
+							<button className="text-center">Submit</button>
+						</div>
+					</form>
+				) : null}
+			</div>
 		);
 	}
 }

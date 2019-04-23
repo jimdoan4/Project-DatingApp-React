@@ -18,10 +18,8 @@ export default class LesfemaleShowPage extends Component {
 							<LesfemalePage lesbianId={this.state.lesbianId} />
 						</Col>
 					</Row>
-			
 				</Container>
 			</div>
 		);
 	}
 }
-

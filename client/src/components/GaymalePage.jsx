@@ -87,161 +87,140 @@ export default class GaymalePage extends Component {
 			<div>
 				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
-					<div style={{ marginTop: '30px', marginBottom: '100px' }}>
-						<Card
-							className=""
-							style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}
-						>
-							<Card>
-								<Card.Img className="zoom" variant="top" src={this.state.gaymale.photoUrl} alt="top" />
-								<Card.Body>
-									<Card.Title>
-										{this.state.gaymale.firstName}
-										&nbsp;
-										{this.state.gaymale.lastName}
-									</Card.Title>
-									<Card.Title>{this.state.gaymale.age}</Card.Title>
-									<Card.Title>{this.state.gaymale.bio}</Card.Title>
-									<Card.Title>{this.state.gaymale.location}</Card.Title>
-								</Card.Body>
-								<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
-										<button
-										onClick={this.toggleGayEditForm}
-										style={{
-											backgroundColor: 'white',
-											borderColor: 'black',
-											color: 'black',
-											marginRight: '10px'
-										
-										}}
-									>
-										Edit Account
-									
-									</button>
-									
-									<button
-										style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
-										onClick={this.deleteGaymale}
-									>
-										Delete Account
-									</button>
-								
-								</Container>
-							</Card>
+				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
+					<Card className="" style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}>
+						<Card>
+							<Card.Img className="zoom" variant="top" src={this.state.gaymale.photoUrl} alt="top" />
+							<Card.Body>
+								<Card.Title>
+									{this.state.gaymale.firstName}
+									&nbsp;
+									{this.state.gaymale.lastName}
+								</Card.Title>
+								<Card.Title>{this.state.gaymale.age}</Card.Title>
+								<Card.Title>{this.state.gaymale.bio}</Card.Title>
+								<Card.Title>{this.state.gaymale.location}</Card.Title>
+							</Card.Body>
+							<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
+								<button
+									onClick={this.toggleGayEditForm}
+									style={{
+										backgroundColor: 'white',
+										borderColor: 'black',
+										color: 'black',
+										marginRight: '10px'
+									}}
+								>
+									Edit Account
+								</button>
+
+								<button
+									style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+									onClick={this.deleteGaymale}
+								>
+									Delete Account
+								</button>
+							</Container>
 						</Card>
-					</div>
-			{this.state.displayGayEditForm ? 
-										<form style= {{marginTop: '50px', marginRight: '50px'}} onSubmit={this.updateGaymale} className="col">
-											<div className="col">
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '30px' }}
-														htmlFor="firstName"
-													>
-														First Name
-													</label>
-													<input
-														style={{ height: '50px', width: '320px' }}
-														className="text-center"
-														id="firstName"
-														type="text"
-														name="firstName"
-														onChange={this.handleChange}
-														value={this.state.gaymale.firstName}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="lastName"
-													>
-														Last Name{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="lastName"
-														type="text"
-														name="lastName"
-														onChange={this.handleChange}
-														value={this.state.gaymale.lastName}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="age"
-													>
-														Age{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="age"
-														type="number"
-														name="age"
-														onChange={this.handleChange}
-														value={this.state.gaymale.age}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="bio"
-													>
-														Biography
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="bio"
-														type="text"
-														name="bio"
-														onChange={this.handleChange}
-														value={this.state.gaymale.bio}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="location"
-													>
-														Location{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="location"
-														type="text"
-														name="location"
-														onChange={this.handleChange}
-														value={this.state.gaymale.location}
-													/>
-												</div>
-												<div className="col s12 m6 text-center">
-													<label
-														style={{ marginRight: '30px', marginTop: '40px' }}
-														htmlFor="photoUrl"
-													>
-														Photo:{' '}
-													</label>
-													<input
-														style={{ height: '54px', width: '390px', marginRight: '53px' }}
-														className="text-center"
-														id="photoUrl"
-														type="text"
-														name="photoUrl"
-														onChange={this.handleChange}
-														value={this.state.gaymale.photoUrl}
-													/>
-												</div>
-											</div>
-											<div className="text-center" style={{ marginTop: '20px' }}>
-												<button className="text-center">Submit</button>
-											</div>
-											</form> :
-											null
-									}
+					</Card>
+				</div>
+				{this.state.displayGayEditForm ? (
+					<form
+						style={{ marginTop: '50px', marginRight: '50px' }}
+						onSubmit={this.updateGaymale}
+						className="col"
+					>
+						<div className="col">
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="firstName">
+									First Name
+								</label>
+								<input
+									style={{ height: '50px', width: '320px' }}
+									className="text-center"
+									id="firstName"
+									type="text"
+									name="firstName"
+									onChange={this.handleChange}
+									value={this.state.gaymale.firstName}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="lastName">
+									Last Name{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="lastName"
+									type="text"
+									name="lastName"
+									onChange={this.handleChange}
+									value={this.state.gaymale.lastName}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="age">
+									Age{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="age"
+									type="number"
+									name="age"
+									onChange={this.handleChange}
+									value={this.state.gaymale.age}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="bio">
+									Biography
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="bio"
+									type="text"
+									name="bio"
+									onChange={this.handleChange}
+									value={this.state.gaymale.bio}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="location">
+									Location{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="location"
+									type="text"
+									name="location"
+									onChange={this.handleChange}
+									value={this.state.gaymale.location}
+								/>
+							</div>
+							<div className="col s12 m6 text-center">
+								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="photoUrl">
+									Photo:{' '}
+								</label>
+								<input
+									style={{ height: '54px', width: '390px', marginRight: '53px' }}
+									className="text-center"
+									id="photoUrl"
+									type="text"
+									name="photoUrl"
+									onChange={this.handleChange}
+									value={this.state.gaymale.photoUrl}
+								/>
+							</div>
+						</div>
+						<div className="text-center" style={{ marginTop: '20px' }}>
+							<button className="text-center">Submit</button>
+						</div>
+					</form>
+				) : null}
 			</div>
 		);
 	}

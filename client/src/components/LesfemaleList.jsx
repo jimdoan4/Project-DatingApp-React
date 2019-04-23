@@ -39,9 +39,9 @@ export default class LesfemaleList extends Component {
 	};
 
 	deleteLesbian = (e, lesbian) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/lesbians/${lesbian._id}`).then((res) => {
-			this.findAllLesbians()
+			this.findAllLesbians();
 		});
 	};
 
@@ -51,7 +51,6 @@ export default class LesfemaleList extends Component {
 		}
 		return (
 			<div>
-
 				<div
 					className="row"
 					style={{
@@ -75,7 +74,7 @@ export default class LesfemaleList extends Component {
 										key={lesbian._id}
 										className="text-center hidden"
 										style={{
-                                            color: 'white',
+											color: 'white',
 											width: '16.8rem',
 											marginLeft: '30px',
 											marginRight: '30px',
@@ -92,18 +91,17 @@ export default class LesfemaleList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'white' }}>{lesbian.firstName}</Card.Title>
 											<Card.Title style={{ color: 'white' }}>{lesbian.age}</Card.Title>
-								
+
 											<Card.Text style={{ color: 'white' }}>{lesbian.location}</Card.Text>
-								
+
 											<div key={lesbian._id}>
 												<Link to={`/lesbians/${lesbian._id}`} key={lesbian._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button
-												    key={lesbian._id}
+													key={lesbian._id}
 													onClick={(e) => this.deleteLesbian(e, lesbian)}
 													type="button"
-													
 													style={{ color: 'black' }}
 												>
 													Not Interested
@@ -115,10 +113,8 @@ export default class LesfemaleList extends Component {
 							</div>
 						);
 					})}
-
 				</div>
 			</div>
 		);
 	}
 }
-

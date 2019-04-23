@@ -40,9 +40,9 @@ export default class MaleList extends Component {
 	};
 
 	deleteMale = (e, male) => {
-		e.preventDefault()
+		e.preventDefault();
 		axios.delete(`/api/males/${male._id}`).then((res) => {
-			this.findAllMales()
+			this.findAllMales();
 		});
 	};
 
@@ -52,7 +52,6 @@ export default class MaleList extends Component {
 		}
 		return (
 			<div>
-			
 				<div
 					className="row"
 					style={{
@@ -92,20 +91,20 @@ export default class MaleList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'white' }}>{male.firstName}</Card.Title>
 											<Card.Title style={{ color: 'white' }}>{male.age}</Card.Title>
-									
+
 											<Card.Text style={{ color: 'white' }}>{male.location}</Card.Text>
-									
+
 											<div key={male._id}>
 												<Link to={`/males/${male._id}`} key={male._id}>
 													<button style={{ marginRight: '16px' }}>Interested</button>
 												</Link>
 												<button
-												    key={male._id}
+													key={male._id}
 													onClick={(e) => this.deleteMale(e, male)}
 													type="button"
 													style={{ color: 'black' }}
 												>
-													 Not Interested
+													Not Interested
 												</button>
 											</div>
 										</Card.Body>
@@ -114,8 +113,6 @@ export default class MaleList extends Component {
 							</div>
 						);
 					})}
-
-		
 				</div>
 			</div>
 		);

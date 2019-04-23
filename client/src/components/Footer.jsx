@@ -24,8 +24,13 @@ export default class Footer extends Component {
 									<i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
 								</a>
 
-								<a style= {{color: 'black' }}className="ins-ic">
-									<i style= {{color: 'black' }}className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+								<a style={{ color: 'black' }} className="ins-ic">
+									<i
+										style={{ color: 'black' }}
+										className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"
+									>
+										{' '}
+									</i>
 								</a>
 
 								<a style={{ color: 'black' }} className="pin-ic">
