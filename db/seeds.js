@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const Lesfemale = require('../models/Lesfemale.js');
+const Lesbian = require('../models/Lesbian.js');
 const User = require('../models/User.js');
 const Comment = require('../models/Comment.js');
 const Mcomment = require('../models/Mcomment.js');
@@ -336,7 +336,7 @@ const gm12 = new Gaymale({
 
 //female
 
-const f1 = new Lesfemale({
+const f1 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -347,7 +347,7 @@ const f1 = new Lesfemale({
 
 });
 
-const f2 = new Lesfemale({
+const f2 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -358,7 +358,7 @@ const f2 = new Lesfemale({
 	
 });
 
-const f3 = new Lesfemale({
+const f3 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -369,7 +369,7 @@ const f3 = new Lesfemale({
 	
 });
 
-const f4 = new Lesfemale({
+const f4 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -380,7 +380,7 @@ const f4 = new Lesfemale({
 	
 });
 
-const f5 = new Lesfemale({
+const f5 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -391,7 +391,7 @@ const f5 = new Lesfemale({
 	
 });
 
-const f6 = new Lesfemale({
+const f6 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://cdn.executiveponies.com/media/catalog/product/t/n/tn_dancing_mood_dress_in_black_sequin.jpg',
@@ -401,7 +401,7 @@ const f6 = new Lesfemale({
 
 });
 
-const f7 = new Lesfemale({
+const f7 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -412,7 +412,7 @@ const f7 = new Lesfemale({
 
 });
 
-const f8 = new Lesfemale({
+const f8 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg',
@@ -422,7 +422,7 @@ const f8 = new Lesfemale({
 	
 });
 
-const f9 = new Lesfemale({
+const f9 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -433,7 +433,7 @@ const f9 = new Lesfemale({
 	
 });
 
-const f10 = new Lesfemale({
+const f10 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
@@ -443,7 +443,7 @@ const f10 = new Lesfemale({
 	
 });
 
-const f11 = new Lesfemale({
+const f11 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl: 'https://assets.capitalfm.com/2018/23/lilliya-scarlett-instagram-1528814125-custom-0.png',
@@ -453,7 +453,7 @@ const f11 = new Lesfemale({
 
 });
 
-const f12 = new Lesfemale({
+const f12 = new Lesbian({
 	firstName: 'Jackie',
 	lastName: 'Hank',
 	photoUrl:
@@ -464,7 +464,8 @@ const f12 = new Lesfemale({
 
 });
 
-// straight female
+//straight female
+
 const sara = new User({
 	firstName: 'Sara',
 	lastName: 'Henderson',
@@ -630,7 +631,7 @@ Male.deleteMany({})
 	.then(() => m11.save())
 	.then(() => m12.save())
 	.then(() => console.log('Successful Save'))
-Lesfemale.deleteMany({})
+Lesbian.deleteMany({})
 	.then(() => f1.save())
 	.then(() => f2.save())
 	.then(() => f3.save())

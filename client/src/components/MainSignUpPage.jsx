@@ -12,7 +12,8 @@ export default class MainSignUpPage extends Component {
 		userId: this.props.match.params.userId,
 		maleId: this.props.match.params.maleId,
 		gaymaleId: this.props.match.params.gaymaleId,
-		lesfemaleId: this.props.match.params.lesfemaleId
+		lesbianId: this.props.match.params.lesbianId
+		// lesfemaleId: this.props.match.params.lesfemaleId
 	};
 
 	render() {
@@ -30,7 +31,7 @@ export default class MainSignUpPage extends Component {
 						</Col>
 
 						<Col>
-							<FemaleSignUp lesfemaleId={this.state.lesfemaleId} />
+							<FemaleSignUp lesbianId={this.state.lesbianId} />
 						</Col>
 
 						<Col>

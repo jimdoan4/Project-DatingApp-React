@@ -8,8 +8,8 @@ import { Col } from 'react-bootstrap';
 
 export default class FemaleSignUp extends Component {
 	state = {
-		lesfemales: [],
-		newLesfemale: {
+		lesbians: [],
+		newLesbian: {
 			firstName: '',
 			lastName: '',
 			age: '',
@@ -19,36 +19,36 @@ export default class FemaleSignUp extends Component {
 			
 		},
 		displayFemaleForm: false,
-		redirectToLesfemale: false
+		redirectToLesbian: false
 	};
 
 	componentDidMount = () => {
-		this.findAllLesfemales();
+		this.findAllLesbians();
 	};
 
-	findAllLesfemales = () => {
-		axios.get('/api/lesfemales/').then((res) => {
-			this.setState({ lesfemales: res.data });
+	findAllLesbians = () => {
+		axios.get('/api/lesbians/').then((res) => {
+			this.setState({ lesbians: res.data });
 		});
 	};
 
 	createFemale = (e) => {
 		axios
-			.post('/api/lesfemales/', {
-				password: this.state.newLesfemale.password,
-				userName: this.state.newLesfemale.userName,
-				firstName: this.state.newLesfemale.firstName,
-				lastName: this.state.newLesfemale.lastName,
-				age: this.state.newLesfemale.age,
-				photoUrl: this.state.newLesfemale.photoUrl,
-				location: this.state.newLesfemale.location,
-				bio: this.state.newLesfemale.bio
+			.post('/api/lesbians/', {
+				password: this.state.newLesbian.password,
+				userName: this.state.newLesbian.userName,
+				firstName: this.state.newLesbian.firstName,
+				lastName: this.state.newLesbian.lastName,
+				age: this.state.newLesbian.age,
+				photoUrl: this.state.newLesbian.photoUrl,
+				location: this.state.newLesbian.location,
+				bio: this.state.newLesbian.bio
 			})
 			.then((res) => {
-				const lesfemalesList = [ this.state.lesfemale ];
-				lesfemalesList.unshift(res.data);
+				const lesbiansList = [ this.state.lesbian ];
+				lesbiansList.unshift(res.data);
 				this.setState({
-					newLesfemale: {
+					newLesbian: {
 						firstName: '',
 						lastName: '',
 						age: '',
@@ -57,16 +57,16 @@ export default class FemaleSignUp extends Component {
 						bio: ''
 					},
 					displayFemaleForm: false,
-					lesfemales: lesfemalesList
+					lesbians: lesbiansList
 				});
 			});
-		this.findAllLesfemales();
+		this.findAllLesbians();
 	};
 
 	handleChange = (e) => {
-		const changeNewFemale = { ...this.state.newLesfemale };
+		const changeNewFemale = { ...this.state.newLesbian };
 		changeNewFemale[e.target.name] = e.target.value;
-		this.setState({ newLesfemale: changeNewFemale });
+		this.setState({ newLesbian: changeNewFemale });
 	};
 
 
@@ -83,13 +83,13 @@ export default class FemaleSignUp extends Component {
     };
 
 	render() {
-		if (this.state.redirectToLesfemale) {
-			return <Redirect to={`/lesfemales/:lesfemaleId`} />;
+		if (this.state.redirectToLesbian) {
+			return <Redirect to={`/lesbians/:lesbianId`} />;
 		}
 
 		return (
 			<div>
-				{this.state.lesfemales.map((lesfemale) => {
+				{this.state.lesbians.map((lesbian) => {
 					return (
 						<div>
 						</div>
@@ -125,7 +125,7 @@ export default class FemaleSignUp extends Component {
 										className="text-center"
 										name="firstName"
 										onChange={this.handleChange}
-										value={this.state.newLesfemale.firstName}
+										value={this.state.newLesbian.firstName}
 										type="text"
 										placeholder="Enter First Name"
 									/>
@@ -139,7 +139,7 @@ export default class FemaleSignUp extends Component {
 										className="text-center"
 										name="lastName"
 										onChange={this.handleChange}
-										value={this.state.newLesfemale.lastName}
+										value={this.state.newLesbian.lastName}
 										type="text"
 										placeholder="Enter Last Name"
 									/>
@@ -154,7 +154,7 @@ export default class FemaleSignUp extends Component {
 									className="text-center"
 									name="photoUrl"
 									onChange={this.handleChange}
-									value={this.state.newLesfemale.photoUrl}
+									value={this.state.newLesbian.photoUrl}
 									type="text"
 									placeholder="Enter a Photo of Yourself"
 								/>
@@ -169,7 +169,7 @@ export default class FemaleSignUp extends Component {
 									name="age"
 									type="number"
 									onChange={this.handleChange}
-									value={this.state.newLesfemale.age}
+									value={this.state.newLesbian.age}
 									placeholder="Enter your Age"
 								/>
 							</Form.Group>
@@ -183,7 +183,7 @@ export default class FemaleSignUp extends Component {
 									name="location"
 									type="text"
 									onChange={this.handleChange}
-									value={this.state.newLesfemale.location}
+									value={this.state.newLesbian.location}
 									placeholder="Apartment, studio, or floor"
 								/>
 							</Form.Group>
@@ -198,7 +198,7 @@ export default class FemaleSignUp extends Component {
 										name="bio"
 										type="text"
 										onChange={this.handleChange}
-										value={this.state.newLesfemale.bio}
+										value={this.state.newLesbian.bio}
 										placeholder="Enter Facts about yourself"
 									/>
 								</Form.Group>
@@ -232,3 +232,230 @@ export default class FemaleSignUp extends Component {
 		);
 	}
 }
+
+// export default class FemaleSignUp extends Component {
+// 	state = {
+// 		lesfemales: [],
+// 		newLesfemale: {
+// 			firstName: '',
+// 			lastName: '',
+// 			age: '',
+// 			photoUrl: '',
+// 			location: '',
+// 			bio: ''
+			
+// 		},
+// 		displayFemaleForm: false,
+// 		redirectToLesfemale: false
+// 	};
+
+// 	componentDidMount = () => {
+// 		this.findAllLesfemales();
+// 	};
+
+// 	findAllLesfemales = () => {
+// 		axios.get('/api/lesfemales/').then((res) => {
+// 			this.setState({ lesfemales: res.data });
+// 		});
+// 	};
+
+// 	createFemale = (e) => {
+// 		axios
+// 			.post('/api/lesfemales/', {
+// 				password: this.state.newLesfemale.password,
+// 				userName: this.state.newLesfemale.userName,
+// 				firstName: this.state.newLesfemale.firstName,
+// 				lastName: this.state.newLesfemale.lastName,
+// 				age: this.state.newLesfemale.age,
+// 				photoUrl: this.state.newLesfemale.photoUrl,
+// 				location: this.state.newLesfemale.location,
+// 				bio: this.state.newLesfemale.bio
+// 			})
+// 			.then((res) => {
+// 				const lesfemalesList = [ this.state.lesfemale ];
+// 				lesfemalesList.unshift(res.data);
+// 				this.setState({
+// 					newLesfemale: {
+// 						firstName: '',
+// 						lastName: '',
+// 						age: '',
+// 						photoUrl: '',
+// 						location: '',
+// 						bio: ''
+// 					},
+// 					displayFemaleForm: false,
+// 					lesfemales: lesfemalesList
+// 				});
+// 			});
+// 		this.findAllLesfemales();
+// 	};
+
+// 	handleChange = (e) => {
+// 		const changeNewFemale = { ...this.state.newLesfemale };
+// 		changeNewFemale[e.target.name] = e.target.value;
+// 		this.setState({ newLesfemale: changeNewFemale });
+// 	};
+
+
+// 	toggleEditForm = () => {
+// 		this.setState((state, props) => {
+// 			return { displayFemaleForm: !state.displayFemaleForm };
+// 		});
+// 	};
+
+
+// 	handleFemaleSignUp = (e) => {
+// 		e.preventDefault();
+// 		this.createFemale();
+//     };
+
+// 	render() {
+// 		if (this.state.redirectToLesfemale) {
+// 			return <Redirect to={`/lesfemales/:lesfemaleId`} />;
+// 		}
+
+// 		return (
+// 			<div>
+// 				{this.state.lesfemales.map((lesfemale) => {
+// 					return (
+// 						<div>
+// 						</div>
+// 					);
+// 				})}
+// 				<br />
+// 				<br />
+// 				 <button className="" onClick={this.toggleEditForm}>Lesbian Women</button>
+//         {
+//           this.state.displayFemaleForm ?
+// 				<div className="container">
+// 					<Card
+// 						className="container"
+// 						style={{
+// 							width: '36rem',
+// 							height: '41.4rem',
+// 							paddingTop: '35px',
+// 							marginTop: '20px',
+// 							marginBottom: '98px'
+// 						}}
+// 					>
+// 						<Form
+// 							className="text-center"
+// 							style={{ display: 'inline-block', paddingRight: '23px' }}
+// 							onSubmit={this.handleFemaleSignUp}
+// 						>
+// 							<Form.Row>
+// 								<Form.Group as={Col} controlId="formGridEmail">
+// 									<Form.Label style={{ fontSize: '16px ' }} htmlFor="firstName">
+// 										First Name
+// 									</Form.Label>
+// 									<Form.Control
+// 										className="text-center"
+// 										name="firstName"
+// 										onChange={this.handleChange}
+// 										value={this.state.newLesfemale.firstName}
+// 										type="text"
+// 										placeholder="Enter First Name"
+// 									/>
+// 								</Form.Group>
+
+// 								<Form.Group as={Col} controlId="formGridPassword">
+// 									<Form.Label style={{ fontSize: '16px ' }} htmlFor="lastName">
+// 										Last Name
+// 									</Form.Label>
+// 									<Form.Control
+// 										className="text-center"
+// 										name="lastName"
+// 										onChange={this.handleChange}
+// 										value={this.state.newLesfemale.lastName}
+// 										type="text"
+// 										placeholder="Enter Last Name"
+// 									/>
+// 								</Form.Group>
+// 							</Form.Row>
+						
+// 							<Form.Group as={Col} controlId="formGridEmail">
+// 								<Form.Label style={{ fontSize: '16px ' }} htmlFor="photoUrl">
+// 									Photo
+// 								</Form.Label>
+// 								<Form.Control
+// 									className="text-center"
+// 									name="photoUrl"
+// 									onChange={this.handleChange}
+// 									value={this.state.newLesfemale.photoUrl}
+// 									type="text"
+// 									placeholder="Enter a Photo of Yourself"
+// 								/>
+// 							</Form.Group>
+
+// 							<Form.Group controlId="formGridAddress1">
+// 								<Form.Label style={{ fontSize: '16px ' }} htmlFor="age">
+// 									Age
+// 								</Form.Label>
+// 								<Form.Control
+// 									className="text-center"
+// 									name="age"
+// 									type="number"
+// 									onChange={this.handleChange}
+// 									value={this.state.newLesfemale.age}
+// 									placeholder="Enter your Age"
+// 								/>
+// 							</Form.Group>
+
+// 							<Form.Group controlId="formGridAddress2">
+// 								<Form.Label style={{ fontSize: '16px ' }} htmlFor="location">
+// 									Location
+// 								</Form.Label>
+// 								<Form.Control
+// 									className="text-center"
+// 									name="location"
+// 									type="text"
+// 									onChange={this.handleChange}
+// 									value={this.state.newLesfemale.location}
+// 									placeholder="Apartment, studio, or floor"
+// 								/>
+// 							</Form.Group>
+
+// 							<Form.Row>
+// 								<Form.Group as={Col} controlId="formGridCity">
+// 									<Form.Label style={{ fontSize: '16px ' }} htmlFor="bio">
+// 										Biography
+// 									</Form.Label>
+// 									<Form.Control
+// 										className="text-center"
+// 										name="bio"
+// 										type="text"
+// 										onChange={this.handleChange}
+// 										value={this.state.newLesfemale.bio}
+// 										placeholder="Enter Facts about yourself"
+// 									/>
+// 								</Form.Group>
+// 							</Form.Row>
+
+// 							<div style={{ marginLeft: '140px' }} className="text-center">
+// 								<Button
+// 									onclick={this.createFemale}
+// 									className="text-center"
+// 									type="submit"
+// 									style={{
+// 										marginRight: '140px',
+// 										paddingLeft: '30px',
+// 										paddingRight: '30px',
+// 										marginTop: '29px',
+// 										marginBottom: '65px',
+// 										backgroundColor: 'grey'
+// 									}}
+// 								>
+// 									Register
+// 								</Button>
+// 							</div>
+// 						</Form>
+// 					</Card>
+// 				</div> 
+// 				: null
+// 								}
+//                     </div>
+                    			
+		
+// 		);
+// 	}
+// }

@@ -10,7 +10,8 @@ const mcommentController = require('../controllers/mcommentController');
 const gaymaleController = require('../controllers/gaymaleController.js');
 const gcommentController = require('../controllers/gcommentController');
 const geventController = require('../controllers/geventController');
-const lesfemaleController = require('../controllers/lesfemaleController.js');
+// const lesfemaleController = require('../controllers/lesfemaleController.js');
+const lesbianController = require('../controllers/lesbianController.js');
 
 router.get('/', appController.index);
 
@@ -20,11 +21,17 @@ router.get('/users/:userId/', userController.show);
 router.put('/users/:userId/', userController.update);
 router.delete('/users/:userId/', userController.delete);
 
-router.get('/lesfemales/', lesfemaleController.index);
-router.post('/lesfemales/', lesfemaleController.create);
-router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
-router.put('/lesfemales/:lesfemaleId/', lesfemaleController.update);
-router.delete('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
+router.get('/lesbians/', lesbianController.index);
+router.post('/lesbians/', lesbianController.create);
+router.get('/lesbians/:lesbianId/', lesbianController.show);
+router.put('/lesbians/:lesbianId/', lesbianController.update);
+router.delete('/lesbians/:lesbianId/', lesbianController.delete);
+
+// router.get('/lesfemales/', lesfemaleController.index);
+// router.post('/lesfemales/', lesfemaleController.create);
+// router.get('/lesfemales/:lesfemaleId/', lesfemaleController.show);
+// router.put('/lesfemales/:lesfemaleId/', lesfemaleController.update);
+// router.delete('/lesfemales/:lesfemaleId/', lesfemaleController.delete);
 
 router.get('/males/', maleController.index);
 router.post('/males/', maleController.create);

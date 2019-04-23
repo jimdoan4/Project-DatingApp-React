@@ -5,30 +5,27 @@ const EventSchema = new Schema({
 	eventName: String,
 	time: Number,
 	price: Number,
-	withWho: String,
-	photoUrl: String
+	withWho: String
+
 });
 
 const MeventSchema = new Schema({
 	eventName: String,
 	time: Number,
 	price: Number,
-	withWho: String,
-	photoUrl: String
+	withWho: String
 });
 
 const GeventSchema = new Schema({
 	eventName: String,
 	time: Number,
 	price: Number,
-	withWho: String,
-	photoUrl: String
+	withWho: String
 });
 
 const CommentSchema = new Schema({
 	rating: Number,
 	dateAgain: String,
-	photoUrl: String,
 	withWho: String,
 	review: String,
 	lessonLearned: String
@@ -37,7 +34,6 @@ const CommentSchema = new Schema({
 const McommentSchema = new Schema({
 	rating: Number,
 	dateAgain: String,
-	photoUrl: String,
 	withWho: String,
 	review: String,
 	lessonLearned: String
@@ -46,7 +42,6 @@ const McommentSchema = new Schema({
 const GcommentSchema = new Schema({
 	rating: Number,
 	dateAgain: String,
-	photoUrl: String,
 	withWho: String,
 	review: String,
 	lessonLearned: String
@@ -85,7 +80,7 @@ const GaymaleSchema = new Schema({
 	gcomments: [ GcommentSchema ]
 });
 
-const LesfemaleSchema = new Schema({
+const LesbianSchema = new Schema({
 	firstName: String,
 	lastName: String,
 	age: Number,
@@ -106,6 +101,6 @@ module.exports = {
 	GaymaleSchema: GaymaleSchema,
 	GeventSchema: GeventSchema,
 	GcommentSchema: GcommentSchema,
-	LesfemaleSchema: LesfemaleSchema,
+	LesbianSchema: LesbianSchema
 	
 };
