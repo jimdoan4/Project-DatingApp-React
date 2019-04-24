@@ -115,8 +115,16 @@ export default class MeventPage extends Component {
 		}
 		return (
 			<div className="text-center" style={{ marginLeft: '90px' }}>
-				<h3>Set up a Date with your MATCH</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleDateForm}>
+				<h3 style= {{marginTop: '30px'}}>Set up a Date with your MATCH</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleDateForm}
+				>
 					List of Scheduled Events
 				</button>
 				{this.state.mevents.map((mevent) => {
@@ -179,12 +187,20 @@ export default class MeventPage extends Component {
 
 				<Col>
 					<div className="text-center" style={{ marginTop: '30px' }}>
-						<button style={{ marginBottom: '20px' }} onClick={this.toggleMeventForm}>
+						<button
+							style={{
+								marginBottom: '20px',
+								backgroundColor: 'white',
+								borderColor: 'black',
+								color: 'black'
+							}}
+							onClick={this.toggleMeventForm}
+						>
 							Add an Event
 						</button>
 						{this.state.displayMeventForm ? (
 							<div className="container">
-								<Card className="container" style={{ width: '25rem', height: '42.8rem' }}>
+								<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
 									<Form
 										className="text-center"
 										style={{
@@ -210,20 +226,20 @@ export default class MeventPage extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="time">Time: </Form.Label>
+												<Form.Label htmlFor="time">What time is the Event: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
 													name="time"
 													onChange={this.handleChange}
 													value={this.state.newMevent.time}
-													placeholder="What time is your date scheduled?"
+													placeholder="What time is your Event"
 												/>
 											</Form.Group>
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="price">Price? </Form.Label>
+												<Form.Label htmlFor="price">What is the cost of the Event: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
@@ -236,7 +252,7 @@ export default class MeventPage extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+												<Form.Label htmlFor="withWho">Who is your Date: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -258,7 +274,10 @@ export default class MeventPage extends Component {
 													paddingLeft: '60px',
 													paddingRight: '60px',
 													marginTop: '1px',
-													marginBottom: '15px'
+													marginBottom: '15px',
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
 												}}
 											>
 												Add Event
@@ -335,7 +354,16 @@ export default class MeventPage extends Component {
 							</div>
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
-							<button className="text-center">Submit</button>
+							<button
+								style={{
+									backgroundColor: 'white',
+									borderColor: 'black',
+									color: 'black'
+								}}
+								className="text-center"
+							>
+								Submit
+							</button>
 						</div>
 					</form>
 				) : null}

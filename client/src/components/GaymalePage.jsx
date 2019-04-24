@@ -217,7 +217,16 @@ export default class GaymalePage extends Component {
 							</div>
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
-							<button className="text-center">Submit</button>
+							<button
+								style={{
+									backgroundColor: 'white',
+									borderColor: 'black',
+									color: 'black'
+								}}
+								className="text-center"
+							>
+								Submit
+							</button>
 						</div>
 					</form>
 				) : null}

@@ -93,7 +93,14 @@ export default class GaySignUp extends Component {
 				})}
 				<br />
 				<br />
-				<button className="" onClick={this.toggleEditForm}>
+				<button
+					style={{
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleEditForm}
+				>
 					Gay Men
 				</button>
 				{this.state.displayGayForm ? (
@@ -204,7 +211,7 @@ export default class GaySignUp extends Component {
 								<div style={{ marginLeft: '140px' }} className="text-center">
 									<Button
 										onclick={this.createGaymale}
-										className="text-center"
+										className="text-center rockstar"
 										type="submit"
 										style={{
 											marginRight: '140px',
@@ -212,7 +219,9 @@ export default class GaySignUp extends Component {
 											paddingRight: '30px',
 											marginTop: '29px',
 											marginBottom: '65px',
-											backgroundColor: 'grey'
+											backgroundColor: 'grey',
+											borderColor: 'black',
+											color: 'black'
 										}}
 									>
 										Register

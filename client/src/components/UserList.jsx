@@ -144,19 +144,33 @@ export default class UserList extends Component {
 										<Card.Body>
 											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
 											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
-											{/* <Card.Text style={{ color: 'black' }}>{user.bio}</Card.Text> */}
 											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
 
 											<div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
-													<button style={{ marginRight: '16px' }}>Interested</button>
+													<button
+													className= 'rockstar'
+														style={{
+															backgroundColor: 'white',
+															borderColor: 'black',
+															color: 'black',
+															marginRight: '10px'
+														}}
+													>
+														Interested
+													</button>
 												</Link>
 
 												<button
 													key={user._id}
 													onClick={(e) => this.deleteUser(e, user)}
 													type="button"
-													style={{ color: 'black' }}
+													className= 'rockstar'
+													style={{
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black'
+													}}
 												>
 													Not Interested
 												</button>

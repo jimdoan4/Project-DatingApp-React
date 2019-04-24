@@ -13,24 +13,16 @@ export default class GayShowPage extends Component {
 
 	render() {
 		return (
-			<div className="row text-center">
-				<div
-					style={{
-						marginLeft: '90px',
-						color: 'black'
-					}}
-					className="row-sm-5 row-md-6 text-center"
-				>
-					<GaymalePage gaymaleId={this.state.gaymaleId} />
-				</div>
-				<div style={{ marginLeft: '60px', marginTop: '30px' }} className=".col-md-8 text-center">
-					<Gevent gaymaleId={this.state.gaymaleId} />
-
-					<div style={{ marginTop: '30px', marginBottom: '160px' }} className=".col-md-8 text-center">
-						<Gcomment gaymaleId={this.state.gaymaleId} />
-					</div>
-				</div>
+			<div className="text-center">
+			<Container> 
+  		<Row>
+    <Col><Gevent gaymaleId={this.state.gaymaleId} /></Col>
+    <Col><GaymalePage gaymaleId={this.state.gaymaleId} /></Col>
+    <Col><Gcomment gaymaleId={this.state.gaymaleId} /></Col>
+  </Row>
+</Container>
 			</div>
 		);
 	}
 }
+

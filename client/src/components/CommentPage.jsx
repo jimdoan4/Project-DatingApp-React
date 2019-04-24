@@ -121,10 +121,18 @@ export default class CommentPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className="text=center" style={{ marginLeft: '90px' }}>
-				<h3>Write A Review about Your DATE</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleCommentForm}>
-					List of Your Date REVIEWS
+			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleCommentForm}
+				>
+					List of Your Date Reviews
 				</button>
 				<div className="row">
 					{this.state.comments.map((comment) => {
@@ -189,7 +197,15 @@ export default class CommentPage extends Component {
 					})}
 
 					<div className="text-center col" style={{ marginTop: '30px' }}>
-						<button style={{ marginBottom: '20px' }} onClick={this.toggleEditForm}>
+						<button
+							style={{
+								marginBottom: '20px',
+								backgroundColor: 'white',
+								borderColor: 'black',
+								color: 'black'
+							}}
+							onClick={this.toggleEditForm}
+						>
 							Add a Review
 						</button>
 						{this.state.displayEditForm ? (
@@ -285,7 +301,10 @@ export default class CommentPage extends Component {
 													paddingLeft: '60px',
 													paddingRight: '60px',
 													marginTop: '1px',
-													marginBottom: '15px'
+													marginBottom: '15px',
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
 												}}
 											>
 												Add Comment

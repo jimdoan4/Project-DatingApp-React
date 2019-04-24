@@ -91,7 +91,15 @@ export default class FemaleSignUp extends Component {
 				})}
 				<br />
 				<br />
-				<button className="" onClick={this.toggleEditForm}>
+				<button
+					style={{
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					className=""
+					onClick={this.toggleEditForm}
+				>
 					Lesbian Women
 				</button>
 				{this.state.displayFemaleForm ? (
@@ -202,7 +210,7 @@ export default class FemaleSignUp extends Component {
 								<div style={{ marginLeft: '140px' }} className="text-center">
 									<Button
 										onclick={this.createFemale}
-										className="text-center"
+										className="text-center rockstar"
 										type="submit"
 										style={{
 											marginRight: '140px',
@@ -210,7 +218,9 @@ export default class FemaleSignUp extends Component {
 											paddingRight: '30px',
 											marginTop: '29px',
 											marginBottom: '65px',
-											backgroundColor: 'grey'
+											backgroundColor: 'grey',
+											borderColor: 'black',
+											color: 'black'
 										}}
 									>
 										Register

@@ -31,14 +31,14 @@ export default class Home extends Component {
 						</Col>
 					</Row>
 					<Row style={{ marginTop: '55px' }}>
-						<Col style={{ fontSize: '35px' }}>Find your Match.</Col>
-						<Col style={{ fontSize: '35px' }}>Set a Date with your Match.</Col>
-						<Col style={{ fontSize: '35px' }}>Rate your Date.</Col>
+						<Col style={{ fontSize: '31px', position: 'block' }}>Find your Match.</Col>
+						<Col style={{ fontSize: '31px', position: 'block'  }}>Set a Date with your Match.</Col>
+						<Col style={{ fontSize: '31px', position: 'block'  }}>Rate your Date.</Col>
 					</Row>
 					<Container className="text-center" style={{ marginTop: '40px' }}>
 						<Link className="" to="/login/" style={{ color: 'black' }}>
 							<button
-								className="join"
+								className="join rockstar"
 								style={{
 									backgroundColor: 'grey',
 									borderColor: 'white',

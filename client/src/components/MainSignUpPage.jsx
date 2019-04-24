@@ -6,6 +6,11 @@ import MaleSignUp from './MaleSignUp';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap';
+import { DropdownButton } from 'react-bootstrap';
+import Weather from './Weather';
+import InputField from './InputField';
 
 export default class MainSignUpPage extends Component {
 	state = {

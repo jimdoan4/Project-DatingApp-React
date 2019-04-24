@@ -117,17 +117,25 @@ export default class Gevent extends Component {
 			return <Redirect to={`/gaymales/`} />;
 		}
 		return (
-			<div className="text=center" style={{ marginLeft: '90px' }}>
-				<h3>Set up a Date with your MATCH</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleDateForm}>
+			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+				<h3 style= {{marginTop: '30px'}}>Set up a Date with your MATCH</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleDateForm}
+				>
 					List of Scheduled Events
 				</button>
-				<div className="row">
+				<div className="">
 					{this.state.gevents.map((gevent) => {
 						return (
 							<div>
 								{this.state.displayDateForm ? (
-									<Col>
+									// <Col>
 										<Card
 											className="text-center"
 											style={{
@@ -175,20 +183,28 @@ export default class Gevent extends Component {
 												</button>
 											</Container>
 										</Card>
-									</Col>
+									// </Col>
 								) : null}
 							</div>
 						);
 					})}
-					<br />
-					<Col>
+				
+					{/* <Col> */}
 						<div className="text-center" style={{ marginTop: '30px' }}>
-							<button style={{ marginBottom: '20px' }} onClick={this.toggleGeventForm}>
+							<button
+								style={{
+									marginBottom: '20px',
+									backgroundColor: 'white',
+									borderColor: 'black',
+									color: 'black'
+								}}
+								onClick={this.toggleGeventForm}
+							>
 								Add an Event
 							</button>
 							{this.state.displayGeventForm ? (
 								<div className="container">
-									<Card className="container" style={{ width: '25rem', height: '40.8rem' }}>
+									<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
 										<Form
 											className="text-center"
 											style={{
@@ -251,19 +267,7 @@ export default class Gevent extends Component {
 													/>
 												</Form.Group>
 											</Form.Row>
-											<Form.Row>
-												<Form.Group as={Col} controlId="formGridPassword">
-													<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
-													<Form.Control
-														className="text-center"
-														type="text"
-														name="withWho"
-														onChange={this.handleChange}
-														value={this.state.newGevent.withWho}
-														placeholder="Enter your date's name"
-													/>
-												</Form.Group>
-											</Form.Row>
+									
 											<div style={{ marginLeft: '110px' }} className="text-center">
 												<button
 													className="text-center"
@@ -274,7 +278,10 @@ export default class Gevent extends Component {
 														paddingLeft: '60px',
 														paddingRight: '60px',
 														marginTop: '1px',
-														marginBottom: '15px'
+														marginBottom: '15px',
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black'
 													}}
 												>
 													Add Event
@@ -285,7 +292,7 @@ export default class Gevent extends Component {
 								</div>
 							) : null}
 						</div>
-					</Col>
+					{/* </Col> */}
 				</div>
 			</div>
 		);

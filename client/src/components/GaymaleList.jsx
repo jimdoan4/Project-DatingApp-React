@@ -96,13 +96,26 @@ export default class GaymaleList extends Component {
 
 											<div key={gaymale._id}>
 												<Link to={`/gaymales/${gaymale._id}`} key={gaymale._id}>
-													<button style={{ marginRight: '16px' }}>Interested</button>
+													<button
+														style={{
+															backgroundColor: 'white',
+															borderColor: 'black',
+															color: 'black',
+															marginRight: '10px'
+														}}
+													>
+														Interested
+													</button>
 												</Link>
 												<button
 													key={gaymale._id}
 													onClick={(e) => this.deleteGaymale(e, gaymale)}
 													type="button"
-													style={{ color: 'black' }}
+													style={{
+														backgroundColor: 'white',
+														borderColor: 'black',
+														color: 'black'
+													}}
 												>
 													Not Interested
 												</button>

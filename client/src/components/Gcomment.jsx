@@ -120,12 +120,20 @@ export default class Gcomment extends Component {
 			return <Redirect to={`/gaymales/`} />;
 		}
 		return (
-			<div className="text=center" style={{ marginLeft: '90px' }}>
-				<h3>Write A Review about Your DATE</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleReviewForm}>
-					List of Your date REVIEWS
+			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleReviewForm}
+				>
+					List of Your date Reviews
 				</button>
-				<div className="row">
+				<div className="col">
 					{this.state.gcomments.map((gcomment) => {
 						return (
 							<div>
@@ -142,11 +150,12 @@ export default class Gcomment extends Component {
 												marginTop: '26px'
 											}}
 										>
+										<p>Who was my date? {gcomment.withWho}</p>
 											<p>Rating for this date: {gcomment.rating}</p>
 											<p>Would I go on a second date? {gcomment.dateAgain}</p>
 											<p>What is your review of this date? {gcomment.review}</p>
 											<p>What did I learn from this date? {gcomment.lessonLearned}</p>
-											<p>Who was my date? {gcomment.withWho}</p>
+											
 											<Container
 												style={{ marginLeft: '0px', textAlign: 'center' }}
 												className="text-center"
@@ -184,10 +193,18 @@ export default class Gcomment extends Component {
 							</div>
 						);
 					})}
-					<br />
-					{/* <br /> */}
+				
+
 					<div className="text-center col" style={{ marginTop: '30px' }}>
-						<button style={{ marginBottom: '20px' }} onClick={this.toggleGcommentForm}>
+						<button
+							style={{
+								marginBottom: '20px',
+								backgroundColor: 'white',
+								borderColor: 'black',
+								color: 'black'
+							}}
+							onClick={this.toggleGcommentForm}
+						>
 							Add a Review
 						</button>
 						{this.state.displayGcommentForm ? (
@@ -284,7 +301,10 @@ export default class Gcomment extends Component {
 													paddingLeft: '30px',
 													paddingRight: '30px',
 													marginTop: '10px',
-													marginBottom: '25px'
+													marginBottom: '25px',
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
 												}}
 											>
 												Add Comment

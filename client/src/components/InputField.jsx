@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 
 const InputField = props =>
-  <Form onSubmit={''}>
-  <Form.Group controlId="">
-    <Form.Control style= {{color: 'black'}} type='text' placeholder='Enter City Name' onKeyDown={props.queryWeather}/>
+  <Form style= {{color: 'black'}} onSubmit={''}>
+  <Form.Group style= {{color: 'black'}} controlId="">
+    <Form.Control style= {{color: 'black'}} type='text' placeholder='Enter Your City Name To Check the Weather' onKeyDown={props.queryWeather}/>
     </Form.Group>
   </Form>
 

@@ -118,18 +118,25 @@ export default class EventPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className="text-center" style={{ marginLeft: '90px' }}>
-				<h3>Set up a Date with your MATCH</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleEventForm}>
+			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+				<h3 style= {{marginTop: '30px'}}>Set up a Date with your MATCH</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleEventForm}
+				>
 					List of Scheduled Events
 				</button>
-				<div className="row">
+				<div className="">
 					{this.state.events.map((event) => {
 						return (
 							<div>
 								{this.state.displayEventForm ? (
-									// <Card>
-									<Col>
+									// <Col>
 										<Card
 											className="text-center"
 											style={{
@@ -178,18 +185,26 @@ export default class EventPage extends Component {
 												</button>
 											</Container>
 										</Card>
-									</Col>
+									// </Col>
 								) : null}
 							</div>
 						);
 					})}
-					<Col>
-						<div className="text-center" style={{ marginTop: '30px' }}>
-							<button style={{ marginBottom: '20px' }} onClick={this.toggleEditForm}>
+				
+						<div className="text-center col" style={{ marginTop: '30px' }}>
+							<button
+								style={{
+									marginBottom: '20px',
+									backgroundColor: 'white',
+									borderColor: 'black',
+									color: 'black'
+								}}
+								onClick={this.toggleEditForm}
+							>
 								Add an Event
 							</button>
 							{this.state.displayEditForm ? (
-								<div className="container">
+								<div className="container text-center">
 									<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
 										<Form
 											className="text-center"
@@ -277,7 +292,7 @@ export default class EventPage extends Component {
 								</div>
 							) : null}
 						</div>
-					</Col>
+					
 				</div>
 			</div>
 		);

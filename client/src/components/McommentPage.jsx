@@ -117,12 +117,20 @@ export default class McommentPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div className="text=center" style={{ marginLeft: '90px' }}>
-				<h3>Write A Review about Your DATE</h3>
-				<button style={{ marginTop: '14px' }} onClick={this.toggleReviewForm}>
-					Lists of Your Date REVIEWS
+			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
+				<button
+					style={{
+						marginTop: '14px',
+						backgroundColor: 'white',
+						borderColor: 'black',
+						color: 'black'
+					}}
+					onClick={this.toggleReviewForm}
+				>
+					Lists of Your Date Reviews
 				</button>
-
+<div className="row">
 				{this.state.mcomments.map((mcomment) => {
 					return (
 						<div>
@@ -139,11 +147,12 @@ export default class McommentPage extends Component {
 											marginTop: '26px'
 										}}
 									>
+									<p>Who was my date? {mcomment.withWho}</p>
 										<p>Rating for this date: {mcomment.rating}</p>
 										<p>Would I go on a second date? {mcomment.dateAgain}</p>
 										<p>What is your review of this date? {mcomment.review}</p>
 										<p>What did I learn from this date? {mcomment.lessonLearned}</p>
-										<p>Who was my date? {mcomment.withWho}</p>
+										
 										<Container
 											style={{ marginLeft: '0px', textAlign: 'center' }}
 											className="text-center"
@@ -178,12 +187,21 @@ export default class McommentPage extends Component {
 								</Col>
 							) : null}
 						</div>
+						
 					);
 				})}
 
-				<Col>
+				
 					<div className="text-center col" style={{ marginTop: '30px' }}>
-						<button style={{ marginBottom: '20px' }} onClick={this.toggleMcommentForm}>
+						<button
+							style={{
+								marginBottom: '20px',
+								backgroundColor: 'white',
+								borderColor: 'black',
+								color: 'black'
+							}}
+							onClick={this.toggleMcommentForm}
+						>
 							Add a Review
 						</button>
 						{this.state.displayMcommentForm ? (
@@ -280,10 +298,13 @@ export default class McommentPage extends Component {
 													paddingLeft: '60px',
 													paddingRight: '60px',
 													marginTop: '1px',
-													marginBottom: '15px'
+													marginBottom: '15px',
+													backgroundColor: 'white',
+													borderColor: 'black',
+													color: 'black'
 												}}
 											>
-												Add Comment
+												Add Review
 											</button>
 										</div>
 									</Form>
@@ -291,7 +312,7 @@ export default class McommentPage extends Component {
 							</div>
 						) : null}
 					</div>
-				</Col>
+				{/* </Col> */}
 
 				{this.state.displayEditForm ? (
 					<form
@@ -372,10 +393,20 @@ export default class McommentPage extends Component {
 							</div>
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
-							<button className="text-center">Submit</button>
+							<button
+								style={{
+									backgroundColor: 'white',
+									borderColor: 'black',
+									color: 'black'
+								}}
+								className="text-center"
+							>
+								Submit
+							</button>
 						</div>
 					</form>
 				) : null}
+			</div>
 			</div>
 		);
 	}
