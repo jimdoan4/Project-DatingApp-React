@@ -13,7 +13,7 @@ Suave Dating Website for Straight Men and Women and Gay Men and Lesbian Women.
 
 This application has:
 
-* **Ten models** – Full Crud on all models.
+* **Ten models** – Full Crud on all models and used OpenWeather 3rd Party API.
 * **Complete RESTful routes** for at least one resource (a project) with GET, POST, PUT, and DELETE.
 * **Uses Mongo queries and the Mongoose module** to interact with a document database.
 * **Promises** to help build more complex queries!
