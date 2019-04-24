@@ -97,13 +97,7 @@ export default class UserLog extends Component {
 				{this.state.users.map((user) => {
 					return (
 						<div>
-							{/* <Card>
-								<Card.Body className="text-center">
-									<Link to={`/users/${user._id}`} key={user._id}>
-										Welcome: <img src= '{user.photoUrl}'/>
-									</Link>
-								</Card.Body>
-							</Card> */}
+						
 						</div>
 					);
 				})}
@@ -111,9 +105,13 @@ export default class UserLog extends Component {
 				<br />
 				<button
 					style={{
-						backgroundColor: 'white',
+						backgroundColor: 'grey',
 						borderColor: 'black',
-						color: 'black'
+						color: 'white',
+						paddingLeft: '60px',
+						paddingRight: '60px',
+						paddingTop: '10px',
+						paddingBottom: '10px'
 					}}
 					onClick={this.toggleEditForm}
 				>

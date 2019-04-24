@@ -93,9 +93,13 @@ export default class FemaleSignUp extends Component {
 				<br />
 				<button
 					style={{
-						backgroundColor: 'white',
+					backgroundColor: 'grey',
 						borderColor: 'black',
-						color: 'black'
+						color: 'white',
+						paddingLeft: '60px',
+						paddingRight: '60px',
+						paddingTop: '10px',
+						paddingBottom: '10px'
 					}}
 					className=""
 					onClick={this.toggleEditForm}

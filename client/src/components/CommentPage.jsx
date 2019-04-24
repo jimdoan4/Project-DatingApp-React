@@ -121,7 +121,7 @@ export default class CommentPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+			<div className="text-center" style={{ position: 'block' }}>
 				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
 				<button
 					style={{
@@ -134,12 +134,12 @@ export default class CommentPage extends Component {
 				>
 					List of Your Date Reviews
 				</button>
-				<div className="row">
+				<div className="">
 					{this.state.comments.map((comment) => {
 						return (
 							<div>
 								{this.state.displayCommentForm ? (
-									<Col>
+								
 										<Card
 											className="text-center"
 											style={{
@@ -152,16 +152,17 @@ export default class CommentPage extends Component {
 											}}
 										>
 											<p>Who was my date? {comment.withWho}</p>
-
 											<p>Rating for this date: {comment.rating}</p>
 											<p>Would I go on a second date? {comment.dateAgain}</p>
 											<p>What is your review of this date? {comment.review}</p>
 											<p>What did I learn from this date? {comment.lessonLearned}</p>
 
 											<Container
-												style={{ marginLeft: '0px', textAlign: 'center' }}
+												style={{ textAlign: 'center' }}
 												className="text-center"
 											>
+											<Row>
+												<Col>
 												<Link
 													to={`/users/${this.state.userId}/comments/${comment._id}`}
 													key={comment._id}
@@ -177,6 +178,8 @@ export default class CommentPage extends Component {
 														Edit Review
 													</button>
 												</Link>
+												</Col>
+												<Col>
 												<button
 													style={{
 														backgroundColor: 'white',
@@ -188,9 +191,11 @@ export default class CommentPage extends Component {
 												>
 													Delete Review
 												</button>
+												</Col>
+												</Row>
 											</Container>
 										</Card>
-									</Col>
+								
 								) : null}
 							</div>
 						);
@@ -212,7 +217,8 @@ export default class CommentPage extends Component {
 							<div className="container text-center">
 								<Card
 									className="container"
-									style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}
+									
+									style={{ width: '28rem', height: '41.5rem', paddingTop: '15px', backgroundColor: '#d4d5d5' }}
 								>
 									<Form
 										className="text-center"

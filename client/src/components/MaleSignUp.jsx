@@ -97,9 +97,13 @@ export default class MaleSignUp extends Component {
 				<br />
 				<button
 					style={{
-						backgroundColor: 'white',
+						backgroundColor: 'grey',
 						borderColor: 'black',
-						color: 'black'
+						color: 'white',
+						paddingLeft: '60px',
+						paddingRight: '60px',
+						paddingTop: '10px',
+						paddingBottom: '10px'
 					}}
 					onClick={this.toggleEditForm}
 				>

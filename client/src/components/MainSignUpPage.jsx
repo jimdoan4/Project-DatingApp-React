@@ -22,23 +22,23 @@ export default class MainSignUpPage extends Component {
 
 	render() {
 		return (
-			<div className="text-center" style={{ marginBottom: '524px' }}>
+			<div className="text-center" style={{ marginBottom: '524px', position: 'block' }}>
 				<h1 style={{ marginTop: '43px' }}>Choose Your Preference</h1>
 				<Container>
 					<Row>
-						<Col>
+						<Col className="text-center rockstar">
 							<UserLog userId={this.state.userId} />
 						</Col>
 
-						<Col>
+						<Col className="text-center rockstar">
 							<MaleSignUp maleId={this.state.maleId} />
 						</Col>
 
-						<Col>
+						<Col className="text-center rockstar">
 							<FemaleSignUp lesbianId={this.state.lesbianId} />
 						</Col>
 
-						<Col>
+						<Col className="text-center rockstar">
 							<GaySignUp gaymaleId={this.state.gaymaleId} />
 						</Col>
 					</Row>

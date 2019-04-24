@@ -8,6 +8,7 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { CardGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 export default class Gcomment extends Component {
 	state = {
@@ -120,7 +121,7 @@ export default class Gcomment extends Component {
 			return <Redirect to={`/gaymales/`} />;
 		}
 		return (
-			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+			<div className="text-center" style={{ position: 'block' }}>
 				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
 				<button
 					style={{
@@ -138,7 +139,7 @@ export default class Gcomment extends Component {
 						return (
 							<div>
 								{this.state.displayReviewForm ? (
-									<Col>
+									
 										<Card
 											className="text-center"
 											style={{
@@ -160,6 +161,8 @@ export default class Gcomment extends Component {
 												style={{ marginLeft: '0px', textAlign: 'center' }}
 												className="text-center"
 											>
+											<Row>
+												<Col>
 												<Link
 													to={`/gaymales/${this.state.gaymaleId}/gcomments/${gcomment._id}`}
 													key={gcomment._id}
@@ -175,6 +178,8 @@ export default class Gcomment extends Component {
 														Edit Review
 													</button>
 												</Link>
+												</Col>
+												<Col>
 												<button
 													key={gcomment._id}
 													onClick={(e) => this.deleteGcomment(e, gcomment)}
@@ -186,9 +191,11 @@ export default class Gcomment extends Component {
 												>
 													Delete Review
 												</button>
+												</Col>
+												</Row>
 											</Container>
 										</Card>
-									</Col>
+									
 								) : null}
 							</div>
 						);
@@ -211,7 +218,7 @@ export default class Gcomment extends Component {
 							<div className="container text-center">
 								<Card
 									className="container"
-									style={{ width: '28rem', height: '42.5rem', paddingTop: '15px' }}
+									style={{ width: '28rem', height: '42.6rem', paddingTop: '15px', backgroundColor: '#d4d5d5' }}
 								>
 									<Form
 										className="text-center"

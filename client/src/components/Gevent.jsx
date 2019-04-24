@@ -149,8 +149,8 @@ export default class Gevent extends Component {
 											<p>Event Name: {gevent.eventName}</p>
 											<p>Time: {gevent.time}</p>
 											<p>Average Price: {gevent.price}</p>
-											<p>Who is my date? {gevent.withWho}</p>
-											<p>what time is the event? {gevent.time}</p>
+											<p>Who is my date: {gevent.withWho}</p>
+											<p>What time is the event: {gevent.time}</p>
 											<Container
 												style={{ marginLeft: '0px', textAlign: 'center' }}
 												className="text-center"
@@ -183,13 +183,13 @@ export default class Gevent extends Component {
 												</button>
 											</Container>
 										</Card>
-									// </Col>
+								
 								) : null}
 							</div>
 						);
 					})}
 				
-					{/* <Col> */}
+					
 						<div className="text-center" style={{ marginTop: '30px' }}>
 							<button
 								style={{
@@ -204,7 +204,7 @@ export default class Gevent extends Component {
 							</button>
 							{this.state.displayGeventForm ? (
 								<div className="container">
-									<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
+									<Card className="container" style={{ width: '25rem', height: '34.3rem', backgroundColor: '#d4d5d5' }}>
 										<Form
 											className="text-center"
 											style={{
@@ -243,7 +243,7 @@ export default class Gevent extends Component {
 											</Form.Row>
 											<Form.Row>
 												<Form.Group as={Col} controlId="formGridPassword">
-													<Form.Label htmlFor="price">Price? </Form.Label>
+													<Form.Label htmlFor="price">Price: </Form.Label>
 													<Form.Control
 														className="text-center"
 														type="number"
@@ -256,7 +256,7 @@ export default class Gevent extends Component {
 											</Form.Row>
 											<Form.Row>
 												<Form.Group as={Col} controlId="formGridPassword">
-													<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+													<Form.Label htmlFor="withWho">Who is your date: </Form.Label>
 													<Form.Control
 														className="text-center"
 														type="text"
@@ -268,13 +268,13 @@ export default class Gevent extends Component {
 												</Form.Group>
 											</Form.Row>
 									
-											<div style={{ marginLeft: '110px' }} className="text-center">
+											<div style={{ marginLeft: '103px' }} className="text-center">
 												<button
 													className="text-center"
 													variant="primary"
 													type="submit"
 													style={{
-														marginRight: '140px',
+														marginRight: '120px',
 														paddingLeft: '60px',
 														paddingRight: '60px',
 														marginTop: '1px',

@@ -205,7 +205,7 @@ export default class EventPage extends Component {
 							</button>
 							{this.state.displayEditForm ? (
 								<div className="container text-center">
-									<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
+									<Card className="container" style={{ width: '25rem', height: '31.8rem', backgroundColor: '#d4d5d5' }}>
 										<Form
 											className="text-center"
 											style={{

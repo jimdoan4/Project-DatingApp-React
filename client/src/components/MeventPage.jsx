@@ -200,7 +200,7 @@ export default class MeventPage extends Component {
 						</button>
 						{this.state.displayMeventForm ? (
 							<div className="container">
-								<Card className="container" style={{ width: '25rem', height: '33.8rem' }}>
+								<Card className="container" style={{ width: '25rem', height: '34.4rem', backgroundColor: '#d4d5d5' }}>
 									<Form
 										className="text-center"
 										style={{

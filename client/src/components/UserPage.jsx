@@ -129,12 +129,13 @@ export default class UserPage extends Component {
 				</div>
 
 				{this.state.displayUserForm ? (
-					<form style={{ marginTop: '50px', marginRight: '50px' }} onSubmit={this.updateUser} className="col">
-						<div className="col">
+					<form style={{ marginTop: '30px', marginRight: '' }} onSubmit={this.updateUser} className="col text-center">
+						<div className="col text-center">
 							<div className="col s12 m6 text-center">
-								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="firstName">
-									First Name
+								<label style={{ marginRight: '0px', marginTop: '30px' }} htmlFor="firstName">
+									First Name{' '}
 								</label>
+								<p></p>
 								<input
 									style={{ height: '50px', width: '320px' }}
 									className="text-center"
@@ -203,7 +204,7 @@ export default class UserPage extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="photoUrl">
-									Photo:{' '}
+									Photo{' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
