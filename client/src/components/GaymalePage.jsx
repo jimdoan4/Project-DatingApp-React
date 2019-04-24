@@ -85,7 +85,6 @@ export default class GaymalePage extends Component {
 		}
 		return (
 			<div>
-				{/* <Jumbotron fluid className="cart" style={{ height: '26rem' }} /> */}
 
 				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 					<Card className="" style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}>

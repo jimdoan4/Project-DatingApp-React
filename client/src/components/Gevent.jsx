@@ -135,7 +135,7 @@ export default class Gevent extends Component {
 						return (
 							<div>
 								{this.state.displayDateForm ? (
-									// <Col>
+									
 										<Card
 											className="text-center"
 											style={{
@@ -292,7 +292,7 @@ export default class Gevent extends Component {
 								</div>
 							) : null}
 						</div>
-					{/* </Col> */}
+				
 				</div>
 			</div>
 		);

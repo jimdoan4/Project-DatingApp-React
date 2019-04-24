@@ -321,7 +321,7 @@ export default class McommentPage extends Component {
 							</div>
 						) : null}
 					</div>
-				{/* </Col> */}
+			
 
 				{this.state.displayEditForm ? (
 					<form

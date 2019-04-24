@@ -136,7 +136,7 @@ export default class EventPage extends Component {
 						return (
 							<div>
 								{this.state.displayEventForm ? (
-									// <Col>
+							
 										<Card
 											className="text-center"
 											style={{
@@ -185,7 +185,7 @@ export default class EventPage extends Component {
 												</button>
 											</Container>
 										</Card>
-									// </Col>
+									
 								) : null}
 							</div>
 						);
