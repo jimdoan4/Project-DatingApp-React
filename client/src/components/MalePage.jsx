@@ -85,8 +85,8 @@ export default class MalePage extends Component {
 		}
 		return (
 			<div>
-				<div style={{ marginTop: '30px', marginBottom: '30px' }}>
-					<Card className="" style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#1e3959' }}>
+				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
+					<Card style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#1e3959' }}>
 						<Card>
 							<Card.Img className="zoom" variant="top" src={this.state.male.photoUrl} alt="top" />
 							<Card.Body>

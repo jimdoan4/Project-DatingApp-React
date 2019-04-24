@@ -70,10 +70,10 @@ export default class MaleList extends Component {
 									marginTop: '30px'
 								}}
 							>
-								<CardGroup className="collapse-show" id="collapseExample">
+								<CardGroup>
 									<Card
 										key={male._id}
-										className="text-center hidden"
+										className="text-center"
 										style={{
 											width: '16.8rem',
 											marginLeft: '30px',

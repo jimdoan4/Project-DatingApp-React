@@ -122,7 +122,7 @@ export default class CommentPage extends Component {
 		}
 		return (
 			<div className="text-center" style={{ position: 'block' }}>
-				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
+				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
 				<button
 					style={{
 						marginTop: '14px',
@@ -139,63 +139,58 @@ export default class CommentPage extends Component {
 						return (
 							<div>
 								{this.state.displayCommentForm ? (
-								
-										<Card
-											className="text-center"
-											style={{
-												backgroundColor: 'white',
-												paddingLeft: '24px',
-												paddingRight: '24px',
-												paddingTop: '24px',
-												paddingBottom: '24px',
-												marginTop: '26px'
-											}}
-										>
-											<p>Who was my date? {comment.withWho}</p>
-											<p>Rating for this date: {comment.rating}</p>
-											<p>Would I go on a second date? {comment.dateAgain}</p>
-											<p>What is your review of this date? {comment.review}</p>
-											<p>What did I learn from this date? {comment.lessonLearned}</p>
+									<Card
+										className="text-center"
+										style={{
+											backgroundColor: 'white',
+											paddingLeft: '24px',
+											paddingRight: '24px',
+											paddingTop: '24px',
+											paddingBottom: '24px',
+											marginTop: '26px'
+										}}
+									>
+										<p>Who was your Date: {comment.withWho}</p>
+										<p>Rating for this Date: {comment.rating}</p>
+										<p>Would you go on a Second Date: {comment.dateAgain}</p>
+										<p>What is your Review of this Date: {comment.review}</p>
+										<p>What did you learn from this Date: {comment.lessonLearned}</p>
 
-											<Container
-												style={{ textAlign: 'center' }}
-												className="text-center"
-											>
+										<Container style={{ textAlign: 'center' }} className="text-center">
 											<Row>
 												<Col>
-												<Link
-													to={`/users/${this.state.userId}/comments/${comment._id}`}
-													key={comment._id}
-												>
+													<Link
+														to={`/users/${this.state.userId}/comments/${comment._id}`}
+														key={comment._id}
+													>
+														<button
+															style={{
+																backgroundColor: 'white',
+																borderColor: 'black',
+																color: 'black',
+																marginRight: '10px'
+															}}
+														>
+															Edit Review
+														</button>
+													</Link>
+												</Col>
+												<Col>
 													<button
 														style={{
 															backgroundColor: 'white',
 															borderColor: 'black',
-															color: 'black',
-															marginRight: '10px'
+															color: 'black'
 														}}
+														key={comment._id}
+														onClick={(e) => this.deleteComment(e, comment)}
 													>
-														Edit Review
+														Delete Review
 													</button>
-												</Link>
 												</Col>
-												<Col>
-												<button
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black'
-													}}
-													key={comment._id}
-													onClick={(e) => this.deleteComment(e, comment)}
-												>
-													Delete Review
-												</button>
-												</Col>
-												</Row>
-											</Container>
-										</Card>
-								
+											</Row>
+										</Container>
+									</Card>
 								) : null}
 							</div>
 						);
@@ -217,8 +212,12 @@ export default class CommentPage extends Component {
 							<div className="container text-center">
 								<Card
 									className="container"
-									
-									style={{ width: '28rem', height: '41.5rem', paddingTop: '15px', backgroundColor: '#d4d5d5' }}
+									style={{
+										width: '28rem',
+										height: '41.5rem',
+										paddingTop: '15px',
+										backgroundColor: '#d4d5d5'
+									}}
 								>
 									<Form
 										className="text-center"
@@ -231,7 +230,7 @@ export default class CommentPage extends Component {
 									>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="withWho">Who is your date? </Form.Label>
+												<Form.Label htmlFor="withWho">Who was your Date: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -244,34 +243,38 @@ export default class CommentPage extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="rating">Rating? </Form.Label>
+												<Form.Label htmlFor="rating">How would you rate this Date: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
 													name="rating"
 													onChange={this.handleChange}
 													value={this.state.newComment.rating}
-													placeholder="Enter Rating? "
+													placeholder="Enter your Rating of your Date "
 												/>
 											</Form.Group>
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
+												<Form.Label htmlFor="dateAgain">
+													Would you Date this person again:{' '}
+												</Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
 													name="dateAgain"
 													onChange={this.handleChange}
 													value={this.state.newComment.dateAgain}
-													placeholder="Data Again? "
+													placeholder="Enter if you would Date this person again "
 												/>
 											</Form.Group>
 										</Form.Row>
 
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
+												<Form.Label htmlFor="dateAgain">
+													What is the Review of your Date:{' '}
+												</Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -285,7 +288,7 @@ export default class CommentPage extends Component {
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
 												<Form.Label htmlFor="lessonLearned">
-													What did you learn from your date?{' '}
+													What did you learn from your Date: {' '}
 												</Form.Label>
 												<Form.Control
 													className="text-center"
@@ -293,7 +296,7 @@ export default class CommentPage extends Component {
 													name="lessonLearned"
 													onChange={this.handleChange}
 													value={this.state.newComment.lessonLearned}
-													placeholder="Enter Lesson Learned? "
+													placeholder="Enter Lesson Learned "
 												/>
 											</Form.Group>
 										</Form.Row>

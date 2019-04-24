@@ -115,7 +115,7 @@ export default class MeventPage extends Component {
 		}
 		return (
 			<div className="text-center" style={{ marginLeft: '90px' }}>
-				<h3 style= {{marginTop: '30px'}}>Set up a Date with your MATCH</h3>
+				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
 				<button
 					style={{
 						marginTop: '14px',
@@ -143,10 +143,10 @@ export default class MeventPage extends Component {
 											marginTop: '26px'
 										}}
 									>
-										<p>Event Name: {mevent.eventName}</p>
-										<p>What time is the Event: {mevent.time}</p>
-										<p>Average Price: {mevent.price}</p>
-										<p>Who is my date? {mevent.withWho}</p>
+										<p>What is the Event Name: {mevent.eventName}</p>
+										<p>What Time is the Event: {mevent.time}</p>
+										<p>What is the Price of the Event: {mevent.price}</p>
+										<p>Who is your Date: {mevent.withWho}</p>
 
 										<Container
 											style={{ marginLeft: '0px', textAlign: 'center' }}
@@ -200,7 +200,10 @@ export default class MeventPage extends Component {
 						</button>
 						{this.state.displayMeventForm ? (
 							<div className="container">
-								<Card className="container" style={{ width: '25rem', height: '34.4rem', backgroundColor: '#d4d5d5' }}>
+								<Card
+									className="container"
+									style={{ width: '25rem', height: '34.4rem', backgroundColor: '#d4d5d5' }}
+								>
 									<Form
 										className="text-center"
 										style={{
@@ -213,7 +216,7 @@ export default class MeventPage extends Component {
 									>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="eventName">Event Name</Form.Label>
+												<Form.Label htmlFor="eventName">What is the Event Name: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -226,20 +229,22 @@ export default class MeventPage extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="time">What time is the Event: </Form.Label>
+												<Form.Label htmlFor="time">What Time is the Event: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
 													name="time"
 													onChange={this.handleChange}
 													value={this.state.newMevent.time}
-													placeholder="What time is your Event"
+													placeholder="What Time is your Event"
 												/>
 											</Form.Group>
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="price">What is the cost of the Event: </Form.Label>
+												<Form.Label htmlFor="price">
+													What is the Price of the Event:{' '}
+												</Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
@@ -252,7 +257,7 @@ export default class MeventPage extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="withWho">Who is your Date: </Form.Label>
+												<Form.Label htmlFor="withWho">Who was your Date: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -298,7 +303,7 @@ export default class MeventPage extends Component {
 						<div className="col">
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="firstName">
-									Event Name
+									What is the Event Name:
 								</label>
 								<input
 									style={{ height: '50px', width: '320px' }}
@@ -312,7 +317,7 @@ export default class MeventPage extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="lastName">
-									What time is the Event:{' '}
+									What Time is the Event: {' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -326,7 +331,7 @@ export default class MeventPage extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="age">
-									Price: {' '}
+									What is the Price of the Event: {' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -340,7 +345,7 @@ export default class MeventPage extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="bio">
-									With Who?
+									Who was your Date:
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}

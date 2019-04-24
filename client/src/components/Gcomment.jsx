@@ -122,7 +122,7 @@ export default class Gcomment extends Component {
 		}
 		return (
 			<div className="text-center" style={{ position: 'block' }}>
-				<h3 style= {{marginTop: '30px'}}>Write A Review about Your DATE</h3>
+				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
 				<button
 					style={{
 						marginTop: '14px',
@@ -139,68 +139,66 @@ export default class Gcomment extends Component {
 						return (
 							<div>
 								{this.state.displayReviewForm ? (
-									
-										<Card
+									<Card
+										className="text-center"
+										style={{
+											backgroundColor: 'white',
+											paddingLeft: '24px',
+											paddingRight: '24px',
+											paddingTop: '24px',
+											paddingBottom: '7px',
+											marginTop: '26px'
+										}}
+									>
+										<p>Who was your Date: {gcomment.withWho}</p>
+										<p>What is the Rating for your Date: {gcomment.rating}</p>
+										<p>Would you go on a second Date: {gcomment.dateAgain}</p>
+										<p>What is your review of this Date: {gcomment.review}</p>
+										<p>What did you learn from this Date: {gcomment.lessonLearned}</p>
+
+										<Container
+											style={{ marginLeft: '0px', textAlign: 'center' }}
 											className="text-center"
-											style={{
-												backgroundColor: 'white',
-												paddingLeft: '24px',
-												paddingRight: '24px',
-												paddingTop: '24px',
-												paddingBottom: '7px',
-												marginTop: '26px'
-											}}
 										>
-										<p>Who was my date? {gcomment.withWho}</p>
-											<p>Rating for this date: {gcomment.rating}</p>
-											<p>Would I go on a second date? {gcomment.dateAgain}</p>
-											<p>What is your review of this date? {gcomment.review}</p>
-											<p>What did I learn from this date? {gcomment.lessonLearned}</p>
-											
-											<Container
-												style={{ marginLeft: '0px', textAlign: 'center' }}
-												className="text-center"
-											>
 											<Row>
 												<Col>
-												<Link
-													to={`/gaymales/${this.state.gaymaleId}/gcomments/${gcomment._id}`}
-													key={gcomment._id}
-												>
+													<Link
+														to={`/gaymales/${this.state
+															.gaymaleId}/gcomments/${gcomment._id}`}
+														key={gcomment._id}
+													>
+														<button
+															style={{
+																backgroundColor: 'white',
+																borderColor: 'black',
+																color: 'black',
+																marginRight: '10px'
+															}}
+														>
+															Edit Review
+														</button>
+													</Link>
+												</Col>
+												<Col>
 													<button
+														key={gcomment._id}
+														onClick={(e) => this.deleteGcomment(e, gcomment)}
 														style={{
 															backgroundColor: 'white',
 															borderColor: 'black',
-															color: 'black',
-															marginRight: '10px'
+															color: 'black'
 														}}
 													>
-														Edit Review
+														Delete Review
 													</button>
-												</Link>
 												</Col>
-												<Col>
-												<button
-													key={gcomment._id}
-													onClick={(e) => this.deleteGcomment(e, gcomment)}
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black'
-													}}
-												>
-													Delete Review
-												</button>
-												</Col>
-												</Row>
-											</Container>
-										</Card>
-									
+											</Row>
+										</Container>
+									</Card>
 								) : null}
 							</div>
 						);
 					})}
-				
 
 					<div className="text-center col" style={{ marginTop: '30px' }}>
 						<button
@@ -218,7 +216,12 @@ export default class Gcomment extends Component {
 							<div className="container text-center">
 								<Card
 									className="container"
-									style={{ width: '28rem', height: '42.6rem', paddingTop: '15px', backgroundColor: '#d4d5d5' }}
+									style={{
+										width: '28rem',
+										height: '42.6rem',
+										paddingTop: '15px',
+										backgroundColor: '#d4d5d5'
+									}}
 								>
 									<Form
 										className="text-center"
@@ -231,7 +234,7 @@ export default class Gcomment extends Component {
 									>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridPassword">
-												<Form.Label htmlFor="withWho">Who was your date? </Form.Label>
+												<Form.Label htmlFor="withWho">Who was your Date: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -244,34 +247,38 @@ export default class Gcomment extends Component {
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="rating">Rating? </Form.Label>
+												<Form.Label htmlFor="rating">Rating: </Form.Label>
 												<Form.Control
 													className="text-center"
 													type="number"
 													name="rating"
 													onChange={this.handleChange}
 													value={this.state.newGcomment.rating}
-													placeholder="Enter Rating? "
+													placeholder="Enter Rating "
 												/>
 											</Form.Group>
 										</Form.Row>
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="dateAgain">Date Again? </Form.Label>
+												<Form.Label htmlFor="dateAgain">
+													Would you Date this person again:{' '}
+												</Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
 													name="dateAgain"
 													onChange={this.handleChange}
 													value={this.state.newGcomment.dateAgain}
-													placeholder="Data Again? "
+													placeholder="Enter Data Again "
 												/>
 											</Form.Group>
 										</Form.Row>
 
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
-												<Form.Label htmlFor="dateAgain">Review of your date? </Form.Label>
+												<Form.Label htmlFor="dateAgain">
+													What is the Review of your Date:{' '}
+												</Form.Label>
 												<Form.Control
 													className="text-center"
 													type="text"
@@ -285,7 +292,7 @@ export default class Gcomment extends Component {
 										<Form.Row>
 											<Form.Group as={Col} controlId="formGridEmail">
 												<Form.Label htmlFor="lessonLearned">
-													What did you learn from your date?{' '}
+													What did you learn from your Date: {' '}
 												</Form.Label>
 												<Form.Control
 													className="text-center"
@@ -293,7 +300,7 @@ export default class Gcomment extends Component {
 													name="lessonLearned"
 													onChange={this.handleChange}
 													value={this.state.newGcomment.lessonLearned}
-													placeholder="Enter Lesson Learned? "
+													placeholder="Enter Lesson Learned "
 												/>
 											</Form.Group>
 										</Form.Row>

@@ -87,7 +87,7 @@ export default class GaymalePage extends Component {
 			<div>
 
 				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
-					<Card className="" style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}>
+					<Card style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#adbfd4' }}>
 						<Card>
 							<Card.Img className="zoom" variant="top" src={this.state.gaymale.photoUrl} alt="top" />
 							<Card.Body>

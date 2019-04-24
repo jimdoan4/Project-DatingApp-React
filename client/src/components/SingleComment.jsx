@@ -77,7 +77,7 @@ export default class SingleComment extends Component {
 						<div className="col">
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="rating">
-									Rating
+									How would you rate this date: 
 								</label>
 								<input
 									style={{ height: '50px', width: '320px' }}
@@ -91,7 +91,7 @@ export default class SingleComment extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="dateAgain">
-									Date Again?{' '}
+									Would you date this person again: {' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -105,7 +105,7 @@ export default class SingleComment extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="withWho">
-									With Who?{' '}
+									Who was your date: {' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -119,7 +119,7 @@ export default class SingleComment extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="review">
-									Review
+									Write a Review about this date: 
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -133,7 +133,7 @@ export default class SingleComment extends Component {
 							</div>
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="lessonLearned">
-									What did you learn about this date?{' '}
+									What did you learn about this date: {' '}
 								</label>
 								<input
 									style={{ height: '54px', width: '390px', marginRight: '53px' }}
@@ -145,21 +145,7 @@ export default class SingleComment extends Component {
 									value={this.state.comment.lessonLearned}
 								/>
 							</div>
-							<div className="col s12 m6 text-center">
-								<label style={{ marginRight: '30px', marginTop: '40px' }} htmlFor="photoUrl">
-									Photo:{' '}
-								</label>
-								<input
-									style={{ height: '54px', width: '390px', marginRight: '53px' }}
-									className="text-center"
-									id="photoUrl"
-									type="text"
-									name="photoUrl"
-									onChange={this.handleChange}
-									value={this.state.comment.photoUrl}
-								/>
 							</div>
-						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
 							<button className="text-center">Submit</button>
 						</div>

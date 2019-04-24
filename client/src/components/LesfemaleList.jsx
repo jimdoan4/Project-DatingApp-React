@@ -69,10 +69,10 @@ export default class LesfemaleList extends Component {
 									marginTop: '30px'
 								}}
 							>
-								<CardGroup className="collapse-show" id="collapseExample">
+								<CardGroup>
 									<Card
 										key={lesbian._id}
-										className="text-center hidden"
+										className="text-center"
 										style={{
 											color: 'white',
 											width: '16.8rem',

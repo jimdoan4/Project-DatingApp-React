@@ -13,27 +13,24 @@ import { Button } from 'react-bootstrap';
 export default class Home extends Component {
 	render() {
 		return (
-			<div>
-				<Container className="text-center" style={{ marginBottom: '100px' }}>
-					<Row>
-						<Col>
-							<Image
-								className="rockstar"
-								style={{
-									width: '100%',
-									height: '100%',
-									backgroundSize: 'cover',
-									backgroundPosition: 'center',
-									backgroundRepeat: 'no-repeat'
-								}}
-								src="https://static1.squarespace.com/static/500818f184aef6ab9cd145a0/t/54eea8cae4b02bdabd98f1ac/1424926928261/?format=2500w"
-							/>
-						</Col>
-					</Row>
-					<Row className= 'two' style={{ marginTop: '55px' }}>
+			<div style={{ width: '100%' }}>
+				<Container className="text-center" style={{ marginBottom: '20px', width: '100%' }}>
+					 <Row> 
+						 <Card style= {{width: '100%'}}>
+				
+					<Image
+						className="rockstar"	
+						src="http://corinnealexandra.com/wp-content/uploads/2017/03/kayli-michael.jpg"
+					/>
+					</Card>
+				
+					 </Row> 
+					</Container>
+					<Container>
+					<Row className="two text-center" style={{ marginTop: '25px' }}>
 						<Col style={{ fontSize: '31px', position: 'block' }}>Find your Match</Col>
-						<Col style={{ fontSize: '31px', position: 'block'  }}>Set a Date with your Match</Col>
-						<Col style={{ fontSize: '31px', position: 'block'  }}>Rate your Date</Col>
+						<Col style={{ fontSize: '31px', position: 'block' }}>Go on a Date with your Match</Col>
+						<Col style={{ fontSize: '31px', position: 'block' }}>Rate your Date</Col>
 					</Row>
 					<Container className="text-center" style={{ marginTop: '40px' }}>
 						<Link className="" to="/login/" style={{ color: 'black' }}>
