@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 const InputField = props =>
   <Form style= {{color: 'black'}} onSubmit={''}>
   <Form.Group style= {{color: 'black'}} controlId="">
-    <Form.Control style= {{color: 'black'}} type='text' placeholder='Enter Your City Name To Check the Weather' onKeyDown={props.queryWeather}/>
+    <Form.Control style= {{color: 'black'}} type='text' placeholder='Enter Your City Name To Check the Current Weather' onKeyDown={props.queryWeather}/>
     </Form.Group>
   </Form>
 

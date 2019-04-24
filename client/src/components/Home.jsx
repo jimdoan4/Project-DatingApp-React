@@ -30,7 +30,7 @@ export default class Home extends Component {
 							/>
 						</Col>
 					</Row>
-					<Row style={{ marginTop: '55px' }}>
+					<Row className= 'two' style={{ marginTop: '55px' }}>
 						<Col style={{ fontSize: '31px', position: 'block' }}>Find your Match</Col>
 						<Col style={{ fontSize: '31px', position: 'block'  }}>Set a Date with your Match</Col>
 						<Col style={{ fontSize: '31px', position: 'block'  }}>Rate your Date</Col>

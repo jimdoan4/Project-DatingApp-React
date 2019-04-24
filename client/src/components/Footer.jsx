@@ -11,9 +11,10 @@ export default class Footer extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: [],
 			weather: [],
 			temp: [],
+			humidity: [],
+			speed: [],
 			clouds: []
 		};
 	}
@@ -27,6 +28,8 @@ export default class Footer extends Component {
 				this.setState({
 					weather: response.data.list[0],
 					temp: response.data.list[0].main.temp,
+					humidity: response.data.list[0].main.humidity,
+					speed: response.data.list[0].wind.speed,
 					clouds: response.data.list[0].weather[0].description
 				});
 			})
@@ -57,9 +60,11 @@ export default class Footer extends Component {
 							key={direction}
 						>
 							<Dropdown.Item style={{ marginTop: '15px', paddingLeft: '20px', paddingRight: '20px', color: 'black' }}>
-								<Weather
+								<Weather	
 									city={this.state.weather.name}
 									temp={this.state.temp}
+									humidity={this.state.humidity}
+									speed={this.state.speed}
 									clouds={this.state.clouds}
 								/>
 							</Dropdown.Item>
@@ -79,10 +84,6 @@ export default class Footer extends Component {
 									<i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
 								</a>
 
-								<a className="gplus-ic">
-									<i className="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-								</a>
-
 								<a className="li-ic">
 									<i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
 								</a>
@@ -96,11 +97,7 @@ export default class Footer extends Component {
 									</i>
 								</a>
 
-								<a style={{ color: 'black' }} className="pin-ic">
-									<i style={{ color: 'black' }} className="fab fa-pinterest fa-lg white-text fa-2x">
-										{' '}
-									</i>
-								</a>
+							
 							</div>
 						</div>
 					</div>
