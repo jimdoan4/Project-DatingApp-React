@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Dropdown } from 'react-bootstrap';
 import { ButtonToolbar } from 'react-bootstrap';
 import { DropdownButton } from 'react-bootstrap';
-import { Card } from 'react-bootstrap';
+import { FooterContainer } from './styled-components/FooterStyles'
 import Weather from './Weather';
 import InputField from './InputField';
 
@@ -47,7 +47,8 @@ export default class Footer extends Component {
 	};
 	render() {
 		return (
-			<footer className="page-footer font-small grey light-2" style={{ paddingBottom: '5px', color: 'black' }}>
+			<FooterContainer>
+			<footer className="page-footer footer-bg-color font-small" style={{ paddingBottom: '5px', color: 'black' }}>
 				<div className= 'text-center'>
 				<InputField queryWeather={this.queryWeather} />
 				<ButtonToolbar style={{ marginRight: '20px' }}>
@@ -72,45 +73,17 @@ export default class Footer extends Component {
 					))}
 					</ButtonToolbar>
 					</div>
-				<div className="container" style={{ color: 'black' }}>
-					<div className="row" style={{ color: 'black' }}>
-						<div className="col-md-12 py-5" style={{ color: 'black' }}>
-							<div className="mb-5 flex-center" style={{ color: 'black' }}>
-								<a className="fb-ic">
-									<i className="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-								</a>
-
-								<a className="tw-ic">
-									<i className="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-								</a>
-
-								<a className="li-ic">
-									<i className="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-								</a>
-
-								<a style={{ color: 'black' }} className="ins-ic">
-									<i
-										style={{ color: 'black' }}
-										className="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"
-									>
-										{' '}
-									</i>
-								</a>
-
-							
-							</div>
-						</div>
-					</div>
-				</div>
+	
 			
-				<div className="footer-copyright text-center py-3" style={{ color: 'black', paddingBottom: '90px' }}>
+				<div className="text-center">
 					© 2019 Copyright:
-					<a style={{ paddingBottom: '90px' }} href="https://mdbootstrap.com/education/bootstrap/">
+					<a href="/">
 						{' '}
 						Jim Doan
 					</a>
 				</div>
 			</footer>
+			</FooterContainer>
 		);
 	}
 }

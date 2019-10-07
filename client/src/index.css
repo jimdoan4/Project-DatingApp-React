@@ -1,7 +1,4 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f7f7;
@@ -9,12 +6,10 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: 'Be Vietnam', sans-serif;
+font-family: 'Ubuntu', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 #page-footer {
   position: absolute;
@@ -24,6 +19,19 @@ code {
   color: black;
   /* Height of the footer */
   background-color: white;
+}
+
+.edit-button {
+  background-color: #802139;
+										border-color: #802139;
+										color: white;
+										margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #802139;
+										border-color: #802139;
+										color: white;
 }
 
 .zoom {
@@ -262,7 +270,6 @@ a {
   border: none;
   box-shadow: #f7f7f7;
   position: absolute;
-  /* background-color: #f7f7f7; */
   top: 84%;
   left: -1.4%;
   font-size: 16px;
@@ -275,7 +282,6 @@ a {
 .homebox {
   box-shadow: 1px 1px #f7f7f7;
   border: none;
-  /* color: white; */
   background-color: #f7f7f7;
   left: -22%;
 }
@@ -286,7 +292,6 @@ a {
 }
 
 .rockstar:hover {
-  /* opacity: .9; */
   -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
   -webkit-mask-size: 200%;
   animation: shine 2s infinite;

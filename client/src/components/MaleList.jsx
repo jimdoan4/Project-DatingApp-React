@@ -11,6 +11,7 @@ import { CardGroup } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap';
 import { ButtonToolbar } from 'react-bootstrap';
 import Footer from './Footer';
+import { MaleContainer } from './styled-components/MaleListStyles'
 
 export default class MaleList extends Component {
 	state = {
@@ -51,71 +52,43 @@ export default class MaleList extends Component {
 			return <Redirect to={`/males}`} />;
 		}
 		return (
-			<div>
+			<MaleContainer>
 				<div
 					className="row"
-					style={{
-						marginLeft: '20px',
-						marginBottom: '30px',
-						marginTop: '50px'
-					}}
 				>
 					{this.state.males.map((male) => {
 						return (
 							<div
-								className="row text-center"
+								className="col text-center"
 								style={{
-									marginLeft: '20px',
-									marginBottom: '20px',
-									marginTop: '30px'
+									marginBottom: '1px',
+									marginTop: '20px'
 								}}
 							>
 								<CardGroup>
 									<Card
 										key={male._id}
-										className="text-center"
-										style={{
-											width: '16.8rem',
-											marginLeft: '30px',
-											marginRight: '30px',
-											backgroundColor: '#1e3959'
-										}}
+										className="text-center male-profile"
 									>
 										<Card.Img
-											className="text-center zoom"
-											style={{ height: '250px', width: '267px' }}
+											className="text-center zoom male-img"
 											variant="top"
 											src={male.photoUrl}
 										/>
 
 										<Card.Body>
-											<Card.Title style={{ color: 'white' }}>{male.firstName}</Card.Title>
-											<Card.Title style={{ color: 'white' }}>{male.age}</Card.Title>
-
-											<Card.Text style={{ color: 'white' }}>{male.location}</Card.Text>
-
 											<div key={male._id}>
 												<Link to={`/males/${male._id}`} key={male._id}>
-													<button
-														style={{
-															backgroundColor: 'white',
-															borderColor: 'black',
-															color: 'black',
-															marginRight: '10px'
-														}}
+													<button className="rockstar interest-button"
 													>
 														Interested
 													</button>
 												</Link>
-												<button
+												<button 
+													className="rockstar not-interested-button"
 													key={male._id}
 													onClick={(e) => this.deleteMale(e, male)}
 													type="button"
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black'
-													}}
 												>
 													Not Interested
 												</button>
@@ -127,7 +100,7 @@ export default class MaleList extends Component {
 						);
 					})}
 				</div>
-			</div>
+			</MaleContainer>
 		);
 	}
 }

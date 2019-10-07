@@ -105,13 +105,13 @@ export default class UserLog extends Component {
 				<br />
 				<button
 					style={{
-						backgroundColor: 'grey',
-						borderColor: 'black',
+						backgroundColor: '#802139',
+						borderColor: '#802139',
 						color: 'white',
-						paddingLeft: '60px',
-						paddingRight: '60px',
-						paddingTop: '10px',
-						paddingBottom: '10px'
+						paddingLeft: '70px',
+						paddingRight: '70px',
+						paddingTop: '15px',
+						paddingBottom: '15px'
 					}}
 					onClick={this.toggleEditForm}
 				>
@@ -125,8 +125,7 @@ export default class UserLog extends Component {
 								width: '36rem',
 								height: '41.4rem',
 								paddingTop: '35px',
-								marginTop: '20px',
-								marginBottom: '98px'
+								marginTop: '20px'
 							}}
 						>
 							<Form
@@ -225,17 +224,16 @@ export default class UserLog extends Component {
 								<div style={{ marginLeft: '140px' }} className="text-center">
 									<Button
 										onclick={this.createUser}
-										className="text-center rockstar"
+										className="text-center"
 										type="submit"
 										style={{
 											marginRight: '140px',
 											paddingLeft: '30px',
 											paddingRight: '30px',
 											marginTop: '29px',
-											marginBottom: '65px',
-											backgroundColor: 'grey',
-											borderColor: 'black',
-											color: 'black'
+											backgroundColor: '#802139',
+											borderColor: '#802139',
+											color: 'white'
 										}}
 									>
 										Register

@@ -5,51 +5,54 @@ import { Nav } from 'react-bootstrap';
 import { Dropdown } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import { NavContainer } from './styled-components/NavStyles'
 
 
 export default class NavBar extends Component {
 	render() {
 		return (
-			<Navbar style={{ backgroundColor: 'GREY', color: 'black' }} collapseOnSelect expand="lg" variant="dark">
-				<Navbar.Brand className ='rockstar' style={{ color: 'black' }} href="/">
+			<NavContainer>
+			<Navbar className="nav-bg-color" collapseOnSelect expand="lg" variant="dark">
+				<Navbar.Brand className ='nav-title' href="/">
 					SUAVE
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ color: 'black' }} />
+				<Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 				<Navbar.Collapse id="responsive-navbar-nav" style={{ color: '#720F1D' }}>
-					<Nav className="mr-auto" style={{ backgroundColor: 'grey', color: 'black' }}>
-						<NavDropdown style={{ color: 'black' }} title="Find Your Match" id="collasible-nav-dropdown">
-							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/users/" style={{ color: 'black' }}>
+					<Nav className="mr-auto">
+						<NavDropdown title="Find Your Match" id="collasible-nav-dropdown">
+							<NavDropdown.Item className="text-center">
+								<Link to="/users/">
 									Woman
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/males/" style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center">
+								<Link to="/males/">
 									Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link className="text-center" to="/gaymales/" style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center">
+								<Link className="text-center" to="/gaymales/">
 									Gay Men
 								</Link>
 							</NavDropdown.Item>
 							<NavDropdown.Divider />
-							<NavDropdown.Item className="text-center" style={{ color: 'black' }}>
-								<Link to="/lesbians/" style={{ color: 'black' }}>
+							<NavDropdown.Item className="text-center">
+								<Link to="/lesbians/">
 									Lesbian Women
 								</Link>
 							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>
-				<Nav.Link style={{ color: 'black' }}>
-					<Link to="/login/" style={{ color: 'black' }}>
+				<Nav.Link>
+					<Link className="profile-link" to="/login/">
 						Profile Account
 					</Link>
 				</Nav.Link>
 			</Navbar>
+			</NavContainer>
 		);
 	}
 }

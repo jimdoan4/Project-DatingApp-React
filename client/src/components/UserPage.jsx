@@ -88,8 +88,8 @@ export default class UserPage extends Component {
 		return (
 			<div>
 				<div style={{ marginTop: '30px', marginBottom: '40px' }}>
-					<Card className="" style={{ width: '28rem', marginBottom: '0px', backgroundColor: '#efe8e8' }}>
-						<Card>
+
+						<Card className="text-center" style={{ width: '23rem', backgroundColor: '#efe8e8' }}>
 							<Card.Img className="zoom" variant="top" src={this.state.user.photoUrl} alt="top" />
 							<Card.Body>
 								<Card.Title>
@@ -104,32 +104,25 @@ export default class UserPage extends Component {
 
 							<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 								<button
-								className= 'rockstar'
+								className= 'edit-button'
 									onClick={this.toggleUserForm}
-									style={{
-										backgroundColor: 'white',
-										borderColor: 'black',
-										color: 'black',
-										marginRight: '10px'
-									}}
 								>
 									Edit Account
 								</button>
 
 								<button
-								className= 'rockstar'
-									style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+								className= 'delete-button'
 									onClick={this.deleteUser}
 								>
 									Delete Account
 								</button>
 							</Container>
 						</Card>
-					</Card>
+					
 				</div>
 
 				{this.state.displayUserForm ? (
-					<form style={{ marginTop: '30px', marginRight: '' }} onSubmit={this.updateUser} className="col text-center">
+					<form style={{ marginTop: '30px'}} onSubmit={this.updateUser} className="col text-center">
 						<div className="col text-center">
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '0px', marginTop: '30px' }} htmlFor="firstName">
@@ -219,12 +212,7 @@ export default class UserPage extends Component {
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
 							<button
-								style={{
-									backgroundColor: 'white',
-									borderColor: 'black',
-									color: 'black'
-								}}
-								className="text-center rockstar"
+								className="text-center edit-button"
 							>
 								Submit
 							</button>

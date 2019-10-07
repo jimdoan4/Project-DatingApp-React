@@ -14,7 +14,7 @@ import SingleComment from './components/SingleComment';
 import Home from './components/Home';
 import MainSignUpPage from './components/MainSignUpPage';
 import NavBar from './components/NavBar.jsx';
-import Footer from './components/Footer.jsx';
+// import Footer from './components/Footer.jsx';
 
 class App extends Component {
 	render() {
@@ -36,7 +36,7 @@ class App extends Component {
 						<Route exact path="/males/" component={MaleList} />
 						<Route exact path="/users/:userId/" component={UserShowPage} />
 					</Switch>
-					<Footer />
+					{/* <Footer /> */}
 				</div>
 			</Router>
 		);

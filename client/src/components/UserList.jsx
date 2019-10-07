@@ -11,6 +11,7 @@ import { CardGroup } from 'react-bootstrap';
 import { ButtonGroup } from 'react-bootstrap';
 import { ButtonToolbar } from 'react-bootstrap';
 import Footer from './Footer';
+import { UserContainer } from './styled-components/UserListStyles'
 
 export default class UserList extends Component {
 	state = {
@@ -104,58 +105,36 @@ export default class UserList extends Component {
 			return <Redirect to={`/users}`} />;
 		}
 		return (
-			<div>
+			<UserContainer>
 				<div
 					className="row"
-					style={{
-						marginLeft: '30px',
-						marginBottom: '30px',
-						marginTop: '50px'
-					}}
 				>
 					{this.state.users.map((user) => {
 						return (
 							<div
-								className="row text-center"
+								className="col text-center"
 								style={{
-									marginLeft: '20px',
-									marginBottom: '20px',
-									marginTop: '30px'
+									marginBottom: '1px',
+									marginTop: '20px'
+
 								}}
 							>
 								<CardGroup>
 									<Card
 										key={user._id}
-										className="text-center"
-										style={{
-											width: '16.8rem',
-											marginLeft: '30px',
-											marginRight: '30px',
-											backgroundColor: '#efe8e8'
-										}}
+										className="text-center female-profile"
 									>
 										<Card.Img
-											className="text-center zoom"
-											style={{ height: '250px', width: '267px' }}
+											className="text-center zoom female-img"
 											variant="top"
 											src={user.photoUrl}
 										/>
 
 										<Card.Body>
-											<Card.Title style={{ color: 'black' }}>{user.firstName}</Card.Title>
-											<Card.Title style={{ color: 'black' }}>{user.age}</Card.Title>
-											<Card.Text style={{ color: 'black' }}>{user.location}</Card.Text>
-
 											<div key={user._id}>
 												<Link to={`/users/${user._id}`} key={user._id}>
 													<button
-													className= 'rockstar'
-														style={{
-															backgroundColor: 'white',
-															borderColor: 'black',
-															color: 'black',
-															marginRight: '10px'
-														}}
+													className= 'rockstar interest-button'
 													>
 														Interested
 													</button>
@@ -165,12 +144,7 @@ export default class UserList extends Component {
 													key={user._id}
 													onClick={(e) => this.deleteUser(e, user)}
 													type="button"
-													className= 'rockstar'
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black'
-													}}
+													className= 'rockstar not-interested-button'
 												>
 													Not Interested
 												</button>
@@ -182,7 +156,7 @@ export default class UserList extends Component {
 						);
 					})}
 				</div>
-			</div>
+			</UserContainer>
 		);
 	}
 }

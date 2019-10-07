@@ -15,14 +15,17 @@ export default class UserShowPage extends Component {
 	render() {
 		return (
 			<div className="text-center">
-			<Container> 
-  		<Row>
-    <Col><EventPage userId={this.state.userId} /></Col>
-    <Col><UserPage userId={this.state.userId} /></Col>
+			
+	<Container> 
+	<Row>
+	<Col><EventPage userId={this.state.userId} /></Col>
     <Col><CommentPage userId={this.state.userId} /></Col>
+
+
   </Row>
-</Container>
-				
+  <Row><UserPage className="text-center" userId={this.state.userId} /></Row>
+  </Container>
+			
 			</div>
 		);
 	}

@@ -123,13 +123,7 @@ export default class CommentPage extends Component {
 		return (
 			<div className="text-center" style={{ position: 'block' }}>
 				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
-				<button
-					style={{
-						marginTop: '14px',
-						backgroundColor: 'white',
-						borderColor: 'black',
-						color: 'black'
-					}}
+				<button className="edit-button"
 					onClick={this.toggleCommentForm}
 				>
 					List of Your Date Reviews
@@ -164,28 +158,19 @@ export default class CommentPage extends Component {
 														key={comment._id}
 													>
 														<button
-															style={{
-																backgroundColor: 'white',
-																borderColor: 'black',
-																color: 'black',
-																marginRight: '10px'
-															}}
+															className="edit-button"
 														>
-															Edit Review
+															Edit 
 														</button>
 													</Link>
 												</Col>
 												<Col>
 													<button
-														style={{
-															backgroundColor: 'white',
-															borderColor: 'black',
-															color: 'black'
-														}}
+														className="edit-button"
 														key={comment._id}
 														onClick={(e) => this.deleteComment(e, comment)}
 													>
-														Delete Review
+														Delete 
 													</button>
 												</Col>
 											</Row>
@@ -197,28 +182,13 @@ export default class CommentPage extends Component {
 					})}
 
 					<div className="text-center col" style={{ marginTop: '30px' }}>
-						<button
-							style={{
-								marginBottom: '20px',
-								backgroundColor: 'white',
-								borderColor: 'black',
-								color: 'black'
-							}}
+						<button className="edit-button"
 							onClick={this.toggleEditForm}
 						>
 							Add a Review
 						</button>
 						{this.state.displayEditForm ? (
 							<div className="container text-center">
-								<Card
-									className="container"
-									style={{
-										width: '28rem',
-										height: '41.5rem',
-										paddingTop: '15px',
-										backgroundColor: '#d4d5d5'
-									}}
-								>
 									<Form
 										className="text-center"
 										style={{
@@ -300,27 +270,17 @@ export default class CommentPage extends Component {
 												/>
 											</Form.Group>
 										</Form.Row>
-										<div style={{ marginLeft: '100px' }} className="text-center">
+										<div className="text-center">
 											<button
-												className="text-center"
+												className="edit-button"
 												variant="primary"
 												type="submit"
-												style={{
-													marginRight: '140px',
-													paddingLeft: '60px',
-													paddingRight: '60px',
-													marginTop: '1px',
-													marginBottom: '15px',
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black'
-												}}
 											>
-												Add Comment
+												Submit
 											</button>
 										</div>
 									</Form>
-								</Card>
+								
 							</div>
 						) : null}
 					</div>

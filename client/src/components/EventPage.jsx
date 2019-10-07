@@ -117,12 +117,7 @@ export default class EventPage extends Component {
 			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
 				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
 				<button
-					style={{
-						marginTop: '14px',
-						backgroundColor: 'white',
-						borderColor: 'black',
-						color: 'black'
-					}}
+					className="edit-button"
 					onClick={this.toggleEventForm}
 				>
 					List of Scheduled Events
@@ -156,27 +151,17 @@ export default class EventPage extends Component {
 												to={`/users/${this.state.userId}/events/${event._id}`}
 												key={event._id}
 											>
-												<button
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black',
-														marginRight: '10px'
-													}}
+												<button className="edit-button"
 												>
-													Edit Event
+													Edit
 												</button>
 											</Link>
 											<button
-												style={{
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black'
-												}}
+												className="edit-button"
 												key={event._id}
 												onClick={(e) => this.deleteEvent(e, event)}
 											>
-												Delete Event
+												Delete
 											</button>
 										</Container>
 									</Card>
@@ -187,22 +172,13 @@ export default class EventPage extends Component {
 
 					<div className="text-center col" style={{ marginTop: '30px' }}>
 						<button
-							style={{
-								marginBottom: '20px',
-								backgroundColor: 'white',
-								borderColor: 'black',
-								color: 'black'
-							}}
+							className="edit-button"
 							onClick={this.toggleEditForm}
 						>
 							Add an Event
 						</button>
 						{this.state.displayEditForm ? (
 							<div className="container text-center">
-								<Card
-									className="container"
-									style={{ width: '25rem', height: '31.8rem', backgroundColor: '#d4d5d5' }}
-								>
 									<Form
 										className="text-center"
 										style={{
@@ -271,21 +247,15 @@ export default class EventPage extends Component {
 											className="text-center"
 										>
 											<button
-												className="text-center"
+												className="edit-button"
 												variant="primary"
 												type="submit"
-												style={{
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black',
-													marginRight: '10px'
-												}}
+												
 											>
-												Add Event
+												Submit
 											</button>
 										</Container>
 									</Form>
-								</Card>
 							</div>
 						) : null}
 					</div>

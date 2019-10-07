@@ -12,31 +12,21 @@ import { Col } from 'react-bootstrap';
 export default class MainSignUpPage extends Component {
 	state = {
 		userId: this.props.match.params.userId,
-		maleId: this.props.match.params.maleId,
-		gaymaleId: this.props.match.params.gaymaleId,
-		lesbianId: this.props.match.params.lesbianId
+		maleId: this.props.match.params.maleId
 	};
 
 	render() {
 		return (
-			<div className="text-center" style={{ marginBottom: '524px', position: 'block' }}>
-				<h1 className = 'two' style={{ marginTop: '43px' }}>Choose Your Preference</h1>
+			<div className="text-center">
+				<h1 style={{ marginTop: '43px' }}>Choose Your Preference</h1>
 				<Container>
 					<Row>
-						<Col className="text-center rockstar">
+						<Col className="text-center">
 							<UserLog userId={this.state.userId} />
 						</Col>
 
-						<Col className="text-center rockstar">
+						<Col className="text-center">
 							<MaleSignUp maleId={this.state.maleId} />
-						</Col>
-
-						<Col className="text-center rockstar">
-							<FemaleSignUp lesbianId={this.state.lesbianId} />
-						</Col>
-
-						<Col className="text-center rockstar">
-							<GaySignUp gaymaleId={this.state.gaymaleId} />
 						</Col>
 					</Row>
 				</Container>
