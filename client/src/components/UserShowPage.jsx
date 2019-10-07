@@ -17,7 +17,7 @@ export default class UserShowPage extends Component {
 			<div className="text-center">
 			
 	<Container> 
-	<Row>
+	<Row className="text-center">
 	<Col><EventPage userId={this.state.userId} /></Col>
 	<Col><UserPage className="text-center" userId={this.state.userId} /></Col>
     <Col><CommentPage userId={this.state.userId} /></Col>

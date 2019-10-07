@@ -89,17 +89,17 @@ export default class UserPage extends Component {
 			<div>
 				<div style={{ marginTop: '30px', marginBottom: '40px' }}>
 
-						<Card className="text-center" style={{ width: '23rem', backgroundColor: '#efe8e8' }}>
-							<Card.Img className="zoom" variant="top" src={this.state.user.photoUrl} alt="top" />
+						<Card className="text-center" style={{ width: '23rem', backgroundColor: '#efe8e8', height: '600px' }}>
+							<Card.Img style={{height: '300px'}} className="zoom" variant="top" src={this.state.user.photoUrl} alt="top"  />
 							<Card.Body>
-								<Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>
 									{this.state.user.firstName}
 									&nbsp;
 									{this.state.user.lastName}
 								</Card.Title>
-								<Card.Title>{this.state.user.age}</Card.Title>
-								<Card.Title>{this.state.user.bio}</Card.Title>
-								<Card.Title>{this.state.user.location}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.user.age}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.user.bio}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.user.location}</Card.Title>
 							</Card.Body>
 
 							<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
@@ -122,7 +122,7 @@ export default class UserPage extends Component {
 				</div>
 
 				{this.state.displayUserForm ? (
-					<form style={{ marginTop: '30px'}} onSubmit={this.updateUser} className="col text-center">
+					<form style={{ marginTop: '10px'}} onSubmit={this.updateUser} className="col text-center">
 						<div className="col text-center">
 							<div className="col s12 m6 text-center">
 								<label style={{ marginRight: '0px', marginTop: '30px' }} htmlFor="firstName">

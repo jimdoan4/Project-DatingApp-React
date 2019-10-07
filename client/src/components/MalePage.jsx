@@ -88,16 +88,16 @@ export default class MalePage extends Component {
 				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
 					
 						<Card>
-							<Card.Img className="zoom" variant="top" src={this.state.male.photoUrl} alt="top" />
+							<Card.Img style={{height: '300px'}} className="zoom" variant="top" src={this.state.male.photoUrl} alt="top" />
 							<Card.Body>
-								<Card.Title>
+								<Card.Title style={{fontSize: '17px'}}> 
 									{this.state.male.firstName}
 									&nbsp;
 									{this.state.male.lastName}
 								</Card.Title>
-								<Card.Title>{this.state.male.age}</Card.Title>
-								<Card.Title>{this.state.male.bio}</Card.Title>
-								<Card.Title>{this.state.male.location}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.male.age}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.male.bio}</Card.Title>
+								<Card.Title style={{fontSize: '17px'}}>{this.state.male.location}</Card.Title>
 							</Card.Body>
 							<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 								<button

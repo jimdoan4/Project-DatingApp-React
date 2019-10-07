@@ -115,12 +115,12 @@ export default class MeventPage extends Component {
 		}
 		return (
 			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
-				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
+								<h3 style={{ marginTop: '30px', fontSize: '22px', background: 'white', border: '1px solid black' }}>Set up a date</h3>
 				<button
 					className="edit-button"
 					onClick={this.toggleDateForm}
 				>
-					List of Scheduled Events
+					Scheduled Events
 				</button>
 				{this.state.mevents.map((mevent) => {
 					return (

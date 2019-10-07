@@ -119,11 +119,11 @@ export default class McommentPage extends Component {
 		}
 		return (
 			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
-				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
+				<h3 style={{ marginTop: '30px', fontSize: '22px', background: 'white', border: '1px solid black' }}>Write A Review</h3>
 				<button className="edit-button"
 					onClick={this.toggleReviewForm}
 				>
-					Lists of Your Date Reviews
+					All Reviews
 				</button>
 				<div className="">
 					{this.state.mcomments.map((mcomment) => {

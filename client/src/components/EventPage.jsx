@@ -115,12 +115,12 @@ export default class EventPage extends Component {
 		}
 		return (
 			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
-				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
+					<h3 style={{ marginTop: '30px', fontSize: '22px', background: 'white', border: '1px solid black' }}>Set up a date</h3>
 				<button
 					className="edit-button"
 					onClick={this.toggleEventForm}
 				>
-					List of Scheduled Events
+					Scheduled Events
 				</button>
 				<div className="">
 					{this.state.events.map((event) => {
