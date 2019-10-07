@@ -1,16 +1,13 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const Lesbian = require('../models/Lesbian.js');
 const User = require('../models/User.js');
 const Comment = require('../models/Comment.js');
 const Mcomment = require('../models/Mcomment.js');
 const Event = require('../models/Event.js');
 const Mevent = require('../models/Mevent.js');
 const Male = require('../models/Male.js');
-const Gaymale = require('../models/Gaymale.js');
-const Gcomment = require('../models/Gcomment.js');
-const Gevent = require('../models/Gevent.js');
+
 
 
 const ihop = new Event({
@@ -38,22 +35,7 @@ const ihops = new Mevent({
 	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg'
 });
 
-const great1 = new Gcomment({
-	rating: 9,
-	dateAgain: 'Yes',
-	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg',
-	withWho: 'Sara Henderson',
-	review: 'She was so funny',
-	lessonLearned: 'Relax next time and do not drink too much'
-});
 
-const ihop1 = new Gevent({
-	eventName: 'Houstons Bar and Grill',
-	time: 7,
-	price: 20.0,
-	withWho: 'Sara Henderson',
-	photoUrl: 'https://cdn.pixabay.com/photo/2018/02/07/20/58/girl-3137998_960_720.jpg'
-});
 
 const greats = new Mcomment({
 	rating: 9,
@@ -200,270 +182,6 @@ const m12 = new Male({
 	mcomments: [ greats ]
 });
 
-//gaymale
-const gm1 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://i.pinimg.com/736x/e4/e7/8c/e4e78c0a1bf12d307b589227de626a0b--gorgeous-men-beautiful-people.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm2 = new Gaymale({
-	firstName: 'Joe',
-	lastName: 'Hender',
-	photoUrl: 'https://intersalon.ee/wp-content/uploads/2016/09/14141661_1110944172309568_98520967740312348_n.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm3 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/D2E9/production/_94639935_stefan3.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm4 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://data.whicdn.com/images/89546444/original.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop ],
-	gcomments: [ great ]
-});
-
-const gm5 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://pbs.twimg.com/media/CjFOwxiW0AAoiqG.jpg:large',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-const gm6 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://www.famousbirthdays.com/faces/tomlin-stefan-pierre-image.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm7 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl:
-		'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/vitalijus-1-1522322806.jpeg?crop=1xw:1xh;center,top&resize=480:*',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm8 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl:
-		'https://mars.nasa.gov/people/images/profile/1x1/rfrancis-22826-profile-hi_F9C4E5F6-5645-4186-9A35995CDA924E4A.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm9 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://beautifyatlanta.com/wp-content/uploads/parser/alex-jones-beard-1.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm10 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm11 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://www.face-agency.co.uk/images/uploads/models/large/1470043935-21.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-const gm12 = new Gaymale({
-	firstName: 'James',
-	lastName: 'Han',
-	photoUrl: 'https://www.wllawsd.com/wp-content/uploads/2018/06/daniel-1.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis',
-	gevents: [ ihop1 ],
-	gcomments: [ great1 ]
-});
-
-//female
-
-const f1 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://cdn.shopify.com/s/files/1/2714/9310/products/76781_1_50a648ed-fce4-4445-8157-2749cb7afcf3_775x.JPG?v=1554145796?w=331',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-
-});
-
-const f2 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://www.poeticjusticejeans.com//media/catalog/product/l/i/little-black-dress-lace-panel-sides-poetic-justice-maja-ho16409pr-sd.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f3 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://s3-us-west-1.amazonaws.com/www.vivaglammagazine.com/wp-content/uploads/2019/02/how-to-style-your-little-black-dress-elegant-lbd-with-nice-heels.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f4 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://cdn.shopify.com/s/files/1/0293/9277/products/12-05-18_Studio_2_13-25-56_72450_Black_0427_JD_JF_600x.jpg?v=1544202558',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f5 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://media.nastygal.com/i/nastygal/agg86163_black_xl?$product_image_category_page_horizontal_filters_desktop$',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f6 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl: 'https://cdn.executiveponies.com/media/catalog/product/t/n/tn_dancing_mood_dress_in_black_sequin.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-
-});
-
-const f7 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://cdn.shopify.com/s/files/1/2714/9310/products/Unique_Vintage_Black_Beaded_Sequin_Margaux_Sleeved_Fringe_Flapper_Dress_1_099c18d6-04b8-4bb2-8c06-ff1c12660f93_1024x1024.jpg?v=1545251688',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-
-});
-
-const f8 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl: 'https://img.ltwebstatic.com/images/pi/201710/d5/15078910542851474215_thumbnail_600x.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f9 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'https://dynamic.zacdn.com/drcoBc6vpsHB-aBopTGP1fs3l7w=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/ripe-maternity-1581-2065341-1.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f10 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl: 'https://www.lulus.com/images/product/xlarge/3768760_772062.jpg?w=331',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-	
-});
-
-const f11 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl: 'https://assets.capitalfm.com/2018/23/lilliya-scarlett-instagram-1528814125-custom-0.png',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-
-});
-
-const f12 = new Lesbian({
-	firstName: 'Jackie',
-	lastName: 'Hank',
-	photoUrl:
-		'http://cdn01.cdn.justjared.com/wp-content/uploads/2015/05/rdma-portraits/hailee-steinfeld-rumer-willis-pose-for-just-jared-portrait-session-11.jpg',
-	age: 28,
-	location: 'Fulton, Georgia',
-	bio: 'I just graduated from UGA am ready to start dating again. I love cats and coding Python on a daily basis'
-
-});
-
 //straight female
 
 const sara = new User({
@@ -603,20 +321,7 @@ const samssss = new User({
 });
 
 
-Gaymale.deleteMany({})
-	.then(() => gm1.save())
-	.then(() => gm2.save())
-	.then(() => gm3.save())
-	.then(() => gm4.save())
-	.then(() => gm5.save())
-	.then(() => gm6.save())
-	.then(() => gm7.save())
-	.then(() => gm8.save())
-	.then(() => gm9.save())
-	.then(() => gm10.save())
-	.then(() => gm11.save())
-	.then(() => gm12.save())
-	.then(() => console.log('Successful Save'))
+
 Male.deleteMany({})
 	.then(() => m1.save())
 	.then(() => m2.save())
@@ -631,20 +336,7 @@ Male.deleteMany({})
 	.then(() => m11.save())
 	.then(() => m12.save())
 	.then(() => console.log('Successful Save'))
-Lesbian.deleteMany({})
-	.then(() => f1.save())
-	.then(() => f2.save())
-	.then(() => f3.save())
-	.then(() => f4.save())
-	.then(() => f6.save())
-	.then(() => f5.save())
-	.then(() => f7.save())
-	.then(() => f8.save())
-	.then(() => f9.save())
-	.then(() => f10.save())
-	.then(() => f11.save())
-	.then(() => f12.save())
-	.then(() => console.log('Successful Save'))
+
 User.deleteMany({})
 	.then(() => sara.save())
 	.then(() => abby.save())

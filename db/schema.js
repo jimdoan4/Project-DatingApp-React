@@ -16,12 +16,6 @@ const MeventSchema = new Schema({
 	withWho: String
 });
 
-const GeventSchema = new Schema({
-	eventName: String,
-	time: Number,
-	price: Number,
-	withWho: String
-});
 
 const CommentSchema = new Schema({
 	rating: Number,
@@ -39,13 +33,6 @@ const McommentSchema = new Schema({
 	lessonLearned: String
 });
 
-const GcommentSchema = new Schema({
-	rating: Number,
-	dateAgain: String,
-	withWho: String,
-	review: String,
-	lessonLearned: String
-});
 
 const UserSchema = new Schema({
 	firstName: String,
@@ -69,25 +56,6 @@ const MaleSchema = new Schema({
 	mcomments: [ McommentSchema ]
 });
 
-const GaymaleSchema = new Schema({
-	firstName: String,
-	lastName: String,
-	age: Number,
-	location: String,
-	photoUrl: String,
-	bio: String,
-	gevents: [ GeventSchema ],
-	gcomments: [ GcommentSchema ]
-});
-
-const LesbianSchema = new Schema({
-	firstName: String,
-	lastName: String,
-	age: Number,
-	location: String,
-	photoUrl: String,
-	bio: String
-});
 
 
 
@@ -98,9 +66,5 @@ module.exports = {
 	MaleSchema: MaleSchema,
 	MeventSchema: MeventSchema,
 	McommentSchema: McommentSchema,
-	GaymaleSchema: GaymaleSchema,
-	GeventSchema: GeventSchema,
-	GcommentSchema: GcommentSchema,
-	LesbianSchema: LesbianSchema
 	
 };
