@@ -86,7 +86,7 @@ export default class MalePage extends Component {
 		return (
 			<div>
 				<div style={{ marginTop: '30px', marginBottom: '100px' }}>
-					<Card style={{ width: '28rem', marginBottom: '20px', backgroundColor: '#1e3959' }}>
+					
 						<Card>
 							<Card.Img className="zoom" variant="top" src={this.state.male.photoUrl} alt="top" />
 							<Card.Body>
@@ -101,33 +101,27 @@ export default class MalePage extends Component {
 							</Card.Body>
 							<Container style={{ textAlign: 'center', marginBottom: '30px', marginTop: '8px' }}>
 								<button
-									className="text-center"
+									className="text-center edit-button"
 									onClick={this.toggleMaleForm}
-									style={{
-										backgroundColor: 'white',
-										borderColor: 'black',
-										color: 'black',
-										marginRight: '10px'
-									}}
 								>
-									Edit Account
+									Edit 
 								</button>
 								<button
-									style={{ backgroundColor: 'white', borderColor: 'black', color: 'black' }}
+									className="edit-button"
 									onClick={this.deleteMale}
 								>
-									Delete Account
+									Delete 
 								</button>
 							</Container>
 						</Card>
-					</Card>
+
 				</div>
 
 				{this.state.displayMaleForm ? (
-					<form style={{ marginTop: '50px', marginRight: '50px' }} onSubmit={this.updateMale} className="col">
+					<form style={{ marginTop: '50px' }} onSubmit={this.updateMale} className="col">
 						<div className="col">
 							<div className="col s12 m6 text-center">
-								<label style={{ marginRight: '30px', marginTop: '30px' }} htmlFor="firstName">
+								<label style={{ marginTop: '30px' }} htmlFor="firstName">
 									First Name
 								</label>
 								<input
@@ -213,12 +207,7 @@ export default class MalePage extends Component {
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
 							<button
-								style={{
-									backgroundColor: 'white',
-									borderColor: 'black',
-									color: 'black'
-								}}
-								className="text-center"
+								className="text-center edit-button"
 							>
 								Submit
 							</button>

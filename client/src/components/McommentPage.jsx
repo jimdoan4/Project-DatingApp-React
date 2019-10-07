@@ -118,15 +118,9 @@ export default class McommentPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div className="text-center" style={{ position: 'block' }}>
+			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
 				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
-				<button
-					style={{
-						marginTop: '14px',
-						backgroundColor: 'white',
-						borderColor: 'black',
-						color: 'black'
-					}}
+				<button className="edit-button"
 					onClick={this.toggleReviewForm}
 				>
 					Lists of Your Date Reviews
@@ -162,16 +156,11 @@ export default class McommentPage extends Component {
 													<Col>
 														<Link key={mcomment._id}>
 															<button
-																style={{
-																	backgroundColor: 'white',
-																	borderColor: 'black',
-																	color: 'black',
-																	marginRight: '10px'
-																}}
+																className="edit-button"
 																key={mcomment._id}
 																onClick={() => this.toggleEditForm(mcomment)}
 															>
-																Edit Review
+																Edit 
 															</button>
 														</Link>
 													</Col>
@@ -179,13 +168,9 @@ export default class McommentPage extends Component {
 														<button
 															key={mcomment._id}
 															onClick={(e) => this.deleteMcomment(e, mcomment)}
-															style={{
-																backgroundColor: 'white',
-																borderColor: 'black',
-																color: 'black'
-															}}
+															className="edit-button"
 														>
-															Delete Review
+															Delete 
 														</button>
 													</Col>
 												</Row>
@@ -199,27 +184,14 @@ export default class McommentPage extends Component {
 
 					<div className="text-center col" style={{ marginTop: '30px' }}>
 						<button
-							style={{
-								marginBottom: '20px',
-								backgroundColor: 'white',
-								borderColor: 'black',
-								color: 'black'
-							}}
+							className="edit-button"
 							onClick={this.toggleMcommentForm}
 						>
 							Add a Review
 						</button>
 						{this.state.displayMcommentForm ? (
 							<div className="container text-center">
-								<Card
-									className="container"
-									style={{
-										width: '28rem',
-										height: '41.5rem',
-										paddingTop: '15px',
-										backgroundColor: '#d4d5d5'
-									}}
-								>
+							
 									<Form
 										className="text-center"
 										style={{
@@ -304,25 +276,15 @@ export default class McommentPage extends Component {
 										</Form.Row>
 										<div style={{ marginLeft: '121px' }} className="text-center">
 											<button
-												className="text-center"
 												variant="primary"
 												type="submit"
-												style={{
-													marginRight: '140px',
-													paddingLeft: '60px',
-													paddingRight: '60px',
-													marginTop: '1px',
-													marginBottom: '15px',
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black'
-												}}
+												className="edit-button text-center"
 											>
-												Add Review
+												Submit
 											</button>
 										</div>
 									</Form>
-								</Card>
+							
 							</div>
 						) : null}
 					</div>
@@ -330,7 +292,7 @@ export default class McommentPage extends Component {
 					{this.state.displayEditForm ? (
 						<form
 							onSubmit={this.updateMcomment}
-							style={{ marginTop: '50px', marginRight: '50px' }}
+							style={{ marginTop: '50px' }}
 							className="col"
 						>
 							<div className="col">
@@ -407,12 +369,7 @@ export default class McommentPage extends Component {
 							</div>
 							<div className="text-center" style={{ marginTop: '20px' }}>
 								<button
-									style={{
-										backgroundColor: 'white',
-										borderColor: 'black',
-										color: 'black'
-									}}
-									className="text-center"
+									className="edit-button"
 								>
 									Submit
 								</button>

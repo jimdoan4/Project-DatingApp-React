@@ -114,15 +114,10 @@ export default class MeventPage extends Component {
 			return <Redirect to={`/males/`} />;
 		}
 		return (
-			<div className="text-center" style={{ marginLeft: '90px' }}>
+			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
 				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
 				<button
-					style={{
-						marginTop: '14px',
-						backgroundColor: 'white',
-						borderColor: 'black',
-						color: 'black'
-					}}
+					className="edit-button"
 					onClick={this.toggleDateForm}
 				>
 					List of Scheduled Events
@@ -154,28 +149,19 @@ export default class MeventPage extends Component {
 										>
 											<Link key={mevent._id}>
 												<button
-													style={{
-														backgroundColor: 'white',
-														borderColor: 'black',
-														color: 'black',
-														marginRight: '10px'
-													}}
+													className="edit-button"
 													key={mevent._id}
 													onClick={() => this.toggleEditForm(mevent)}
 												>
-													Edit Event
+													Edit 
 												</button>
 											</Link>
 											<button
 												key={mevent._id}
 												onClick={(e) => this.deleteMevent(e, mevent)}
-												style={{
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black'
-												}}
+												className="edit-button"
 											>
-												Delete Event
+												Delete 
 											</button>
 										</Container>
 									</Card>
@@ -188,22 +174,17 @@ export default class MeventPage extends Component {
 				<Col>
 					<div className="text-center" style={{ marginTop: '30px' }}>
 						<button
-							style={{
-								marginBottom: '20px',
-								backgroundColor: 'white',
-								borderColor: 'black',
-								color: 'black'
-							}}
+																	className="edit-button"
 							onClick={this.toggleMeventForm}
 						>
 							Add an Event
 						</button>
 						{this.state.displayMeventForm ? (
 							<div className="container">
-								<Card
+								{/* <Card
 									className="container"
 									style={{ width: '25rem', height: '34.4rem', backgroundColor: '#d4d5d5' }}
-								>
+								> */}
 									<Form
 										className="text-center"
 										style={{
@@ -271,25 +252,15 @@ export default class MeventPage extends Component {
 										<Form.Row />
 										<div style={{ marginLeft: '100px' }} className="text-center">
 											<button
-												className="text-center"
+												className="text-center edit-button"
 												variant="primary"
 												type="submit"
-												style={{
-													marginRight: '140px',
-													paddingLeft: '60px',
-													paddingRight: '60px',
-													marginTop: '1px',
-													marginBottom: '15px',
-													backgroundColor: 'white',
-													borderColor: 'black',
-													color: 'black'
-												}}
 											>
-												Add Event
+												Submit
 											</button>
 										</div>
 									</Form>
-								</Card>
+								{/* </Card> */}
 							</div>
 						) : null}
 					</div>
@@ -360,12 +331,7 @@ export default class MeventPage extends Component {
 						</div>
 						<div className="text-center" style={{ marginTop: '20px' }}>
 							<button
-								style={{
-									backgroundColor: 'white',
-									borderColor: 'black',
-									color: 'black'
-								}}
-								className="text-center"
+								className="text-center edit-button"
 							>
 								Submit
 							</button>

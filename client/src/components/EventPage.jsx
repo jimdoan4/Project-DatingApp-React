@@ -114,7 +114,7 @@ export default class EventPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className="text-center" style={{ marginLeft: '', position: 'block' }}>
+			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
 				<h3 style={{ marginTop: '30px' }}>Set up a Date with your MATCH</h3>
 				<button
 					className="edit-button"

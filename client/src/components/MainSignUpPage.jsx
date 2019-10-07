@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import UserLog from './UserLog';
-import GaySignUp from './GaySignUp';
-import FemaleSignUp from './FemaleSignUp';
 import MaleSignUp from './MaleSignUp';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';

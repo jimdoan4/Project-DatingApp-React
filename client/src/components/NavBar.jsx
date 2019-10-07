@@ -31,18 +31,6 @@ export default class NavBar extends Component {
 									Men
 								</Link>
 							</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item className="text-center">
-								<Link className="text-center" to="/gaymales/">
-									Gay Men
-								</Link>
-							</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item className="text-center">
-								<Link to="/lesbians/">
-									Lesbian Women
-								</Link>
-							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>

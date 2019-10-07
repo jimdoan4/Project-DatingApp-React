@@ -19,11 +19,9 @@ export default class UserShowPage extends Component {
 	<Container> 
 	<Row>
 	<Col><EventPage userId={this.state.userId} /></Col>
+	<Col><UserPage className="text-center" userId={this.state.userId} /></Col>
     <Col><CommentPage userId={this.state.userId} /></Col>
-
-
-  </Row>
-  <Row><UserPage className="text-center" userId={this.state.userId} /></Row>
+	</Row>
   </Container>
 			
 			</div>

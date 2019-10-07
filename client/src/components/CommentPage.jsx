@@ -121,7 +121,7 @@ export default class CommentPage extends Component {
 			return <Redirect to={`/users/`} />;
 		}
 		return (
-			<div className="text-center" style={{ position: 'block' }}>
+			<div className="text-center jumbotron" style={{ position: 'block', marginTop: '30px' }}>
 				<h3 style={{ marginTop: '30px' }}>Write A Review about Your DATE</h3>
 				<button className="edit-button"
 					onClick={this.toggleCommentForm}
