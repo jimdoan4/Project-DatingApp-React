@@ -7,7 +7,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Be Vietnam', sans-serif;
-font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 
@@ -23,15 +23,15 @@ font-family: 'Ubuntu', sans-serif;
 
 .edit-button {
   background-color: #802139;
-										border-color: #802139;
-										color: white;
-										margin-right: 10px;
+  border-color: #802139;
+  color: white;
+  margin-right: 10px;
 }
 
 .delete-button {
   background-color: #802139;
-										border-color: #802139;
-										color: white;
+  border-color: #802139;
+  color: white;
 }
 
 .zoom {
