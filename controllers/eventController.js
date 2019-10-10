@@ -4,25 +4,25 @@ const User = require('../models/User.js');
 
 const eventController = {
 	index: (req, res) => {
-		User.findById(req.params.userId)
+		User.findById(req.params.userId)  // Find all of the users events from the database
 			.then((user) => {
 				res.json(user.events);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err); // If there is any error, tell the client something went wrong on the server
 			});
 	},
 	create: (req, res) => {
 		User.findById(req.params.userId)
 			.then((user) => {
-				const newEvent = new Event(req.body);
+				const newEvent = new Event(req.body);  // create a new Event, let Mongoose give the default values
 				user.events.push(newEvent);
 				user.save().then((user) => {
 					res.json(newEvent);
 				});
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err); // If there is any error, tell the client something went wrong on the server
 			});
 	},
 	
@@ -30,10 +30,10 @@ const eventController = {
 		User.findById(req.params.userId)
 			.then((user) => {
 				const singleEvent = user.events.id(req.params.eventId);
-				res.json(singleEvent);
+				res.json(singleEvent); // Show the information requested
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err); // If there is any error, tell the client something went wrong on the server
 			});
 	},
 
@@ -46,20 +46,20 @@ const eventController = {
 				res.json(updatedEvent);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err); // If there is any error, tell the client something went wrong on the server
 			});
 	},
 
 	delete: (req, res) => {
 		User.findById(req.params.userId)
 			.then((user) => {
-				const filterEvents = user.events.filter((event) => event._id != req.params.eventId);
+				const filterEvents = user.events.filter((event) => event._id != req.params.eventId); // Delete the information from the database
 				user.events = filterEvents;
 				user.save();
 				res.json(user.events);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err); // If there is any error, tell the client something went wrong on the server
 			});
 	},
 };

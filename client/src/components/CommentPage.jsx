@@ -11,6 +11,7 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 export default class CommentPage extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     userId: this.props.userId,
     comments: [],
@@ -28,7 +29,7 @@ export default class CommentPage extends Component {
   };
 
   getAllComments = () => {
-    axios.get(`/api/users/${this.state.userId}/comments`).then(res => {
+    axios.get(`/api/users/${this.state.userId}/comments`).then(res => { // When the page loads, grab all Comments from the database
       console.log(res.data);
       this.setState({ comments: res.data });
     });
@@ -47,7 +48,7 @@ export default class CommentPage extends Component {
   createComment = e => {
     e.preventDefault();
     axios
-      .post(`/api/users/${this.state.userId}/comments`, {
+      .post(`/api/users/${this.state.userId}/comments`, {  // Ask the server to create a new user comment in the database
         rating: this.state.newComment.rating,
         dateAgain: this.state.newComment.dateAgain,
         review: this.state.newComment.review,
@@ -56,7 +57,7 @@ export default class CommentPage extends Component {
         lessonLearned: this.state.newComment.lessonLearned
       })
       .then(res => {
-        const commentsList = [...this.state.comments];
+        const commentsList = [...this.state.comments]; // Copy the old comments list into a new one
         commentsList.unshift(res.data);
         this.setState({
           newComment: {
@@ -83,7 +84,7 @@ export default class CommentPage extends Component {
   updateComment = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}`, {
+      .put(`/api/users/${this.state.userId}`, {  // ask the server to update the comment in the database
         rating: this.state.newComment.rating,
         dateAgain: this.state.newComment.dateAgain,
         review: this.state.newComment.review,
@@ -97,13 +98,13 @@ export default class CommentPage extends Component {
     this.getAllComments();
   };
 
-  toggleEditForm = () => {
+  toggleEditForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
   };
 
-  toggleCommentForm = () => {
+  toggleCommentForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayCommentForm: !state.displayCommentForm };
     });
@@ -112,7 +113,7 @@ export default class CommentPage extends Component {
   deleteComment = (e, comment) => {
     e.preventDefault();
     axios
-      .delete(`/api/users/${this.state.userId}/comments/${comment._id}`)
+      .delete(`/api/users/${this.state.userId}/comments/${comment._id}`)  // Ask the server to delete this comment id
       .then(res => {
         this.getAllComments();
       });

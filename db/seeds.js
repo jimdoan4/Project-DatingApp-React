@@ -9,7 +9,6 @@ const Mevent = require('../models/Mevent.js');
 const Male = require('../models/Male.js');
 
 
-
 const ihop = new Event({
 	eventName: 'Houstons Bar and Grill',
 	time: 7,
@@ -183,7 +182,6 @@ const m12 = new Male({
 });
 
 //straight female
-
 const sara = new User({
 	firstName: 'Sara',
 	lastName: 'Henderson',

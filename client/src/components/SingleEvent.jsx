@@ -4,6 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 export default class SingleEvent extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     event: {
       eventName: "",
@@ -20,7 +21,7 @@ export default class SingleEvent extends Component {
 
   getSingleEventData = () => {
     axios
-      .get(`/api/users/${this.state.userId}/events/${this.state.eventId}`)
+      .get(`/api/users/${this.state.userId}/events/${this.state.eventId}`) // When the page loads, grab all user event id from the database
       .then(res => {
         this.setState({ event: res.data });
       });
@@ -30,7 +31,7 @@ export default class SingleEvent extends Component {
     this.getSingleEventData();
   };
 
-  toggleEditForm = () => {
+  toggleEditForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
@@ -45,7 +46,7 @@ export default class SingleEvent extends Component {
   updateEvent = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}/events/${this.state.eventId}`, {
+      .put(`/api/users/${this.state.userId}/events/${this.state.eventId}`, {  // ask the server to update the user event in the database
         eventName: this.state.event.eventName,
         time: this.state.event.time,
         price: this.state.event.price,
@@ -60,7 +61,7 @@ export default class SingleEvent extends Component {
 
   deleteEvent = () => {
     axios
-      .delete(`/api/users/${this.state.userId}/events/${this.state.eventId}`)
+      .delete(`/api/users/${this.state.userId}/events/${this.state.eventId}`)  // Ask the server to delete this user event id
       .then(res => {
         this.setState({ redirectToEvent: true });
       });

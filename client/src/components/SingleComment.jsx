@@ -3,6 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 
 export default class SingleComment extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     comment: {
       rating: "",
@@ -20,7 +21,7 @@ export default class SingleComment extends Component {
 
   getSingleCommentData = () => {
     axios
-      .get(`/api/users/${this.state.userId}/comments/${this.state.commentId}`)
+      .get(`/api/users/${this.state.userId}/comments/${this.state.commentId}`) // When the page loads, grab all user comment id from the database
       .then(res => {
         this.setState({ comment: res.data });
       });
@@ -30,7 +31,7 @@ export default class SingleComment extends Component {
     this.getSingleCommentData();
   };
 
-  toggleEditForm = () => {
+  toggleEditForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
@@ -45,7 +46,7 @@ export default class SingleComment extends Component {
   updateComment = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}/comments/${this.state.commentId}`, {
+      .put(`/api/users/${this.state.userId}/comments/${this.state.commentId}`, {  // ask the server to update the user comment in the database
         rating: this.state.comment.rating,
         dateAgain: this.state.comment.dateAgain,
         review: this.state.comment.review,
@@ -62,7 +63,7 @@ export default class SingleComment extends Component {
   deleteComment = () => {
     axios
       .delete(
-        `/api/users/${this.state.userId}/comments/${this.state.commentId}`
+        `/api/users/${this.state.userId}/comments/${this.state.commentId}`  // Ask the server to delete this user comment id
       )
       .then(res => {
         this.setState({ redirectToComment: true });

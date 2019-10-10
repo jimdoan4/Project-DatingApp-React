@@ -6,6 +6,7 @@ import { Card } from "react-bootstrap";
 
 
 export default class MalePage extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     maleId: this.props.maleId,
     males: [],
@@ -25,7 +26,7 @@ export default class MalePage extends Component {
   };
 
   getSingleMaleData = () => {
-    axios.get(`/api/males/${this.state.maleId}`).then(res => {
+    axios.get(`/api/males/${this.state.maleId}`).then(res => { // When the page loads, grab male id from the database
       this.setState({ male: res.data });
     });
   };
@@ -34,7 +35,7 @@ export default class MalePage extends Component {
     this.getSingleMaleData();
   };
 
-  toggleMaleForm = () => {
+  toggleMaleForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayMaleForm: !state.displayMaleForm };
     });
@@ -55,7 +56,7 @@ export default class MalePage extends Component {
   updateMale = e => {
     e.preventDefault();
     axios
-      .put(`/api/males/${this.state.maleId}`, {
+      .put(`/api/males/${this.state.maleId}`, {  // ask the server to update the male in the database
         firstName: this.state.male.firstName,
         lastName: this.state.male.lastName,
         age: this.state.male.age,
@@ -72,7 +73,7 @@ export default class MalePage extends Component {
   };
 
   deleteMale = () => {
-    axios.delete(`/api/males/${this.state.maleId}`).then(res => {
+    axios.delete(`/api/males/${this.state.maleId}`).then(res => {  // Ask the server to delete this male id
       this.setState({ redirectToMale: true });
     });
   };

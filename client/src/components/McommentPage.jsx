@@ -8,6 +8,7 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 export default class McommentPage extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     maleId: this.props.maleId,
     mcommentId: this.props.mcommentId,
@@ -26,7 +27,7 @@ export default class McommentPage extends Component {
   };
 
   getAllMcomments = () => {
-    axios.get(`/api/males/${this.state.maleId}/mcomments`).then(res => {
+    axios.get(`/api/males/${this.state.maleId}/mcomments`).then(res => { // When the page loads, grab all male comment id from the database
       console.log(res.data);
       this.setState({ mcomments: res.data });
     });
@@ -42,13 +43,13 @@ export default class McommentPage extends Component {
     });
   };
 
-  toggleReviewForm = () => {
+  toggleReviewForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayReviewForm: !state.displayReviewForm };
     });
   };
 
-  toggleEditForm = comment => {
+  toggleEditForm = comment => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm, newMcomment: comment };
     });
@@ -63,7 +64,7 @@ export default class McommentPage extends Component {
   createMcomment = e => {
     e.preventDefault();
     axios
-      .post(`/api/males/${this.state.maleId}/mcomments`, {
+      .post(`/api/males/${this.state.maleId}/mcomments`, {  // Ask the server to create a new male comment in the database
         rating: this.state.newMcomment.rating,
         dateAgain: this.state.newMcomment.dateAgain,
         review: this.state.newMcomment.review,
@@ -71,7 +72,7 @@ export default class McommentPage extends Component {
         lessonLearned: this.state.newMcomment.lessonLearned
       })
       .then(res => {
-        const mcommentsList = [...this.state.mcomments];
+        const mcommentsList = [...this.state.mcomments];  // Copy the old male comment list into a new one
         mcommentsList.unshift(res.data);
         this.setState({
           newMcomment: {
@@ -92,7 +93,7 @@ export default class McommentPage extends Component {
     e.preventDefault();
     axios
       .put(
-        `/api/males/${this.state.maleId}/mcomments/${this.state.newMcomment._id}}`,
+        `/api/males/${this.state.maleId}/mcomments/${this.state.newMcomment._id}}`,  // ask the server to update the male comment in the database
         {
           rating: this.state.newMcomment.rating,
           dateAgain: this.state.newMcomment.dateAgain,
@@ -109,7 +110,7 @@ export default class McommentPage extends Component {
   deleteMcomment = (e, mcomment) => {
     e.preventDefault();
     axios
-      .delete(`/api/males/${this.state.maleId}/mcomments/${mcomment._id}`)
+      .delete(`/api/males/${this.state.maleId}/mcomments/${mcomment._id}`)  // Ask the server to delete this male comment id
       .then(res => {
         this.getAllMcomments();
       });

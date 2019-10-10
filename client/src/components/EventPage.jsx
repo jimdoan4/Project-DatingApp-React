@@ -11,6 +11,7 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 export default class EventPage extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     userId: this.props.userId,
     eventId: this.props.eventId,
@@ -27,7 +28,7 @@ export default class EventPage extends Component {
   };
 
   getAllEvents = () => {
-    axios.get(`/api/users/${this.state.userId}/events`).then(res => {
+    axios.get(`/api/users/${this.state.userId}/events`).then(res => {  // When the page loads, grab all events from the database
       console.log(res.data);
       this.setState({ events: res.data });
     });
@@ -37,13 +38,13 @@ export default class EventPage extends Component {
     this.getAllEvents();
   };
 
-  toggleEditForm = () => {
+  toggleEditForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
   };
 
-  toggleEventForm = () => {
+  toggleEventForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEventForm: !state.displayEventForm };
     });
@@ -58,14 +59,14 @@ export default class EventPage extends Component {
   createEvent = e => {
     e.preventDefault();
     axios
-      .post(`/api/users/${this.state.userId}/events`, {
+      .post(`/api/users/${this.state.userId}/events`, {  // Ask the server to create a new user event in the database
         eventName: this.state.newEvent.eventName,
         time: this.state.newEvent.time,
         price: this.state.newEvent.price,
         withWho: this.state.newEvent.withWho
       })
       .then(res => {
-        const eventsList = [...this.state.events];
+        const eventsList = [...this.state.events];  // Copy the old events list into a new one
         eventsList.unshift(res.data);
         this.setState({
           newEvent: {
@@ -90,7 +91,7 @@ export default class EventPage extends Component {
   updateEvent = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}/events`, {
+      .put(`/api/users/${this.state.userId}/events`, {  // ask the server to update the event in the database
         eventName: this.state.newEvent.eventName,
         time: this.state.newEvent.time,
         price: this.state.newEvent.price,
@@ -105,7 +106,7 @@ export default class EventPage extends Component {
   deleteEvent = (e, event) => {
     e.preventDefault();
     axios
-      .delete(`/api/users/${this.state.userId}/events/${event._id}`)
+      .delete(`/api/users/${this.state.userId}/events/${event._id}`)  // Ask the server to delete this event id
       .then(res => {
         this.getAllEvents();
       });

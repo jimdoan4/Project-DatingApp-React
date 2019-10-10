@@ -10,6 +10,7 @@ import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 export default class MeventPage extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     maleId: this.props.maleId,
     meventId: this.props.meventId,
@@ -28,7 +29,7 @@ export default class MeventPage extends Component {
   };
 
   getAllMevents = () => {
-    axios.get(`/api/males/${this.state.maleId}/mevents`).then(res => {
+    axios.get(`/api/males/${this.state.maleId}/mevents`).then(res => { // When the page loads, grab all male event id from the database
       console.log(res.data);
       this.setState({ mevents: res.data });
     });
@@ -44,13 +45,13 @@ export default class MeventPage extends Component {
     });
   };
 
-  toggleDateForm = () => {
+  toggleDateForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayDateForm: !state.displayDateForm };
     });
   };
 
-  toggleEditForm = event => {
+  toggleEditForm = event => { // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm, newMevent: event };
     });
@@ -65,14 +66,14 @@ export default class MeventPage extends Component {
   createMevent = e => {
     e.preventDefault();
     axios
-      .post(`/api/males/${this.state.maleId}/mevents`, {
+      .post(`/api/males/${this.state.maleId}/mevents`, {  // Ask the server to create a new male event in the database
         eventName: this.state.newMevent.eventName,
         time: this.state.newMevent.time,
         price: this.state.newMevent.price,
         withWho: this.state.newMevent.withWho
       })
       .then(res => {
-        const meventsList = [...this.state.mevents];
+        const meventsList = [...this.state.mevents];  // Copy the old male event list into a new one
         meventsList.unshift(res.data);
         this.setState({
           newMevent: {
@@ -92,7 +93,7 @@ export default class MeventPage extends Component {
     e.preventDefault();
     axios
       .put(
-        `/api/males/${this.state.maleId}/mevents/${this.state.newMevent._id}`,
+        `/api/males/${this.state.maleId}/mevents/${this.state.newMevent._id}`,  // ask the server to update the male event in the database
         {
           eventName: this.state.newMevent.eventName,
           time: this.state.newMevent.time,
@@ -108,7 +109,7 @@ export default class MeventPage extends Component {
   deleteMevent = (e, mevent) => {
     e.preventDefault();
     axios
-      .delete(`/api/males/${this.state.maleId}/mevents/${mevent._id}`)
+      .delete(`/api/males/${this.state.maleId}/mevents/${mevent._id}`)  // Ask the server to delete this male event id
       .then(res => {
         this.getAllMevents();
       });

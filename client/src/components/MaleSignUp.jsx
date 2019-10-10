@@ -7,6 +7,7 @@ import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 export default class MaleSignUp extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     males: [],
     newMale: {
@@ -35,7 +36,7 @@ export default class MaleSignUp extends Component {
 
   createMale = e => {
     axios
-      .post("/api/males/", {
+      .post("/api/males/", {  // Ask the server to create a new male in the database
         password: this.state.newMale.password,
         userName: this.state.newMale.userName,
         firstName: this.state.newMale.firstName,
@@ -46,7 +47,7 @@ export default class MaleSignUp extends Component {
         bio: this.state.newMale.bio
       })
       .then(res => {
-        const malesList = [this.state.males];
+        const malesList = [this.state.males]; // Copy the old males list into a new one
         malesList.unshift(res.data);
         this.setState({
           newMale: {
@@ -72,7 +73,7 @@ export default class MaleSignUp extends Component {
     this.setState({ newMale: changeNewMale });
   };
 
-  toggleEditForm = () => {
+  toggleEditForm = () => {   // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayMaleForm: !state.displayMaleForm };
     });

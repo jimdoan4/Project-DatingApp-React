@@ -14,6 +14,7 @@ import Footer from "./Footer";
 import { MaleContainer } from "./styled-components/MaleListStyles";
 
 export default class MaleList extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     males: [],
     newMale: {
@@ -35,14 +36,14 @@ export default class MaleList extends Component {
   };
 
   findAllMales = () => {
-    axios.get("/api/males/").then(res => {
+    axios.get("/api/males/").then(res => { // When the page loads, grab all males from the database
       this.setState({ males: res.data });
     });
   };
 
   deleteMale = (e, male) => {
     e.preventDefault();
-    axios.delete(`/api/males/${male._id}`).then(res => {
+    axios.delete(`/api/males/${male._id}`).then(res => {  // Ask the server to delete this male id
       this.findAllMales();
     });
   };

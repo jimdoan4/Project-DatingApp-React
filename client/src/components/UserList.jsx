@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import { UserContainer } from "./styled-components/UserListStyles";
 
 export default class UserList extends Component {
+        // We'll set up the  array as an empty array to begin with
   state = {
     users: [],
     newUser: {
@@ -31,15 +32,15 @@ export default class UserList extends Component {
     this.findAllUsers();
   };
 
-  findAllUsers = () => {
-    axios.get("/api/users").then(res => {
+  findAllUsers = () => {  
+    axios.get("/api/users").then(res => {  // When the page loads, grab all users from the database
       this.setState({ users: res.data });
     });
   };
 
   createUser = e => {
     axios
-      .post("/api/users", {
+      .post("/api/users", {  // Ask the server to create a new user in the database
         password: this.state.newUser.password,
         userName: this.state.newUser.userName,
         firstName: this.state.newUser.firstName,
@@ -52,7 +53,7 @@ export default class UserList extends Component {
         events: []
       })
       .then(res => {
-        const usersList = [this.state.users];
+        const usersList = [this.state.users];  // Copy the old users list into a new one
         usersList.unshift(res.data);
         this.setState({
           newUser: {
@@ -76,7 +77,7 @@ export default class UserList extends Component {
 
   deleteUser = (e, user) => {
     e.preventDefault();
-    axios.delete(`/api/users/${user._id}`).then(res => {
+    axios.delete(`/api/users/${user._id}`).then(res => {  // Ask the server to delete this user
       this.findAllUsers();
     });
   };
@@ -87,7 +88,7 @@ export default class UserList extends Component {
     this.setState({ newUser: changeNewUser });
   };
 
-  toggleUserForm = () => {
+  toggleUserForm = () => {  // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayUserForm: !state.displayUserForm };
     });
