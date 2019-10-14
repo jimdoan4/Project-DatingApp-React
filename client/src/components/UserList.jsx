@@ -3,6 +3,9 @@ import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Footer from "./Footer";
 import { UserContainer } from "./styled-components/UserListStyles";
 
@@ -100,11 +103,11 @@ export default class UserList extends Component {
     }
     return (
       <UserContainer>
-        <div className="row">
+        <Row>
           {this.state.users.map(user => {
             return (
-              <div
-                className="col text-center"
+              <Col
+                className="text-center"
                 style={{
                   marginBottom: "1px",
                   marginTop: "20px"
@@ -121,27 +124,27 @@ export default class UserList extends Component {
                     <Card.Body>
                       <div key={user._id}>
                         <Link to={`/users/${user._id}`} key={user._id}>
-                          <button className="rockstar interest-button">
+                          <Button className="interest-button">
                             Interested
-                          </button>
+                          </Button>
                         </Link>
 
-                        <button
+                        <Button
                           key={user._id}
                           onClick={e => this.deleteUser(e, user)}
                           type="button"
-                          className="rockstar not-interested-button"
+                          className="not-interested-button"
                         >
                           Not Interested
-                        </button>
+                        </Button>
                       </div>
                     </Card.Body>
                   </Card>
                 </CardGroup>
-              </div>
+              </Col>
             );
           })}
-        </div>
+        </Row>
       </UserContainer>
     );
   }

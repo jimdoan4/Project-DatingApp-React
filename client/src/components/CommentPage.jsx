@@ -6,12 +6,11 @@ import { Jumbotron } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 export default class CommentPage extends Component {
-        // We'll set up the  array as an empty array to begin with
+  // We'll set up the  array as an empty array to begin with
   state = {
     userId: this.props.userId,
     comments: [],
@@ -29,7 +28,8 @@ export default class CommentPage extends Component {
   };
 
   getAllComments = () => {
-    axios.get(`/api/users/${this.state.userId}/comments`).then(res => { // When the page loads, grab all Comments from the database
+    axios.get(`/api/users/${this.state.userId}/comments`).then(res => {
+      // When the page loads, grab all Comments from the database
       console.log(res.data);
       this.setState({ comments: res.data });
     });
@@ -48,7 +48,8 @@ export default class CommentPage extends Component {
   createComment = e => {
     e.preventDefault();
     axios
-      .post(`/api/users/${this.state.userId}/comments`, {  // Ask the server to create a new user comment in the database
+      .post(`/api/users/${this.state.userId}/comments`, {
+        // Ask the server to create a new user comment in the database
         rating: this.state.newComment.rating,
         dateAgain: this.state.newComment.dateAgain,
         review: this.state.newComment.review,
@@ -84,7 +85,8 @@ export default class CommentPage extends Component {
   updateComment = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}`, {  // ask the server to update the comment in the database
+      .put(`/api/users/${this.state.userId}`, {
+        // ask the server to update the comment in the database
         rating: this.state.newComment.rating,
         dateAgain: this.state.newComment.dateAgain,
         review: this.state.newComment.review,
@@ -98,13 +100,15 @@ export default class CommentPage extends Component {
     this.getAllComments();
   };
 
-  toggleEditForm = () => {  // This toggle the button when clicked
+  toggleEditForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
   };
 
-  toggleCommentForm = () => {  // This toggle the button when clicked
+  toggleCommentForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayCommentForm: !state.displayCommentForm };
     });
@@ -113,7 +117,7 @@ export default class CommentPage extends Component {
   deleteComment = (e, comment) => {
     e.preventDefault();
     axios
-      .delete(`/api/users/${this.state.userId}/comments/${comment._id}`)  // Ask the server to delete this comment id
+      .delete(`/api/users/${this.state.userId}/comments/${comment._id}`) // Ask the server to delete this comment id
       .then(res => {
         this.getAllComments();
       });
@@ -124,24 +128,26 @@ export default class CommentPage extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <div
-        className="text-center jumbotron"
+      <Jumbotron
+        className="text-center"
         style={{ position: "block", marginTop: "30px" }}
       >
         <h3
           style={{
             marginTop: "30px",
             fontSize: "22px",
+            marginBottom: "45px",
+            padding: "8px",
             background: "white",
             border: "1px solid black"
           }}
         >
           Write A Review
         </h3>
-        <button className="edit-button" onClick={this.toggleCommentForm}>
+        <Button className="edit-button" onClick={this.toggleCommentForm}>
           All Reviews
-        </button>
-        <div className="">
+        </Button>
+        <div>
           {this.state.comments.map(comment => {
             return (
               <div>
@@ -149,6 +155,7 @@ export default class CommentPage extends Component {
                   <Card
                     className="text-center"
                     style={{
+                      width:"28rem",
                       backgroundColor: "white",
                       paddingLeft: "24px",
                       paddingRight: "24px",
@@ -157,12 +164,12 @@ export default class CommentPage extends Component {
                       marginTop: "26px"
                     }}
                   >
-                    <p>Who was your Date: {comment.withWho}</p>
-                    <p>Rating for this Date: {comment.rating}</p>
-                    <p>Would you go on a Second Date: {comment.dateAgain}</p>
-                    <p>What is your Review of this Date: {comment.review}</p>
+                    <p>Name of your Date: <br/>{comment.withWho}</p>
+                    <p>Rating: <br/>{comment.rating}</p>
+                    <p>Would you go on a Second Date: <br/>{comment.dateAgain}</p>
+                    <p>Review of this Date: <br/>{comment.review}</p>
                     <p>
-                      What did you learn from this Date: {comment.lessonLearned}
+                      Lesson learned from this Date: <br/>{comment.lessonLearned}
                     </p>
 
                     <Container
@@ -175,17 +182,17 @@ export default class CommentPage extends Component {
                             to={`/users/${this.state.userId}/comments/${comment._id}`}
                             key={comment._id}
                           >
-                            <button className="edit-button">Edit</button>
+                            <Button className="edit-button">Edit</Button>
                           </Link>
                         </Col>
                         <Col>
-                          <button
+                          <Button
                             className="edit-button"
                             key={comment._id}
                             onClick={e => this.deleteComment(e, comment)}
                           >
                             Delete
-                          </button>
+                          </Button>
                         </Col>
                       </Row>
                     </Container>
@@ -195,12 +202,12 @@ export default class CommentPage extends Component {
             );
           })}
 
-          <div className="text-center col" style={{ marginTop: "30px" }}>
-            <button className="edit-button" onClick={this.toggleEditForm}>
+          <Col className="text-center" style={{ marginTop: "30px" }}>
+            <Button className="edit-button" onClick={this.toggleEditForm}>
               Add a Review
-            </button>
+            </Button>
             {this.state.displayEditForm ? (
-              <div className="container text-center">
+              <Container className="text-center">
                 <Form
                   className="text-center"
                   style={{
@@ -287,20 +294,20 @@ export default class CommentPage extends Component {
                     </Form.Group>
                   </Form.Row>
                   <div className="text-center">
-                    <button
+                    <Button
                       className="edit-button"
                       variant="primary"
                       type="submit"
                     >
                       Submit
-                    </button>
+                    </Button>
                   </div>
                 </Form>
-              </div>
+              </Container>
             ) : null}
-          </div>
+          </Col>
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 }

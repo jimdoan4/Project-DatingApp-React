@@ -3,6 +3,9 @@ import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export default class UserPage extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -125,24 +128,24 @@ export default class UserPage extends Component {
                 marginTop: "8px"
               }}
             >
-              <button className="edit-button" onClick={this.toggleUserForm}>
+              <Button className="edit-button" onClick={this.toggleUserForm}>
                 Edit Account
-              </button>
+              </Button>
 
-              <button className="delete-button" onClick={this.deleteUser}>
+              <Button className="delete-button" onClick={this.deleteUser}>
                 Delete Account
-              </button>
+              </Button>
             </Container>
           </Card>
         </div>
 
         {this.state.displayUserForm ? (
-          <form
+          <Form
             style={{ marginTop: "10px" }}
             onSubmit={this.updateUser}
             className="col text-center"
           >
-            <div className="col text-center">
+            <Col className="text-center">
               <div className="col s12 m6 text-center">
                 <label
                   style={{ marginRight: "0px", marginTop: "30px" }}
@@ -266,11 +269,11 @@ export default class UserPage extends Component {
                   value={this.state.user.photoUrl}
                 />
               </div>
-            </div>
+            </Col>
             <div className="text-center" style={{ marginTop: "20px" }}>
-              <button className="text-center edit-button">Submit</button>
+              <Button className="text-center edit-button">Submit</Button>
             </div>
-          </form>
+          </Form>
         ) : null}
       </div>
     );

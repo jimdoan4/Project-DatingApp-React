@@ -18,9 +18,9 @@ height: 100%!important;
 }
 
 
-.join-button {
+.join-button  {
     background-color: white;
-    color: black;
+    color: black!important;
     font-size: 20px;
  border: 1px solid #802139;
  margin-top: 363px;
@@ -31,8 +31,8 @@ padding-bottom: 20px;
 }
 
 .join-button:hover {
-    background-color: #802139;
-    color: white;
+    background-color: #802139!important;
+    color: white!important;
     border: 1px solid #802139;
 }
 `

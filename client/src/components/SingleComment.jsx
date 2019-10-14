@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { CardGroup } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 export default class SingleComment extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -80,8 +84,8 @@ export default class SingleComment extends Component {
           {this.state.comment.withWho}
         </h3>
         {this.state.displayEditForm ? (
-          <form onSubmit={this.updateComment} className="col s12">
-            <div className="col">
+          <Form onSubmit={this.updateComment} className="col s12">
+            <Col>
               <div className="col s12 m6 text-center">
                 <label
                   style={{ marginRight: "30px", marginTop: "30px" }}
@@ -183,51 +187,38 @@ export default class SingleComment extends Component {
                   value={this.state.comment.lessonLearned}
                 />
               </div>
-            </div>
+            </Col>
             <div className="text-center" style={{ marginTop: "20px" }}>
-              <button className="text-center">Submit</button>
+              <Button className="text-center edit-button">Submit</Button>
             </div>
-          </form>
+          </Form>
         ) : (
           <div>
-            <div className="text-center">
-              <button
+            <div className="text-center edit-button">
+              <Button
+                 className="edit-button"
                 onClick={this.toggleEditForm}
-                style={{
-                  marginRight: "50px",
-                  marginTop: "20px",
-                  width: "12rem",
-                  marginBottom: "30px",
-                  backgroundColor: "white",
-                  borderColor: "white",
-                  color: "black",
-                  borderColor: "black"
-                }}
               >
                 Edit Review
-              </button>
-              <button
-                style={{
-                  marginTop: "20px",
-                  width: "12rem",
-                  marginBottom: "30px",
-                  backgroundColor: "white",
-                  borderColor: "white",
-                  color: "black",
-                  borderColor: "black"
-                }}
+              </Button>
+              <Button
+              className="edit-button"
                 onClick={this.deleteComment}
               >
                 Delete Review
-              </button>
+              </Button>
             </div>
           </div>
         )}
         <div className="text-center" style={{ marginTop: "18px" }}>
+       
           <Link className="text-center" to={`/users/${this.state.userId}/`}>
+          <Button className="edit-button">
             Back To User
+            </Button>
           </Link>
-        </div>
+   
+      </div>
       </div>
     );
   }

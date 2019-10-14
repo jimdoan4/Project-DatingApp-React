@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 export default class UserLog extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -96,26 +97,18 @@ export default class UserLog extends Component {
     return (
       <div>
         {this.state.users.map(user => {
-          return <div></div>;
+          return <div/>;
         })}
         <br />
         <br />
-        <button
-          style={{
-            backgroundColor: "#802139",
-            borderColor: "#802139",
-            color: "white",
-            paddingLeft: "70px",
-            paddingRight: "70px",
-            paddingTop: "15px",
-            paddingBottom: "15px"
-          }}
+        <Button
+        className="woman-signup-button"
           onClick={this.toggleEditForm}
         >
           Straight Women
-        </button>
+        </Button>
         {this.state.displayUserForm ? (
-          <div className="container">
+          <Container>
             <Card
               className="container"
               style={{
@@ -244,7 +237,7 @@ export default class UserLog extends Component {
                 </div>
               </Form>
             </Card>
-          </div>
+            </Container>
         ) : null}
       </div>
     );

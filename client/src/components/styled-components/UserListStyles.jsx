@@ -4,6 +4,7 @@ import styled, { keyframes, css } from 'styled-components'
 export const UserContainer = styled.div`
 font-family: 'Be Vietnam', sans-serif;
 font-family: 'Ubuntu', sans-serif;
+margin: 90px;
 }
 
 .female-profile {
@@ -19,17 +20,18 @@ margin: 10px;
 }
 
 .interest-button {
-background-color: white;
+background-color: white!important;
 border: 1px solid black;
-color: black;
-margin-right: 10px;
+color: black!important;
 font-size: 14px;
+padding-left: 26px!important;
+padding-right: 26px!important;
 }
 
 .not-interested-button {
-background-color: white;
+background-color: #802139!important;
 border: 1px solid black;
-color: black;
+color: white!important;
 font-size: 14px;
 }
 

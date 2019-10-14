@@ -3,6 +3,8 @@ import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 
 export default class MalePage extends Component {
@@ -116,15 +118,15 @@ export default class MalePage extends Component {
                 marginTop: "8px"
               }}
             >
-              <button
+              <Button
                 className="text-center edit-button"
                 onClick={this.toggleMaleForm}
               >
                 Edit
-              </button>
-              <button className="edit-button" onClick={this.deleteMale}>
+              </Button>
+              <Button className="edit-button" onClick={this.deleteMale}>
                 Delete
-              </button>
+              </Button>
             </Container>
           </Card>
         </div>
@@ -135,7 +137,7 @@ export default class MalePage extends Component {
             onSubmit={this.updateMale}
             className="col"
           >
-            <div className="col">
+            <Col>
               <div className="col s12 m6 text-center">
                 <label style={{ marginTop: "30px" }} htmlFor="firstName">
                   First Name
@@ -255,9 +257,9 @@ export default class MalePage extends Component {
                   value={this.state.male.photoUrl}
                 />
               </div>
-            </div>
+            </Col>
             <div className="text-center" style={{ marginTop: "20px" }}>
-              <button className="text-center edit-button">Submit</button>
+              <Button className="text-center edit-button">Submit</Button>
             </div>
           </form>
         ) : null}

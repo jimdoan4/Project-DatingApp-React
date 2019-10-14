@@ -3,13 +3,10 @@ import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
-import { Container } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
-import { ButtonGroup } from "react-bootstrap";
-import { ButtonToolbar } from "react-bootstrap";
+
 import Footer from "./Footer";
 import { MaleContainer } from "./styled-components/MaleListStyles";
 
@@ -54,11 +51,11 @@ export default class MaleList extends Component {
     }
     return (
       <MaleContainer>
-        <div className="row">
+        <Row>
           {this.state.males.map(male => {
             return (
-              <div
-                className="col text-center"
+              <Col
+                className="text-center"
                 style={{
                   marginBottom: "1px",
                   marginTop: "20px"
@@ -75,26 +72,26 @@ export default class MaleList extends Component {
                     <Card.Body>
                       <div key={male._id}>
                         <Link to={`/males/${male._id}`} key={male._id}>
-                          <button className="rockstar interest-button">
+                          <Button className="interest-button">
                             Interested
-                          </button>
+                          </Button>
                         </Link>
-                        <button
-                          className="rockstar not-interested-button"
+                        <Button
+                          className="not-interested-button"
                           key={male._id}
                           onClick={e => this.deleteMale(e, male)}
                           type="button"
                         >
                           Not Interested
-                        </button>
+                        </Button>
                       </div>
                     </Card.Body>
                   </Card>
                 </CardGroup>
-              </div>
+              </Col>
             );
           })}
-        </div>
+        </Row>
       </MaleContainer>
     );
   }

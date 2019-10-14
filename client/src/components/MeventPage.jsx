@@ -9,6 +9,7 @@ import { Button } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
+
 export default class MeventPage extends Component {
         // We'll set up the  array as an empty array to begin with
   state = {
@@ -120,23 +121,25 @@ export default class MeventPage extends Component {
       return <Redirect to={`/males/`} />;
     }
     return (
-      <div
-        className="text-center jumbotron"
+      <Jumbotron
+        className="text-center"
         style={{ position: "block", marginTop: "30px" }}
       >
         <h3
           style={{
             marginTop: "30px",
+            marginBottom: "45px",
+            padding: "8px",
             fontSize: "22px",
             background: "white",
             border: "1px solid black"
           }}
         >
-          Set up a date
+          Schedule a Date
         </h3>
-        <button className="edit-button" onClick={this.toggleDateForm}>
+        <Button className="edit-button" onClick={this.toggleDateForm}>
           Scheduled Events
-        </button>
+        </Button>
         {this.state.mevents.map(mevent => {
           return (
             <div>
@@ -145,6 +148,7 @@ export default class MeventPage extends Component {
                   <Card
                     className="text-center"
                     style={{
+                      width:"28rem",
                       backgroundColor: "white",
                       paddingLeft: "24px",
                       paddingRight: "24px",
@@ -153,31 +157,31 @@ export default class MeventPage extends Component {
                       marginTop: "26px"
                     }}
                   >
-                    <p>What is the Event Name: {mevent.eventName}</p>
-                    <p>What Time is the Event: {mevent.time}</p>
-                    <p>What is the Price of the Event: {mevent.price}</p>
-                    <p>Who is your Date: {mevent.withWho}</p>
+           <p>Event Name: <br/>{mevent.eventName}</p>
+                    <p>Scheduled time: <br/>{mevent.time}</p>
+                    <p>Costs: <br/>{mevent.price}</p>
+                    <p>Name of your Date: <br/>{mevent.withWho}</p>
 
                     <Container
                       style={{ marginLeft: "0px", textAlign: "center" }}
                       className="text-center"
                     >
                       <Link key={mevent._id}>
-                        <button
+                        <Button
                           className="edit-button"
                           key={mevent._id}
                           onClick={() => this.toggleEditForm(mevent)}
                         >
                           Edit
-                        </button>
+                        </Button>
                       </Link>
-                      <button
+                      <Button
                         key={mevent._id}
                         onClick={e => this.deleteMevent(e, mevent)}
                         className="edit-button"
                       >
                         Delete
-                      </button>
+                      </Button>
                     </Container>
                   </Card>
                 </Col>
@@ -188,15 +192,11 @@ export default class MeventPage extends Component {
 
         <Col>
           <div className="text-center" style={{ marginTop: "30px" }}>
-            <button className="edit-button" onClick={this.toggleMeventForm}>
+            <Button className="edit-button" onClick={this.toggleMeventForm}>
               Add an Event
-            </button>
+            </Button>
             {this.state.displayMeventForm ? (
-              <div className="container">
-                {/* <Card
-									className="container"
-									style={{ width: '25rem', height: '34.4rem', backgroundColor: '#d4d5d5' }}
-								> */}
+              <Container className="text-center">
                 <Form
                   className="text-center"
                   style={{
@@ -278,8 +278,7 @@ export default class MeventPage extends Component {
                     </button>
                   </div>
                 </Form>
-                {/* </Card> */}
-              </div>
+              </Container>
             ) : null}
           </div>
         </Col>
@@ -372,11 +371,11 @@ export default class MeventPage extends Component {
               </div>
             </div>
             <div className="text-center" style={{ marginTop: "20px" }}>
-              <button className="text-center edit-button">Submit</button>
+              <Button className="text-center edit-button">Submit</Button>
             </div>
           </form>
         ) : null}
-      </div>
+      </Jumbotron>
     );
   }
 }

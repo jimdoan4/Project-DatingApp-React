@@ -1,11 +1,11 @@
 # Suave Dating App
 
 ### Overview
-Suave Dating Website for Straight Men and Women and Gay Men and Lesbian Women.
+Suave Dating Website for Straight Men and Women where users can decide if he/she is interested in the person, if so, the user can set up a date and also write a review about how the date went.
 
 ### Project Links
 
-[Heroku](https://shrouded-fortress-30460.herokuapp.com/)
+[Heroku](https://suavedate.herokuapp.com/)
 
 [Trello Board](https://trello.com/b/Z9z3AGaN/wdi-project-4-dating-app)
 
@@ -33,6 +33,8 @@ This application has:
 #### Technology Used
 - REACT
 - MongoDB
+- Axios
+- Styled-Components
 - Mongoose
 - Express
 - Dotenv

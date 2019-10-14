@@ -6,12 +6,11 @@ import { Jumbotron } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+
 
 export default class EventPage extends Component {
-        // We'll set up the  array as an empty array to begin with
+  // We'll set up the  array as an empty array to begin with
   state = {
     userId: this.props.userId,
     eventId: this.props.eventId,
@@ -28,7 +27,8 @@ export default class EventPage extends Component {
   };
 
   getAllEvents = () => {
-    axios.get(`/api/users/${this.state.userId}/events`).then(res => {  // When the page loads, grab all events from the database
+    axios.get(`/api/users/${this.state.userId}/events`).then(res => {
+      // When the page loads, grab all events from the database
       console.log(res.data);
       this.setState({ events: res.data });
     });
@@ -38,13 +38,15 @@ export default class EventPage extends Component {
     this.getAllEvents();
   };
 
-  toggleEditForm = () => {  // This toggle the button when clicked
+  toggleEditForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEditForm: !state.displayEditForm };
     });
   };
 
-  toggleEventForm = () => {  // This toggle the button when clicked
+  toggleEventForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayEventForm: !state.displayEventForm };
     });
@@ -59,14 +61,15 @@ export default class EventPage extends Component {
   createEvent = e => {
     e.preventDefault();
     axios
-      .post(`/api/users/${this.state.userId}/events`, {  // Ask the server to create a new user event in the database
+      .post(`/api/users/${this.state.userId}/events`, {
+        // Ask the server to create a new user event in the database
         eventName: this.state.newEvent.eventName,
         time: this.state.newEvent.time,
         price: this.state.newEvent.price,
         withWho: this.state.newEvent.withWho
       })
       .then(res => {
-        const eventsList = [...this.state.events];  // Copy the old events list into a new one
+        const eventsList = [...this.state.events]; // Copy the old events list into a new one
         eventsList.unshift(res.data);
         this.setState({
           newEvent: {
@@ -91,7 +94,8 @@ export default class EventPage extends Component {
   updateEvent = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}/events`, {  // ask the server to update the event in the database
+      .put(`/api/users/${this.state.userId}/events`, {
+        // ask the server to update the event in the database
         eventName: this.state.newEvent.eventName,
         time: this.state.newEvent.time,
         price: this.state.newEvent.price,
@@ -106,7 +110,7 @@ export default class EventPage extends Component {
   deleteEvent = (e, event) => {
     e.preventDefault();
     axios
-      .delete(`/api/users/${this.state.userId}/events/${event._id}`)  // Ask the server to delete this event id
+      .delete(`/api/users/${this.state.userId}/events/${event._id}`) // Ask the server to delete this event id
       .then(res => {
         this.getAllEvents();
       });
@@ -117,24 +121,26 @@ export default class EventPage extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <div
-        className="text-center jumbotron"
+      <Jumbotron
+        className="text-center"
         style={{ position: "block", marginTop: "30px" }}
       >
         <h3
           style={{
             marginTop: "30px",
             fontSize: "22px",
+            marginBottom: "45px",
+            padding: "8px",
             background: "white",
             border: "1px solid black"
           }}
         >
-          Set up a date
+          Schedule a Date
         </h3>
-        <button className="edit-button" onClick={this.toggleEventForm}>
+        <Button className="edit-button" onClick={this.toggleEventForm}>
           Scheduled Events
-        </button>
-        <div className="">
+        </Button>
+        <div>
           {this.state.events.map(event => {
             return (
               <div>
@@ -142,6 +148,7 @@ export default class EventPage extends Component {
                   <Card
                     className="text-center"
                     style={{
+                      width: "33rem",
                       backgroundColor: "white",
                       paddingLeft: "24px",
                       paddingRight: "24px",
@@ -150,10 +157,10 @@ export default class EventPage extends Component {
                       marginTop: "26px"
                     }}
                   >
-                    <p>What is the Event Name: {event.eventName}</p>
-                    <p>What Time is the Event: {event.time}</p>
-                    <p>What is the Average Price: {event.price}</p>
-                    <p>Who is your Date: {event.withWho}</p>
+                    <p>Event Name: <br/>{event.eventName}</p>
+                    <p>Scheduled time: <br/>{event.time}</p>
+                    <p>Costs: <br/>{event.price}</p>
+                    <p>Name of your Date: <br/>{event.withWho}</p>
 
                     <Container
                       style={{ marginLeft: "0px", textAlign: "center" }}
@@ -163,15 +170,15 @@ export default class EventPage extends Component {
                         to={`/users/${this.state.userId}/events/${event._id}`}
                         key={event._id}
                       >
-                        <button className="edit-button">Edit</button>
+                        <Button className="edit-button">Edit</Button>
                       </Link>
-                      <button
+                      <Button
                         className="edit-button"
                         key={event._id}
                         onClick={e => this.deleteEvent(e, event)}
                       >
                         Delete
-                      </button>
+                      </Button>
                     </Container>
                   </Card>
                 ) : null}
@@ -179,12 +186,12 @@ export default class EventPage extends Component {
             );
           })}
 
-          <div className="text-center col" style={{ marginTop: "30px" }}>
-            <button className="edit-button" onClick={this.toggleEditForm}>
+          <Col className="text-center" style={{ marginTop: "30px" }}>
+            <Button className="edit-button" onClick={this.toggleEditForm}>
               Add an Event
-            </button>
+            </Button>
             {this.state.displayEditForm ? (
-              <div className="container text-center">
+              <Container className="text-center">
                 <Form
                   className="text-center"
                   style={{
@@ -254,20 +261,20 @@ export default class EventPage extends Component {
                     style={{ marginLeft: "15px", textAlign: "center" }}
                     className="text-center"
                   >
-                    <button
+                    <Button
                       className="edit-button"
                       variant="primary"
                       type="submit"
                     >
                       Submit
-                    </button>
+                    </Button>
                   </Container>
                 </Form>
-              </div>
+              </Container>
             ) : null}
-          </div>
+          </Col>
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 }

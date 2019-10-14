@@ -6,6 +6,8 @@ import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export default class McommentPage extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -121,24 +123,26 @@ export default class McommentPage extends Component {
       return <Redirect to={`/males/`} />;
     }
     return (
-      <div
-        className="text-center jumbotron"
+      <Jumbotron
+        className="text-center"
         style={{ position: "block", marginTop: "30px" }}
       >
         <h3
           style={{
             marginTop: "30px",
             fontSize: "22px",
+            marginBottom: "45px",
+            padding: "8px",
             background: "white",
             border: "1px solid black"
           }}
         >
           Write A Review
         </h3>
-        <button className="edit-button" onClick={this.toggleReviewForm}>
+        <Button className="edit-button" onClick={this.toggleReviewForm}>
           All Reviews
-        </button>
-        <div className="">
+        </Button>
+        <div>
           {this.state.mcomments.map(mcomment => {
             return (
               <div>
@@ -147,6 +151,7 @@ export default class McommentPage extends Component {
                     <Card
                       className="text-center"
                       style={{
+                        width:"28rem",
                         backgroundColor: "white",
                         paddingLeft: "24px",
                         paddingRight: "24px",
@@ -155,14 +160,13 @@ export default class McommentPage extends Component {
                         marginTop: "26px"
                       }}
                     >
-                      <p>Who was your Date: {mcomment.withWho}</p>
-                      <p>How would you Rate your Date: {mcomment.rating}</p>
-                      <p>Would you go on a second Date: {mcomment.dateAgain}</p>
-                      <p>What is your Review of this Date: {mcomment.review}</p>
-                      <p>
-                        What did you learn from this Date:{" "}
-                        {mcomment.lessonLearned}
-                      </p>
+                      <p>Name of your Date: <br/>{mcomment.withWho}</p>
+                    <p>Rating: <br/>{mcomment.rating}</p>
+                    <p>Would you go on a Second Date: <br/>{mcomment.dateAgain}</p>
+                    <p>Review of this Date: <br/>{mcomment.review}</p>
+                    <p>
+                      Lesson learned from this Date: <br/>{mcomment.lessonLearned}
+                    </p>
 
                       <Container
                         style={{ marginLeft: "0px", textAlign: "center" }}
@@ -171,23 +175,23 @@ export default class McommentPage extends Component {
                         <Row>
                           <Col>
                             <Link key={mcomment._id}>
-                              <button
+                              <Button
                                 className="edit-button"
                                 key={mcomment._id}
                                 onClick={() => this.toggleEditForm(mcomment)}
                               >
                                 Edit
-                              </button>
+                              </Button>
                             </Link>
                           </Col>
                           <Col>
-                            <button
+                            <Button
                               key={mcomment._id}
                               onClick={e => this.deleteMcomment(e, mcomment)}
                               className="edit-button"
                             >
                               Delete
-                            </button>
+                            </Button>
                           </Col>
                         </Row>
                       </Container>
@@ -198,12 +202,12 @@ export default class McommentPage extends Component {
             );
           })}
 
-          <div className="text-center col" style={{ marginTop: "30px" }}>
-            <button className="edit-button" onClick={this.toggleMcommentForm}>
+          <Col className="text-center" style={{ marginTop: "30px" }}>
+            <Button className="edit-button" onClick={this.toggleMcommentForm}>
               Add a Review
-            </button>
+            </Button>
             {this.state.displayMcommentForm ? (
-              <div className="container text-center">
+              <Container className="text-center">
                 <Form
                   className="text-center"
                   style={{
@@ -300,9 +304,9 @@ export default class McommentPage extends Component {
                     </button>
                   </div>
                 </Form>
-              </div>
+              </Container>
             ) : null}
-          </div>
+          </Col>
 
           {this.state.displayEditForm ? (
             <form
@@ -310,7 +314,7 @@ export default class McommentPage extends Component {
               style={{ marginTop: "50px" }}
               className="col"
             >
-              <div className="col">
+              <Col>
                 <div className="col s12 m6 text-center">
                   <label
                     style={{ marginRight: "30px", marginTop: "30px" }}
@@ -408,14 +412,14 @@ export default class McommentPage extends Component {
                     value={this.state.newMcomment.lessonLearned}
                   />
                 </div>
-              </div>
+              </Col>
               <div className="text-center" style={{ marginTop: "20px" }}>
-                <button className="edit-button">Submit</button>
+                <Button className="edit-button">Submit</Button>
               </div>
             </form>
           ) : null}
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 }
