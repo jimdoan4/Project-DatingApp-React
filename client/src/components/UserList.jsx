@@ -107,14 +107,9 @@ export default class UserList extends Component {
           {this.state.users.map(user => {
             return (
               <Col
-                className="text-center"
-                style={{
-                  marginBottom: "1px",
-                  marginTop: "20px"
-                }}
               >
                 <CardGroup>
-                  <Card key={user._id} className="text-center female-profile">
+                  <Card key={user._id} className="female-profile">
                     <Card.Img
                       className="text-center zoom female-img"
                       variant="top"

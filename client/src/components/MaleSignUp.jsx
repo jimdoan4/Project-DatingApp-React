@@ -6,6 +6,7 @@ import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import { MaleLogContainer } from "./styled-components/MaleLogStyles";
 
 export default class MaleSignUp extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -91,7 +92,7 @@ export default class MaleSignUp extends Component {
     }
 
     return (
-      <div>
+      <MaleLogContainer>
         {this.state.males.map(male => {
           return <div />;
         })}
@@ -105,17 +106,9 @@ export default class MaleSignUp extends Component {
         </Button>
         {this.state.displayMaleForm ? (
           <Container>
-            <Card
-              className="container"
-              style={{
-                width: "36rem",
-                height: "41.4rem",
-                paddingTop: "35px",
-                marginTop: "20px"
-              }}
             >
               <Form
-                className="text-center"
+                className="text-center card man-form"
                 style={{ display: "inline-block", paddingRight: "23px" }}
                 onSubmit={this.handleMaleSignUp}
               >
@@ -213,29 +206,19 @@ export default class MaleSignUp extends Component {
                   </Form.Group>
                 </Form.Row>
 
-                <div style={{ marginLeft: "140px" }} className="text-center">
+                <div className="text-center">
                   <Button
                     onclick={this.createMale}
-                    className="text-center"
+                    className="register-button"
                     type="submit"
-                    style={{
-                      marginRight: "140px",
-                      paddingLeft: "30px",
-                      paddingRight: "30px",
-                      marginTop: "29px",
-                      backgroundColor: "#802139",
-                      borderColor: "#802139",
-                      color: "white"
-                    }}
                   >
                     Register
                   </Button>
                 </div>
               </Form>
-            </Card>
           </Container>
         ) : null}
-      </div>
+      </MaleLogContainer>
     );
   }
 }

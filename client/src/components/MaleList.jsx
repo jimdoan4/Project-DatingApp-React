@@ -55,16 +55,11 @@ export default class MaleList extends Component {
           {this.state.males.map(male => {
             return (
               <Col
-                className="text-center"
-                style={{
-                  marginBottom: "1px",
-                  marginTop: "20px"
-                }}
               >
                 <CardGroup>
-                  <Card key={male._id} className="text-center male-profile">
+                  <Card key={male._id} className="male-profile">
                     <Card.Img
-                      className="text-center zoom male-img"
+                      className="zoom male-img"
                       variant="top"
                       src={male.photoUrl}
                     />

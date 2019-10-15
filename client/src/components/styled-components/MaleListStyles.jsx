@@ -10,7 +10,8 @@ margin: 90px;
 .male-profile {
 width: 14rem;
 background-color: white;
-margin: 10px;									
+margin: 10px;	
+text-align: center;								
 }
 
 .male-img {

@@ -11,7 +11,7 @@ export default class Home extends Component {
           <div className="overlay-desc join-headline">
          
               <Link to="/login/" className="join-text centered">
-               JOIN NOW
+               FIND YOUR MATCH
               </Link>
       
           </div>

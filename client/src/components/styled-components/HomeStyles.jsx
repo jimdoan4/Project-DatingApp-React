@@ -35,21 +35,21 @@ color: white;
 .join-text {
     font-size: 1.5rem;
     text-align: center;
-    background-color: #802139;
-    color: white!important;
+    background-color: #f5f7fa;
+    color: black!important;
     border: 1px solid #802139;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 1px 1px #b3b3b3;
+    border-radius: 10px;
+    font-weight: bold;
     text-decoration: none;
 }
 
 
 .join-text:hover {
-    background-color: #802139!important;
+    background-color: #f0264f!important;
     color: white!important;
     border: 1px solid #802139;
 }
@@ -84,7 +84,7 @@ color: white;
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
         .join-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
     }
 `
