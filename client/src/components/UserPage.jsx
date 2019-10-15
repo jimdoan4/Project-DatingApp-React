@@ -148,7 +148,7 @@ export default class UserPage extends Component {
             <Col className="text-center">
               <div className="col s12 m6 text-center">
                 <label
-                  style={{ marginRight: "0px", marginTop: "30px" }}
+                  style={{ marginTop: "30px" }}
                   htmlFor="firstName"
                 >
                   First Name{" "}

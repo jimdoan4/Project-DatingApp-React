@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { render } from "react-dom";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
@@ -13,13 +12,12 @@ export default class NavBar extends Component {
         <Navbar
           className="nav-bg-color"
           collapseOnSelect
-          expand="lg"
           variant="dark"
         >
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand className="nav-title" href="/">
             SUAVE
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             id="responsive-navbar-nav"
             style={{ color: "#720F1D" }}

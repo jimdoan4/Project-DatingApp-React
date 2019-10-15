@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
-import { Redirect, Link } from "react-router-dom";
-import { Jumbotron } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { HomeContainer } from "./styled-components/HomeStyles";
 
 export default class Home extends Component {
   render() {
     return (
-      <HomeContainer style={{ height: "100%" }}>
-        <Jumbotron className="main-page-image">
-          <div className="text-center">
-            <Link to="/login/">
-              <Button className="join-button">Join Now</Button>
-            </Link>
+      <HomeContainer>
+        <div className="home-img-wrapper">
+          <img src="https://i2-prod.mirror.co.uk/incoming/article12836783.ece/ALTERNATES/s1200b/1_Couple-walking-with-heart-shaped-balloon.jpg" />
+          <div className="overlay-desc join-headline">
+         
+              <Link to="/login/" className="join-text centered">
+               JOIN NOW
+              </Link>
+      
           </div>
-        </Jumbotron>
+        </div>
       </HomeContainer>
     );
   }
