@@ -6,7 +6,6 @@ import { Card } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
-
 import Footer from "./Footer";
 import { MaleContainer } from "./styled-components/MaleListStyles";
 

@@ -1,13 +1,17 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 
 
 export const NavContainer = styled.div`
-font-family: 'Be Vietnam', sans-serif;
-font-family: 'Ubuntu', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Tinos:400,700&display=swap');
+z-index: 1;
+position: relative;
+width: 100%;
+text-transform: uppercase;
+height: 100%;
 }
 
 .nav-bg-color {
-    background-color: #802139;
+    background: #8C6C79;
      color: black;
 }
 
@@ -19,7 +23,5 @@ font-family: 'Ubuntu', sans-serif;
     color: white;
     text-decoration: none;
 }
-
-
 
 `

@@ -13,6 +13,7 @@ export default class NavBar extends Component {
           className="nav-bg-color"
           collapseOnSelect
           variant="dark"
+          fixed-top 
         >
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand className="nav-title" href="/">

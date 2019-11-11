@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components'
 export const MaleContainer = styled.div`
 font-family: 'Be Vietnam', sans-serif;
 font-family: 'Ubuntu', sans-serif;
-margin: 90px;
+margin: 40px 90px;
 }
 
 .male-profile {
@@ -29,7 +29,7 @@ padding-right: 26px!important;
 }
 
 .not-interested-button {
-background-color: #802139!important;
+background-color: #8C6C79!important;
 border: 1px solid black;
 color: white!important;
 font-size: 14px;
