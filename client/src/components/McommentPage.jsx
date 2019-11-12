@@ -125,16 +125,20 @@ export default class McommentPage extends Component {
     return (
       <Jumbotron
         className="text-center"
-        style={{ position: "block", marginTop: "30px" }}
+        style={{ position: "relative", marginTop: "30px" }}
       >
         <h3
           style={{
-            marginTop: "30px",
-            fontSize: "22px",
-            marginBottom: "45px",
-            padding: "8px",
-            background: "white",
-            border: "1px solid black"
+            fontSize: "18px",
+            marginBottom: "36px",
+            padding: "12px 1px 12px 1px",
+            background: "black",
+            border: "1px solid black",
+            borderRadius: "30px",
+            color: "white",
+            textTransform: "uppercase",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
           }}
         >
           Write A Review
@@ -147,56 +151,56 @@ export default class McommentPage extends Component {
             return (
               <div>
                 {this.state.displayReviewForm ? (
-                  <Col>
+                  <Container className="text-center">
                     <Card
                       className="text-center"
                       style={{
-                        width:"28rem",
-                        backgroundColor: "white",
-                        paddingLeft: "24px",
-                        paddingRight: "24px",
-                        paddingTop: "24px",
-                        paddingBottom: "7px",
-                        marginTop: "26px"
+                        width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold", 
+                      fontSize: "13.5px"
                       }}
                     >
-                      <p>Name of your Date: <br/>{mcomment.withWho}</p>
-                    <p>Rating: <br/>{mcomment.rating}</p>
-                    <p>Would you go on a Second Date: <br/>{mcomment.dateAgain}</p>
-                    <p>Review of this Date: <br/>{mcomment.review}</p>
+                      <p>Name of your Date <br/>{mcomment.withWho}</p>
+                    <p>How would you rate this date <br/>{mcomment.rating}</p>
+                    <p>Would you go on a Second Date<br/>{mcomment.dateAgain}</p>
+                    <p>Review of this Date <br/>{mcomment.review}</p>
                     <p>
-                      Lesson learned from this Date: <br/>{mcomment.lessonLearned}
+                    Lesson learned from this Date <br/>{mcomment.lessonLearned}
                     </p>
 
                       <Container
-                        style={{ marginLeft: "0px", textAlign: "center" }}
+                        style={{ textAlign: "center" }}
                         className="text-center"
                       >
-                        <Row>
-                          <Col>
+                     
                             <Link key={mcomment._id}>
                               <Button
                                 className="edit-button"
                                 key={mcomment._id}
                                 onClick={() => this.toggleEditForm(mcomment)}
                               >
-                                Edit
+                                Edit Review
                               </Button>
                             </Link>
-                          </Col>
-                          <Col>
+                       
                             <Button
                               key={mcomment._id}
                               onClick={e => this.deleteMcomment(e, mcomment)}
                               className="edit-button"
                             >
-                              Delete
+                              Delete Review
                             </Button>
-                          </Col>
-                        </Row>
                       </Container>
                     </Card>
-                  </Col>
+                  </Container>
                 ) : null}
               </div>
             );
@@ -211,16 +215,24 @@ export default class McommentPage extends Component {
                 <Form
                   className="text-center"
                   style={{
-                    display: "inline-block",
-                    backgroundColor: "white",
-                    paddingRight: "23px"
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
                   }}
                   onSubmit={this.createMcomment}
                 >
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label htmlFor="rating">
-                        How would you Rate your Date:{" "}
+                      How would you rate this Date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -228,14 +240,13 @@ export default class McommentPage extends Component {
                         name="rating"
                         onChange={this.handleChange}
                         value={this.state.newMcomment.rating}
-                        placeholder="Enter Rating "
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label htmlFor="withWho">
-                        Who was your Date:{" "}
+                      Who was your Date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -243,7 +254,6 @@ export default class McommentPage extends Component {
                         name="withWho"
                         onChange={this.handleChange}
                         value={this.state.newMcomment.withWho}
-                        placeholder="Enter Your Date's Name"
                       />
                     </Form.Group>
                   </Form.Row>
@@ -251,7 +261,7 @@ export default class McommentPage extends Component {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label htmlFor="dateAgain">
-                        Would you Date this person again:{" "}
+                      Would you Date this person again{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -259,7 +269,6 @@ export default class McommentPage extends Component {
                         name="dateAgain"
                         onChange={this.handleChange}
                         value={this.state.newMcomment.dateAgain}
-                        placeholder="Enter if you would Date Again "
                       />
                     </Form.Group>
                   </Form.Row>
@@ -267,7 +276,7 @@ export default class McommentPage extends Component {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label htmlFor="dateAgain">
-                        What is the Review of your Date:{" "}
+                      What is the Review of this Date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -275,14 +284,13 @@ export default class McommentPage extends Component {
                         name="review"
                         onChange={this.handleChange}
                         value={this.state.newMcomment.review}
-                        placeholder="Enter Review "
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label htmlFor="lessonLearned">
-                        What did you learn from your Date:{" "}
+                      What did you learn from this Date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -290,40 +298,48 @@ export default class McommentPage extends Component {
                         name="lessonLearned"
                         onChange={this.handleChange}
                         value={this.state.newMcomment.lessonLearned}
-                        placeholder="Enter Lesson Learned "
                       />
                     </Form.Group>
                   </Form.Row>
-                  <div style={{ marginLeft: "121px" }} className="text-center">
-                    <button
+                    <Button
                       variant="primary"
                       type="submit"
                       className="edit-button text-center"
                     >
-                      Submit
-                    </button>
-                  </div>
+                      Submit Review
+                    </Button>
                 </Form>
               </Container>
             ) : null}
           </Col>
-
+          <Col className="text-center" style={{ marginTop: "30px" }}>
           {this.state.displayEditForm ? (
-            <form
+            <Container className="text-center">
+            <Form
               onSubmit={this.updateMcomment}
-              style={{ marginTop: "50px" }}
-              className="col"
+                  className="text-center"
+                  style={{
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
+                  }}
             >
-              <Col>
-                <div className="col s12 m6 text-center">
-                  <label
-                    style={{ marginRight: "30px", marginTop: "30px" }}
+                             <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label
                     htmlFor="rating"
                   >
-                    Rating
-                  </label>
-                  <input
-                    style={{ height: "50px", width: "320px" }}
+                    How would you rate this Date{" "}
+                  </Form.Label>
+                  <Form.Control
                     className="text-center"
                     id="rating"
                     type="number"
@@ -331,16 +347,16 @@ export default class McommentPage extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMcomment.rating}
                   />
-                </div>
-                <div className="col s12 m6 text-center">
-                  <label
-                    style={{ marginRight: "30px", marginTop: "30px" }}
+                 </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                     htmlFor="withWho"
                   >
-                    Who was your DATE:
-                  </label>
-                  <input
-                    style={{ height: "50px", width: "320px" }}
+                     Who was your Date
+                  </Form.Label>
+                  <Form.Control
                     className="text-center"
                     id="withWho"
                     type="text"
@@ -348,20 +364,16 @@ export default class McommentPage extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMcomment.withWho}
                   />
-                </div>
-                <div className="col s12 m6 text-center">
-                  <label
-                    style={{ marginRight: "30px", marginTop: "40px" }}
+       </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                     htmlFor="dateAgain"
                   >
-                    Would you date this person again:{" "}
-                  </label>
-                  <input
-                    style={{
-                      height: "54px",
-                      width: "390px",
-                      marginRight: "53px"
-                    }}
+                     Would you Date this person again{" "}
+                  </Form.Label>
+                  <Form.Control
                     className="text-center"
                     id="dateAgain"
                     type="text"
@@ -369,20 +381,16 @@ export default class McommentPage extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMcomment.dateAgain}
                   />
-                </div>
-                <div className="col s12 m6 text-center">
-                  <label
-                    style={{ marginRight: "30px", marginTop: "40px" }}
+                  </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                     htmlFor="review"
                   >
-                    Review your Date:{" "}
-                  </label>
-                  <input
-                    style={{
-                      height: "54px",
-                      width: "390px",
-                      marginRight: "53px"
-                    }}
+                    What is the Review of this Date{" "}
+                  </Form.Label>
+                  <Form.Control
                     className="text-center"
                     id="review"
                     type="text"
@@ -390,20 +398,16 @@ export default class McommentPage extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMcomment.review}
                   />
-                </div>
-                <div className="col s12 m6 text-center">
-                  <label
-                    style={{ marginRight: "30px", marginTop: "40px" }}
+                 </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                     htmlFor="lessonLearned"
                   >
-                    What did you learn about your Date?
-                  </label>
-                  <input
-                    style={{
-                      height: "54px",
-                      width: "390px",
-                      marginRight: "53px"
-                    }}
+                   What did you learn from this Date{" "}
+                  </Form.Label>
+                  <Form.Control
                     className="text-center"
                     id="lessonLearned"
                     type="text"
@@ -411,13 +415,15 @@ export default class McommentPage extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMcomment.lessonLearned}
                   />
-                </div>
-              </Col>
-              <div className="text-center" style={{ marginTop: "20px" }}>
-                <Button className="edit-button">Submit</Button>
-              </div>
-            </form>
+                   </Form.Group>
+                  </Form.Row>
+
+                <Button className="edit-button">Submit Review</Button>
+            
+            </Form>
+            </Container>
           ) : null}
+          </Col>
         </div>
       </Jumbotron>
     );

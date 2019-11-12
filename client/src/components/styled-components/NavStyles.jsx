@@ -1,18 +1,17 @@
 import styled from 'styled-components'
 
-
 export const NavContainer = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Tinos:400,700&display=swap');
 z-index: 1;
 position: relative;
 width: 100%;
 text-transform: uppercase;
 height: 100%;
+color: black!important;
 }
 
 .nav-bg-color {
-    background: #8C6C79;
-     color: black;
+    background: #f7f7f7;
+    color: black!important;
 }
 
 .nav-title {
@@ -20,8 +19,12 @@ height: 100%;
 }
 
 .profile-link {
-    color: white;
+    color: black;
     text-decoration: none;
+}
+
+#title {
+    color: black!important;
 }
 
 `

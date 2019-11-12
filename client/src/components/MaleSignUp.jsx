@@ -106,7 +106,7 @@ export default class MaleSignUp extends Component {
         </Button>
         {this.state.displayMaleForm ? (
           <Container>
-            >
+            
               <Form
                 className="text-center card man-form"
                 style={{ display: "inline-block", paddingRight: "23px" }}

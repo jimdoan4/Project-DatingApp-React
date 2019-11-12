@@ -10,21 +10,21 @@ export default class NavBar extends Component {
     return (
       <NavContainer>
         <Navbar
-          className="nav-bg-color"
+          className="nav-bg-color text-dark"
           collapseOnSelect
-          variant="dark"
+          variant="light"
           fixed-top 
         >
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Brand className="nav-title" href="/">
+          <Navbar.Brand className="nav-title text-dark" href="/">
             SUAVE
           </Navbar.Brand>
           <Navbar.Collapse
             id="responsive-navbar-nav"
             style={{ color: "#720F1D" }}
           >
-            <Nav className="mr-auto">
-              <NavDropdown title="Find Your Match" id="collasible-nav-dropdown">
+            <Nav className="mr-auto text-dark">
+              <NavDropdown className="text-dark" title="Find Your Match" id="collasible-nav-dropdown">
                 <NavDropdown.Item className="text-center">
                   <Link to="/users/">Woman</Link>
                 </NavDropdown.Item>

@@ -87,18 +87,18 @@ export default class UserPage extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <div>
+ <div>
         <div style={{ marginTop: "30px", marginBottom: "40px" }}>
           <Card
             className="text-center"
             style={{
-              width: "23rem",
-              backgroundColor: "#efe8e8",
-              height: "600px"
+              width: "25rem",
+              backgroundColor: "white",
+              borderRadius: "20px"
             }}
           >
             <Card.Img
-              style={{ height: "300px" }}
+              style={{ height: "50vh", borderRadius: "5px" }}
               className="zoom"
               variant="top"
               src={this.state.user.photoUrl}
@@ -127,6 +127,7 @@ export default class UserPage extends Component {
                 marginBottom: "30px",
                 marginTop: "8px"
               }}
+              className="text-center"
             >
               <Button className="edit-button" onClick={this.toggleUserForm}>
                 Edit Account
@@ -138,24 +139,34 @@ export default class UserPage extends Component {
             </Container>
           </Card>
         </div>
-
+        <Col className="text-center" style={{ marginTop: "30px" }}>
         {this.state.displayUserForm ? (
+          <Container className="text-center">
           <Form
-            style={{ marginTop: "10px" }}
+             style={{
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
+                  }}
             onSubmit={this.updateUser}
-            className="col text-center"
+            className="text-center"
           >
-            <Col className="text-center">
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginTop: "30px" }}
+            <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label
                   htmlFor="firstName"
                 >
                   First Name{" "}
-                </label>
-                <p></p>
-                <input
-                  style={{ height: "50px", width: "320px" }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="firstName"
                   type="text"
@@ -163,20 +174,16 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.firstName}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+       </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="lastName"
                 >
                   Last Name{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="lastName"
                   type="text"
@@ -184,20 +191,16 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.lastName}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+         </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="age"
                 >
                   Age{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="age"
                   type="number"
@@ -205,20 +208,16 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.age}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+     </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="bio"
                 >
                   Biography
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="bio"
                   type="text"
@@ -226,20 +225,16 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.bio}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+    </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="location"
                 >
                   Location{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="location"
                   type="text"
@@ -247,20 +242,16 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.location}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+        </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="photoUrl"
                 >
                   Photo{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="photoUrl"
                   type="text"
@@ -268,14 +259,15 @@ export default class UserPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.user.photoUrl}
                 />
-              </div>
-            </Col>
-            <div className="text-center" style={{ marginTop: "20px" }}>
-              <Button className="text-center edit-button">Submit</Button>
-            </div>
-          </Form>
+           </Form.Group>
+                  </Form.Row>
+              <Button className="text-center edit-button">Submit UPDATE</Button>
+              </Form>
+            </Container>
         ) : null}
-      </div>
+        </Col>
+        </div>
+   
     );
   }
 }

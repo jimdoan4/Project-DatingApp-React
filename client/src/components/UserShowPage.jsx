@@ -16,12 +16,12 @@ export default class UserShowPage extends Component {
     return (
       <div className="text-center">
         <Container>
-          <Row className="text-center">
+          <Row>
             <Col>
               <EventPage userId={this.state.userId} />
             </Col>
             <Col>
-              <UserPage className="text-center" userId={this.state.userId} />
+              <UserPage userId={this.state.userId} />
             </Col>
             <Col>
               <CommentPage userId={this.state.userId} />

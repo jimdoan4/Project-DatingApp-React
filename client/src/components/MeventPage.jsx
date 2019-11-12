@@ -123,16 +123,20 @@ export default class MeventPage extends Component {
     return (
       <Jumbotron
         className="text-center"
-        style={{ position: "block", marginTop: "30px" }}
+        style={{ position: "relative", marginTop: "30px" }}
       >
         <h3
           style={{
-            marginTop: "30px",
-            marginBottom: "45px",
-            padding: "8px",
-            fontSize: "22px",
-            background: "white",
-            border: "1px solid black"
+            fontSize: "18px",
+            marginBottom: "36px",
+            padding: "12px 1px 12px 1px",
+            background: "black",
+            border: "1px solid black",
+            borderRadius: "30px",
+            color: "white",
+            textTransform: "uppercase",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
           }}
         >
           Schedule a Date
@@ -140,30 +144,35 @@ export default class MeventPage extends Component {
         <Button className="edit-button" onClick={this.toggleDateForm}>
           Scheduled Events
         </Button>
+        <div>
         {this.state.mevents.map(mevent => {
           return (
             <div>
               {this.state.displayDateForm ? (
-                <Col>
+                <Container className="text-center">
                   <Card
                     className="text-center"
                     style={{
-                      width:"28rem",
+                      width: "33rem",
                       backgroundColor: "white",
                       paddingLeft: "24px",
                       paddingRight: "24px",
                       paddingTop: "24px",
                       paddingBottom: "24px",
-                      marginTop: "26px"
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold", 
+                      fontSize: "13.5px"
                     }}
                   >
-           <p>Event Name: <br/>{mevent.eventName}</p>
-                    <p>Scheduled time: <br/>{mevent.time}</p>
-                    <p>Costs: <br/>{mevent.price}</p>
-                    <p>Name of your Date: <br/>{mevent.withWho}</p>
+           <p>Event Name <br/>{mevent.eventName}</p>
+                    <p>Scheduled time<br/>{mevent.time}</p>
+                    <p>Event Price <br/>{mevent.price}</p>
+                    <p>who is your lucky Date <br/>{mevent.withWho}</p>
 
                     <Container
-                      style={{ marginLeft: "0px", textAlign: "center" }}
+                      style={{ textAlign: "center" }}
                       className="text-center"
                     >
                       <Link key={mevent._id}>
@@ -172,7 +181,7 @@ export default class MeventPage extends Component {
                           key={mevent._id}
                           onClick={() => this.toggleEditForm(mevent)}
                         >
-                          Edit
+                          Edit Event
                         </Button>
                       </Link>
                       <Button
@@ -180,18 +189,17 @@ export default class MeventPage extends Component {
                         onClick={e => this.deleteMevent(e, mevent)}
                         className="edit-button"
                       >
-                        Delete
+                        Delete Event
                       </Button>
                     </Container>
                   </Card>
-                </Col>
+                  </Container>
               ) : null}
             </div>
           );
         })}
 
-        <Col>
-          <div className="text-center" style={{ marginTop: "30px" }}>
+        <Col className="text-center" style={{ marginTop: "30px" }}>
             <Button className="edit-button" onClick={this.toggleMeventForm}>
               Add an Event
             </Button>
@@ -200,17 +208,24 @@ export default class MeventPage extends Component {
                 <Form
                   className="text-center"
                   style={{
-                    display: "inline-block",
-                    backgroundColor: "white",
-                    paddingRight: "25px",
-                    marginTop: "14px"
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
                   }}
                   onSubmit={this.createMevent}
                 >
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label htmlFor="eventName">
-                        What is the Event Name:{" "}
+                    Event Name{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -218,14 +233,13 @@ export default class MeventPage extends Component {
                         name="eventName"
                         onChange={this.handleChange}
                         value={this.state.newMevent.eventName}
-                        placeholder="Enter Event"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label htmlFor="time">
-                        What Time is the Event:{" "}
+                       Event time
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -233,14 +247,13 @@ export default class MeventPage extends Component {
                         name="time"
                         onChange={this.handleChange}
                         value={this.state.newMevent.time}
-                        placeholder="What Time is your Event"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label htmlFor="price">
-                        What is the Price of the Event:{" "}
+                       Event Price{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -248,14 +261,13 @@ export default class MeventPage extends Component {
                         name="price"
                         onChange={this.handleChange}
                         value={this.state.newMevent.price}
-                        placeholder="Enter the price"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label htmlFor="withWho">
-                        Who was your Date:{" "}
+                      Who is your lucky date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -263,41 +275,51 @@ export default class MeventPage extends Component {
                         name="withWho"
                         onChange={this.handleChange}
                         value={this.state.newMevent.withWho}
-                        placeholder="Enter your date's name"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row />
-                  <div style={{ marginLeft: "100px" }} className="text-center">
+
                     <button
                       className="text-center edit-button"
                       variant="primary"
                       type="submit"
                     >
-                      Submit
+                      Submit Event
                     </button>
-                  </div>
+              
                 </Form>
               </Container>
             ) : null}
-          </div>
         </Col>
+        <Col className="text-center" style={{ marginTop: "30px" }}>
         {this.state.displayEditForm ? (
-          <form
+          <Container className="text-center">
+            <Form
             onSubmit={this.updateMevent}
-            style={{ marginTop: "50px", marginRight: "50px" }}
-            className="col"
+            style={{
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
+                  }}
+            className="text-center"
           >
-            <div className="col">
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "30px" }}
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="firstName"
                 >
                   What is the Event Name:
-                </label>
-                <input
-                  style={{ height: "50px", width: "320px" }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="eventName"
                   type="text"
@@ -305,20 +327,16 @@ export default class MeventPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.newMevent.eventName}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+              </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="lastName"
                 >
                   What Time is the Event:{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="time"
                   type="text"
@@ -326,20 +344,16 @@ export default class MeventPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.newMevent.time}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+                </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="age"
                 >
                   What is the Price of the Event:{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="price"
                   type="number"
@@ -347,20 +361,16 @@ export default class MeventPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.newMevent.price}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+               </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Label
                   htmlFor="bio"
                 >
                   Who was your Date:
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                  <Form.Control
                   className="text-center"
                   id="withWho"
                   type="text"
@@ -368,13 +378,14 @@ export default class MeventPage extends Component {
                   onChange={this.handleChange}
                   value={this.state.newMevent.withWho}
                 />
-              </div>
-            </div>
-            <div className="text-center" style={{ marginTop: "20px" }}>
-              <Button className="text-center edit-button">Submit</Button>
-            </div>
-          </form>
+ </Form.Group>
+                  </Form.Row>
+              <Button className="text-center edit-button">Submit Event</Button>
+              </Form>
+            </Container>
         ) : null}
+        </Col>
+        </div>
       </Jumbotron>
     );
   }

@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Tinos:400,700&display=swap');
-background-color: #8C6C79!important;
-width: 100%;
-height: 100%; 
-overflow: hidden; 
-font-family: 'Be Vietnam', sans-serif;
-font-family: 'Ubuntu', sans-serif;
-z-index: -1;
+
+.home-body {
+  font-family: 'Be Vietnam', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #8C6C79!important;
 }
 
 * {
-  /* margin: 0; */
+  margin: 0; 
   padding: 0;
   box-sizing: 0;
 }
@@ -26,8 +26,27 @@ ul {
   left: 0%;
   width: 0%;
   height: 100%;
-  background-color: #8C6C79!important;
+  background: #8C6C79!important;
+  background-size: cover;
   z-index: -1;
+}
+
+/* SOCIAL MEDIA
+=========================== */
+.media {
+  position: absolute;
+  top: 350px;
+  right: -90px;
+  transform: rotate(-90deg);
+}
+
+.media ul li {
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
 /* IMAGES
@@ -35,15 +54,16 @@ ul {
 .img-wrapper01 {
   position: absolute;
   top: 120px;
-  left: 200px;
+  left: 160px;
+  opacity: .85;
 }
 
 .img-wrapper01 .img01 {
   background: url('https://image.businessinsider.com/5d5ae4cfcd9784562a7d9693?width=1100&format=jpeg&auto=webp') no-repeat;
-  background-position: 35%;
-  background-size: cover;
-  height: 500px;
-  width: 380px;
+  background-position: 15%;
+  opacity: .85;
+  height: 70vh;
+  width: 370px;
   opacity: 0;
   animation: image-appear 0.0001s linear forwards;
   animation-delay: 2.2s;
@@ -52,17 +72,18 @@ ul {
 .img-wrapper02 {
   position: absolute;
   top: 0;
-  left: 650px;
+  left: 682px;
   color: white;
+  opacity: .9;
 }
 
 .img-wrapper02 .img02 {
-  background-position: 130%;
-  background-size: cover;
+  background: url('https://image.businessinsider.com/5d5ae4cfcd9784562a7d9693?width=1100&format=jpeg&auto=webp') no-repeat;
+  background-position: 95%; 
   height: 100vh;
-  background-color: #8C6C79;
-  width: 800px;
-  opacity: 0;
+  background-color: white;
+  width: 556px;
+  opacity: .9;
   animation: image-appear 0.0001s linear forwards;
   animation-delay: 2.4s;
   color: white!important;
@@ -85,13 +106,13 @@ ul {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgb(163, 124, 140);
+  background-color: rgb(163, 124, 140)!important;
   animation: block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   animation-delay: 1.5s;
 }
 
 .img-wrapper02 .block {
-  animation-delay: 1.8s;
+  animation-delay: 2.5s;
 }
 
 @keyframes block-appear {
@@ -131,7 +152,7 @@ ul {
   overflow: hidden;
   height: 120px;
   width: 100%;
-  color: black;
+  color: white;
 }
 
 .text h1 .hidetext {
@@ -150,21 +171,24 @@ ul {
   height: 40px;
   width: 100%;
 }
+
 .text p .hidetext {
   position: absolute;
 }
 
 .join-text {
-    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
     text-align: center;
-    background-color: #8C6C79;
+    background-color: black;
     color: white!important;
-    border: 1px solid #8C6C79;
+    border: 1px solid black;
     padding-left: 27px;
     padding-right: 27px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    border-radius: 10px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-radius: 30px;
     font-weight: bold;
     letter-spacing: 3px;
     text-decoration: none;
@@ -211,7 +235,6 @@ ul {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 5px;
-
   position: absolute;
   bottom: 110px;
   left: -60px;
@@ -272,11 +295,12 @@ ul {
 }
 
 .bottomnav-img {
-  background: url('https://imgix.bustle.com/uploads/shutterstock/2019/8/21/2c4a078b-3f9f-43a1-8c4c-6139ee46b149-shutterstock-1432454765.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70') no-repeat;
+  background: url('https://www.emirates247.com/polopoly_fs/1.520896.1452278089!/image/image.png') no-repeat;
   background-position: 50%;
   background-size: cover;
   height: 200px;
   width: 300px;
+  box-shadow: 0px 1px 1px .5px #b3b3b3;
 }
 
     

@@ -1,7 +1,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f7f7;
+  background-color: #f7f7f7; 
   margin: 0;
   padding: 0;
   height: 100%!important;
@@ -20,54 +20,82 @@ body {
 }
 
 .edit-button {
-  background-color: #802139!important;
-  border-color: #802139;
-  color: white;
+  background-color: black!important;
+  border-color: black;
+  color: white!important;
   margin-right: 10px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  font-weight: bold;
+  padding: 12px 15px 12px 15px;
 }
 
 .edit-button:hover {
-  background-color: #802139!important;
+  background-color: white!important;
+  border-color: white;
+  color: black!important;
 }
 
 .delete-button {
-  background-color: #802139!important;
-  border-color: #802139;
-  color: white;
+  background-color: black!important;
+  border-color: black;
+  color: white!important;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  font-weight: bold;
+  padding: 12px 15px 12px 15px;
 }
 
 .delete-button:hover {
-  background-color: #802139!important;
+  background-color: white!important;
+  border-color: white;
+  color: black!important;
 }
 
 .woman-signup-button {
-    background-color: #802139!important;
-    border-color: #802139;
+    background-color: black!important;
+    border-color: black;
     color: white;
     padding-left: 70px;
     padding-right: 70px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 .woman-signup-button:hover {
-  background-color: #802139!important;
-  border-color: #802139;
+  background-color: white!important;
+  border-color: white;
+  color: black!important;
 }
 
 .man-signup-button {
-  background-color: #802139!important;
-  border-color: #802139;
+  background-color: black!important;
+  border-color: black;
   color: white;
   padding-left: 70px;
   padding-right: 70px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
 .man-signup-button:hover {
-background-color: #802139!important;
-border-color: #802139;
+background-color: white!important;
+border-color: white;
+color: black!important;
 }
 
 .zoom {
@@ -76,7 +104,7 @@ border-color: #802139;
 }
 
 .zoom:hover {
-  transform: scale(1.2);
+  transform: scale(1.08);
 }
 
 .rockstar:hover {

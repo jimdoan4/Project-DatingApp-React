@@ -9,14 +9,25 @@ export const MaleLogContainer=styled.div`
 }
 
 .register-button {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 15px 30px 15px 30px;
     margin-top: 9px;
-    background-color: #802139;
-    border-color: #802139;
-    color: white;
-
+    background-color: black!important;
+border-color: black;
+color: white!important;
+border-radius: 30px;
+text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
 }
+
+.register-button:hover {
+    background-color: white!important;
+border-color: white;
+color: black!important;
+}
+
+
 
 /* Media for Iphone X */
 @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {

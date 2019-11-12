@@ -6,6 +6,8 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Jumbotron} from "react-bootstrap";
 
 export default class SingleEvent extends Component {
         // We'll set up the  array as an empty array to begin with
@@ -76,22 +78,36 @@ export default class SingleEvent extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <div className="text-center">
+      <div className="text-center" style={{ position: "relative", marginTop: "30px" }}>
         <h3 style={{ marginTop: "30px" }} className="text-center">
           {this.state.event.eventName}
         </h3>
         {this.state.displayEditForm ? (
-          <Form onSubmit={this.updateEvent} className="col s12">
-            <Col>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "30px" }}
+          <Container className="text-center">
+                <Form
+                  className="text-center"
+                  style={{
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
+                  }}
+                  onSubmit={this.updateEvent}>
+           <Form.Row>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                      <Form.Label
                   htmlFor="eventName"
                 >
                   Event Name
-                </label>
-                <input
-                  style={{ height: "50px", width: "320px" }}
+                  </Form.Label>
+                      <Form.Control
                   className="text-center"
                   id="eventName"
                   type="text"
@@ -99,20 +115,16 @@ export default class SingleEvent extends Component {
                   onChange={this.handleChange}
                   value={this.state.event.eventName}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+                     </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                      <Form.Label 
                   htmlFor="time"
                 >
                   Time
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                      <Form.Control
                   className="text-center"
                   id="time"
                   type="text"
@@ -120,20 +132,16 @@ export default class SingleEvent extends Component {
                   onChange={this.handleChange}
                   value={this.state.event.time}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+              </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                      <Form.Label 
                   htmlFor="price"
                 >
                   Price
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                      <Form.Control
                   className="text-center"
                   id="price"
                   type="text"
@@ -141,20 +149,16 @@ export default class SingleEvent extends Component {
                   onChange={this.handleChange}
                   value={this.state.event.price}
                 />
-              </div>
-              <div className="col s12 m6 text-center">
-                <label
-                  style={{ marginRight: "30px", marginTop: "40px" }}
+                         </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as={Col} controlId="formGridPassword">
+                      <Form.Label 
                   htmlFor="withWho"
                 >
                   Your Date:{" "}
-                </label>
-                <input
-                  style={{
-                    height: "54px",
-                    width: "390px",
-                    marginRight: "53px"
-                  }}
+                  </Form.Label>
+                      <Form.Control
                   className="text-center"
                   id="withWho"
                   type="text"
@@ -162,12 +166,12 @@ export default class SingleEvent extends Component {
                   onChange={this.handleChange}
                   value={this.state.event.withWho}
                 />
-              </div>
-            </Col>
-            <div className="text-center" style={{ marginTop: "20px" }}>
-              <Button className="text-center edit-button">Submit</Button>
-            </div>
-          </Form>
+          </Form.Group>
+                  </Form.Row>
+              <Button className="text-center edit-button">Submit update</Button>
+               
+              </Form>
+              </Container>
         ) : (
           <div>
             <div className="text-center">

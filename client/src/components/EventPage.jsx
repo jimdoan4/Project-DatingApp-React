@@ -8,7 +8,6 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
-
 export default class EventPage extends Component {
   // We'll set up the  array as an empty array to begin with
   state = {
@@ -123,16 +122,20 @@ export default class EventPage extends Component {
     return (
       <Jumbotron
         className="text-center"
-        style={{ position: "block", marginTop: "30px" }}
+        style={{ position: "relative", marginTop: "30px" }}
       >
         <h3
           style={{
-            marginTop: "30px",
-            fontSize: "22px",
-            marginBottom: "45px",
-            padding: "8px",
-            background: "white",
-            border: "1px solid black"
+            fontSize: "18px",
+            marginBottom: "36px",
+            padding: "12px 1px 12px 1px",
+            background: "black",
+            border: "1px solid black",
+            borderRadius: "30px",
+            color: "white",
+            textTransform: "uppercase",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
           }}
         >
           Schedule a Date
@@ -145,6 +148,7 @@ export default class EventPage extends Component {
             return (
               <div>
                 {this.state.displayEventForm ? (
+                  <Container className="text-center">
                   <Card
                     className="text-center"
                     style={{
@@ -154,38 +158,55 @@ export default class EventPage extends Component {
                       paddingRight: "24px",
                       paddingTop: "24px",
                       paddingBottom: "24px",
-                      marginTop: "26px"
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold", 
+                      fontSize: "13.5px"
                     }}
                   >
-                    <p>Event Name: <br/>{event.eventName}</p>
-                    <p>Scheduled time: <br/>{event.time}</p>
-                    <p>Costs: <br/>{event.price}</p>
-                    <p>Name of your Date: <br/>{event.withWho}</p>
+                    <p>
+                      Event Name <br />
+                      {event.eventName}
+                    </p>
+                    <p>
+                      Scheduled time <br />
+                      {event.time}
+                    </p>
+                    <p>
+                    Event Price <br />
+                      {event.price}
+                    </p>
+                    <p>
+                      who is your lucky Date <br />
+                      {event.withWho}
+                    </p>
 
                     <Container
-                      style={{ marginLeft: "0px", textAlign: "center" }}
+                      style={{ textAlign: "center" }}
                       className="text-center"
                     >
                       <Link
                         to={`/users/${this.state.userId}/events/${event._id}`}
                         key={event._id}
                       >
-                        <Button className="edit-button">Edit</Button>
+                        <Button className="edit-button">Edit Event</Button>
                       </Link>
                       <Button
                         className="edit-button"
                         key={event._id}
                         onClick={e => this.deleteEvent(e, event)}
                       >
-                        Delete
+                        Delete Event
                       </Button>
                     </Container>
                   </Card>
+                  </Container>
                 ) : null}
               </div>
             );
           })}
-
+      
           <Col className="text-center" style={{ marginTop: "30px" }}>
             <Button className="edit-button" onClick={this.toggleEditForm}>
               Add an Event
@@ -195,10 +216,17 @@ export default class EventPage extends Component {
                 <Form
                   className="text-center"
                   style={{
-                    display: "inline-block",
-                    backgroundColor: "white",
-                    paddingRight: "25px",
-                    marginTop: "14px"
+                    position: "relative",
+                    width: "33rem",
+                      backgroundColor: "white",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      marginTop: "26px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1.3px",
+                      fontWeight: "bold"
                   }}
                   onSubmit={this.createEvent}
                 >
@@ -211,40 +239,37 @@ export default class EventPage extends Component {
                         name="eventName"
                         onChange={this.handleChange}
                         value={this.state.newEvent.eventName}
-                        placeholder="Enter Event"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
-                      <Form.Label htmlFor="time">Time: </Form.Label>
+                      <Form.Label htmlFor="time">Event Time</Form.Label>
                       <Form.Control
                         className="text-center"
                         type="number"
                         name="time"
                         onChange={this.handleChange}
                         value={this.state.newEvent.time}
-                        placeholder="What time is your date scheduled?"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
-                      <Form.Label htmlFor="price">Price? </Form.Label>
+                      <Form.Label htmlFor="price">Event Price</Form.Label>
                       <Form.Control
                         className="text-center"
                         type="number"
                         name="price"
                         onChange={this.handleChange}
                         value={this.state.newEvent.price}
-                        placeholder="Enter the price"
                       />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label htmlFor="withWho">
-                        Who is your date?{" "}
+                        Who is your lucky date{" "}
                       </Form.Label>
                       <Form.Control
                         className="text-center"
@@ -252,23 +277,16 @@ export default class EventPage extends Component {
                         name="withWho"
                         onChange={this.handleChange}
                         value={this.state.newEvent.withWho}
-                        placeholder="Enter your date's name"
                       />
                     </Form.Group>
                   </Form.Row>
-                  <Form.Row />
-                  <Container
-                    style={{ marginLeft: "15px", textAlign: "center" }}
-                    className="text-center"
-                  >
                     <Button
                       className="edit-button"
                       variant="primary"
                       type="submit"
                     >
-                      Submit
+                      Submit Event
                     </Button>
-                  </Container>
                 </Form>
               </Container>
             ) : null}
