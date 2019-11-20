@@ -14,10 +14,10 @@ export default class UserShowPage extends Component {
   render() {
     return (
       <div className="text-center bg-info">
-        <Container>
-            <p className="bg-dark">
+        <Container className="pt-4 pb-4">
+            <p className="bg-dark" style={{ fontWeight: "bold", borderRadius: '6px' }}>
               <a
-                className="btn btn-light m-2"
+                className="btn btn-light ml-5 mr-5 mt-2 mb-2"
                 data-toggle="collapse"
                 href="#multiCollapseExample1"
                 role="button"
@@ -27,7 +27,7 @@ export default class UserShowPage extends Component {
                 USER INFO
               </a>
               <button
-                className="btn btn-light  m-2"
+                className="btn btn-light ml-5 mr-5 mt-2 mb-2"
                 type="button"
                 data-toggle="collapse"
                 data-target="#multiCollapseExample2"
@@ -37,7 +37,7 @@ export default class UserShowPage extends Component {
                 EVENTS
               </button>
               <button
-                className="btn btn-light  m-2"
+                className="btn btn-light ml-5 mr-5 mt-2 mb-2"
                 type="button"
                 data-toggle="collapse"
                 data-target="#multiCollapseExample3"

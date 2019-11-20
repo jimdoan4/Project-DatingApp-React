@@ -3,7 +3,6 @@ import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 export default class SingleComment extends Component {

@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 
@@ -124,16 +122,12 @@ export default class MeventPage extends Component {
       <div
         className="text-center bg-light"
       >
-        <h3
+        <h3 className="text-light bg-dark m-3 text-uppercase"
           style={{
             fontSize: "18px",
-            marginBottom: "36px",
             padding: "12px 1px 12px 1px",
-            background: "white",
             border: "1px solid white",
             borderRadius: "10px",
-            color: "black",
-            textTransform: "uppercase",
             letterSpacing: "1.3px",
             fontWeight: "bold"
           }}
@@ -143,29 +137,25 @@ export default class MeventPage extends Component {
         <Button className="edit-button" onClick={this.toggleDateForm}>
           Scheduled Events
         </Button>
-        <div>
+        <div className="row">
         {this.state.mevents.map(mevent => {
           return (
-            <div>
+            <div className="col-md-4">
               {this.state.displayDateForm ? (
-                <Container className="text-center">
                   <Card
-                    className="text-center"
+                    className="text-center pb-3 pt-3 mt-2 text-uppercase"
                     style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
                     }}
                   >
-           <p>Event Name <br/>{mevent.eventName}</p>
+                    <p>Event Name <br/>{mevent.eventName}</p>
                     <p>Scheduled time<br/>{mevent.time}</p>
                     <p>Event Price <br/>{mevent.price}</p>
                     <p>who is your lucky Date <br/>{mevent.withWho}</p>
 
                     <Container
-                      style={{ textAlign: "center" }}
                       className="text-center"
                     >
                       <Link key={mevent._id}>
@@ -174,7 +164,7 @@ export default class MeventPage extends Component {
                           key={mevent._id}
                           onClick={() => this.toggleEditForm(mevent)}
                         >
-                          Edit Event
+                          Edit 
                         </Button>
                       </Link>
                       <Button
@@ -182,27 +172,32 @@ export default class MeventPage extends Component {
                         onClick={e => this.deleteMevent(e, mevent)}
                         className="edit-button"
                       >
-                        Delete Event
+                        Delete 
                       </Button>
                     </Container>
                   </Card>
-                  </Container>
               ) : null}
             </div>
           );
         })}
-
-        <Col className="text-center" style={{ marginTop: "30px" }}>
-            <Button className="edit-button" onClick={this.toggleMeventForm}>
+        </div>
+        <div className="row m-3">
+          <Col className="text-center">
+            <h3 className="bg-dark text-light text-uppercase" 
+            style={{
+            fontSize: "18px",
+            padding: "12px 1px 12px 1px",
+            borderRadius: "10px",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
+          }} onClick={this.toggleMeventForm}>
               Add an Event
-            </Button>
+            </h3>
             {this.state.displayMeventForm ? (
               <Container className="text-center">
                 <Form
-                  className="text-center bg-light"
+                  className="text-center bg-light text-uppercase"
                   style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
@@ -272,26 +267,26 @@ export default class MeventPage extends Component {
                       variant="primary"
                       type="submit"
                     >
-                      Submit Event
+                      Submit 
                     </Button>
               
                 </Form>
               </Container>
             ) : null}
         </Col>
-        <Col className="text-center" style={{ marginTop: "30px" }}>
+        </div>
+        <div className="row">
+        <Col className="text-center">
         {this.state.displayEditForm ? (
           <Container className="text-center">
             <Form
             onSubmit={this.updateMevent}
             style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
                   }}
-            className="text-center bg-light"
+            className="text-center bg-light text-uppercase"
           >
                   <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
@@ -361,13 +356,15 @@ export default class MeventPage extends Component {
                 />
  </Form.Group>
                   </Form.Row>
-              <Button className="text-center edit-button">Submit Event</Button>
+              <Button className="text-center edit-button">Submit </Button>
               </Form>
             </Container>
         ) : null}
         </Col>
         </div>
-      </div>
+        </div>
+ 
+      
     );
   }
 }

@@ -5,8 +5,6 @@ import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 export default class McommentPage extends Component {
@@ -126,16 +124,12 @@ export default class McommentPage extends Component {
       <div
         className="text-center bg-light"
       >
-        <h3
+     <h3 className="text-light bg-dark m-3 text-uppercase"
           style={{
             fontSize: "18px",
-            marginBottom: "36px",
             padding: "12px 1px 12px 1px",
-            background: "white",
             border: "1px solid white",
             borderRadius: "10px",
-            color: "black",
-            textTransform: "uppercase",
             letterSpacing: "1.3px",
             fontWeight: "bold"
           }}
@@ -145,21 +139,18 @@ export default class McommentPage extends Component {
         <Button className="edit-button" onClick={this.toggleReviewForm}>
           All Reviews
         </Button>
-        <div>
+        <div className="row">
           {this.state.mcomments.map(mcomment => {
             return (
-              <div>
+              <div className="col-md-4">
                 {this.state.displayReviewForm ? (
-                  <Container className="text-center">
                     <Card
-                      className="text-center"
-                      style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
+                   className="text-center pb-3 pt-3 mt-2 text-uppercase"
+                    style={{
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
-                      }}
+                    }}
                     >
                       <p>Name of your Date <br/>{mcomment.withWho}</p>
                     <p>How would you rate this date <br/>{mcomment.rating}</p>
@@ -170,17 +161,15 @@ export default class McommentPage extends Component {
                     </p>
 
                       <Container
-                        style={{ textAlign: "center" }}
                         className="text-center"
                       >
-                     
                             <Link key={mcomment._id}>
                               <Button
                                 className="edit-button"
                                 key={mcomment._id}
                                 onClick={() => this.toggleEditForm(mcomment)}
                               >
-                                Edit Review
+                                Edit 
                               </Button>
                             </Link>
                        
@@ -189,27 +178,32 @@ export default class McommentPage extends Component {
                               onClick={e => this.deleteMcomment(e, mcomment)}
                               className="edit-button"
                             >
-                              Delete Review
+                              Delete 
                             </Button>
                       </Container>
                     </Card>
-                  </Container>
                 ) : null}
               </div>
             );
           })}
-
-          <Col className="text-center" style={{ marginTop: "30px" }}>
-            <Button className="edit-button" onClick={this.toggleMcommentForm}>
+          </div>
+          <div className="row m-3">
+          <Col className="text-center">
+            <h3 className="bg-dark text-light text-uppercase" 
+            style={{
+            fontSize: "18px",
+            padding: "12px 1px 12px 1px",
+            borderRadius: "10px",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
+          }} onClick={this.toggleMcommentForm}>
               Add a Review
-            </Button>
+            </h3>
             {this.state.displayMcommentForm ? (
               <Container className="text-center">
                 <Form
-                  className="text-center bg-light"
+                  className="text-center bg-light text-uppercase"
                   style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
@@ -293,26 +287,26 @@ export default class McommentPage extends Component {
                       type="submit"
                       className="edit-button text-center"
                     >
-                      Submit Review
+                      Submit 
                     </Button>
                 </Form>
               </Container>
             ) : null}
           </Col>
-          <Col className="text-center" style={{ marginTop: "30px" }}>
+          </div>
+        <div className="row">
+        <Col className="text-center">
           {this.state.displayEditForm ? (
             <Container className="text-center">
             <Form
               onSubmit={this.updateMcomment}
-                  className="text-center bg-light"
-                  style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
+              style={{
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
                   }}
-            >
+            className="text-center bg-light text-uppercase"
+          >
                              <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                   <Form.Label
@@ -399,7 +393,7 @@ export default class McommentPage extends Component {
                    </Form.Group>
                   </Form.Row>
 
-                <Button className="edit-button">Submit Review</Button>
+                <Button className="edit-button">Submit </Button>
             
             </Form>
             </Container>

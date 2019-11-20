@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 export const MaleLogContainer = styled.div ` 
 .man-form {
-    width: 36vw;
-    height: 74vh;
-    padding-top: 35px;
+    max-width: 40vw;
+    max-height: 74vh;
     margin-top: 20px;
     padding: 25px;
     border-radius: 15px;

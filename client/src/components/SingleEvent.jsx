@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import { Jumbotron} from "react-bootstrap";
 
 export default class SingleEvent extends Component {
         // We'll set up the  array as an empty array to begin with

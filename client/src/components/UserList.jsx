@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Footer from "./Footer";
 import { UserContainer } from "./styled-components/UserListStyles";
 
 export default class UserList extends Component {

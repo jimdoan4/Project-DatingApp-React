@@ -2,6 +2,10 @@ import styled, { keyframes, css } from 'styled-components'
 
 
 export const FooterContainer = styled.div`
+
+.footer {
+    max-height: 14vh!important;
+}
 .bottom-col{
     padding: 25px 15px;
     text-align: center;
@@ -66,6 +70,7 @@ export const FooterContainer = styled.div`
     padding: 15px 0;
     font-size: 12px;
     color: grey;
+    max-height: 4vh!important;
 }
 
 

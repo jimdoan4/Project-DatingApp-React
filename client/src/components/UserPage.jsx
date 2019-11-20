@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import { Card } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { UserPageContainer } from "./styled-components/UserPageStyles";
-import CommentPage from "./CommentPage";
-import EventPage from "./EventPage";
 
 export default class UserPage extends Component {
   // We'll set up the  array as an empty array to begin with
@@ -95,26 +92,26 @@ export default class UserPage extends Component {
     }
     return (
       <UserPageContainer>
-        <div className="container">
-          <div className="cards">
+        <div className="container-fluid">
+          <div className="card"> 
             <div className="row no-gutters">
               <div className="col-lg-4">
                 <img
                   src={this.state.user.photoUrl}
-                  className="img-fluid zoom"
+                  className="img-fluid zoom female-individual-img"
                   alt="..."
                 />
               </div>
               <div className="col-lg-8 bg-light">
-                <div className="card-body m-4 text-dark" style={{ fontWeight: "bold" }}>
-                  <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                <div className="card-body m-2 text-dark" style={{ fontWeight: "bold" }}>
+                  <p className="card-title lead bg-info text-light p-1 text-uppercase" style={{ fontWeight: "bold", borderRadius: '6px' }}>
                     {this.state.user.firstName}
                     &nbsp;
                     {this.state.user.lastName}
-                  </h5>
-                  <p className="card-text">{this.state.user.age}</p>
-                  <p className="card-text">{this.state.user.location}</p>
-                  <p className="card-text">{this.state.user.bio}</p>
+                  </p>
+                  <p className="card-text"><span className="text-left">Age: </span> {this.state.user.age}</p>
+                  <p className="card-text"><span className="text-left">Location: </span>{this.state.user.location}</p>
+                  <p className="card-text"><span className="text-left">About me: </span>{this.state.user.bio}</p>
                 </div>
                 <Container
             >
@@ -136,14 +133,12 @@ export default class UserPage extends Component {
           <Container className="text-center">
           <Form
              style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
                   }}
             onSubmit={this.updateUser}
-            className="text-center bg-light"
+            className="text-center bg-light text-uppercase"
           >
             <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
@@ -247,7 +242,7 @@ export default class UserPage extends Component {
                 />
            </Form.Group>
                   </Form.Row>
-              <Button className="text-center edit-button">Submit UPDATE</Button>
+              <Button className="text-center edit-button">Submit</Button>
               </Form>
             </Container>
         ) : null}

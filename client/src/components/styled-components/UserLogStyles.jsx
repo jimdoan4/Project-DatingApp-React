@@ -2,12 +2,12 @@ import styled, { keyframes, css } from 'styled-components'
 
 export const UserLogContainer=styled.div` 
 .woman-form {
-    width: 36vw;
-    height: 74vh;
-    padding-top: 35px;
+    max-width: 40vw;
+    max-height: 74vh;
     margin-top: 20px;
     padding: 25px;
     border-radius: 15px;
+    justify-content: center;
 }
 
 .register-button {

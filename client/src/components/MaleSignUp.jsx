@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -108,7 +107,7 @@ export default class MaleSignUp extends Component {
           <Container>
             
               <Form
-                className="text-center card bg-light man-form"
+                className="text-center bg-light man-form"
                 onSubmit={this.handleMaleSignUp}
               >
                 <Form.Row>

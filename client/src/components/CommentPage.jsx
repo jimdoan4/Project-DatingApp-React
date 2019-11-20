@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
 
 export default class CommentPage extends Component {
   // We'll set up the  array as an empty array to begin with
@@ -131,16 +129,12 @@ export default class CommentPage extends Component {
       <div
         className="text-center bg-light"
       >
-        <h3
+       <h3 className="text-light bg-dark m-3 text-uppercase"
           style={{
             fontSize: "18px",
-            marginBottom: "36px",
             padding: "12px 1px 12px 1px",
-            background: "white",
             border: "1px solid white",
             borderRadius: "10px",
-            color: "black",
-            textTransform: "uppercase",
             letterSpacing: "1.3px",
             fontWeight: "bold"
           }}
@@ -150,18 +144,14 @@ export default class CommentPage extends Component {
         <Button className="edit-button" onClick={this.toggleCommentForm}>
           All Reviews
         </Button>
-        <div>
+        <div className="row">
           {this.state.comments.map(comment => {
             return (
-              <div>
+              <div className="col-md-4">
                 {this.state.displayCommentForm ? (
-                  <Container className="text-center">
                   <Card
-                    className="text-center text-dark bg-light"
+                  className="text-center pb-3 pt-3 mt-2 text-uppercase"
                     style={{
-                      marginTop: "26px",
-                      background: "white",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
@@ -176,7 +166,6 @@ export default class CommentPage extends Component {
                     </p>
 
                     <Container
-                      style={{ textAlign: "center" }}
                       className="text-center"
                     >
                           <Link
@@ -194,23 +183,29 @@ export default class CommentPage extends Component {
                           </Button>
                     </Container>
                   </Card>
-                  </Container>
+                
                 ) : null}
               </div>
             );
           })}
-
-          <Col className="text-center" style={{ marginTop: "30px" }}>
-            <Button className="edit-button" onClick={this.toggleEditForm}>
+          </div>
+      <div className="row">
+          <Col className="text-center m-3">
+            <h3 className="bg-dark text-light text-uppercase" 
+            style={{
+            fontSize: "18px",
+            padding: "12px 1px 12px 1px",
+            borderRadius: "10px",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
+          }}  onClick={this.toggleEditForm}>
               Add a Review
-            </Button>
+            </h3>
             {this.state.displayEditForm ? (
               <Container className="text-center">
                 <Form
-                  className="text-center bg-light"
+                  className="text-center bg-light text-uppercase"
                   style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
@@ -293,7 +288,7 @@ export default class CommentPage extends Component {
                       variant="primary"
                       type="submit"
                     >
-                      Submit Review
+                      Submit
                     </Button>
                 </Form>
               </Container>

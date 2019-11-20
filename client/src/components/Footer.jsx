@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Dropdown } from "react-bootstrap";
-import { ButtonToolbar } from "react-bootstrap";
-import { DropdownButton } from "react-bootstrap";
 import { FooterContainer } from "./styled-components/FooterStyles";
-import Weather from "./Weather";
-import InputField from "./InputField";
 
 export default class Footer extends Component {
   constructor() {
@@ -49,7 +44,7 @@ export default class Footer extends Component {
     return (
       <FooterContainer>
          <section className="one">
-          <div className="container">
+          <div className="container" >
         <div className="row mt-5 contact">
               <div className="col-md-3">
                 <h4>SAUVE</h4>

@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
 
+.home-body-container {
+height: 130vh!important;
+}
+
 img {
     width: 100%;
 }

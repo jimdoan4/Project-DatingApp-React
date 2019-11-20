@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -111,7 +110,7 @@ export default class UserLog extends Component {
         {this.state.displayUserForm ? (
           <Container>
               <Form
-                className="text-center card bg-light woman-form"
+                className="text-center bg-light woman-form"
                 onSubmit={this.handleSignUp}
               >
                 <Form.Row>

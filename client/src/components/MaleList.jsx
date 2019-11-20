@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { CardGroup } from "react-bootstrap";
-import Footer from "./Footer";
 import { MaleContainer } from "./styled-components/MaleListStyles";
 
 export default class MaleList extends Component {

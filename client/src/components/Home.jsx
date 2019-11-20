@@ -5,7 +5,7 @@ import { HomeContainer } from "./styled-components/HomeStyles";
 export default class Home extends Component {
   render() {
     return (
-      <HomeContainer className="bg-info p-5">
+      <HomeContainer className="bg-info p-5 home-body-container">
         <section className="one">
           <div className="container">
             <div className="row">

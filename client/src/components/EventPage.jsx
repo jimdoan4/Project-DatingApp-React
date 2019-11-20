@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 import { Container } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -123,16 +122,12 @@ export default class EventPage extends Component {
       <div
         className="text-center bg-light"
       >
-        <h3
+        <h3 className="text-light bg-dark m-3 text-uppercase"
           style={{
             fontSize: "18px",
-            marginBottom: "36px",
             padding: "12px 1px 12px 1px",
-            background: "white",
             border: "1px solid white",
             borderRadius: "10px",
-            color: "black",
-            textTransform: "uppercase",
             letterSpacing: "1.3px",
             fontWeight: "bold"
           }}
@@ -142,75 +137,77 @@ export default class EventPage extends Component {
         <Button className="edit-button" onClick={this.toggleEventForm}>
           Scheduled Events
         </Button>
-        <div>
+        <div className="row">
           {this.state.events.map(event => {
             return (
-              <div>
+              <div className="col-md-4">
                 {this.state.displayEventForm ? (
-                  <Container className="text-center">
                   <Card
-                    className="text-center"
+                    className="text-center pb-3 pt-3 mt-2 text-uppercase"
                     style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
                       fontSize: "11px"
                     }}
                   >
-                    <p>
-                      Event Name <br />
+                    <p><u>
+                      Event Name</u> <br />
                       {event.eventName}
                     </p>
-                    <p>
-                      Scheduled time <br />
+                    <p><u>
+                      Scheduled time </u> <br />
                       {event.time}
                     </p>
-                    <p>
-                    Event Price <br />
+                    <p><u>
+                    Event Price </u> <br />
                       {event.price}
                     </p>
-                    <p>
-                      who is your lucky Date <br />
+                    <p><u>
+                      who is your lucky Date </u> <br />
                       {event.withWho}
                     </p>
 
                     <Container
-                      style={{ textAlign: "center" }}
                       className="text-center"
                     >
                       <Link
                         to={`/users/${this.state.userId}/events/${event._id}`}
                         key={event._id}
                       >
-                        <Button className="edit-button">Edit Event</Button>
+                        <Button className="edit-button">Edit</Button>
                       </Link>
                       <Button
                         className="edit-button"
                         key={event._id}
                         onClick={e => this.deleteEvent(e, event)}
                       >
-                        Delete Event
+                        Delete 
                       </Button>
                     </Container>
                   </Card>
-                  </Container>
+                
                 ) : null}
               </div>
             );
           })}
-      
-          <Col className="text-center" style={{ marginTop: "30px" }}>
-            <Button className="edit-button" onClick={this.toggleEditForm}>
+      </div>
+      <div className="row">
+          <Col className="text-center m-3">
+            <h3 className="bg-dark text-light text-uppercase" 
+            style={{
+            fontSize: "18px",
+            padding: "12px 1px 12px 1px",
+            borderRadius: "10px",
+            letterSpacing: "1.3px",
+            fontWeight: "bold"
+          }} onClick={this.toggleEditForm}>
               Add an Event
-            </Button>
+            </h3>
             {this.state.displayEditForm ? (
               <Container className="text-center">
                 <Form
-                  className="text-center bg-light"
+                  className="text-center bg-light text-uppercase"
                   style={{
-                      marginTop: "26px",
-                      textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold",
                       fontSize: "11px"
@@ -272,7 +269,7 @@ export default class EventPage extends Component {
                       variant="primary"
                       type="submit"
                     >
-                      Submit Event
+                      Submit
                     </Button>
                 </Form>
               </Container>
