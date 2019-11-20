@@ -24,8 +24,8 @@ export default class McommentPage extends Component {
     },
     redirectToMcomment: false,
     displayMcommentForm: false,
-    displayReviewForm: false,
-    displayEditForm: false
+    displayReviewForm: true,
+    displayEditForm: true
   };
 
   getAllMcomments = () => {
@@ -124,18 +124,17 @@ export default class McommentPage extends Component {
     }
     return (
       <Jumbotron
-        className="text-center"
-        style={{ position: "relative", marginTop: "30px" }}
+        className="text-center bg-light"
       >
         <h3
           style={{
             fontSize: "18px",
             marginBottom: "36px",
             padding: "12px 1px 12px 1px",
-            background: "black",
-            border: "1px solid black",
-            borderRadius: "30px",
-            color: "white",
+            background: "white",
+            border: "1px solid white",
+            borderRadius: "10px",
+            color: "black",
             textTransform: "uppercase",
             letterSpacing: "1.3px",
             fontWeight: "bold"
@@ -155,17 +154,15 @@ export default class McommentPage extends Component {
                     <Card
                       className="text-center"
                       style={{
-                        width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
                       fontWeight: "bold", 
-                      fontSize: "13.5px"
+                      fontSize: "11px"
                       }}
                     >
                       <p>Name of your Date <br/>{mcomment.withWho}</p>
@@ -213,19 +210,17 @@ export default class McommentPage extends Component {
             {this.state.displayMcommentForm ? (
               <Container className="text-center">
                 <Form
-                  className="text-center"
+                  className="text-center bg-light"
                   style={{
-                    position: "relative",
-                    width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
-                      fontWeight: "bold"
+                      fontWeight: "bold", 
+                      fontSize: "11px"
                   }}
                   onSubmit={this.createMcomment}
                 >
@@ -317,19 +312,17 @@ export default class McommentPage extends Component {
             <Container className="text-center">
             <Form
               onSubmit={this.updateMcomment}
-                  className="text-center"
+                  className="text-center bg-light"
                   style={{
-                    position: "relative",
-                    width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
-                      fontWeight: "bold"
+                      fontWeight: "bold", 
+                      fontSize: "11px"
                   }}
             >
                              <Form.Row>

@@ -1,30 +1,31 @@
 import styled from 'styled-components'
 
 export const NavContainer = styled.div`
-z-index: 1;
-position: relative;
-width: 100%;
-text-transform: uppercase;
-height: 100%;
-color: black!important;
-}
-
-.nav-bg-color {
-    background: #f7f7f7;
-    color: black!important;
-}
-
-.nav-title {
-    font-size: 30px;
-}
-
-.profile-link {
-    color: black;
+a,a:hover{
     text-decoration: none;
+    color: #000;
 }
 
-#title {
-    color: black!important;
+
+header .navbar{
+    background-color: transparent !important;
+    padding: 0;
+    height: 80px;
+    width: 100%;
 }
+
+header .navbar-brand{
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+header .navbar-nav .nav-link{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 25px!important;
+}
+
 
 `

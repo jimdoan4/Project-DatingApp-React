@@ -1,10 +1,9 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 
 
 export const MaleContainer = styled.div`
 font-family: 'Be Vietnam', sans-serif;
 font-family: 'Ubuntu', sans-serif;
-margin: 40px 90px;
 }
 
 .male-profile {
@@ -15,8 +14,8 @@ text-align: center;
 }
 
 .male-img {
-height: 200px; 
-width: 267px;
+    max-height: 260px;
+    max-width: 430px;
 }
 
 .interest-button {
@@ -43,5 +42,13 @@ font-weight: bold;
 letter-spacing: 1.3px;
 }
 
+/* Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .male-img {
+   width: 155px;
+   height: 220px;
 
+}
+}
 `
+

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import UserLog from "./UserLog";
 import MaleSignUp from "./MaleSignUp";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 
 export default class MainSignUpPage extends Component {
   state = {
@@ -13,19 +10,19 @@ export default class MainSignUpPage extends Component {
 
   render() {
     return (
-      <div className="text-center">
-        <h1 style={{ marginTop: "43px" }}>Choose Your Preference</h1>
-        <Container>
-          <Row>
-            <Col className="text-center">
+      <div className="text-center card p-3 bg-info">
+        <h1 className="text-center text-light" style={{ marginTop: "13px" }}>FIND YOUR TRUE MATCH!</h1>
+        <div className="container-fluid">
+          <div className="row justify-content-center">
+            <div className="col-lg-5 col-sm-6">
               <UserLog userId={this.state.userId} />
-            </Col>
+            </div>
 
-            <Col className="text-center">
+            <div className="col-lg-5 col-sm-6">
               <MaleSignUp maleId={this.state.maleId} />
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

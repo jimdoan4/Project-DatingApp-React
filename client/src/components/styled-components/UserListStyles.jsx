@@ -1,9 +1,9 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 
 export const UserContainer=styled.div` 
 font-family: 'Be Vietnam', sans-serif;
 font-family: 'Ubuntu', sans-serif;
-margin: 40px 90px;
+
 }
 
 .female-profile {
@@ -14,12 +14,13 @@ margin: 40px 90px;
 }
 
 .female-img {
-    height: 200px;
-    width: 267px;
+    max-height: 260px;
+    max-width: 430px;
+
 }
 
 .interest-button {
-    background-color: white!important;
+background-color: white!important;
 border: 1px solid white;
 color: black!important;
 font-size: 11px;
@@ -31,7 +32,7 @@ letter-spacing: 1.3px;
 }
 
 .not-interested-button {
-    background-color: black!important;
+background-color: black!important;
 border: 1px solid black;
 color: white!important;
 font-size: 11px;
@@ -42,5 +43,12 @@ font-weight: bold;
 letter-spacing: 1.3px;
 }
 
+/* Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .female-img {
+   width: 155px;
+   height: 220px;
 
+}
+}
 `

@@ -20,7 +20,7 @@ export default class SingleEvent extends Component {
       photoUrl: ""
     },
     redirectToEvent: false,
-    displayEditForm: false,
+    displayEditForm: true,
     userId: this.props.match.params.userId,
     eventId: this.props.match.params.eventId
   };
@@ -78,26 +78,24 @@ export default class SingleEvent extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <div className="text-center" style={{ position: "relative", marginTop: "30px" }}>
+      <div className="text-center" style={{ marginTop: "30px" }}>
         <h3 style={{ marginTop: "30px" }} className="text-center">
           {this.state.event.eventName}
         </h3>
         {this.state.displayEditForm ? (
           <Container className="text-center">
                 <Form
-                  className="text-center"
+                  className="text-center bg-light"
                   style={{
-                    position: "relative",
-                    width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
-                      fontWeight: "bold"
+                      fontWeight: "bold", 
+                      fontSize: "13.5px"
                   }}
                   onSubmit={this.updateEvent}>
            <Form.Row>

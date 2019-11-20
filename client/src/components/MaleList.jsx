@@ -49,43 +49,52 @@ export default class MaleList extends Component {
       return <Redirect to={`/males}`} />;
     }
     return (
-      <MaleContainer>
-        <Row>
-          {this.state.males.map(male => {
-            return (
-              <Col
-              >
-                <CardGroup>
-                  <Card key={male._id} className="male-profile">
-                    <Card.Img
-                      className="zoom male-img"
-                      variant="top"
-                      src={male.photoUrl}
-                    />
-
-                    <Card.Body>
-                      <div key={male._id}>
-                        <Link to={`/males/${male._id}`} key={male._id}>
-                          <Button className="interest-button">
-                            Interested
-                          </Button>
-                        </Link>
-                        <Button
-                          className="not-interested-button"
-                          key={male._id}
-                          onClick={e => this.deleteMale(e, male)}
-                          type="button"
-                        >
-                          Not Interested
-                        </Button>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </CardGroup>
-              </Col>
-            );
-          })}
-        </Row>
+      <MaleContainer className="bg-info p-5">
+      <div className="container">
+            <div className="row p-3">
+              {this.state.males.map(male => {
+                return (
+                  <div
+                    key={male._id}
+                    className="col-md-3 col-sm-6 col-xs-12 text-center mb-4"
+                  >
+                    <div className="card">
+                    <Link to={`/males/${male._id}`}>
+                      <img
+                        src={male.photoUrl}
+                        className="img-fluid male-img zoom"
+                        width="100%"
+                      />
+                    </Link>
+                    <div className="row">
+                        <div className="col-6">
+                    <Link to={`/males/${male._id}`} key={male._id}>
+                      <button
+                        type="button"
+                        className="btn btn-default m-4 btn-xs bg-danger"
+                      >
+                        <i className="p-2 fas fa-heart text-light" aria-hidden="true"></i>
+                      </button>
+                    </Link>
+                    </div>
+                        <div className="col-6">
+                    <button
+                      type="button"
+                      key={male._id}
+                      onClick={e => this.deleteMale(e, male)}
+                      className="btn btn-default m-4 bg-dark text-light btn-xs"
+                    >
+                      <i className="p-2 fas fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+      
       </MaleContainer>
     );
   }

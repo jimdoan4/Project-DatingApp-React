@@ -48,47 +48,45 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <footer
-          className="page-footer footer-bg-color font-small"
-          style={{ paddingBottom: "5px", color: "black" }}
-        >
-          <div className="text-center">
-            <InputField queryWeather={this.queryWeather} />
-            <ButtonToolbar style={{ marginRight: "20px" }}>
-              {["left"].map(direction => (
-                <DropdownButton
-                  style={{ color: "black" }}
-                  drop={direction}
-                  placeholder="x"
-                  id={`dropdown-button-drop-${direction}`}
-                  key={direction}
-                >
-                  <Dropdown.Item
-                    style={{
-                      marginTop: "15px",
-                      paddingLeft: "20px",
-                      paddingRight: "20px",
-                      color: "black"
-                    }}
-                  >
-                    <Weather
-                      city={this.state.weather.name}
-                      temp={this.state.temp}
-                      humidity={this.state.humidity}
-                      speed={this.state.speed}
-                      clouds={this.state.clouds}
-                    />
-                  </Dropdown.Item>
-                </DropdownButton>
-              ))}
-            </ButtonToolbar>
-          </div>
-
-          <div className="text-center">
-            © 2019 Copyright:
-            <a href="/"> Jim Doan</a>
-          </div>
-        </footer>
+         <section className="one">
+          <div className="container">
+        <div className="row mt-5 contact">
+              <div className="col-md-3">
+                <h4>SAUVE</h4>
+                <p>
+                  Lorem ipsum hit me a bum, <br /> connector has done it a bit
+                </p>
+              </div>
+              <div className="col-md-2">
+                <h4>Social Media</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+              <div className="col-md-3">
+                <h4>Contact</h4>
+                <a href="#">678-468-6012</a>
+                <a href="#">Date@sauve.com</a>
+              </div>
+              <div className="col-md-4">
+                <h4>Enter your email address and submit to subscribe</h4>
+                <form>
+                  <input
+                    className="textField"
+                    type="text"
+                    placeholder="Your Email Here"
+                  />
+                  <input className="submitBtn" type="submit" name="" />
+                </form>
+              </div>
+            </div>
+            <div className="row copyright">
+              <div className="col-md-12">
+                <p>&copy; 2019 SUAVE DATING</p>
+              </div>
+            </div>
+            </div>
+            </section>
       </FooterContainer>
     );
   }

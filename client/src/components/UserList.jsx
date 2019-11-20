@@ -10,13 +10,11 @@ import Footer from "./Footer";
 import { UserContainer } from "./styled-components/UserListStyles";
 
 export default class UserList extends Component {
-        // We'll set up the  array as an empty array to begin with
+  // We'll set up the  array as an empty array to begin with
   state = {
     users: [],
     newUser: {
       _id: "",
-      userName: "",
-      password: "",
       firstName: "",
       lastName: "",
       age: "",
@@ -35,17 +33,17 @@ export default class UserList extends Component {
     this.findAllUsers();
   };
 
-  findAllUsers = () => {  
-    axios.get("/api/users").then(res => {  // When the page loads, grab all users from the database
+  findAllUsers = () => {
+    axios.get("/api/users").then(res => {
+      // When the page loads, grab all users from the database
       this.setState({ users: res.data });
     });
   };
 
   createUser = e => {
     axios
-      .post("/api/users", {  // Ask the server to create a new user in the database
-        password: this.state.newUser.password,
-        userName: this.state.newUser.userName,
+      .post("/api/users", {
+        // Ask the server to create a new user in the database
         firstName: this.state.newUser.firstName,
         lastName: this.state.newUser.lastName,
         age: this.state.newUser.age,
@@ -56,12 +54,10 @@ export default class UserList extends Component {
         events: []
       })
       .then(res => {
-        const usersList = [this.state.users];  // Copy the old users list into a new one
+        const usersList = [this.state.users]; // Copy the old users list into a new one
         usersList.unshift(res.data);
         this.setState({
           newUser: {
-            userName: "",
-            password: "",
             firstName: "",
             lastName: "",
             age: "",
@@ -80,7 +76,8 @@ export default class UserList extends Component {
 
   deleteUser = (e, user) => {
     e.preventDefault();
-    axios.delete(`/api/users/${user._id}`).then(res => {  // Ask the server to delete this user
+    axios.delete(`/api/users/${user._id}`).then(res => {
+      // Ask the server to delete this user
       this.findAllUsers();
     });
   };
@@ -91,7 +88,8 @@ export default class UserList extends Component {
     this.setState({ newUser: changeNewUser });
   };
 
-  toggleUserForm = () => {  // This toggle the button when clicked
+  toggleUserForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayUserForm: !state.displayUserForm };
     });
@@ -102,44 +100,56 @@ export default class UserList extends Component {
       return <Redirect to={`/users}`} />;
     }
     return (
-      <UserContainer>
-        <Row>
-          {this.state.users.map(user => {
-            return (
-              <Col
-              >
-                <CardGroup>
-                  <Card key={user._id} className="female-profile">
-                    <Card.Img
-                      className="text-center zoom female-img"
-                      variant="top"
-                      src={user.photoUrl}
-                    />
-
-                    <Card.Body>
-                      <div key={user._id}>
-                        <Link to={`/users/${user._id}`} key={user._id}>
-                          <Button className="interest-button">
-                            Interested
-                          </Button>
-                        </Link>
-
-                        <Button
-                          key={user._id}
-                          onClick={e => this.deleteUser(e, user)}
-                          type="button"
-                          className="not-interested-button"
-                        >
-                          Not Interested
-                        </Button>
+      <UserContainer className="bg-info p-5">
+        <div className="container">
+            <div className="row p-3">
+              {this.state.users.map(user => {
+                return (
+                  <div
+                    key={user._id}
+                    className="col-md-3 col-sm-6 col-xs-12 text-center mb-4"
+                  >
+                    <div className="card">
+                      <Link to={`/users/${user._id}`}>
+                        <img
+                          src={user.photoUrl}
+                          className="img-fluid female-img zoom"
+                          width="100%"
+                        />
+                      </Link>
+                      <div className="row">
+                        <div className="col-6">
+                          <Link to={`/users/${user._id}`} key={user._id}>
+                            <button
+                              type="button"
+                              className="btn btn-default m-4 btn-xs bg-danger"
+                            >
+                              <i
+                                className="p-2 fas fa-heart text-light"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </Link>
+                        </div>
+                        <div className="col-6">
+                          <button
+                            type="button"
+                            key={user._id}
+                            onClick={e => this.deleteUser(e, user)}
+                            className="btn btn-default m-4 bg-dark text-light btn-xs"
+                          >
+                            <i className="p-2 fas fa-trash" aria-hidden="true"></i>
+                      
+                          </button>
+                        
+                        </div>
                       </div>
-                    </Card.Body>
-                  </Card>
-                </CardGroup>
-              </Col>
-            );
-          })}
-        </Row>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
       </UserContainer>
     );
   }

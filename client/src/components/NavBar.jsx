@@ -1,46 +1,61 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Nav } from "react-bootstrap";
-import { Navbar } from "react-bootstrap";
-import { NavDropdown } from "react-bootstrap";
 import { NavContainer } from "./styled-components/NavStyles";
 
 export default class NavBar extends Component {
   render() {
     return (
       <NavContainer>
-        <Navbar
-          className="nav-bg-color text-dark"
-          collapseOnSelect
-          variant="light"
-          fixed-top 
-        >
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Brand className="nav-title text-dark" href="/">
-            SUAVE
-          </Navbar.Brand>
-          <Navbar.Collapse
-            id="responsive-navbar-nav"
-            style={{ color: "#720F1D" }}
-          >
-            <Nav className="mr-auto text-dark">
-              <NavDropdown className="text-dark" title="Find Your Match" id="collasible-nav-dropdown">
-                <NavDropdown.Item className="text-center">
-                  <Link to="/users/">Woman</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item className="text-center">
-                  <Link to="/males/">Men</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-          <Nav.Link>
-            <Link className="profile-link" to="/login/">
-              Profile Account
-            </Link>
-          </Nav.Link>
-        </Navbar>
+        <header>
+          <div className="container">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+              <a className="navbar-brand" href="/">
+                SUAVE
+              </a>
+              <button
+                className="navbar-toggler close"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Close"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item">
+                    <Link
+                      to="/users/"
+                      className="nav-link text-dark lead font-weight-bold"
+                    >
+                      Women
+                    </Link>
+                  </li>
+                  <li class="nav-item">
+                    <Link
+                      to="/males/"
+                      className="nav-link text-dark lead font-weight-bold"
+                    >
+                      Men
+                    </Link>
+                  </li>
+                  <li class="nav-item">
+                    <Link
+                      to="/login/"
+                      className="nav-link text-dark lead font-weight-bold"
+                    >
+                      SIGN UP
+                   
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </header>
       </NavContainer>
     );
   }

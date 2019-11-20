@@ -87,43 +87,28 @@ export default class MalePage extends Component {
     }
     return (
       <div>
-        <div style={{ marginTop: "30px", marginBottom: "40px" }}>
-          <Card   
-          className="text-center"
-            style={{
-              width: "25rem",
-              backgroundColor: "white",
-              borderRadius: "20px"
-            }}>
-            <Card.Img
-              style={{ height: "50vh", borderRadius: "5px" }}
-              className="zoom"
-              variant="top"
-              src={this.state.male.photoUrl}
-              alt="top"
-            />
-            <Card.Body>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.male.firstName}
-                &nbsp;
-                {this.state.male.lastName}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.male.age}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.male.bio}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.male.location}
-              </Card.Title>
-            </Card.Body>
-            <Container
-              style={{
-                textAlign: "center",
-                marginBottom: "30px",
-                marginTop: "8px"
-              }}
+          <div className="container">
+          <div className="card m-3">
+            <div className="row no-gutters">
+              <div className="col-lg-3">
+                <img
+                  src={this.state.male.photoUrl}
+                  className="card-img img-fluid zoom"
+                  alt="..."
+                />
+              </div>
+              <div className="col-lg-9 bg-light">
+                <div className="card-body m-4 text-dark" style={{ fontWeight: "bold" }}>
+                  <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                    {this.state.male.firstName}
+                    &nbsp;
+                    {this.state.male.lastName}
+                  </h5>
+                  <p className="card-text">{this.state.male.age}</p>
+                  <p className="card-text">{this.state.male.location}</p>
+                  <p className="card-text">{this.state.male.bio}</p>
+                </div>
+                <Container
             >
               <Button
                 className="text-center edit-button"
@@ -135,27 +120,27 @@ export default class MalePage extends Component {
                 Delete Account
               </Button>
             </Container>
-          </Card>
+              </div>
+            </div>
+          </div>
         </div>
 
         {this.state.displayMaleForm ? (
           <Container className="text-center">
           <Form
              style={{
-                    position: "relative",
-                    width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
-                      fontWeight: "bold"
+                      fontWeight: "bold", 
+                      fontSize: "11px"
                   }}
             onSubmit={this.updateMale}
-            className="text-center"
+            className="text-center bg-light"
           >
              <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">

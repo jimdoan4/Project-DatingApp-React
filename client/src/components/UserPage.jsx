@@ -6,9 +6,12 @@ import { Card } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { UserPageContainer } from "./styled-components/UserPageStyles";
+import CommentPage from "./CommentPage";
+import EventPage from "./EventPage";
 
 export default class UserPage extends Component {
-        // We'll set up the  array as an empty array to begin with
+  // We'll set up the  array as an empty array to begin with
   state = {
     userId: this.props.userId,
     users: [],
@@ -30,7 +33,8 @@ export default class UserPage extends Component {
   };
 
   getSingleUserData = () => {
-    axios.get(`/api/users/${this.state.userId}`).then(res => {  // When the page loads, grab user id from the database
+    axios.get(`/api/users/${this.state.userId}`).then(res => {
+      // When the page loads, grab user id from the database
       this.setState({ user: res.data });
     });
   };
@@ -39,7 +43,8 @@ export default class UserPage extends Component {
     this.getSingleUserData();
   };
 
-  toggleUserForm = () => {  // This toggle the button when clicked
+  toggleUserForm = () => {
+    // This toggle the button when clicked
     this.setState((state, props) => {
       return { displayUserForm: !state.displayUserForm };
     });
@@ -60,7 +65,8 @@ export default class UserPage extends Component {
   updateUser = e => {
     e.preventDefault();
     axios
-      .put(`/api/users/${this.state.userId}`, {  // ask the server to update the user in the database
+      .put(`/api/users/${this.state.userId}`, {
+        // ask the server to update the user in the database
         firstName: this.state.user.firstName,
         lastName: this.state.user.lastName,
         age: this.state.user.age,
@@ -77,7 +83,8 @@ export default class UserPage extends Component {
   };
 
   deleteUser = () => {
-    axios.delete(`/api/users/${this.state.userId}`).then(res => {  // Ask the server to delete this user
+    axios.delete(`/api/users/${this.state.userId}`).then(res => {
+      // Ask the server to delete this user
       this.setState({ redirectToUser: true });
     });
   };
@@ -87,77 +94,60 @@ export default class UserPage extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
- <div>
-        <div style={{ marginTop: "30px", marginBottom: "40px" }}>
-          <Card
-            className="text-center"
-            style={{
-              width: "25rem",
-              backgroundColor: "white",
-              borderRadius: "20px"
-            }}
-          >
-            <Card.Img
-              style={{ height: "50vh", borderRadius: "5px" }}
-              className="zoom"
-              variant="top"
-              src={this.state.user.photoUrl}
-              alt="top"
-            />
-            <Card.Body>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.user.firstName}
-                &nbsp;
-                {this.state.user.lastName}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.user.age}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.user.bio}
-              </Card.Title>
-              <Card.Title style={{ fontSize: "17px" }}>
-                {this.state.user.location}
-              </Card.Title>
-            </Card.Body>
-
-            <Container
-              style={{
-                textAlign: "center",
-                marginBottom: "30px",
-                marginTop: "8px"
-              }}
-              className="text-center"
+      <UserPageContainer>
+        <div className="container">
+          <div className="card m-3">
+            <div className="row no-gutters">
+              <div className="col-lg-3">
+                <img
+                  src={this.state.user.photoUrl}
+                  className="card-img img-fluid zoom"
+                  alt="..."
+                />
+              </div>
+              <div className="col-lg-9 bg-light">
+                <div className="card-body m-4 text-dark" style={{ fontWeight: "bold" }}>
+                  <h5 className="card-title" style={{ fontWeight: "bold" }}>
+                    {this.state.user.firstName}
+                    &nbsp;
+                    {this.state.user.lastName}
+                  </h5>
+                  <p className="card-text">{this.state.user.age}</p>
+                  <p className="card-text">{this.state.user.location}</p>
+                  <p className="card-text">{this.state.user.bio}</p>
+                </div>
+                <Container
             >
-              <Button className="edit-button" onClick={this.toggleUserForm}>
+              <Button
+                className="text-center edit-button"
+                onClick={this.toggleUserForm}
+              >
                 Edit Account
               </Button>
-
-              <Button className="delete-button" onClick={this.deleteUser}>
+              <Button className="edit-button" onClick={this.deleteUser}>
                 Delete Account
               </Button>
             </Container>
-          </Card>
+              </div>
+            </div>
+          </div>
         </div>
-        <Col className="text-center" style={{ marginTop: "30px" }}>
         {this.state.displayUserForm ? (
           <Container className="text-center">
           <Form
              style={{
-                    position: "relative",
-                    width: "33rem",
-                      backgroundColor: "white",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      paddingTop: "24px",
-                      paddingBottom: "24px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                      paddingTop: "20px",
+                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
-                      fontWeight: "bold"
+                      fontWeight: "bold", 
+                      fontSize: "11px"
                   }}
             onSubmit={this.updateUser}
-            className="text-center"
+            className="text-center bg-light"
           >
             <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
@@ -265,9 +255,7 @@ export default class UserPage extends Component {
               </Form>
             </Container>
         ) : null}
-        </Col>
-        </div>
-   
+      </UserPageContainer>
     );
   }
 }

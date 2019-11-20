@@ -22,7 +22,7 @@ export default class MaleSignUp extends Component {
       mcomments: [],
       mevents: []
     },
-    displayMaleForm: false,
+    displayMaleForm: true,
     redirectToMale: false
   };
 
@@ -102,14 +102,13 @@ export default class MaleSignUp extends Component {
         className="man-signup-button"
           onClick={this.toggleEditForm}
         >
-          Straight Men
+        Men
         </Button>
         {this.state.displayMaleForm ? (
           <Container>
             
               <Form
-                className="text-center card man-form"
-                style={{ display: "inline-block", paddingRight: "23px" }}
+                className="text-center card bg-light man-form"
                 onSubmit={this.handleMaleSignUp}
               >
                 <Form.Row>
@@ -148,7 +147,7 @@ export default class MaleSignUp extends Component {
                   </Form.Group>
                 </Form.Row>
 
-                <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Group controlId="formGridEmail">
                   <Form.Label style={{ fontSize: "16px " }} htmlFor="photoUrl">
                     Photo
                   </Form.Label>

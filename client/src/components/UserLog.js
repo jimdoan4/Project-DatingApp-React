@@ -22,7 +22,7 @@ export default class UserLog extends Component {
       comments: [],
       events: []
     },
-    displayUserForm: false,
+    displayUserForm: true,
     redirectToUser: false
   };
 
@@ -106,19 +106,18 @@ export default class UserLog extends Component {
         className="woman-signup-button"
           onClick={this.toggleEditForm}
         >
-          Straight Women
+         Women
         </Button>
         {this.state.displayUserForm ? (
           <Container>
               <Form
-                className="text-center card woman-form"
-                style={{ display: "inline-block", paddingRight: "23px" }}
+                className="text-center card bg-light woman-form"
                 onSubmit={this.handleSignUp}
               >
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label
-                      style={{ fontSize: "16px " }}
+                      style={{ fontSize: "16px" }}
                       htmlFor="firstName"
                     >
                       First Name
@@ -151,7 +150,7 @@ export default class UserLog extends Component {
                   </Form.Group>
                 </Form.Row>
 
-                <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Group controlId="formGridEmail">
                   <Form.Label style={{ fontSize: "16px " }} htmlFor="photoUrl">
                     Photo
                   </Form.Label>

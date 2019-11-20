@@ -18,7 +18,7 @@ export default class SingleComment extends Component {
       lessonLearned: ""
     },
     redirectToComment: false,
-    displayEditForm: false,
+    displayEditForm: true,
     userId: this.props.match.params.userId,
     commentId: this.props.match.params.commentId
   };
@@ -84,9 +84,9 @@ export default class SingleComment extends Component {
           {this.state.comment.withWho}
         </h3>
         {this.state.displayEditForm ? (
-          <Form onSubmit={this.updateComment} className="col s12">
+          <Form onSubmit={this.updateComment} className="col-lg-12">
             <Col>
-              <div className="col s12 m6 text-center">
+              <div className="col-lg-12 m6 text-center">
                 <label
                   style={{ marginRight: "30px", marginTop: "30px" }}
                   htmlFor="rating"
