@@ -96,16 +96,16 @@ export default class UserPage extends Component {
     return (
       <UserPageContainer>
         <div className="container">
-          <div className="card m-3">
+          <div className="cards">
             <div className="row no-gutters">
-              <div className="col-lg-3">
+              <div className="col-lg-4">
                 <img
                   src={this.state.user.photoUrl}
-                  className="card-img img-fluid zoom"
+                  className="img-fluid zoom"
                   alt="..."
                 />
               </div>
-              <div className="col-lg-9 bg-light">
+              <div className="col-lg-8 bg-light">
                 <div className="card-body m-4 text-dark" style={{ fontWeight: "bold" }}>
                   <h5 className="card-title" style={{ fontWeight: "bold" }}>
                     {this.state.user.firstName}
@@ -136,10 +136,6 @@ export default class UserPage extends Component {
           <Container className="text-center">
           <Form
              style={{
-                      paddingLeft: "20px",
-                      paddingRight: "20px",
-                      paddingTop: "20px",
-                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",

@@ -13,7 +13,7 @@ export default class MaleShowPage extends Component {
 
   render() {
     return (
-      <div className="text-center bg-info p-5">
+      <div className="text-center bg-info">
         <Container>
             <p className="bg-dark">
               <a

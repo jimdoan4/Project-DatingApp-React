@@ -88,17 +88,17 @@ export default class MalePage extends Component {
     return (
       <div>
           <div className="container">
-          <div className="card m-3">
+          <div className="cards">
             <div className="row no-gutters">
-              <div className="col-lg-3">
+              <div className="col-md-4">
                 <img
                   src={this.state.male.photoUrl}
-                  className="card-img img-fluid zoom"
+                  className="img-fluid zoom"
                   alt="..."
                 />
               </div>
-              <div className="col-lg-9 bg-light">
-                <div className="card-body m-4 text-dark" style={{ fontWeight: "bold" }}>
+              <div className="col-md-8 bg-light">
+                <div className="card-body text-dark" style={{ fontWeight: "bold" }}>
                   <h5 className="card-title" style={{ fontWeight: "bold" }}>
                     {this.state.male.firstName}
                     &nbsp;
@@ -110,29 +110,30 @@ export default class MalePage extends Component {
                 </div>
                 <Container
             >
+            <div className="row">
+            <div className="col-md-6">
               <Button
                 className="text-center edit-button"
                 onClick={this.toggleMaleForm}
               >
                 Edit Account
               </Button>
+              </div>
+              <div className="col-md-6">
               <Button className="edit-button" onClick={this.deleteMale}>
                 Delete Account
               </Button>
-            </Container>
               </div>
+              </div>
+            </Container>
             </div>
           </div>
         </div>
-
+</div>
         {this.state.displayMaleForm ? (
           <Container className="text-center">
           <Form
              style={{
-                      paddingLeft: "20px",
-                      paddingRight: "20px",
-                      paddingTop: "20px",
-                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",

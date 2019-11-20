@@ -120,7 +120,7 @@ export default class EventPage extends Component {
       return <Redirect to={`/users/`} />;
     }
     return (
-      <Jumbotron
+      <div
         className="text-center bg-light"
       >
         <h3
@@ -151,10 +151,6 @@ export default class EventPage extends Component {
                   <Card
                     className="text-center"
                     style={{
-                      paddingLeft: "20px",
-                      paddingRight: "20px",
-                      paddingTop: "20px",
-                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
@@ -213,10 +209,6 @@ export default class EventPage extends Component {
                 <Form
                   className="text-center bg-light"
                   style={{
-                      paddingLeft: "20px",
-                      paddingRight: "20px",
-                      paddingTop: "20px",
-                      paddingBottom: "20px",
                       marginTop: "26px",
                       textTransform: "uppercase",
                       letterSpacing: "1.3px",
@@ -287,7 +279,7 @@ export default class EventPage extends Component {
             ) : null}
           </Col>
         </div>
-      </Jumbotron>
+      </div>
     );
   }
 }

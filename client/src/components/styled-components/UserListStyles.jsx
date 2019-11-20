@@ -46,7 +46,7 @@ letter-spacing: 1.3px;
 /* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .female-img {
-   width: 155px;
+   width: 215px;
    height: 220px;
 
 }

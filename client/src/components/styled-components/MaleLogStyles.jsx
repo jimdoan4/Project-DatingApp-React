@@ -11,14 +11,14 @@ export const MaleLogContainer = styled.div `
 }
 
 .register-button {
-    padding: 15px 30px 15px 30px;
+    padding: 12px 22px 12px 22px;
     margin-top: 9px;
     background-color: black!important;
 border-color: black;
 color: white!important;
 border-radius: 10px;
 text-transform: uppercase;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   font-weight: bold;
 }

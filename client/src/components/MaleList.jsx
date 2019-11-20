@@ -71,9 +71,9 @@ export default class MaleList extends Component {
                     <Link to={`/males/${male._id}`} key={male._id}>
                       <button
                         type="button"
-                        className="btn btn-default m-4 btn-xs bg-danger"
+                        className="btn btn-default m-3 btn-xs bg-danger"
                       >
-                        <i className="p-2 fas fa-heart text-light" aria-hidden="true"></i>
+                        <i className="p-1 fas fa-heart text-light" aria-hidden="true"></i>
                       </button>
                     </Link>
                     </div>
@@ -82,9 +82,9 @@ export default class MaleList extends Component {
                       type="button"
                       key={male._id}
                       onClick={e => this.deleteMale(e, male)}
-                      className="btn btn-default m-4 bg-dark text-light btn-xs"
+                      className="btn btn-default m-3 bg-dark text-light btn-xs"
                     >
-                      <i className="p-2 fas fa-trash" aria-hidden="true"></i>
+                      <i className="p-1 fas fa-trash" aria-hidden="true"></i>
                     </button>
                   </div>
                   </div>
