@@ -42,10 +42,10 @@ color: black!important;
 
 
 /* Media for Iphone X */
-@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+@media only screen and (min-device-width : 375px) and (max-device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
     .woman-form {
-        width: 314px!important;
-        height: 55.5vh;
+       width: 314px!important;
+        height: 65.5vh;
         padding: 10px 13px;
         margin-top: 20px;
     }
