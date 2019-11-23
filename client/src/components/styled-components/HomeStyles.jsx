@@ -3,11 +3,12 @@ import styled from 'styled-components'
 export const HomeContainer = styled.div`
 
 .home-body-container {
-height: 130vh!important;
+height: 100vh!important;
 }
 
 img {
     width: 100%;
+    box-shadow: 1px 3px 7px 1px #b3b3b3;
 }
 
 .product-price{
@@ -34,7 +35,12 @@ img {
     letter-spacing: 1px;
 }
 
-
+/* Media for Iphone X */
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+    .col-md-12 img {
+        height: 160px;
+    }
+}
 
 
     

@@ -3,25 +3,8 @@ import styled, { keyframes, css } from 'styled-components'
 
 export const FooterContainer = styled.div`
 
-.footer {
-    max-height: 14vh!important;
-}
-.bottom-col{
-    padding: 25px 15px;
-    text-align: center;
-    border: 2px solid #f3f3f3;
-    border-radius: 4px;
-}
-
-.bottom-col h3{
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.bottom-col p{
-    font-size: 13px;
-    margin-bottom: 0;
+.container{
+    max-height: 14vh;
 }
 
 .contact{

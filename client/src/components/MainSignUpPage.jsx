@@ -11,7 +11,7 @@ export default class MainSignUpPage extends Component {
   render() {
     return (
       <div className="text-center bg-info main-signup-body" style={{height: "110vh"}}>
-        <h1 className="text-center text-light pt-4">FIND YOUR TRUE MATCH!</h1>
+        <h2 className="text-center text-light p-4">FIND YOUR TRUE MATCH!</h2>
         <div className="container">
           <div className="row">
             <div className="col-md-6">

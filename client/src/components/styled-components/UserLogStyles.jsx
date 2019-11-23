@@ -1,13 +1,24 @@
 import styled, { keyframes, css } from 'styled-components'
 
 export const UserLogContainer=styled.div` 
+padding: 0;
+}
+
 .woman-form {
-    max-width: 40vw;
+    max-width: 500px;
     max-height: 74vh;
-    margin-top: 20px;
-    padding: 25px;
+    margin-top: 30px;
+    padding: 15px;
     border-radius: 15px;
     justify-content: center;
+}
+
+.woman-form .form-label {
+    font-size: 16px;
+}
+
+.form-control {
+    margin: -5px 0px!important;
 }
 
 .register-button {
@@ -33,11 +44,10 @@ color: black!important;
 /* Media for Iphone X */
 @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
     .woman-form {
-        width: 84vw;
-        height: 65vh;
-        padding:15px;
+        width: 314px!important;
+        height: 55.5vh;
+        padding: 10px 13px;
         margin-top: 20px;
-
     }
 }
 

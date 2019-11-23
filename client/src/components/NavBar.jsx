@@ -10,7 +10,7 @@ export default class NavBar extends Component {
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <a className="navbar-brand" href="/">
-                SUAVE
+                SUAVE Match <span><i className="fas fa-heart text-danger"></i></span>
               </a>
               <button
                 className="navbar-toggler close"
@@ -47,7 +47,7 @@ export default class NavBar extends Component {
                       to="/login/"
                       className="nav-link text-dark lead font-weight-bold"
                     >
-                      SIGN UP
+                      SIGN UP 
                    
                     </Link>
                   </li>

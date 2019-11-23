@@ -100,7 +100,6 @@ export default class UserLog extends Component {
           return <div/>;
         })}
         <br />
-        <br />
         <Button
         className="woman-signup-button"
           onClick={this.toggleEditForm}
@@ -116,24 +115,21 @@ export default class UserLog extends Component {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label
-                      style={{ fontSize: "16px" }}
                       htmlFor="firstName"
                     >
                       First Name
                     </Form.Label>
                     <Form.Control
-                      className="text-center"
+                      className="text-center input"
                       name="firstName"
                       onChange={this.handleChange}
                       value={this.state.newUser.firstName}
                       type="text"
-                      placeholder="Enter First Name"
                     />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label
-                      style={{ fontSize: "16px " }}
                       htmlFor="lastName"
                     >
                       Last Name
@@ -144,13 +140,12 @@ export default class UserLog extends Component {
                       onChange={this.handleChange}
                       value={this.state.newUser.lastName}
                       type="text"
-                      placeholder="Enter Last Name"
                     />
                   </Form.Group>
                 </Form.Row>
 
                 <Form.Group controlId="formGridEmail">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="photoUrl">
+                  <Form.Label htmlFor="photoUrl">
                     Photo
                   </Form.Label>
                   <Form.Control
@@ -159,12 +154,11 @@ export default class UserLog extends Component {
                     onChange={this.handleChange}
                     value={this.state.newUser.photoUrl}
                     type="text"
-                    placeholder="Enter a Photo of Yourself"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress1">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="age">
+                  <Form.Label htmlFor="age">
                     Age
                   </Form.Label>
                   <Form.Control
@@ -173,12 +167,11 @@ export default class UserLog extends Component {
                     type="text"
                     onChange={this.handleChange}
                     value={this.state.newUser.age}
-                    placeholder="Enter your Age"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress2">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="location">
+                  <Form.Label htmlFor="location">
                     Location
                   </Form.Label>
                   <Form.Control
@@ -187,13 +180,12 @@ export default class UserLog extends Component {
                     type="text"
                     onChange={this.handleChange}
                     value={this.state.newUser.location}
-                    placeholder="Apartment, studio, or floor"
                   />
                 </Form.Group>
 
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCity">
-                    <Form.Label style={{ fontSize: "16px " }} htmlFor="bio">
+                    <Form.Label htmlFor="bio">
                       Biography
                     </Form.Label>
                     <Form.Control
@@ -202,7 +194,6 @@ export default class UserLog extends Component {
                       type="text"
                       onChange={this.handleChange}
                       value={this.state.newUser.bio}
-                      placeholder="Enter Facts about yourself"
                     />
                   </Form.Group>
                 </Form.Row>

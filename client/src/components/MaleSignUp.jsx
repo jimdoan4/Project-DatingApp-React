@@ -96,7 +96,6 @@ export default class MaleSignUp extends Component {
           return <div />;
         })}
         <br />
-        <br />
         <Button
         className="man-signup-button"
           onClick={this.toggleEditForm}
@@ -113,7 +112,6 @@ export default class MaleSignUp extends Component {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label
-                      style={{ fontSize: "16px " }}
                       htmlFor="firstName"
                     >
                       First Name
@@ -124,13 +122,11 @@ export default class MaleSignUp extends Component {
                       onChange={this.handleChange}
                       value={this.state.newMale.firstName}
                       type="text"
-                      placeholder="Enter First Name"
                     />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label
-                      style={{ fontSize: "16px " }}
                       htmlFor="lastName"
                     >
                       Last Name
@@ -141,13 +137,12 @@ export default class MaleSignUp extends Component {
                       onChange={this.handleChange}
                       value={this.state.newMale.lastName}
                       type="text"
-                      placeholder="Enter Last Name"
                     />
                   </Form.Group>
                 </Form.Row>
 
                 <Form.Group controlId="formGridEmail">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="photoUrl">
+                  <Form.Label htmlFor="photoUrl">
                     Photo
                   </Form.Label>
                   <Form.Control
@@ -156,12 +151,11 @@ export default class MaleSignUp extends Component {
                     onChange={this.handleChange}
                     value={this.state.newMale.photoUrl}
                     type="text"
-                    placeholder="Enter a Photo of Yourself"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress1">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="age">
+                  <Form.Label htmlFor="age">
                     Age
                   </Form.Label>
                   <Form.Control
@@ -170,12 +164,11 @@ export default class MaleSignUp extends Component {
                     type="number"
                     onChange={this.handleChange}
                     value={this.state.newMale.age}
-                    placeholder="Enter your Age"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="formGridAddress2">
-                  <Form.Label style={{ fontSize: "16px " }} htmlFor="location">
+                  <Form.Label htmlFor="location">
                     Location
                   </Form.Label>
                   <Form.Control
@@ -184,13 +177,12 @@ export default class MaleSignUp extends Component {
                     type="text"
                     onChange={this.handleChange}
                     value={this.state.newMale.location}
-                    placeholder="Apartment, studio, or floor"
                   />
                 </Form.Group>
 
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCity">
-                    <Form.Label style={{ fontSize: "16px " }} htmlFor="bio">
+                    <Form.Label htmlFor="bio">
                       Biography
                     </Form.Label>
                     <Form.Control
@@ -199,7 +191,6 @@ export default class MaleSignUp extends Component {
                       type="text"
                       onChange={this.handleChange}
                       value={this.state.newMale.bio}
-                      placeholder="Enter Facts about yourself"
                     />
                   </Form.Group>
                 </Form.Row>

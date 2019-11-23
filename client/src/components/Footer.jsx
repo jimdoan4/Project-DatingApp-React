@@ -44,12 +44,12 @@ export default class Footer extends Component {
     return (
       <FooterContainer>
          <section className="one">
-          <div className="container" >
+          <div className="container footer">
         <div className="row mt-5 contact">
               <div className="col-md-3">
-                <h4>SAUVE</h4>
+                <h4>SAUVE Match Maker</h4>
                 <p>
-                  Lorem ipsum hit me a bum, <br /> connector has done it a bit
+                  Explore your chances <br /> Leave with a great memory
                 </p>
               </div>
               <div className="col-md-2">
@@ -77,7 +77,7 @@ export default class Footer extends Component {
             </div>
             <div className="row copyright">
               <div className="col-md-12">
-                <p>&copy; 2019 SUAVE DATING</p>
+                <p>&copy; 2019 SUAVE Match Maker</p>
               </div>
             </div>
             </div>

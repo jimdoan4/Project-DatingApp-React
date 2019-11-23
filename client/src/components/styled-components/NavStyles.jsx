@@ -4,6 +4,7 @@ export const NavContainer = styled.div`
 a,a:hover{
     text-decoration: none;
     color: #000;
+    
 }
 
 
