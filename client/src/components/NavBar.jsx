@@ -34,7 +34,7 @@ export default class NavBar extends Component {
                       Women
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       to="/males/"
                       className="nav-link text-dark lead font-weight-bold"
@@ -42,7 +42,7 @@ export default class NavBar extends Component {
                       Men
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
                       to="/login/"
                       className="nav-link text-dark lead font-weight-bold"

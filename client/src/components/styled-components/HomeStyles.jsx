@@ -11,23 +11,23 @@ img {
     box-shadow: 1px 3px 7px 1px #b3b3b3;
 }
 
-.product-price{
+.home-img {
     padding: 25px 0;
 }
 
-.product-price h2{
+.home-img h2{
     font-size: 16px;
     font-weight: normal;
     letter-spacing: 1px;
 }
 
-.product-price h2 span{
+.home-img h2 span{
     float: right;
     padding: 5px;
     background-color: #f2f2f2;
 }
 
-.product-price h4{
+.home-img h4{
     font-size: 14px;
     color: #bdbdbd;
     font-weight: 500;

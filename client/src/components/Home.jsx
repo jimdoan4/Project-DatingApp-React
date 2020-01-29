@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { HomeContainer } from "./styled-components/HomeStyles";
 
-export default class Home extends Component {
-  render() {
+function Home () {
     return (
       <HomeContainer className="bg-info p-5 home-body-container">
         <section className="one">
@@ -19,8 +18,8 @@ export default class Home extends Component {
             <div className="row mt-5 text-center text-dark">
               <div className="col-md-4 zoom">
                 <a href="#">
-                  <img src="https://image.freepik.com/free-photo/valentine-day-young-couple-smiling-with-happy-pleasant-expression-pink-background_1368-26912.jpg" />
-                  <div className="product-price">
+                  <img src="https://springfielddentist.com/wp-content/uploads/2014/10/brightly-smiling-couple.jpg" />
+                  <div className="home-img">
                   <Link to={`/users/`}>
                     <h4 className="text-dark bg-light p-2">REGISTER NOW!</h4>
                     </Link>
@@ -30,7 +29,7 @@ export default class Home extends Component {
               <div className="col-md-4 zoom">
                 <a href="#">
                   <img src="https://drbeckermeyer.com/wp-content/uploads/2017/01/happy-couple.jpg" />
-                  <div className="product-price">
+                  <div className="home-img">
                     {" "}
                     <Link to={`/users/`}>
                     <h4 className="text-dark bg-light p-2">CREATE A PROFILE!</h4>
@@ -41,7 +40,7 @@ export default class Home extends Component {
               <div className="col-md-4 zoom">
                 <a href="#">
                   <img src="https://t4.ftcdn.net/jpg/02/12/75/17/240_F_212751741_IH2iyT8gbdo2Oa5RoNsCUwoI1KT7RCza.jpg" />
-                  <div className="product-price">
+                  <div className="home-img">
                   <Link to={`/users/`}>
                     <h4 className="text-dark bg-light p-2">FIND TRUE LOVE</h4>
                     </Link>
@@ -56,4 +55,4 @@ export default class Home extends Component {
       </HomeContainer>
     );
   }
-}
+  export default Home;

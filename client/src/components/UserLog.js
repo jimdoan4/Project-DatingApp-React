@@ -120,7 +120,7 @@ export default class UserLog extends Component {
                       First Name
                     </Form.Label>
                     <Form.Control
-                      className="text-center input"
+                      className="text-center"
                       name="firstName"
                       onChange={this.handleChange}
                       value={this.state.newUser.firstName}

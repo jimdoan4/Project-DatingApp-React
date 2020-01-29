@@ -1,46 +1,7 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React from "react";
 import { FooterContainer } from "./styled-components/FooterStyles";
 
-export default class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      weather: [],
-      temp: [],
-      humidity: [],
-      speed: [],
-      clouds: []
-    };
-  }
-
-  getWeather = query => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/find?q=${query}&units=imperial&appid=f92c1f4990b0574d4a4e4d3dd556f388`
-      )
-      .then(response => {
-        this.setState({
-          weather: response.data.list[0],
-          temp: response.data.list[0].main.temp,
-          humidity: response.data.list[0].main.humidity,
-          speed: response.data.list[0].wind.speed,
-          clouds: response.data.list[0].weather[0].description
-        });
-      })
-      .catch(error => {
-        console.log("Error", error);
-      });
-  };
-
-  queryWeather = (event, cityName) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      cityName = event.target.value;
-      this.getWeather(cityName);
-    }
-  };
-  render() {
+function Footer () {
     return (
       <FooterContainer>
          <section className="one">
@@ -85,4 +46,4 @@ export default class Footer extends Component {
       </FooterContainer>
     );
   }
-}
+export default Footer;
