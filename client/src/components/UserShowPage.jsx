@@ -3,8 +3,6 @@ import UserPage from "./UserPage";
 import CommentPage from "./CommentPage";
 import EventPage from "./EventPage";
 import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 
 export default class UserShowPage extends Component {
   state = {

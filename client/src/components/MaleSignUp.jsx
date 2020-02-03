@@ -106,7 +106,7 @@ export default class MaleSignUp extends Component {
           <Container>
             
               <Form
-                className="text-center bg-light man-form"
+                className="text-center bg-light man-form animated slideInRight"
                 onSubmit={this.handleMaleSignUp}
               >
                 <Form.Row>

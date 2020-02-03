@@ -109,7 +109,7 @@ export default class UserLog extends Component {
         {this.state.displayUserForm ? (
           <Container>
               <Form
-                className="text-center bg-light woman-form"
+                className="text-center bg-light woman-form animated slideInLeft"
                 onSubmit={this.handleSignUp}
               >
                 <Form.Row>
