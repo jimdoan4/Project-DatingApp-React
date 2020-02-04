@@ -21,10 +21,10 @@ export default class NavBar extends Component {
                 aria-expanded="false"
                 aria-label="Close"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-icon"><i class="fas fa-times"></i></span>
               </button>
 
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="collapse navbar-collapse text-center bg-light p-3" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
                     <Link

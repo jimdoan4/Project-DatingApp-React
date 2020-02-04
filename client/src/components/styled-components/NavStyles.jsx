@@ -7,7 +7,6 @@ a,a:hover{
     
 }
 
-
 header .navbar{
     background-color: transparent !important;
     padding: 0;
@@ -26,6 +25,11 @@ header .navbar-nav .nav-link{
     font-weight: 500;
     text-transform: uppercase;
     padding: 0 25px!important;
+}
+
+.navbar-icon {
+    color: black;
+    font-size: 25px;
 }
 
 
